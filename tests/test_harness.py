@@ -218,6 +218,91 @@ def test_run_tick_harness_timestamp_wins_over_plugin_timestamp():
         mock_commit.assert_called_once()
 
 
+def test_git_commit_push_serializes_across_sibling_plugins():
+    """Two sibling plugins ticking at once must not race on the shared repo lock -
+    one blocks until the other releases, rather than corrupting .git concurrently."""
+    import threading
+    import time
+
+    with tempfile.TemporaryDirectory() as repo_root:
+        plugin_a_dir = os.path.join(repo_root, "plugin-a")
+        plugin_b_dir = os.path.join(repo_root, "plugin-b")
+        os.makedirs(plugin_a_dir)
+        os.makedirs(plugin_b_dir)
+
+        plugin_a = FakeShitpost({"value": 1}, plugin_a_dir)
+        plugin_b = FakeShitpost({"value": 2}, plugin_b_dir)
+
+        events = []
+        events_lock = threading.Lock()
+
+        with patch.object(
+            plugin_a,
+            "_git_commit_push",
+            wraps=lambda msg: _locked_call(plugin_a, "a", 0.2, events, events_lock),
+        ), patch.object(
+            plugin_b,
+            "_git_commit_push",
+            wraps=lambda msg: _locked_call(plugin_b, "b", 0.2, events, events_lock),
+        ):
+            t_a = threading.Thread(target=plugin_a.run_tick)
+            t_b = threading.Thread(target=plugin_b.run_tick)
+            t_a.start()
+            time.sleep(0.05)  # ensure a acquires the lock first
+            t_b.start()
+            t_a.join()
+            t_b.join()
+
+        # b must not start until a has fully finished - proves serialization,
+        # not just "both eventually ran".
+        assert events == ["a-start", "a-end", "b-start", "b-end"]
+
+
+def _locked_call(plugin, label, sleep_seconds, events, events_lock):
+    """Exercise the real repo lock via the plugin's actual lock path, then
+    simulate a slow git operation so overlap would be observable if the lock
+    didn't serialize."""
+    import fcntl
+    import time
+
+    lock_path = plugin._repo_git_lock_path()
+    fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
+    fcntl.flock(fd, fcntl.LOCK_EX)
+    try:
+        with events_lock:
+            events.append(f"{label}-start")
+        time.sleep(sleep_seconds)
+        with events_lock:
+            events.append(f"{label}-end")
+    finally:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+        os.close(fd)
+
+
+def test_git_commit_push_raises_on_lock_timeout():
+    """If the repo lock is held past the timeout, the tick must surface an
+    error rather than hang forever or silently skip the push."""
+    import fcntl
+
+    with tempfile.TemporaryDirectory() as repo_root:
+        plugin_dir = os.path.join(repo_root, "plugin-a")
+        os.makedirs(plugin_dir)
+        fake = FakeShitpost({"value": 1}, plugin_dir)
+
+        lock_path = fake._repo_git_lock_path()
+        holder_fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
+        fcntl.flock(holder_fd, fcntl.LOCK_EX)
+        try:
+            with patch(
+                "harness.shitpost_base._GIT_LOCK_TIMEOUT_SECONDS", 0.3
+            ):
+                with pytest.raises(TimeoutError):
+                    fake._git_commit_push("tick: 1")
+        finally:
+            fcntl.flock(holder_fd, fcntl.LOCK_UN)
+            os.close(holder_fd)
+
+
 def test_run_tick_skips_when_another_tick_is_in_progress():
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost({"value": 42}, tmp)
