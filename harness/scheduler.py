@@ -31,9 +31,17 @@ import sys
 import time
 from pathlib import Path
 
-from harness.shitpost_base import git_push
-
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# Make the repo root importable so `harness.shitpost_base` resolves whether
+# this is run as `python3 harness/scheduler.py` (systemd invokes it exactly
+# this way - Python only auto-adds the script's own directory to sys.path,
+# not its parent) or as `python3 -m harness.scheduler` from the repo root.
+# Same pattern every plugin's tick.py already uses for the same reason.
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from harness.shitpost_base import git_push  # noqa: E402
 
 # (plugin directory name, cadence in seconds). Cadence per each plugin's own
 # design.md; base-converter doesn't state one, so it uses the majority
@@ -134,6 +142,18 @@ def main() -> None:
     jobs = default_jobs()
     scheduler = Scheduler(jobs)
     print(f"Scheduler started with {len(jobs)} jobs: {[name for name, _, _ in jobs]}")
+
+    # Import-check mode: confirms the module loaded and jobs were built
+    # correctly (the exact thing that broke in production - see
+    # test_scheduler_runs_standalone_exactly_as_systemd_invokes_it) without
+    # actually running any tick or push. Every job starts "due now", so
+    # calling run_forever() here would fire real ticks/pushes immediately.
+    import os
+
+    if os.environ.get("SCHEDULER_IMPORT_CHECK_ONLY"):
+        print("Import check OK, exiting without running any job.")
+        return
+
     scheduler.run_forever()
 
 

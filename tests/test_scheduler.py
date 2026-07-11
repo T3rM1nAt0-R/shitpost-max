@@ -124,3 +124,37 @@ def test_default_jobs_includes_all_plugins_and_a_pusher():
     assert "push" in names
     assert "pi-spigot" in names
     assert "commit-poet" in names
+
+
+def test_scheduler_runs_standalone_exactly_as_systemd_invokes_it():
+    """Regression test: `from harness.scheduler import Scheduler` works fine
+    under pytest (repo root is already on sys.path via pytest's own
+    mechanism), but that's NOT how this actually gets run in production -
+    systemd invokes it as `python3 harness/scheduler.py` from the repo
+    root, and Python only auto-adds the *script's own* directory to
+    sys.path, not its parent. That gap broke the very first real
+    deployment (ModuleNotFoundError: No module named 'harness') despite
+    every other test passing. This runs the real file as a real
+    subprocess, the same way systemd does, to catch that class of bug -
+    using SCHEDULER_IMPORT_CHECK_ONLY so it exits right after a successful
+    import instead of actually running any tick/push (every job starts
+    "due now", so a real run would fire real subprocess ticks and pushes
+    against the live repo during a test)."""
+    import os
+    import subprocess
+    import sys
+
+    from harness.scheduler import REPO_ROOT
+
+    env = {**os.environ, "SCHEDULER_IMPORT_CHECK_ONLY": "1"}
+    result = subprocess.run(
+        [sys.executable, "harness/scheduler.py"],
+        cwd=str(REPO_ROOT),
+        capture_output=True,
+        text=True,
+        env=env,
+        timeout=10,
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    assert "Import check OK" in result.stdout
+    assert "ModuleNotFoundError" not in result.stderr
