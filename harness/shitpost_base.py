@@ -2,9 +2,12 @@
 
 A plugin only needs to subclass :class:`Shitpost`, set the three class
 attributes, and implement :meth:`produce`. The harness handles state
-persistence, summary snapshots, commits, and pushes uniformly.
+persistence, summary snapshots, and commits uniformly. Pushing is handled
+separately by :func:`git_push`, run periodically by the scheduler rather
+than once per plugin tick - see that function's docstring for why.
 """
 
+import contextlib
 import fcntl
 import json
 import os
@@ -60,7 +63,10 @@ class Shitpost(ABC):
         raise NotImplementedError
 
     def run_tick(self) -> None:
-        """Run one tick: produce, persist, commit, and push.
+        """Run one tick: produce, persist, and commit locally.
+
+        Pushing happens separately - see :func:`git_push`, run periodically
+        by the scheduler rather than once per tick.
 
         Exceptions raised by :meth:`produce` are isolated: they are logged
         to stderr, recorded as an error line in ``state.jsonl``, and do
@@ -130,7 +136,7 @@ class Shitpost(ABC):
                 return
 
             try:
-                self._git_commit_push(message)
+                self._git_commit(message)
             except Exception:
                 self._log_error(traceback.format_exc())
                 return
@@ -190,35 +196,28 @@ class Shitpost(ABC):
             json.dump(data, f, separators=(",", ":"), sort_keys=True)
             f.write("\n")
 
-    def _git_commit_push(self, message: str) -> None:
-        """Commit ``state.jsonl`` and ``summary.json`` and push.
+    def _git_commit(self, message: str) -> None:
+        """Commit ``state.jsonl`` and ``summary.json`` - local only, no push.
 
-        Runs ``git add``, ``git commit -m <message>``, and ``git push`` in
-        the plugin's own directory, holding a repo-wide lock for the
-        duration so a concurrently-ticking sibling plugin can't race on
-        the same shared ``.git``. Raises if the lock can't be acquired
-        within ``_GIT_LOCK_TIMEOUT_SECONDS`` (surfaces as an error line
-        via run_tick's existing exception handling, not a silent skip) or
-        if any git command fails.
+        Runs ``git add`` and ``git commit -m <message>`` in the plugin's own
+        directory, holding a repo-wide lock for the duration so a
+        concurrently-ticking sibling plugin can't race on the same shared
+        ``.git``. Raises if the lock can't be acquired within
+        ``_GIT_LOCK_TIMEOUT_SECONDS`` (surfaces as an error line via
+        run_tick's existing exception handling, not a silent skip) or if
+        any git command fails.
+
+        Deliberately does not push (see ``git_push`` at module level): a
+        local commit is a few milliseconds, but a push is a network round
+        trip, and holding this same lock for both would mean every plugin
+        serializes on network latency - the exact bottleneck that makes
+        one-push-per-tick fall over well before 100 plugins. The scheduler
+        runs ``git_push`` as its own periodic job instead, batching
+        whatever's been committed locally since the last push into one
+        network round trip.
         """
         plugin_dir = self._plugin_dir()
-        lock_path = self._repo_git_lock_path()
-        lock_fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
-        try:
-            deadline = time.monotonic() + _GIT_LOCK_TIMEOUT_SECONDS
-            while True:
-                try:
-                    fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                    break
-                except (BlockingIOError, OSError):
-                    if time.monotonic() >= deadline:
-                        raise TimeoutError(
-                            f"could not acquire repo git lock within "
-                            f"{_GIT_LOCK_TIMEOUT_SECONDS}s (held by a "
-                            f"concurrently-ticking plugin)"
-                        )
-                    time.sleep(0.5)
-
+        with _repo_git_lock(self._repo_git_lock_path()):
             subprocess.run(
                 ["git", "add", "state.jsonl", "summary.json"],
                 cwd=plugin_dir,
@@ -229,11 +228,56 @@ class Shitpost(ABC):
                 cwd=plugin_dir,
                 check=True,
             )
-            subprocess.run(
-                ["git", "push"],
-                cwd=plugin_dir,
-                check=True,
-            )
-        finally:
-            fcntl.flock(lock_fd, fcntl.LOCK_UN)
-            os.close(lock_fd)
+
+
+@contextlib.contextmanager
+def _repo_git_lock(lock_path: str):
+    """Hold the shared repo-wide git lock for the duration of the block.
+
+    Shared by :meth:`Shitpost._git_commit` and :func:`git_push` so a local
+    commit and a push (or two pushes) never run concurrently and step on
+    each other's ``.git`` state, while still letting commits (fast, local)
+    and pushes (slower, network) each hold the lock only as long as they
+    individually need it rather than one operation blocking on the other's
+    typical duration.
+    """
+    lock_fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
+    try:
+        deadline = time.monotonic() + _GIT_LOCK_TIMEOUT_SECONDS
+        while True:
+            try:
+                fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except (BlockingIOError, OSError):
+                if time.monotonic() >= deadline:
+                    raise TimeoutError(
+                        f"could not acquire repo git lock within "
+                        f"{_GIT_LOCK_TIMEOUT_SECONDS}s (held by a "
+                        f"concurrent commit or push)"
+                    )
+                time.sleep(0.5)
+        yield
+    finally:
+        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+        os.close(lock_fd)
+
+
+def git_push(repo_root: str) -> None:
+    """Push whatever's been locally committed since the last push.
+
+    Meant to be run periodically (by the scheduler, as its own job on its
+    own cadence) rather than once per plugin tick. This is the actual fix
+    for the scaling ceiling one-push-per-tick hits: pushing is a network
+    round trip (hundreds of ms to a couple seconds), and serializing every
+    plugin's tick through that round trip caps out well before 100
+    plugins sharing a cadence. Local commits (see ``Shitpost._git_commit``)
+    are cheap and don't have this problem - only the push itself needs to
+    be batched.
+
+    If there's nothing new to push, ``git push`` exits quickly on its own
+    ("Everything up-to-date") - this function doesn't try to detect that
+    case itself, just always attempts the push under the shared lock.
+    """
+    lock_path = os.path.join(repo_root, ".git-push.lock")
+    with _repo_git_lock(lock_path):
+        subprocess.run(["git", "push"], cwd=repo_root, check=True)

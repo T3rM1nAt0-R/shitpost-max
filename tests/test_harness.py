@@ -40,7 +40,7 @@ def test_run_tick_writes_state_and_summary_and_commits():
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost({"value": 42}, tmp)
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -59,7 +59,7 @@ def test_run_tick_none_skip_does_nothing():
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost(None, tmp)
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         assert not os.path.exists(os.path.join(tmp, "state.jsonl"))
@@ -85,7 +85,7 @@ def test_run_tick_exception_is_isolated():
     with tempfile.TemporaryDirectory() as tmp:
         broken = BrokenShitpost(tmp)
 
-        with patch.object(broken, "_git_commit_push") as mock_commit:
+        with patch.object(broken, "_git_commit") as mock_commit:
             broken.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -106,7 +106,7 @@ def test_run_tick_multi_line_format():
         )
         fake.commit_template = "{value}: {count}"
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -123,8 +123,10 @@ def test_run_tick_multi_line_format():
 
 
 @pytest.mark.skipif(shutil.which("git") is None, reason="git not installed")
-def test_run_tick_git_commit_push_integration():
-    """A real git repo commits successfully; a missing remote is isolated."""
+def test_run_tick_git_commit_integration():
+    """A real git repo commits successfully - and does NOT attempt a push
+    (no remote configured at all here; if run_tick tried to push, this
+    would raise, since _git_commit no longer pushes)."""
     with tempfile.TemporaryDirectory() as tmp:
         subprocess.run(["git", "init"], cwd=tmp, check=True, capture_output=True)
         subprocess.run(
@@ -141,7 +143,7 @@ def test_run_tick_git_commit_push_integration():
         )
 
         fake = FakeShitpost({"value": 123}, tmp)
-        fake.run_tick()  # push fails (no remote), but must not raise.
+        fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
         assert len(state) == 1
@@ -157,13 +159,71 @@ def test_run_tick_git_commit_push_integration():
         assert "tick: 123" in log.stdout
 
 
+@pytest.mark.skipif(shutil.which("git") is None, reason="git not installed")
+def test_git_push_pushes_local_commits_to_remote():
+    """git_push actually pushes what's been locally committed - proven with
+    a real local 'remote' (a bare repo), not just checking it doesn't raise."""
+    from harness.shitpost_base import git_push
+
+    with tempfile.TemporaryDirectory() as remote_dir, tempfile.TemporaryDirectory() as work_dir:
+        subprocess.run(["git", "init", "--bare"], cwd=remote_dir, check=True, capture_output=True)
+        subprocess.run(["git", "init"], cwd=work_dir, check=True, capture_output=True)
+        subprocess.run(
+            ["git", "config", "--local", "user.name", "Test User"],
+            cwd=work_dir, check=True, capture_output=True,
+        )
+        subprocess.run(
+            ["git", "config", "--local", "user.email", "test@example.com"],
+            cwd=work_dir, check=True, capture_output=True,
+        )
+        subprocess.run(
+            ["git", "remote", "add", "origin", remote_dir],
+            cwd=work_dir, check=True, capture_output=True,
+        )
+        subprocess.run(
+            ["git", "checkout", "-b", "main"], cwd=work_dir, check=True, capture_output=True,
+        )
+
+        with open(os.path.join(work_dir, "file.txt"), "w", encoding="utf-8") as f:
+            f.write("content")
+        subprocess.run(["git", "add", "file.txt"], cwd=work_dir, check=True, capture_output=True)
+        subprocess.run(
+            ["git", "commit", "-m", "local commit"], cwd=work_dir, check=True, capture_output=True,
+        )
+        subprocess.run(
+            ["git", "push", "-u", "origin", "main"], cwd=work_dir, check=True, capture_output=True,
+        )
+
+        # A second local commit, not yet on the remote.
+        with open(os.path.join(work_dir, "file2.txt"), "w", encoding="utf-8") as f:
+            f.write("more content")
+        subprocess.run(["git", "add", "file2.txt"], cwd=work_dir, check=True, capture_output=True)
+        subprocess.run(
+            ["git", "commit", "-m", "second commit"], cwd=work_dir, check=True, capture_output=True,
+        )
+
+        remote_log_before = subprocess.run(
+            ["git", "log", "--oneline", "main"], cwd=remote_dir, check=True,
+            capture_output=True, text=True,
+        )
+        assert "second commit" not in remote_log_before.stdout
+
+        git_push(work_dir)
+
+        remote_log_after = subprocess.run(
+            ["git", "log", "--oneline", "main"], cwd=remote_dir, check=True,
+            capture_output=True, text=True,
+        )
+        assert "second commit" in remote_log_after.stdout
+
+
 def test_run_tick_commit_template_key_error_is_isolated():
     """A bad commit_template referencing a missing key must not crash the tick."""
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost({"value": 42}, tmp)
         fake.commit_template = "tick: {missing}"
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -179,7 +239,7 @@ def test_run_tick_tuple_wrong_length_is_isolated():
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost(({"value": 1}, [{"item": "a"}], "extra"), tmp)
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -193,7 +253,7 @@ def test_run_tick_details_non_dict_is_isolated():
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost(({"value": 1}, [{"item": "a"}, "not-a-dict"]), tmp)
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -207,7 +267,7 @@ def test_run_tick_harness_timestamp_wins_over_plugin_timestamp():
     with tempfile.TemporaryDirectory() as tmp:
         fake = FakeShitpost({"value": 42, "timestamp": "0001-01-01T00:00:00+00:00"}, tmp)
 
-        with patch.object(fake, "_git_commit_push") as mock_commit:
+        with patch.object(fake, "_git_commit") as mock_commit:
             fake.run_tick()
 
         state = _read_jsonl(os.path.join(tmp, "state.jsonl"))
@@ -218,7 +278,7 @@ def test_run_tick_harness_timestamp_wins_over_plugin_timestamp():
         mock_commit.assert_called_once()
 
 
-def test_git_commit_push_serializes_across_sibling_plugins():
+def test_git_commit_serializes_across_sibling_plugins():
     """Two sibling plugins ticking at once must not race on the shared repo lock -
     one blocks until the other releases, rather than corrupting .git concurrently."""
     import threading
@@ -238,11 +298,11 @@ def test_git_commit_push_serializes_across_sibling_plugins():
 
         with patch.object(
             plugin_a,
-            "_git_commit_push",
+            "_git_commit",
             wraps=lambda msg: _locked_call(plugin_a, "a", 0.2, events, events_lock),
         ), patch.object(
             plugin_b,
-            "_git_commit_push",
+            "_git_commit",
             wraps=lambda msg: _locked_call(plugin_b, "b", 0.2, events, events_lock),
         ):
             t_a = threading.Thread(target=plugin_a.run_tick)
@@ -279,9 +339,9 @@ def _locked_call(plugin, label, sleep_seconds, events, events_lock):
         os.close(fd)
 
 
-def test_git_commit_push_raises_on_lock_timeout():
+def test_git_commit_raises_on_lock_timeout():
     """If the repo lock is held past the timeout, the tick must surface an
-    error rather than hang forever or silently skip the push."""
+    error rather than hang forever or silently skip the commit."""
     import fcntl
 
     with tempfile.TemporaryDirectory() as repo_root:
@@ -297,7 +357,7 @@ def test_git_commit_push_raises_on_lock_timeout():
                 "harness.shitpost_base._GIT_LOCK_TIMEOUT_SECONDS", 0.3
             ):
                 with pytest.raises(TimeoutError):
-                    fake._git_commit_push("tick: 1")
+                    fake._git_commit("tick: 1")
         finally:
             fcntl.flock(holder_fd, fcntl.LOCK_UN)
             os.close(holder_fd)
@@ -312,7 +372,7 @@ def test_run_tick_skips_when_another_tick_is_in_progress():
         fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
         fcntl.flock(fd, fcntl.LOCK_EX)
         try:
-            with patch.object(fake, "_git_commit_push") as mock_commit:
+            with patch.object(fake, "_git_commit") as mock_commit:
                 fake.run_tick()
 
             assert not os.path.exists(os.path.join(tmp, "state.jsonl"))

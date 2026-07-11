@@ -1,30 +1,37 @@
 #!/usr/bin/env python3
 """Single-process scheduler for every plugin's tick, replacing one cron line
-per plugin.
+per plugin - plus a periodic push job that batches network pushes instead
+of pushing once per tick.
 
 The core idea is a min-heap ("sorted pile, soonest on top") of
-``(next_due_time, plugin_dir, cadence_seconds)``. The scheduler always pops
-whichever plugin is due soonest, waits until it's actually due, runs it,
-then pushes it back with its *next* due time. Popping/pushing a Python
-heap is O(log n), so this comfortably handles far more than the handful
-of plugins registered today.
+``(next_due_time, job_name, cadence_seconds)``. The scheduler always pops
+whichever job is due soonest, waits until it's actually due, runs it, then
+pushes it back with its *next* due time. Popping/pushing a Python heap is
+O(log n), so this comfortably handles far more than the handful of jobs
+registered today.
 
-Each tick still runs as its own subprocess (``python3 tick.py``, exactly
-what cron would have invoked) rather than importing every plugin's module
-into this one process. That's a deliberate choice, not an oversight: two
-unrelated plugins could someday pick the same module name (e.g. two
-different plugins both naming their main file ``plugin.py``), and Python's
-import cache is keyed by module name process-wide - importing everything
-into one process would make that a real, silent collision risk as the
-plugin count grows. A subprocess per tick costs a bit of process-spawn
-overhead but keeps every plugin's namespace fully isolated, matching how
-they already run under cron today.
+Two kinds of job share the same heap:
+- **Plugin ticks** run ``tick.py`` as a subprocess (exactly what cron would
+  have invoked) rather than importing every plugin's module into this one
+  process - two unrelated plugins could someday pick the same module name
+  (e.g. two different "plugin.py"s), and Python's import cache is keyed by
+  name process-wide. Subprocess-per-tick keeps every plugin's namespace
+  isolated at the cost of some spawn overhead (acceptable at this scale).
+  Each tick only commits locally (see ``Shitpost._git_commit``) - it does
+  not push.
+- **The pusher** runs ``git_push`` on its own cadence (independent of any
+  plugin's), batching whatever's been locally committed since the last
+  push into one network round trip. This is what actually lets the whole
+  thing scale past a few dozen plugins - see ``git_push``'s docstring in
+  ``shitpost_base.py`` for why per-tick pushing doesn't.
 """
 import heapq
 import subprocess
 import sys
 import time
 from pathlib import Path
+
+from harness.shitpost_base import git_push
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -39,6 +46,9 @@ PLUGINS = [
     ("base-converter", 60),
     ("commit-poet", 600),
 ]
+
+# How often the pusher runs, independent of any plugin's own cadence.
+PUSH_CADENCE_SECONDS = 20
 
 
 def run_tick_subprocess(plugin_dir: str, repo_root: Path = REPO_ROOT) -> None:
@@ -56,50 +66,74 @@ def run_tick_subprocess(plugin_dir: str, repo_root: Path = REPO_ROOT) -> None:
         )
 
 
-class Scheduler:
-    """Min-heap scheduler over a set of (plugin_dir, cadence_seconds) pairs.
+def push_job(repo_root: Path = REPO_ROOT) -> None:
+    """Scheduler job wrapper around ``git_push`` - logs instead of crashing
+    the whole scheduler if a push fails (e.g. transient network issue),
+    matching each plugin tick's own error-isolation philosophy."""
+    try:
+        git_push(str(repo_root))
+    except Exception as exc:
+        print(f"[push] failed: {exc}", file=sys.stderr)
 
-    ``run_tick``, ``clock``, and ``sleeper`` are injectable so ``step()`` can
-    be unit-tested without real subprocesses or real waiting.
+
+class Scheduler:
+    """Min-heap scheduler over a set of named jobs, each with its own
+    cadence and action callable.
+
+    ``clock`` and ``sleeper`` are injectable so ``step()`` can be
+    unit-tested without real waiting.
     """
 
-    def __init__(self, plugins, run_tick=run_tick_subprocess, clock=time.monotonic, sleeper=time.sleep):
-        self._run_tick = run_tick
+    def __init__(self, jobs, clock=time.monotonic, sleeper=time.sleep):
+        """``jobs``: iterable of ``(name, cadence_seconds, action)`` triples,
+        where ``action`` is a zero-argument callable run when that job is
+        due."""
         self._clock = clock
         self._sleep = sleeper
+        self._actions = {name: action for name, _cadence, action in jobs}
         now = clock()
-        # Every plugin starts "due now" so the first pass through fires
-        # each one once immediately, then settles into its real cadence.
-        self._heap = [(now, plugin_dir, cadence) for plugin_dir, cadence in plugins]
+        # Every job starts "due now" so the first pass fires each one
+        # immediately, then settles into its real cadence.
+        self._heap = [(now, name, cadence) for name, cadence, _action in jobs]
         heapq.heapify(self._heap)
 
     def step(self) -> str:
-        """Run exactly one tick: pop the soonest-due plugin, wait if it isn't
-        due yet, run it, and reschedule it. Returns the plugin_dir that ran,
+        """Run exactly one job: pop the soonest-due one, wait if it isn't
+        due yet, run it, and reschedule it. Returns the job name that ran,
         so callers/tests can observe ordering."""
-        due_time, plugin_dir, cadence = heapq.heappop(self._heap)
+        due_time, name, cadence = heapq.heappop(self._heap)
 
         sleep_for = due_time - self._clock()
         if sleep_for > 0:
             self._sleep(sleep_for)
 
-        self._run_tick(plugin_dir)
+        self._actions[name]()
 
-        # Reschedule from the *original* due time, not "now" - if a tick
+        # Reschedule from the *original* due time, not "now" - if a job
         # runs a little late, the next one is still due on the original
         # cadence instead of drifting later and later.
-        heapq.heappush(self._heap, (due_time + cadence, plugin_dir, cadence))
+        heapq.heappush(self._heap, (due_time + cadence, name, cadence))
 
-        return plugin_dir
+        return name
 
     def run_forever(self) -> None:
         while True:
             self.step()
 
 
+def default_jobs():
+    jobs = [
+        (plugin_dir, cadence, lambda p=plugin_dir: run_tick_subprocess(p))
+        for plugin_dir, cadence in PLUGINS
+    ]
+    jobs.append(("push", PUSH_CADENCE_SECONDS, push_job))
+    return jobs
+
+
 def main() -> None:
-    scheduler = Scheduler(PLUGINS)
-    print(f"Scheduler started with {len(PLUGINS)} plugins: {[p for p, _ in PLUGINS]}")
+    jobs = default_jobs()
+    scheduler = Scheduler(jobs)
+    print(f"Scheduler started with {len(jobs)} jobs: {[name for name, _, _ in jobs]}")
     scheduler.run_forever()
 
 
