@@ -1,0 +1,232 @@
+#!/usr/bin/env python3
+"""Regenerate the plugin table in README.md from live plugin introspection.
+
+Each plugin is inspected in a short-lived subprocess so its module is never
+imported into this script's own process (avoiding module-name collisions and
+import-time side effects). The table is written between marker comments in
+README.md so there is a single source of truth.
+"""
+
+import argparse
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+README_PATH = REPO_ROOT / "README.md"
+
+# Directories that are never plugin directories.
+SKIP_DIRS = {
+    "harness",
+    "tests",
+    "tools",
+    "scripts",
+    ".venv",
+    ".git",
+    ".github",
+    ".githooks",
+    ".pytest_cache",
+}
+
+MARKER_START = "<!-- PLUGIN_TABLE_START -->"
+MARKER_END = "<!-- PLUGIN_TABLE_END -->"
+
+
+class PluginTableError(RuntimeError):
+    """Raised when the plugin table cannot be generated."""
+
+
+_INTROSPECT_SCRIPT = r"""
+import importlib.util
+import json
+import os
+import sys
+
+repo_root = sys.argv[1]
+plugin_dir = sys.argv[2]
+plugin_name = os.path.basename(plugin_dir)
+sys.path.insert(0, repo_root)
+
+plugin_files = [
+    f for f in os.listdir(plugin_dir)
+    if f.endswith(".py")
+    and f != "tick.py"
+    and not f.startswith("test")
+    and f != "__init__.py"
+]
+
+if len(plugin_files) != 1:
+    print(
+        "expected 1 plugin module in %s, found %d: %s"
+        % (plugin_name, len(plugin_files), plugin_files),
+        file=sys.stderr,
+    )
+    sys.exit(1)
+
+module_path = os.path.join(plugin_dir, plugin_files[0])
+module_name = plugin_files[0].replace(".py", "")
+spec = importlib.util.spec_from_file_location(module_name, module_path)
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+
+from harness.shitpost_base import Shitpost  # noqa: E402
+
+candidates = [
+    obj for name in dir(mod)
+    if isinstance((obj := getattr(mod, name)), type)
+    and issubclass(obj, Shitpost)
+    and obj is not Shitpost
+]
+
+if len(candidates) != 1:
+    print(
+        "expected 1 Shitpost subclass in %s, found %d"
+        % (plugin_name, len(candidates)),
+        file=sys.stderr,
+    )
+    sys.exit(1)
+
+cls = candidates[0]
+doc = mod.__doc__ or ""
+first_line = doc.strip().splitlines()[0].strip() if doc.strip() else ""
+print(json.dumps({"name": cls.name, "internal": cls.internal, "description": first_line}))
+"""
+
+
+def discover_plugin_dirs(repo_root: Path) -> list[str]:
+    """Return sorted plugin directory names, excluding special directories."""
+    return sorted(
+        entry.name
+        for entry in repo_root.iterdir()
+        if entry.is_dir()
+        and not entry.name.startswith(".")
+        and entry.name not in SKIP_DIRS
+    )
+
+
+def introspect_plugin(repo_root: Path, plugin_dir_name: str) -> dict:
+    """Run a subprocess to read a plugin's name, internal flag, and docstring.
+
+    Returns ``{"name": str, "internal": bool, "description": str}`` on
+    success. Raises :class:`PluginTableError` if introspection fails.
+    """
+    plugin_dir = repo_root / plugin_dir_name
+    try:
+        result = subprocess.run(
+            [sys.executable, "-c", _INTROSPECT_SCRIPT, str(repo_root), str(plugin_dir)],
+            capture_output=True,
+            text=True,
+            timeout=10,
+            cwd=str(plugin_dir),
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise PluginTableError(f"introspection timed out for {plugin_dir_name}") from exc
+    except OSError as exc:
+        raise PluginTableError(f"could not introspect {plugin_dir_name}: {exc}") from exc
+
+    if result.returncode != 0:
+        stderr = result.stderr.strip()
+        raise PluginTableError(
+            f"introspection failed for {plugin_dir_name}: "
+            f"{stderr or result.stdout.strip()}"
+        )
+
+    try:
+        data = json.loads(result.stdout.strip())
+    except json.JSONDecodeError as exc:
+        raise PluginTableError(
+            f"introspection output for {plugin_dir_name} is not valid JSON: {exc}"
+        ) from exc
+
+    return data
+
+
+def collect_plugin_rows(repo_root: Path) -> list[tuple[str, str]]:
+    """Return (plugin_name, description) rows for all public plugins."""
+    rows: list[tuple[str, str]] = []
+    for plugin_dir_name in discover_plugin_dirs(repo_root):
+        meta = introspect_plugin(repo_root, plugin_dir_name)
+        if meta is None:
+            continue
+        if meta.get("internal"):
+            continue
+        rows.append((meta["name"], meta.get("description", "")))
+    return rows
+
+
+def format_table(rows: list[tuple[str, str]]) -> str:
+    """Format rows as a markdown table with pipe-escaped descriptions."""
+    lines = ["Plugin | Description", "--- | ---"]
+    for name, description in rows:
+        # Escape literal pipes so the description cannot break the table.
+        safe_description = description.replace("|", "\\|")
+        lines.append(f"{name} | {safe_description}")
+    return "\n".join(lines) + "\n"
+
+
+def regenerate_readme(readme_path: Path, table: str) -> str:
+    """Return README content with the table section replaced."""
+    content = readme_path.read_text(encoding="utf-8")
+    start_count = content.count(MARKER_START)
+    end_count = content.count(MARKER_END)
+    if start_count != 1 or end_count != 1:
+        raise ValueError(
+            f"{readme_path} must contain exactly one {MARKER_START} marker "
+            f"(found {start_count}) and exactly one {MARKER_END} marker "
+            f"(found {end_count})"
+        )
+
+    start_idx = content.find(MARKER_START)
+    end_idx = content.find(MARKER_END)
+    if end_idx < start_idx:
+        raise ValueError("End marker appears before start marker")
+
+    before = content[: start_idx + len(MARKER_START)]
+    after = content[end_idx:]
+    return f"{before}\n\n{table}\n{after}"
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Regenerate the public plugin table in README.md."
+    )
+    parser.add_argument(
+        "--readme",
+        type=Path,
+        default=README_PATH,
+        help="Path to README.md (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Exit non-zero if the committed table is stale instead of writing.",
+    )
+    args = parser.parse_args(argv)
+
+    try:
+        rows = collect_plugin_rows(REPO_ROOT)
+        table = format_table(rows)
+
+        if args.check:
+            current = args.readme.read_text(encoding="utf-8")
+            expected = regenerate_readme(args.readme, table)
+            if current != expected:
+                print(
+                    f"ERROR: {args.readme} plugin table is stale. "
+                    "Run 'python3 tools/generate_plugin_table.py' to regenerate it.",
+                    file=sys.stderr,
+                )
+                return 1
+            return 0
+
+        expected = regenerate_readme(args.readme, table)
+        args.readme.write_text(expected, encoding="utf-8")
+        return 0
+    except (PluginTableError, ValueError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
