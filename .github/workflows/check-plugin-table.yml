@@ -1,0 +1,16 @@
+name: Check plugin table
+
+on: [push, pull_request]
+
+jobs:
+  check-plugin-table:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Check README plugin table is up to date
+        run: python3 tools/generate_plugin_table.py --check
