@@ -1,0 +1,17 @@
+[
+    {
+        "id": "plain",
+        "system_prompt_template": "",
+        "user_prompt_suffix": ""
+    },
+    {
+        "id": "prefixed-schema",
+        "system_prompt_template": "You are a helpful assistant.",
+        "user_prompt_suffix": ""
+    },
+    {
+        "id": "strictly-typed",
+        "system_prompt_template": "You are a JSON parser.",
+        "user_prompt_suffix": ""
+    }
+]

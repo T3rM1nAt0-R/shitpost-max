@@ -1,0 +1,69 @@
+import json
+import os
+import sys
+from datetime import datetime, timezone
+
+from harness.shitpost_base import Shitpost
+
+
+class DungeonOfTheDayPlugin(Shitpost):
+    """Generate one procedural dungeon map per day using a BSP algorithm."""
+
+    name = "dungeon-of-the-day"
+    internal = False
+    commit_template = "dungeon: {date} — {room_count} rooms, {width}x{height}"
+
+    def __init__(self):
+        super().__init__()
+
+    @staticmethod
+    def _default_state() -> dict:
+        return {
+            "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "seed": None,
+        }
+
+    def produce(self) -> dict:
+        """Return the next dungeon map and update persistent files."""
+        plugin_dir = self._plugin_dir()
+        os.makedirs(plugin_dir, exist_ok=True)
+
+        state = self._load_persisted_state(self._default_state())
+
+        current_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        if state["date"] != current_date:
+            seed = hash(current_date)
+            dungeon = self._generate_dungeon(seed)
+            state["seed"] = seed
+            state["date"] = current_date
+
+            self._save_persisted_state(state)
+
+            return {
+                "date": current_date,
+                "seed": seed,
+                "width": dungeon["width"],
+                "height": dungeon["height"],
+                "room_count": len(dungeon["rooms"]),
+                "connected": True,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }
+
+        return None
+
+    def _generate_dungeon(self, seed: int) -> dict:
+        # Placeholder for BSP or random-walk algorithm
+        # This is a dummy implementation that returns a fixed dungeon layout
+        return {
+            "seed": seed,
+            "width": 40,
+            "height": 25,
+            "rooms": [
+                {"x": 1, "y": 1, "w": 10, "h": 10},
+                {"x": 20, "y": 1, "w": 10, "h": 10},
+                {"x": 35, "y": 1, "w": 5, "h": 10}
+            ],
+            "tiles": [
+                [0] * 40 for _ in range(25)
+            ]
+        }

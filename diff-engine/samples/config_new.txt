@@ -1,0 +1,17 @@
+# Application Configuration
+server.host=0.0.0.0
+server.port=9000
+server.workers=8
+
+database.url=jdbc:postgresql://db-prod:5432/app
+database.user=app_user
+database.password=supersecret
+database.pool_size=20
+
+logging.level=DEBUG
+logging.file=/var/log/app.log
+
+cache.enabled=true
+cache.ttl_seconds=1800
+cache.max_size=2000
+cache.backend=redis
