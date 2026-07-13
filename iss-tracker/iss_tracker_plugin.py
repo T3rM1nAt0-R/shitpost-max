@@ -29,7 +29,7 @@ class IssTracker(Shitpost):
             data = response.json()
             latitude = float(data["iss_position"]["latitude"])
             longitude = float(data["iss_position"]["longitude"])
-            api_timestamp = datetime.fromisoformat(data["timestamp"]).astimezone(timezone.utc).isoformat()
+            api_timestamp = datetime.fromtimestamp(int(data["timestamp"]), tz=timezone.utc).isoformat()
         except (requests.RequestException, KeyError, ValueError) as exc:
             print(f"error: failed to fetch ISS position ({exc})", file=sys.stderr)
             return None
