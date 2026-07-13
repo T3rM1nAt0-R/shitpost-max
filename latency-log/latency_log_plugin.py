@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from datetime import datetime, timezone
 import subprocess
 
@@ -41,7 +42,8 @@ class LatencyLogPlugin(Shitpost):
             if "time=" in line:
                 avg_ms = float(line.split("time=")[1].split()[0])
             elif "packet loss" in line:
-                packet_loss = int(line.split("%")[0])
+                m = re.search(r"(\d+)% packet loss", line)
+                packet_loss = int(m.group(1)) if m else packet_loss
 
         return {"avg_ms": avg_ms, "packet_loss": packet_loss}
 
