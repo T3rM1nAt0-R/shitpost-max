@@ -1,5 +1,3 @@
-import json
-import os
 import random
 from datetime import datetime, timezone
 from typing import Dict, List, Set
@@ -13,51 +11,6 @@ class GraphOfTheDayPlugin(Shitpost):
     name = "graph-of-the-day"
     internal = False
     commit_template = "graph-of-the-day: {vertices}v/{edges}e — {property_name} = {property_value}"
-
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "graph_of_the_day_state.json"
-
-    def _load_state(self, plugin_dir: str) -> Dict[str, int]:
-        """Load the running state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: graph-of-the-day state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"vertices", "edges", "property_index"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: graph-of-the-day state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> Dict[str, int]:
-        return {
-            "vertices": 100,
-            "edges": 30,
-            "property_index": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: Dict[str, int]) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def _generate_graph(self, vertices: int, edges: int) -> List[Set[int]]:
         """Generate a random undirected graph with the given number of vertices and edges."""
@@ -192,10 +145,9 @@ class GraphOfTheDayPlugin(Shitpost):
 
     def produce(self) -> Dict[str, int]:
         """Generate a random graph and compute one property per tick."""
-        plugin_dir = self._plugin_dir()
-        os.makedirs(plugin_dir, exist_ok=True)
-
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state(
+            {"vertices": 100, "edges": 30, "property_index": 0}
+        )
 
         vertices = state["vertices"]
         edges = state["edges"]
@@ -225,7 +177,7 @@ class GraphOfTheDayPlugin(Shitpost):
             property_value = "N/A"
             state["property_index"] = (state["property_index"] + 1) % len(properties)
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "vertices": vertices,
