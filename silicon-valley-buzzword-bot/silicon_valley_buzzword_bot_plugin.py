@@ -1,4 +1,3 @@
-import json
 import os
 import random
 from datetime import datetime, timezone
@@ -15,47 +14,10 @@ class SiliconValleyBuzzwordBotPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "buzzwords_state.json"
         self._buzzwords_file_name = "buzzwords.txt"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running buzzword state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: buzzword state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"last_generated": "0"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: buzzword state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "last_generated": "0",
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "buzzwords_state.json")
 
     def _append_buzzword(self, plugin_dir: str, buzzword: str) -> None:
         path = os.path.join(plugin_dir, self._buzzwords_file_name)
@@ -71,7 +33,10 @@ class SiliconValleyBuzzwordBotPlugin(Shitpost):
         return buzzword
 
     def _is_unique(self, buzzword: str) -> bool:
-        with open(self._plugin_dir() + "/" + self._buzzwords_file_name, 'r') as file:
+        path = os.path.join(self._plugin_dir(), self._buzzwords_file_name)
+        if not os.path.exists(path):
+            return True
+        with open(path, 'r') as file:
             for line in file:
                 if buzzword in line:
                     return False
@@ -82,7 +47,7 @@ class SiliconValleyBuzzwordBotPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"last_generated": "0"})
 
         buzzword = self._generate_buzzword()
         while not self._is_unique(buzzword):
@@ -90,11 +55,11 @@ class SiliconValleyBuzzwordBotPlugin(Shitpost):
 
         state["last_generated"] = str(datetime.now(timezone.utc).timestamp())
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._append_buzzword(plugin_dir, buzzword)
 
         return {
-            "tick": int(state["last_generated"]),
+            "tick": int(float(state["last_generated"])),
             "buzzword": buzzword,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
