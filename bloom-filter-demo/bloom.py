@@ -1,7 +1,4 @@
 import os
-import json
-import sys
-from datetime import datetime, timezone
 import hashlib
 import secrets
 import string
@@ -16,9 +13,8 @@ class BloomFilterDemo(Shitpost):
     internal = False
     commit_template = "bloom-filter-demo: {bits_set}/{capacity} bits set, {fp_rate:.1%} false-positive rate"
 
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "bloom_filter_state.json"
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "bloom_filter_state.json")
 
     def _bit_positions(self, item: str) -> list[int]:
         seeds = [b"s1", b"s2", b"s3"]
@@ -40,7 +36,11 @@ class BloomFilterDemo(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "bits": [0] * BIT_COUNT,
+            "count": 0,
+            "tick": 0,
+        })
 
         bits = state["bits"]
         count = state["count"]
@@ -66,7 +66,7 @@ class BloomFilterDemo(Shitpost):
         state["count"] = count
         state["tick"] = tick
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": tick,
@@ -77,44 +77,4 @@ class BloomFilterDemo(Shitpost):
             "fp_rate": fp_rate
         }
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running Bloom filter state, or initialise it at F(0)."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: bloom filter state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"bits", "count", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: bloom filter state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
 
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            # The next number to emit is always ``a``; ``b`` is the one after.
-            "bits": [0] * BIT_COUNT,
-            "count": 0,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
