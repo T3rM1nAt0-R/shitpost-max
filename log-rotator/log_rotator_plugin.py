@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Cron entry point for the log-rotator plugin."""
 
+import json
 import os
 import sys
 import gzip
@@ -26,51 +27,14 @@ class LogRotatorPlugin(Shitpost):
         self._log_file_name = "app.log"
         self._audit_log_file_name = "rotation_audit.jsonl"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at rotation 0."""
-        path = os.path.join(plugin_dir, "rotation_state.json")
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: rotation state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"rotation", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: rotation state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            # The next number to emit is always ``a``; ``b`` is the one after.
-            "rotation": 0,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, "rotation_state.json")
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        """Preserve the original custom state filename so existing state isn't lost."""
+        return os.path.join(self._plugin_dir(), "rotation_state.json")
 
     def _rotate_log(self, plugin_dir: str) -> None:
         log_file = os.path.join(plugin_dir, self._log_file_name)
         audit_log_file = os.path.join(plugin_dir, self._audit_log_file_name)
-        rotation = self._load_state(plugin_dir)["rotation"]
+        rotation = self._load_persisted_state({"rotation": 0, "tick": 0})["rotation"]
 
         if os.path.exists(log_file):
             old_size = os.path.getsize(log_file)
@@ -99,14 +63,14 @@ class LogRotatorPlugin(Shitpost):
                 os.remove(oldest_file)
                 os.remove(f"{oldest_file}.gz")
 
-        self._save_state(plugin_dir, {"rotation": rotation + 1, "tick": 0})
+        self._save_persisted_state({"rotation": rotation + 1, "tick": 0})
 
     def produce(self) -> dict:
         """Return the next Fibonacci number and update persistent files."""
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"rotation": 0, "tick": 0})
         tick = state["tick"] + 1
 
         if tick % 60 == 0:
