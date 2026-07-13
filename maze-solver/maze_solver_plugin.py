@@ -1,7 +1,6 @@
 import json
 import os
 import random
-import sys
 from datetime import datetime, timezone
 from typing import Dict, List, Tuple
 
@@ -17,48 +16,25 @@ class MazeSolverPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "maze_state.json"
 
-    def _load_state(self, plugin_dir: str) -> Dict:
+    def _load_persisted_state(self, default: Dict) -> Dict:
         """Load the running maze state, or initialise it at a random seed."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: maze state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"seed", "size", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: maze state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
+        plugin_dir = self._plugin_dir()
+        os.makedirs(plugin_dir, exist_ok=True)
+        state_path = os.path.join(plugin_dir, "state.json")
+        if not os.path.exists(state_path):
+            with open(state_path, "w") as f:
+                json.dump(default, f)
+        with open(state_path, "r") as f:
+            return json.load(f)
 
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> Dict:
-        return {
-            "seed": random.randint(0, 1000000),
-            "size": 21,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: Dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _save_persisted_state(self, state: Dict) -> None:
+        """Atomically persists the state dict."""
+        plugin_dir = self._plugin_dir()
+        os.makedirs(plugin_dir, exist_ok=True)
+        state_path = os.path.join(plugin_dir, "state.json")
+        with open(state_path, "w") as f:
+            json.dump(state, f)
 
     def _generate_maze(self, size: int, seed: int) -> List[List[int]]:
         """Generate a solvable maze using the Aldous-Broder algorithm."""
@@ -130,7 +106,7 @@ class MazeSolverPlugin(Shitpost):
             return {"path_len": -1, "visited": len(visited)}
 
         start = (1, 1)
-        goal = (size-2, size-2)
+        goal = (len(maze)-2, len(maze[0])-2)
         return {
             "bfs": bfs(start, goal),
             "dfs": dfs(start, goal),
@@ -139,10 +115,11 @@ class MazeSolverPlugin(Shitpost):
 
     def produce(self) -> Dict:
         """Return the maze and its solutions."""
-        plugin_dir = self._plugin_dir()
-        os.makedirs(plugin_dir, exist_ok=True)
-
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "seed": random.randint(0, 1000000),
+            "size": 21,
+            "tick": 0,
+        })
 
         size = state["size"]
         seed = state["seed"]
@@ -152,7 +129,7 @@ class MazeSolverPlugin(Shitpost):
 
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
