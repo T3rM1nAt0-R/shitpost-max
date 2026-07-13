@@ -71,7 +71,7 @@ class RamWitnessPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state(self._default_state())
 
         # Read memory info
         try:
@@ -94,7 +94,7 @@ class RamWitnessPlugin(Shitpost):
         state["available_gb"] = round(available_gb, 2)
         state["percent"] = round(percent_used, 2)
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._append_summary(plugin_dir, state)
 
         return {
