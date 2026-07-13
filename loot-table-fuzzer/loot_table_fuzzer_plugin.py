@@ -34,10 +34,23 @@ class LootTableFuzzerPlugin(Shitpost):
                 "timestamp": datetime.now(timezone.utc).isoformat()
             }) + "\n")
 
+    def _load_rates(self, plugin_dir: str) -> dict:
+        """Load loot_rates.json, or return a fresh default if absent / corrupt."""
+        path = os.path.join(plugin_dir, self._rates_file_name)
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except json.JSONDecodeError as exc:
+                print(
+                    f"warning: {self.name} loot_rates.json is corrupt ({exc}); starting fresh",
+                    file=sys.stderr,
+                )
+        return {"total_rolls": 0, "items": {}}
+
     def _update_rates(self, plugin_dir: str, item: str, weight: float) -> None:
         path = os.path.join(plugin_dir, self._rates_file_name)
-        with open(path, "r", encoding="utf-8") as f:
-            rates = json.load(f)
+        rates = self._load_rates(plugin_dir)
 
         total_rolls = rates["total_rolls"] + 1
         item_rates = rates["items"].get(item, {"weight": weight, "observed_rate": 0.0, "count": 0})
@@ -52,9 +65,10 @@ class LootTableFuzzerPlugin(Shitpost):
             f.write("\n")
 
     def _compute_deviation(self, plugin_dir: str) -> None:
-        path = os.path.join(plugin_dir, self._rates_file_name)
-        with open(path, "r", encoding="utf-8") as f:
-            rates = json.load(f)
+        rates = self._load_rates(plugin_dir)
+        if not rates["items"]:
+            print("No rate data yet; skipping deviation summary")
+            return
 
         print("Deviation Summary:")
         for item, rate in rates["items"].items():
