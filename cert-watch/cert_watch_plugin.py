@@ -1,14 +1,36 @@
 import json
 import os
+import socket
 import sys
 from datetime import datetime, timezone
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 from harness.shitpost_base import Shitpost
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 from OpenSSL import SSL, crypto
+
+
+# Fallback subdomain list kept in sync with the real tools.json as a resilience
+# measure in case that file is unreadable at tick time.
+_FALLBACK_SUBDOMAINS: list[dict[str, Any]] = [
+    {"subdomain": "masala.i7.ovh"},
+    {"subdomain": "brief.i7.ovh"},
+    {"subdomain": "mood.i7.ovh"},
+    {"subdomain": "decisions.i7.ovh"},
+    {"subdomain": "links.i7.ovh"},
+    {"subdomain": "upload.i7.ovh"},
+    {"subdomain": "relay.i7.ovh"},
+    {"subdomain": "gamepad.i7.ovh"},
+    {"subdomain": "gitcrawl.i7.ovh"},
+    {"subdomain": "superhermes.i7.ovh"},
+    {"subdomain": "repo-analyzer.i7.ovh"},
+    {"subdomain": "testenv.i7.ovh"},
+    {"subdomain": "eval-loop-dashboard.i7.ovh"},
+    {"subdomain": "atlas-ops-console.i7.ovh"},
+    {"subdomain": "lifeos-shell.i7.ovh"},
+]
 
 
 class CertWatchPlugin(Shitpost):
@@ -73,6 +95,21 @@ class CertWatchPlugin(Shitpost):
 
         return days_remaining, not_after
 
+    def _discover_subdomains(self) -> list[str]:
+        """Return subdomains from tools.json, or the hardcoded fallback."""
+        try:
+            with open(self._tools_json_path, "r", encoding="utf-8") as f:
+                tools_data = json.load(f)
+        except (OSError, json.JSONDecodeError) as exc:
+            print(
+                f"WARNING: could not read {self._tools_json_path} "
+                f"({type(exc).__name__}: {exc}); using hardcoded fallback subdomain list",
+                file=sys.stderr,
+            )
+            return [t["subdomain"] for t in _FALLBACK_SUBDOMAINS if "subdomain" in t]
+
+        return [tool["subdomain"] for tool in tools_data if "subdomain" in tool]
+
     def produce(self) -> Dict[str, str]:
         """Return the nearest certificate expiry and update persistent files."""
         plugin_dir = self._plugin_dir()
@@ -81,9 +118,7 @@ class CertWatchPlugin(Shitpost):
         state = self._load_state(plugin_dir)
         log_entries = []
 
-        with open(self._tools_json_path, "r", encoding="utf-8") as f:
-            tools_data = json.load(f)
-            subdomains = [tool["subdomain"] for tool in tools_data if "subdomain" in tool]
+        subdomains = self._discover_subdomains()
 
         min_days = float('inf')
         for subdomain in subdomains:
