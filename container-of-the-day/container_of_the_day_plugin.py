@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import sys
 from datetime import datetime, timezone
 import subprocess
 
@@ -111,6 +112,6 @@ class ContainerOfTheDayPlugin(Shitpost):
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }
 
-        except subprocess.CalledProcessError as e:
+        except (subprocess.CalledProcessError, OSError) as e:
             print(f"error: {e}", file=sys.stderr)
             return None
