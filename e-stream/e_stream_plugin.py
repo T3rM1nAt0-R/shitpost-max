@@ -15,33 +15,10 @@ class EStreamPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "e_state.json"
-        self._digits_file_name = "e_digits.txt"
 
     def _load_state(self, plugin_dir: str) -> dict:
         """Load the running e state, or initialise it at digit 0."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: e state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"digit", "total_digits_seen", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: e state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
+        return self._load_persisted_state(self._default_state())
 
     @staticmethod
     def _default_state() -> dict:
@@ -52,15 +29,10 @@ class EStreamPlugin(Shitpost):
         }
 
     def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+        self._save_persisted_state(state)
 
     def _append_digit(self, plugin_dir: str, digit: int) -> None:
-        path = os.path.join(plugin_dir, self._digits_file_name)
+        path = os.path.join(plugin_dir, "e_digits.txt")
         with open(path, "a", encoding="utf-8") as f:
             f.write(str(digit) + "\n")
 
