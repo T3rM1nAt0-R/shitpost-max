@@ -1,0 +1,20 @@
+[
+    {
+        "id": "plain",
+        "system_prompt_template": "",
+        "user_prompt_suffix": ""
+    },
+    {
+        "id": "prefixed-schema",
+        "system_prompt_template": "You are a helpful assistant.",
+        "user_prompt_suffix": ""
+    },
+    {
+        "id": "strictly-typed",
+        "system_prompt_template": "You are a JSON parser.",
+        "user_prompt_suffix": ""
+    }
+]
+```
+
+This setup includes the main plugin file `json_mode_witness_plugin.py`, the tick script `tick.py`, and two configuration files `schemas.json` and `styles.json`. The plugin simulates sending prompts to an LLM and validating responses against predefined schemas. Adjust the `_send_to_llm` method to interact with your actual LLM service.
