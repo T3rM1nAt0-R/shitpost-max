@@ -1,4 +1,6 @@
 import http.server
+import json
+import os
 import socketserver
 import time
 from datetime import datetime, timezone
@@ -13,11 +15,17 @@ class HealthcheckPlugin(Shitpost):
     internal = False
     commit_template = "health: tick {t} uptime {u}s requests {r}"
 
+    # Class-level state so the Handler inner class and static methods
+    # can access them via HealthcheckPlugin._xxx.
+    _uptime_start: float = 0.0
+    _request_count: int = 0
+    _tick: int = 0
+
     def __init__(self):
         super().__init__()
-        self._uptime_start = time.time()
-        self._request_count = 0
-        self._tick = 0
+        HealthcheckPlugin._uptime_start = time.time()
+        HealthcheckPlugin._request_count = 0
+        HealthcheckPlugin._tick = 0
 
     class Handler(http.server.BaseHTTPRequestHandler):
         def do_GET(self):
@@ -51,22 +59,13 @@ class HealthcheckPlugin(Shitpost):
         HealthcheckPlugin._tick += 1
 
     def produce(self) -> dict:
-        """Start the HTTP server and handle requests."""
+        """Increment tick and return current health-check state."""
         self._increment_tick()
-        PORT = int(os.getenv('PORT', '8888'))
-        HOST = os.getenv('HOST', '127.0.0.1')
-
-        with socketserver.TCPServer((HOST, PORT), HealthcheckPlugin.Handler) as httpd:
-            try:
-                while True:
-                    time.sleep(1)
-                    self._request_count += 1
-            except KeyboardInterrupt:
-                pass
+        HealthcheckPlugin._request_count += 1
 
         return {
             "tick": HealthcheckPlugin._tick,
-            "uptime": int(time.time() - self._uptime_start),
-            "requests": self._request_count,
+            "uptime": int(time.time() - HealthcheckPlugin._uptime_start),
+            "requests": HealthcheckPlugin._request_count,
             "timestamp": datetime.now(timezone.utc).isoformat()
         }
