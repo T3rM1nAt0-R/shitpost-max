@@ -1,7 +1,5 @@
 import json
 import os
-import sys
-from datetime import datetime, timezone
 from typing import Dict, List, Optional
 
 from harness.shitpost_base import Shitpost
@@ -16,44 +14,11 @@ class TokenGolfPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "state.jsonl"
         self._task_file_name = "task.json"
         self._active_prompt_file_name = "active_prompt.json"
 
-    @staticmethod
-    def _default_state() -> Dict[str, List[Dict[str, str]]]:
-        return {
-            "candidates": [],
-            "winner": None,
-            "active_tokens": 0,
-            "baseline_tokens": 0,
-            "plateau_ticks": 0
-        }
-
-    def _load_state(self, plugin_dir: str) -> Dict[str, List[Dict[str, str]]]:
-        """Load the running state, or initialise it at default."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: token-golf state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    def _save_state(self, plugin_dir: str, state: Dict[str, List[Dict[str, str]]]) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "state.jsonl")
 
     def _load_task(self, plugin_dir: str) -> Dict[str, str]:
         """Load the task definition."""
@@ -117,7 +82,13 @@ class TokenGolfPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "candidates": [],
+            "winner": None,
+            "active_tokens": 0,
+            "baseline_tokens": 0,
+            "plateau_ticks": 0
+        })
         task = self._load_task(plugin_dir)
 
         if not state["active_tokens"]:
@@ -141,7 +112,7 @@ class TokenGolfPlugin(Shitpost):
 
         state["candidates"] = candidates
         state["plateau_ticks"] += 1 if not state["winner"] else 0
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": len(state["candidates"]),
