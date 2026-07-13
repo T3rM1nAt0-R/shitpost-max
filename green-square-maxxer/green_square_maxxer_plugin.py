@@ -1,7 +1,5 @@
 import os
 from datetime import datetime, timezone
-import json
-import sys
 
 from harness.shitpost_base import Shitpost
 
