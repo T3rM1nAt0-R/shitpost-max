@@ -67,8 +67,9 @@ class LatencyLogPlugin(Shitpost):
             avg_ms = result["avg_ms"]
             packet_loss = result["packet_loss"]
 
-            state[target]["avg_ms"] = avg_ms
-            state[target]["packet_loss"] = packet_loss
+            target_state = state.setdefault(target, {})
+            target_state["avg_ms"] = avg_ms
+            target_state["packet_loss"] = packet_loss
 
             self._append_log(plugin_dir, target, avg_ms, packet_loss)
 
