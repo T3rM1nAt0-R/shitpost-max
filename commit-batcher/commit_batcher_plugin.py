@@ -17,20 +17,6 @@ class CommitBatcherPlugin(Shitpost):
     def __init__(self):
         super().__init__()
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at tick 0."""
-        return self._load_persisted_state(default={"tick": 0, "last_push": None})
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "last_push": None,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        self._save_persisted_state(state)
-
     def _log_push(self, plugin_dir: str, commits_since_push: int, total_commits: int) -> None:
         path = os.path.join(plugin_dir, "batcher_log.jsonl")
         with open(path, "a", encoding="utf-8") as f:
@@ -46,7 +32,7 @@ class CommitBatcherPlugin(Shitpost):
         os.makedirs(plugin_dir, exist_ok=True)
         os.makedirs(os.path.join(plugin_dir, "data"), exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state(default={"tick": 0, "last_push": None})
         tick = state["tick"] + 1
         state["tick"] = tick
 
@@ -56,7 +42,7 @@ class CommitBatcherPlugin(Shitpost):
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(random_word)
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         print(f"tick {tick}: created data/{ts}.txt with word '{random_word}'")
 
         if tick % 600 == 0:
