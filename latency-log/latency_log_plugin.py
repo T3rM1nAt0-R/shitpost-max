@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 from datetime import datetime, timezone
 import subprocess
 
@@ -16,50 +15,11 @@ class LatencyLogPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "latency_state.json"
         self._log_file_name = "latency_log.jsonl"
         self._summary_file_name = "latency_summary.json"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running latency state."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: latency state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick", "cloudflare", "domain"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: latency state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "cloudflare": {"avg_ms": None, "packet_loss": None},
-            "domain": {"avg_ms": None, "packet_loss": None}
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "latency_state.json")
 
     def _append_log(self, plugin_dir: str, target: str, avg_ms: float, packet_loss: int) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
@@ -90,7 +50,11 @@ class LatencyLogPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "tick": 0,
+            "cloudflare": {"avg_ms": None, "packet_loss": None},
+            "domain": {"avg_ms": None, "packet_loss": None}
+        })
         tick = state["tick"] + 1
 
         targets = ["1.1.1.1", "nirajsangani.com"]
@@ -107,7 +71,7 @@ class LatencyLogPlugin(Shitpost):
             self._append_log(plugin_dir, target, avg_ms, packet_loss)
 
         state["tick"] = tick
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._update_summary(plugin_dir, state)
 
         return {
