@@ -1,6 +1,9 @@
 import json
 import os
+import sys
 from datetime import datetime, timezone
+
+import requests
 from typing import Dict, List, Tuple
 
 from harness.shitpost_base import Shitpost
@@ -20,8 +23,46 @@ class RagDecayPlugin(Shitpost):
         self._rag_endpoint = os.getenv("RAG_ENDPOINT", "http://localhost:8000/retrieve")
 
     def _load_test_set(self) -> List[Dict[str, any]]:
-        """Load the test set of queries and ground-truth relevant chunk IDs."""
-        with open(self._test_set_path, "r", encoding="utf-8") as f:
+        """Load the test set of queries and ground-truth relevant chunk IDs.
+
+        If the file does not exist (e.g. on first run) a small default set of
+        realistic RAG queries is created and persisted so subsequent ticks see
+        the same stable test set.
+        """
+        test_set_path = self._test_set_path
+        if not os.path.exists(test_set_path):
+            default = [
+                {
+                    "query": "What is retrieval augmented generation?",
+                    "relevant_chunk_ids": ["chunk_001", "chunk_002"],
+                },
+                {
+                    "query": "How does RAG handle out-of-domain queries?",
+                    "relevant_chunk_ids": ["chunk_003", "chunk_004"],
+                },
+                {
+                    "query": "What are the key components of a RAG pipeline?",
+                    "relevant_chunk_ids": ["chunk_005", "chunk_006"],
+                },
+                {
+                    "query": "Explain chunking strategies for document retrieval",
+                    "relevant_chunk_ids": ["chunk_007", "chunk_008"],
+                },
+                {
+                    "query": "What is the role of embedding models in RAG?",
+                    "relevant_chunk_ids": ["chunk_009", "chunk_010"],
+                },
+            ]
+            print(
+                f"info: {test_set_path} not found, creating default test set",
+                file=sys.stderr,
+            )
+            os.makedirs(os.path.dirname(test_set_path), exist_ok=True)
+            with open(test_set_path, "w", encoding="utf-8") as f:
+                json.dump(default, f, separators=(",", ":"), sort_keys=True)
+                f.write("\n")
+            return default
+        with open(test_set_path, "r", encoding="utf-8") as f:
             return json.load(f)
 
     @staticmethod
