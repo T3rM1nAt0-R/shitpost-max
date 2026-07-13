@@ -22,20 +22,23 @@ class TemperatureLabPlugin(Shitpost):
         os.makedirs(self._output_dir, exist_ok=True)
 
     def _send_prompt(self, prompt: str, temperature: float) -> str:
-        model = os.getenv("MODEL", "qwen2.5:7b")
-        endpoint = os.getenv("LLM_ENDPOINT", "http://localhost:11434/api/generate")
+        model = os.getenv("MODEL", "qwen2.5-coder:7b-instruct-q6_K")
+        endpoint = os.getenv("LLM_ENDPOINT", "http://localhost:1601/api/generate")
         max_tokens = int(os.getenv("MAX_TOKENS", 512))
 
         payload = {
             "model": model,
             "prompt": prompt,
-            "temperature": temperature,
-            "max_tokens": max_tokens
+            "stream": False,
+            "options": {
+                "temperature": temperature,
+                "num_predict": max_tokens,
+            },
         }
 
         response = requests.post(endpoint, json=payload)
         if response.status_code == 200:
-            return response.json().get("output", "")
+            return response.json().get("response", "")
         else:
             print(f"Error sending prompt: {response.text}", file=sys.stderr)
             return ""
