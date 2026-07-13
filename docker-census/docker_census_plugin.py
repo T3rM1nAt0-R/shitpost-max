@@ -75,18 +75,19 @@ class DockerCensusPlugin(Shitpost):
 
         containers = []
         running_count = 0
-        total_count = len(client.containers.list(all=True))
+        containers_list = list(client.containers.list(all=True))
+        total_count = len(containers_list)
 
-        for container in client.containers.list(all=True):
-            container_info = container.inspect()
-            restart_count = container_info['HostConfig']['RestartCount']
+        for container in containers_list:
+            info = container.attrs
+            restart_count = info['RestartCount']
             status = container.status
             is_running = status == 'running'
             running_count += 1 if is_running else 0
 
             containers.append({
                 "name": container.name,
-                "image": container.image.tags[0],
+                "image": container.image.tags[0] if container.image.tags else "",
                 "status": status,
                 "running": is_running,
                 "restart_count": restart_count
