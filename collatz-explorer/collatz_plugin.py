@@ -2,7 +2,6 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
-import tempfile
 
 from harness.shitpost_base import Shitpost
 
