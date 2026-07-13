@@ -1,7 +1,5 @@
 import json
 import os
-import sys
-from datetime import datetime, timezone
 import gzip
 import bz2
 
@@ -15,55 +13,6 @@ class CompressionLabPlugin(Shitpost):
     internal = False
     commit_template = "compression-lab: {sibling_count} logs, {raw_bytes}B → gzip={gzip[compressed_bytes]}B ({gzip[ratio]:.2f}x), bzip2={bzip2[compressed_bytes]}B ({bzip2[ratio]:.2f}x)"
 
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "compression_lab_state.json"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: compression-lab state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick", "sibling_count", "raw_bytes", "algorithms"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: compression-lab state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "sibling_count": 0,
-            "raw_bytes": 0,
-            "algorithms": {
-                "gzip": {"compressed_bytes": 0, "ratio": 1.0},
-                "bzip2": {"compressed_bytes": 0, "ratio": 1.0}
-            }
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
-
     def _compress_data(self, data: bytes) -> dict:
         """Compress data with gzip and bzip2."""
         return {
@@ -76,7 +25,15 @@ class CompressionLabPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "tick": 0,
+            "sibling_count": 0,
+            "raw_bytes": 0,
+            "algorithms": {
+                "gzip": {"compressed_bytes": 0, "ratio": 1.0},
+                "bzip2": {"compressed_bytes": 0, "ratio": 1.0}
+            }
+        })
         sibling_count = 0
         raw_bytes = 0
 
@@ -104,7 +61,7 @@ class CompressionLabPlugin(Shitpost):
 
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
