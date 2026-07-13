@@ -1,0 +1,5 @@
+{
+    "baseline_prompt": "Please provide a summary of the following text:\n\nThe quick brown fox jumps over the lazy dog. The dog barked loudly.",
+    "baseline_output": "The quick brown fox jumps over the lazy dog. The dog barked loudly.",
+    "task_description": "Summarize the given text."
+}
