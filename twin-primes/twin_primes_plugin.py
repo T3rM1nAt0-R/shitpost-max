@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -15,53 +13,7 @@ class TwinPrimesPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "twin_primes_state.json"
         self._twins_file_name = "twins.txt"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running twin primes state, or initialise it for the first tick."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: twin primes state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            required = {
-                "last_prime",
-                "candidate",
-                "tick",
-            }
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: twin primes state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        # Start with last_prime=2, candidate=3, and tick=0
-        return {
-            "last_prime": 2,
-            "candidate": 3,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def _append_twin(self, plugin_dir: str, last_prime: int, candidate: int) -> None:
         path = os.path.join(plugin_dir, self._twins_file_name)
@@ -82,7 +34,7 @@ class TwinPrimesPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"last_prime": 2, "candidate": 3, "tick": 0})
         last_prime = state["last_prime"]
         candidate = state["candidate"]
 
@@ -97,7 +49,7 @@ class TwinPrimesPlugin(Shitpost):
 
         state["candidate"] += 2
         state["tick"] += 1
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],  # post-increment, matches collatz-explorer's convention
