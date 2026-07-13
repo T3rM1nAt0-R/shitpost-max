@@ -1,6 +1,5 @@
 import json
 import os
-import random
 import sys
 from datetime import datetime, timezone
 import subprocess
@@ -18,20 +17,9 @@ class ContainerOfTheDayPlugin(Shitpost):
     def __init__(self):
         super().__init__()
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at day 0."""
-        return self._load_persisted_state(self._default_state())
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            # The next day to emit is always ``day``; ``tick`` is the one after.
-            "day": 0,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        self._save_persisted_state(state)
+    def _persisted_state_path(self) -> str:
+        """Return the original state file path so existing state is preserved."""
+        return os.path.join(self._plugin_dir(), "cotd_state.json")
 
     def _append_log(self, plugin_dir: str, log_entry: dict) -> None:
         path = os.path.join(plugin_dir, "container_log.jsonl")
@@ -43,7 +31,7 @@ class ContainerOfTheDayPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"day": 0, "tick": 0})
 
         # Emit the next day, then advance the counter.
         day = state["day"]
@@ -72,7 +60,7 @@ class ContainerOfTheDayPlugin(Shitpost):
                 "container_output": container_output
             }
 
-            self._save_state(plugin_dir, state)
+            self._save_persisted_state(state)
             self._append_log(plugin_dir, log_entry)
 
             return {
