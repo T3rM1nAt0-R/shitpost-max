@@ -17,6 +17,20 @@ class RSSFirehosePlugin(Shitpost):
     internal = False
     commit_template = "rss-firehose: {new_items} new from {feeds_checked} feeds"
 
+    # Default RSS feeds written to feeds.txt on first run if the file is missing.
+    _DEFAULT_FEEDS: List[str] = [
+        "http://feeds.bbci.co.uk/news/rss.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+        "https://feeds.arstechnica.com/arstechnica/index",
+        "https://www.theverge.com/rss/index.xml",
+        "https://www.wired.com/feed/rss",
+        "https://blog.rust-lang.org/feed.xml",
+        "https://github.blog/feed/feed.xml",
+        "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+        "https://www.eurogamer.net/feed",
+        "https://rss.slashdot.org/Slashdot/slashdotMain",
+    ]
+
     def __init__(self):
         super().__init__()
         self._state_file_name = "state.jsonl"
@@ -91,10 +105,24 @@ class RSSFirehosePlugin(Shitpost):
             f.write("\n")
         os.replace(tmp_path, path)
 
-    def _fetch_feeds(self) -> List[Dict]:
-        """Fetch and parse feeds."""
-        with open(os.path.join(self._plugin_dir(), self._feeds_file_name), "r", encoding="utf-8") as f:
-            urls = [line.strip() for line in f if line.strip()]
+    def _fetch_feeds(self) -> tuple:
+        """Fetch and parse feeds.
+
+        If ``feeds.txt`` does not exist, it is created with a default set of
+        well-known RSS feed URLs so the plugin works out of the box.
+
+        Returns ``(entries, urls)`` so the caller knows both the parsed
+        entries and how many feeds were checked.
+        """
+        feeds_path = os.path.join(self._plugin_dir(), self._feeds_file_name)
+        if not os.path.exists(feeds_path):
+            with open(feeds_path, "w", encoding="utf-8") as f:
+                for url in self._DEFAULT_FEEDS:
+                    f.write(url + "\n")
+            urls = list(self._DEFAULT_FEEDS)
+        else:
+            with open(feeds_path, "r", encoding="utf-8") as f:
+                urls = [line.strip() for line in f if line.strip()]
         results = []
         for url in urls:
             try:
@@ -104,7 +132,7 @@ class RSSFirehosePlugin(Shitpost):
                 results.extend(feed.entries)
             except Exception as exc:
                 print(f"warning: failed to fetch {url} ({exc})", file=sys.stderr)
-        return results
+        return results, urls
 
     def produce(self) -> dict:
         """Return the new items and update persistent files."""
@@ -116,12 +144,13 @@ class RSSFirehosePlugin(Shitpost):
         summary = self._load_summary(plugin_dir)
 
         new_items = []
-        for item in self._fetch_feeds():
+        entries, urls = self._fetch_feeds()
+        for item in entries:
             guid = getattr(item, "guid", None) or item.link
             if guid not in seen:
                 state.append({
                     "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "feed": item.feed.title,
+                    "feed": getattr(item, "feed", None).title if hasattr(item, "feed") and getattr(item, "feed", None) else "unknown",
                     "title": item.title,
                     "link": item.link,
                     "guid": guid,
