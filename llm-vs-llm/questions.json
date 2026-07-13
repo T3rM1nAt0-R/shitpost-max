@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "reference": "Paris"
+  },
+  {
+    "question": "What is 2 + 2?",
+    "reference": "4"
+  },
+  {
+    "question": "Who wrote Romeo and Juliet?",
+    "reference": "Shakespeare"
+  },
+  {
+    "question": "What is the boiling point of water in Celsius?",
+    "reference": "100"
+  },
+  {
+    "question": "What planet is known as the Red Planet?",
+    "reference": "Mars"
+  }
+]

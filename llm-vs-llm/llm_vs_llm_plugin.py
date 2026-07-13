@@ -17,8 +17,34 @@ class LLMvsLLMPlugin(Shitpost):
         self._questions_file_name = "questions.json"
 
     def _load_questions(self, plugin_dir: str) -> List[Dict[str, str]]:
-        """Load the question bank."""
+        """Load the question bank, creating a default if missing."""
         path = os.path.join(plugin_dir, self._questions_file_name)
+        if not os.path.exists(path):
+            default = [
+                {
+                    "question": "What is the capital of France?",
+                    "reference": "Paris",
+                },
+                {
+                    "question": "What is 2 + 2?",
+                    "reference": "4",
+                },
+                {
+                    "question": "Who wrote Romeo and Juliet?",
+                    "reference": "Shakespeare",
+                },
+                {
+                    "question": "What is the boiling point of water in Celsius?",
+                    "reference": "100",
+                },
+                {
+                    "question": "What planet is known as the Red Planet?",
+                    "reference": "Mars",
+                },
+            ]
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(default, f, indent=2)
+            return default
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
