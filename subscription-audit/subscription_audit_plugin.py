@@ -1,6 +1,8 @@
+import hashlib
 import json
 import os
 import sys
+import yaml
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
