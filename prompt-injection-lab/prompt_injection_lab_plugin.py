@@ -1,10 +1,9 @@
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime, timezone
 from typing import Dict, Optional
-
-import requests
 
 from harness.shitpost_base import Shitpost
 
@@ -90,15 +89,17 @@ class PromptInjectionLab(Shitpost):
         payload = payloads[payload_id]["payload"]
 
         # Send the injection to the local model
-        response = requests.post(
+        req = urllib.request.Request(
             self._llm_endpoint,
-            json={
+            data=json.dumps({
                 "model": self._model,
                 "prompt": f"{self._system_prompt}\n{payload}",
                 "max_tokens": 1024,
-            },
+            }).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
         )
-        raw_output = response.json().get("choices", [{}])[0].get("text", "")
+        response = urllib.request.urlopen(req)
+        raw_output = json.loads(response.read().decode("utf-8")).get("choices", [{}])[0].get("text", "")
 
         # Judge the verdict
         verdict = self._judge_verdict(payload_id, raw_output)
