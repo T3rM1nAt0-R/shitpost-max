@@ -1,0 +1,8 @@
+{
+    "baseline_prompt": "Please provide a summary of the following text:\n\nThe quick brown fox jumps over the lazy dog. The dog barked loudly.",
+    "baseline_output": "The quick brown fox jumps over the lazy dog. The dog barked loudly.",
+    "task_description": "Summarize the given text."
+}
+```
+
+This implementation includes a basic structure for the token-golf plugin, including state management, task loading, candidate generation, quality judgment, and result production. The quality judgment is currently a placeholder that always returns 80, which should be replaced with actual LLM-as-judge logic in a real-world scenario.
