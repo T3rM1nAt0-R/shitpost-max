@@ -1,8 +1,8 @@
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime, timezone
-import requests
 
 from harness.shitpost_base import Shitpost
 
@@ -77,12 +77,12 @@ class AqiBlrPlugin(Shitpost):
 
         # Fetch current AQI data from Open-Meteo API
         url = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=12.97&longitude=77.59&current=us_aqi,pm10,pm2_5"
-        response = requests.get(url)
-        if response.status_code != 200:
-            print(f"error: failed to fetch AQI data ({response.status_code})", file=sys.stderr)
+        response = urllib.request.urlopen(url)
+        if response.status != 200:
+            print(f"error: failed to fetch AQI data ({response.status})", file=sys.stderr)
             return None
 
-        data = response.json()
+        data = json.loads(response.read().decode("utf-8"))
         current = data["current"]
         aqi = current["us_aqi"]
         pm10 = current["pm10"]
