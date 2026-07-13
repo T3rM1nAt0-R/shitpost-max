@@ -3,6 +3,7 @@
 
 import json
 import os
+import subprocess
 import sys
 from datetime import datetime, timezone
 
@@ -79,7 +80,7 @@ class BackupWitnessPlugin(Shitpost):
                 text=True,
             ).strip()
             backup_sh_datetime = datetime.fromisoformat(backup_sh_timestamp)
-        except subprocess.CalledProcessError as e:
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
             print(f"error: failed to get backup.sh commit time ({e})", file=sys.stderr)
             return None
 
@@ -94,7 +95,7 @@ class BackupWitnessPlugin(Shitpost):
                 raise ValueError("No Kopia snapshots found")
             latest_snapshot = max(snapshots, key=lambda s: s["endTime"])
             kopia_datetime = datetime.fromisoformat(latest_snapshot["endTime"])
-        except subprocess.CalledProcessError as e:
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
             print(f"error: failed to get Kopia snapshot list ({e})", file=sys.stderr)
             return None
         except json.JSONDecodeError as e:
