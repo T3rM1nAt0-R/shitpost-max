@@ -37,14 +37,31 @@ class SubscriptionAuditPlugin(Shitpost):
             for entry in state:
                 f.write(json.dumps(entry) + "\n")
 
+    @staticmethod
+    def _default_subscriptions() -> list:
+        """Return sensible default subscriptions for first-run auto-creation."""
+        return [
+            {"name": "Netflix Standard", "amount": 15.49, "frequency": "monthly"},
+            {"name": "Spotify Premium", "amount": 10.99, "frequency": "monthly"},
+            {"name": "iCloud+ 200GB", "amount": 2.99, "frequency": "monthly"},
+            {"name": "Amazon Prime", "amount": 139.00, "frequency": "yearly"},
+        ]
+
     def _load_subscriptions(self, plugin_dir: str) -> list:
         """Load the subscription list."""
         path = os.path.join(plugin_dir, self._subscriptions_file_name)
         if not os.path.exists(path):
-            return []
+            self._create_default_subscriptions(path)
 
         with open(path, "r", encoding="utf-8") as f:
             return yaml.safe_load(f)
+
+    def _create_default_subscriptions(self, path: str) -> None:
+        """Create subscriptions.yaml with sensible defaults if missing."""
+        defaults = self._default_subscriptions()
+        with open(path, "w", encoding="utf-8") as f:
+            yaml.dump(defaults, f, default_flow_style=False)
+        print(f"[{self.name}] Created default {os.path.basename(path)} ({len(defaults)} entries)", file=sys.stderr)
 
     def _save_subscriptions_hash(self, plugin_dir: str, hash_value: str) -> None:
         """Save the hash of subscriptions.yaml."""
@@ -81,6 +98,9 @@ class SubscriptionAuditPlugin(Shitpost):
         """Return the subscription audit tick or skip if unchanged."""
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
+
+        # Ensure subscriptions.yaml exists (auto-create defaults if missing).
+        self._load_subscriptions(plugin_dir)
 
         current_hash = hashlib.sha256(open(os.path.join(plugin_dir, self._subscriptions_file_name), "rb").read()).hexdigest()
         last_hash = self._load_subscriptions_hash(plugin_dir)
