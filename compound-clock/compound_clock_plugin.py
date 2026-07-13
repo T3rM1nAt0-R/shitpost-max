@@ -18,7 +18,6 @@ class CompoundClockPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "compound_clock_state.json"
 
     @staticmethod
     def compound_value(principal: Decimal, annual_rate: Decimal, day: int) -> Decimal:
@@ -70,7 +69,7 @@ class CompoundClockPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state(default=self._default_state())
 
         # Read config from environment variables with defaults
         principal = Decimal(os.environ.get("PRINCIPAL", "1000"))
@@ -89,7 +88,7 @@ class CompoundClockPlugin(Shitpost):
             state["day"] += 1
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
@@ -97,5 +96,3 @@ class CompoundClockPlugin(Shitpost):
             "value": str(value),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
-
-
