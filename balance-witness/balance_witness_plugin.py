@@ -113,7 +113,8 @@ class BalanceWitnessPlugin(Shitpost):
 
         self._save_state(plugin_dir, state)
 
-    def _simulate_combat(self, team1: List[str], team2: List[str]) -> str:
+    def _simulate_combat(self, team1: List[str], team2: List[str]):
+        """Simulate combat and return (winner_team_str, turn_count)."""
         roster = self._default_roster()
         turn_order = sorted(team1 + team2, key=lambda unit: -roster[unit]["speed"])
         alive_units = set(turn_order)
@@ -130,7 +131,7 @@ class BalanceWitnessPlugin(Shitpost):
                     alive_units.remove(target)
             turns += 1
 
-        return ",".join(alive_units)
+        return ",".join(alive_units), turns
 
     def produce(self) -> Optional[Dict]:
         """Simulate one match and update persistent files."""
@@ -145,7 +146,7 @@ class BalanceWitnessPlugin(Shitpost):
         team2 = random.sample(roster, k=3)
 
         # Simulate combat and determine the winner
-        winner_team = self._simulate_combat(team1, team2)
+        winner_team, turns = self._simulate_combat(team1, team2)
         loser_team = ",".join(set(team1 + team2) - set(winner_team.split(",")))
         winner_archetype = ",".join(sorted(winner_team))
         loser_archetype = ",".join(sorted(loser_team))
