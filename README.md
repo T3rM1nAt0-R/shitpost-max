@@ -28,65 +28,12 @@ Pushing is intentionally *not* done per tick. `harness/scheduler.py` runs a sing
 
 Plugin | Description
 --- | ---
-10x-engineer | 
-agile-theater | 
-anagram-hunter | 
-aqi-blr | 
-balance-witness | 
 base-converter | Base converter plugin: increment a counter and convert it to new bases each tick.
-bloom-filter-demo | 
-card-shuffler | 
-catalan-numbers | 
-collatz-explorer | 
-commit-batcher | 
-commit-driven-development | 
 commit-poet | commit-poet plugin: one LLM-generated line of an infinite poem per tick.
-compound-clock | 
-compression-lab | 
-container-of-the-day | 
-cron-vs-timer | 
-dice-fairness | 
-diff-engine | 
-digits-of-tau | 
-domain-watch | 
-dungeon-of-the-day | 
-e-stream | 
-earthquake-log | 
-fake-changelog | 
-fear-greed-index | 
 fibonacci-full | Fibonacci plugin: one full Fibonacci number per tick.
-git-hook-theater | 
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
-green-square-maxxer | 
-haiku-daily | 
-hallucination-witness | 
-hash-collision-hunt | 
-healthcheck-endpoint | 
-high-iq-certifier | 
-json-mode-witness | 
-log-rotator | Cron entry point for the log-rotator plugin.
-lru-cache-witness | 
-markov-nonsense | 
-maze-solver | 
-meta-tracker | 
-name-generator | 
-networth-witness | 
-palindrome-generator | 
-pascal-row | 
-perfect-numbers | 
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
-primes-forever | 
-rate-limit-lab | 
-rupee-cost-averaging-sim | 
-silicon-valley-buzzword-bot | 
-sorting-race | 
-sqrt2-stream | 
-steam-playercount | 
-thought-leader | 
-token-golf | 
-translation-telephone | 
-twin-primes | 
-word-of-the-day | 
+weather-blr | 
 
 <!-- PLUGIN_TABLE_END -->
 
