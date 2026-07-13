@@ -1,8 +1,8 @@
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime, timezone
-import requests
 
 from harness.shitpost_base import Shitpost
 
@@ -48,15 +48,16 @@ class FearGreedIndexPlugin(Shitpost):
 
     def _fetch_fear_greed_index(self) -> dict:
         url = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata"
-        response = requests.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            return {
-                "score": data["fear_and_greed"]["score"],
-                "classification": data["fear_and_greed"]["rating"]
-            }
-        else:
-            raise Exception(f"Failed to fetch fear/greed index: {response.status_code}")
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req) as response:
+            if response.status == 200:
+                data = json.loads(response.read().decode("utf-8"))
+                return {
+                    "score": data["fear_and_greed"]["score"],
+                    "classification": data["fear_and_greed"]["rating"]
+                }
+            else:
+                raise Exception(f"Failed to fetch fear/greed index: {response.status}")
 
     def produce(self) -> dict:
         """Fetch the daily fear/greed index and update persistent files."""
