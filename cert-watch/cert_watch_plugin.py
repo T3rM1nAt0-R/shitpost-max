@@ -122,7 +122,15 @@ class CertWatchPlugin(Shitpost):
 
         min_days = float('inf')
         for subdomain in subdomains:
-            days_remaining, not_after = self._parse_certificate(subdomain)
+            try:
+                days_remaining, not_after = self._parse_certificate(subdomain)
+            except (socket.gaierror, socket.timeout, ConnectionRefusedError, OSError, SSL.Error) as exc:
+                print(
+                    f"WARNING: failed to fetch certificate for {subdomain} "
+                    f"({type(exc).__name__}: {exc}); skipping",
+                    file=sys.stderr,
+                )
+                continue
             state[subdomain] = {"expiry_date": not_after.isoformat(), "days_remaining": days_remaining}
             log_entries.append({"subdomain": subdomain, "expiry_date": not_after.isoformat(), "days_remaining": days_remaining})
             min_days = min(min_days, days_remaining)
