@@ -30,6 +30,7 @@ Plugin | Description
 --- | ---
 base-converter | Base converter plugin: increment a counter and convert it to new bases each tick.
 commit-poet | commit-poet plugin: one LLM-generated line of an infinite poem per tick.
+fear-greed-index | 
 fibonacci-full | Fibonacci plugin: one full Fibonacci number per tick.
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
