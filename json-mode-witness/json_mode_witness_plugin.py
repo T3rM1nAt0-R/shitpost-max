@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -15,51 +14,8 @@ class JsonModeWitnessPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "json_mode_witness_state.json"
         self._schemas_file_name = "schemas.json"
         self._styles_file_name = "styles.json"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: json_mode_witness state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"valid_count", "total_combos", "best_style", "best_style_rate"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: json_mode_witness state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "valid_count": 0,
-            "total_combos": 0,
-            "best_style": None,
-            "best_style_rate": 0.0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def _load_schemas(self, plugin_dir: str) -> list:
         """Load the prompt/schema pairs."""
@@ -83,7 +39,7 @@ class JsonModeWitnessPlugin(Shitpost):
         if not isinstance(parsed, dict):
             return False, "schema_mismatch", None
 
-        for key, value in schema["properties"].items():
+        for key, value in schema["schema"]["properties"].items():
             if key not in parsed:
                 return False, "schema_mismatch", None
             if value["type"] == "string" and not isinstance(parsed[key], str):
@@ -102,7 +58,12 @@ class JsonModeWitnessPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "valid_count": 0,
+            "total_combos": 0,
+            "best_style": None,
+            "best_style_rate": 0.0,
+        })
         schemas = self._load_schemas(plugin_dir)
         styles = self._load_styles(plugin_dir)
 
@@ -147,10 +108,10 @@ class JsonModeWitnessPlugin(Shitpost):
         state["valid_count"] = valid_count
         state["total_combos"] = total_combos
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
-            "tick": len(state["state.jsonl"]),
+            "tick": len(state),
             "valid_count": valid_count,
             "total_combos": total_combos,
             "best_style": state["best_style"],
