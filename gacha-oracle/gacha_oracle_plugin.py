@@ -78,8 +78,8 @@ class GachaOraclePlugin(Shitpost):
         state["total_pulls"] += 1
         if outcome == "hit":
             state["total_5star"] += 1
-        state["pity_histogram"] = self._load_persisted_state({"pity": 0, "total_pulls": 0, "total_5star": 0, "current_pity": 0})["pity_histogram"]
-        state["pity_histogram"][state["current_pity"]] = state["pity_histogram"].get(state["current_pity"], 0) + 1
+        state["pity_histogram"] = state.get("pity_histogram", {})
+        state["pity_histogram"][str(state["current_pity"])] = state["pity_histogram"].get(str(state["current_pity"]), 0) + 1
 
         # Reset pity counter if guaranteed hit
         if guarantee_used:
