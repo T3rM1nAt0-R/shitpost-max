@@ -15,49 +15,17 @@ class AnagramHunterPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "anagram_state.json"
         self._logged_sigs_file_name = "logged_sigs.json"
         self._words_file_name = "words.txt"
 
     def _load_state(self, plugin_dir: str) -> dict:
         """Load the running state, or initialise it at tick 0."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: anagram state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick", "word_length"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: anagram state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "word_length": 2,
-        }
+        path = os.path.join(plugin_dir, "anagram_state.json")
+        return self._load_persisted_state({"tick": 0, "word_length": 2})
 
     def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+        path = os.path.join(plugin_dir, "anagram_state.json")
+        self._save_persisted_state(state)
 
     def _load_logged_sigs(self, plugin_dir: str) -> set:
         """Load the set of logged anagram signatures."""

@@ -196,6 +196,55 @@ class Shitpost(ABC):
             json.dump(data, f, separators=(",", ":"), sort_keys=True)
             f.write("\n")
 
+    def _persisted_state_path(self) -> str:
+        """Path to this plugin's own small config/counter file.
+
+        Distinct from state.jsonl/summary.json (the harness's own automatic
+        per-tick log, written by _append_state/_write_summary above) - this
+        is for whatever a plugin needs to remember between ticks to compute
+        the *next* one (a counter, a running total, a "last seen" value).
+        """
+        return os.path.join(self._plugin_dir(), f"{self.name.replace('-', '_')}_state.json")
+
+    def _load_persisted_state(self, default: dict) -> dict:
+        """Load this plugin's own persisted state, or return ``default``.
+
+        Added 2026-07-13: every plugin built so far reimplemented this exact
+        load/save/corruption-handling pattern by hand (with real variation in
+        correctness - missing imports, forgetting the atomic tmp-file write,
+        wrong required-keys checks). One shared, tested implementation here
+        removes an entire recurring bug class instead of relying on each
+        generated file getting ~30 lines of boilerplate right independently.
+        """
+        path = self._persisted_state_path()
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    state = json.load(f)
+            except json.JSONDecodeError as exc:
+                print(
+                    f"warning: {self.name} persisted state file is corrupt ({exc}); "
+                    "starting fresh",
+                    file=sys.stderr,
+                )
+                return dict(default)
+            if not default.keys() <= state.keys():
+                print(
+                    f"warning: {self.name} persisted state missing keys; starting fresh",
+                    file=sys.stderr,
+                )
+                return dict(default)
+            return state
+        return dict(default)
+
+    def _save_persisted_state(self, state: dict) -> None:
+        path = self._persisted_state_path()
+        tmp_path = path + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(state, f, separators=(",", ":"), sort_keys=True)
+            f.write("\n")
+        os.replace(tmp_path, path)
+
     def _git_commit(self, message: str) -> None:
         """Commit ``state.jsonl`` and ``summary.json`` - local only, no push.
 
