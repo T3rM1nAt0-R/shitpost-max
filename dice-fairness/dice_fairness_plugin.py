@@ -40,6 +40,12 @@ class DiceFairnessPlugin(Shitpost):
                     file=sys.stderr,
                 )
                 return self._default_state()
+            # Convert observed_frequencies keys to int — json.load always
+            # produces string keys, but the rest of the code uses int keys
+            # (from random.randint). Mixed types crash json.dump(sort_keys=True).
+            state["observed_frequencies"] = {
+                int(k): v for k, v in state["observed_frequencies"].items()
+            }
             return state
 
         return self._default_state()
