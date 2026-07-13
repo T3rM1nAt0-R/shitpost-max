@@ -1,5 +1,6 @@
 import json
 import os
+import subprocess
 import sys
 from datetime import datetime, timezone
 
@@ -53,21 +54,21 @@ class GitHookTheaterPlugin(Shitpost):
         passed = True
         errors = []
         bypassed = False
+        files = []
+        commit_hash = "unknown"
 
         if "GIT_COMMIT_NO_VERIFY" in os.environ:
             bypassed = True
         else:
             try:
-                import subprocess
                 result = subprocess.run(["git", "diff", "--cached", "--name-only"], capture_output=True, text=True)
                 files = result.stdout.splitlines()
                 for file in files:
                     with open(file, "r", encoding="utf-8") as f:
                         content = f.read()
-                        if content.endswith("\n"):
-                            continue
-                        errors.append(f"{file}: missing newline at EOF")
-                        passed = False
+                        if not content.endswith("\n"):
+                            errors.append(f"{file}: missing newline at EOF")
+                            passed = False
 
                     if len(content) > 1024 * 1024:
                         errors.append(f"{file}: file size exceeds 1 MB")
@@ -76,12 +77,15 @@ class GitHookTheaterPlugin(Shitpost):
                     if any(line.endswith(" ") for line in content.splitlines()):
                         errors.append(f"{file}: trailing whitespace found")
                         passed = False
+
+                commit_hash = subprocess.run(
+                    ["git", "rev-parse", "HEAD"], capture_output=True, text=True
+                ).stdout.strip()
             except Exception as e:
                 errors.append(str(e))
                 passed = False
 
         # Append the result to the report
-        commit_hash = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
         timestamp = datetime.now(timezone.utc).isoformat()
         report.append({
             "timestamp": timestamp,
