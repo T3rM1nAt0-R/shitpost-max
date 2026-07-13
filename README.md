@@ -28,14 +28,92 @@ Pushing is intentionally *not* done per tick. `harness/scheduler.py` runs a sing
 
 Plugin | Description
 --- | ---
+10x-engineer | 
+agile-theater | 
+anagram-hunter | 
+aqi-blr | 
+balance-witness | 
 base-converter | Base converter plugin: increment a counter and convert it to new bases each tick.
+bloom-filter-demo | 
+card-shuffler | 
+catalan-numbers | 
+certificate-mill | 
+collatz-explorer | 
+commit-batcher | 
+commit-driven-development | 
 commit-poet | commit-poet plugin: one LLM-generated line of an infinite poem per tick.
+compound-clock | 
+compression-lab | 
+container-of-the-day | 
+cron-vs-timer | 
+crypto-tick | 
+dice-fairness | 
+diff-engine | 
+digits-of-tau | 
+domain-watch | 
+dungeon-of-the-day | 
+e-stream | 
+earthquake-log | 
+economy-sim-tick | 
+emoji-summary | 
+fake-changelog | 
+fear-greed-index | 
 fibonacci-full | Fibonacci plugin: one full Fibonacci number per tick.
+gacha-oracle | 
+gas-prices | 
+git-hook-theater | 
 github-trending | 
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
 graph-of-the-day | 
+green-square-maxxer | 
+haiku-daily | 
+hallucination-witness | 
+hash-collision-hunt | 
+healthcheck-endpoint | 
+high-iq-certifier | 
+hn-frontpage | 
+iss-tracker | 
+json-mode-witness | 
+llm-vs-llm | 
+log-rotator | Cron entry point for the log-rotator plugin.
+loot-table-fuzzer | 
+lru-cache-witness | 
+markov-nonsense | 
+maze-solver | 
+meta-tracker | 
+model-diff | 
+name-generator | 
+networth-witness | 
+npm-downloads | 
+palindrome-generator | 
+pascal-row | 
+perfect-numbers | 
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
+playtest-bot | 
+primes-forever | 
+rag-decay | 
+rate-limit-lab | 
+reddit-titles | 
+regex-of-the-day | 
+regression-canary | 
+retry-with-backoff | 
+rss-firehose | 
+rupee-cost-averaging-sim | 
+crash-service | 
+silicon-valley-buzzword-bot | 
+sorting-race | 
+spotify-charts | 
+sqrt2-stream | 
+steam-playercount | 
+subscription-audit | 
+thought-leader | 
+token-golf | 
+translation-telephone | 
+twin-primes | 
+usd-inr | 
 weather-blr | 
+wikipedia-featured | 
+word-of-the-day | 
 
 <!-- PLUGIN_TABLE_END -->
 
