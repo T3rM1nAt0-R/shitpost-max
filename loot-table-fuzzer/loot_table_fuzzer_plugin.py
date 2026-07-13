@@ -24,11 +24,11 @@ class LootTableFuzzerPlugin(Shitpost):
         """Override to keep the original ``loot_state.json`` filename."""
         return os.path.join(self._plugin_dir(), "loot_state.json")
 
-    def _append_log(self, plugin_dir: str, item: str, weight: float) -> None:
+    def _append_log(self, plugin_dir: str, tick: int, item: str, weight: float) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
         with open(path, "a", encoding="utf-8") as f:
             f.write(json.dumps({
-                "tick": self.tick,
+                "tick": tick,
                 "item": item,
                 "weight": weight,
                 "timestamp": datetime.now(timezone.utc).isoformat()
@@ -86,10 +86,10 @@ class LootTableFuzzerPlugin(Shitpost):
 
         state["total_rolls"] += 1
         self._save_persisted_state(state)
-        self._append_log(plugin_dir, selected_item["item"], selected_item["weight"])
+        self._append_log(plugin_dir, state["total_rolls"], selected_item["item"], selected_item["weight"])
         self._update_rates(plugin_dir, selected_item["item"], selected_item["weight"])
 
-        if self.tick % self._check_interval == 0:
+        if state["total_rolls"] % self._check_interval == 0:
             self._compute_deviation(plugin_dir)
 
         return {
