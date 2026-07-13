@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -14,56 +13,12 @@ class HnFrontpagePlugin(Shitpost):
     internal = False
     commit_template = "hn-frontpage: {count} stories, top: {top_title}"
 
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "hn_frontpage_state.json"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: hn-frontpage state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"stories", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: hn-frontpage state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "stories": [],
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
-
     def produce(self) -> dict:
         """Return the next snapshot of Hacker News front-page titles."""
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"stories": [], "tick": 0})
 
         # Fetch top 30 story IDs
         response = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json")
@@ -97,7 +52,7 @@ class HnFrontpagePlugin(Shitpost):
         state["stories"] += stories
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
