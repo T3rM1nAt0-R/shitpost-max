@@ -72,6 +72,7 @@ class CommitBatcherPlugin(Shitpost):
         """Create a new file and commit it every second."""
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
+        os.makedirs(os.path.join(plugin_dir, "data"), exist_ok=True)
 
         state = self._load_state(plugin_dir)
         tick = state["tick"] + 1
