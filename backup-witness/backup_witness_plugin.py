@@ -23,43 +23,12 @@ class BackupWitnessPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "backup_log.jsonl"
         self._summary_file_name = "backup_summary.json"
         self._backup_repo = os.getenv("BACKUP_REPO", "/home/niraj/i7-backup")
         self._warning_hours = int(os.getenv("WARNING_HOURS", 26))
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running backup state."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: backup witness state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "backup_sh_hours_since": None,
-            "kopia_hours_since": None,
-            "ok": False,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "backup_log.jsonl")
 
     def _update_summary(self, plugin_dir: str, state: dict) -> None:
         path = os.path.join(plugin_dir, self._summary_file_name)
@@ -71,7 +40,11 @@ class BackupWitnessPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "backup_sh_hours_since": None,
+            "kopia_hours_since": None,
+            "ok": False,
+        })
 
         try:
             # Get the latest backup.sh commit time
@@ -111,7 +84,7 @@ class BackupWitnessPlugin(Shitpost):
         state["kopia_hours_since"] = kopia_hours_since
         state["ok"] = backup_sh_hours_since <= self._warning_hours and kopia_hours_since <= self._warning_hours
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._update_summary(plugin_dir, state)
 
         return {
