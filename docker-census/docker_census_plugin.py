@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 from datetime import datetime, timezone
 import docker
 
@@ -16,47 +15,10 @@ class DockerCensusPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "docker_summary.json"
         self._log_file_name = "docker_log.jsonl"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running Docker state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: docker state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"containers"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: docker state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "containers": {}
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "docker_summary.json")
 
     def _append_log(self, plugin_dir: str, log_entry: dict) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
@@ -69,7 +31,7 @@ class DockerCensusPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"containers": {}})
 
         client = docker.from_env()
 
@@ -95,7 +57,7 @@ class DockerCensusPlugin(Shitpost):
 
         state["containers"] = {c['name']: c for c in containers}
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         for container in containers:
             self._append_log(plugin_dir, container)
 
