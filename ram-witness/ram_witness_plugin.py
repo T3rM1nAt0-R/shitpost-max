@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -15,51 +14,7 @@ class RamWitnessPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "ram_log.jsonl"
         self._summary_file_name = "ram_summary.json"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running RAM state."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: ram log file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"timestamp", "total_gb", "used_gb", "available_gb", "percent"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: ram log missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "timestamp": None,
-            "total_gb": 0,
-            "used_gb": 0,
-            "available_gb": 0,
-            "percent": 0.0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def _append_summary(self, plugin_dir: str, state: dict) -> None:
         path = os.path.join(plugin_dir, self._summary_file_name)
@@ -71,7 +26,13 @@ class RamWitnessPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_persisted_state(self._default_state())
+        state = self._load_persisted_state({
+            "timestamp": None,
+            "total_gb": 0,
+            "used_gb": 0,
+            "available_gb": 0,
+            "percent": 0.0,
+        })
 
         # Read memory info
         try:
