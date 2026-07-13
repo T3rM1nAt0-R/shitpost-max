@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import requests
 from datetime import datetime, timezone
 from typing import Dict, List
 
@@ -106,12 +107,15 @@ class RegressionCanaryPlugin(Shitpost):
         summary = self._load_summary(plugin_dir)
 
         changed_count = 0
-        prompts_evaluated = len(self.prompts)
+        prompts_evaluated = 0
+        total_edit_ratio = 0.0
 
         for prompt in self.prompts:
             response = self.send_prompt(prompt["prompt"])
             if not response:
                 continue
+
+            prompts_evaluated += 1
 
             previous_output = next((item["output"] for item in state if item["prompt_id"] == prompt["id"]), None)
             edit_ratio, similarity = self.diff_outputs(previous_output, response)
@@ -119,6 +123,8 @@ class RegressionCanaryPlugin(Shitpost):
             changed = edit_ratio < 0.98
             if changed:
                 changed_count += 1
+
+            total_edit_ratio += edit_ratio
 
             state.append({
                 "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -129,10 +135,20 @@ class RegressionCanaryPlugin(Shitpost):
                 "changed": changed
             })
 
+        if summary and prompts_evaluated > 0:
+            avg_edit_ratio = (
+                (summary.get("avg_edit_ratio", 0) * summary.get("prompts_evaluated", 0) + total_edit_ratio)
+                / (summary.get("prompts_evaluated", 0) + prompts_evaluated)
+            )
+        elif prompts_evaluated > 0:
+            avg_edit_ratio = total_edit_ratio / prompts_evaluated
+        else:
+            avg_edit_ratio = 0.0
+
         summary = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "changed_count": changed_count,
-            "avg_edit_ratio": (summary.get("avg_edit_ratio", 0) * summary.get("prompts_evaluated", 0) + edit_ratio) / prompts_evaluated if summary else edit_ratio,
+            "avg_edit_ratio": avg_edit_ratio,
             "prompts_evaluated": prompts_evaluated
         }
 
@@ -160,7 +176,7 @@ class RegressionCanaryPlugin(Shitpost):
         try:
             response = requests.post(endpoint, json=payload)
             response.raise_for_status()
-            return response.json().get("output", "")
+            return response.json().get("response", "")
         except Exception as e:
             print(f"error: failed to send prompt '{prompt}' to model '{model}': {e}", file=sys.stderr)
             return ""
