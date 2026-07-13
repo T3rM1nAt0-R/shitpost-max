@@ -1,8 +1,6 @@
 import json
 import os
 import re
-import sys
-from datetime import datetime, timezone
 from urllib.request import Request, urlopen
 
 from harness.shitpost_base import Shitpost
@@ -17,48 +15,11 @@ class PalindromeGenerator(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "palindrome_state.json"
         self._record_file_name = "record.txt"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at target=10 and tick=0."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: palindrome state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"target", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: palindrome state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "target": 10,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        """Preserve the original custom filename so existing state is not lost."""
+        return os.path.join(self._plugin_dir(), "palindrome_state.json")
 
     def _append_record(self, plugin_dir: str, length: int, raw_output: str) -> None:
         path = os.path.join(plugin_dir, self._record_file_name)
@@ -85,7 +46,7 @@ class PalindromeGenerator(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"target": 10, "tick": 0})
 
         target = state["target"]
         tick = state["tick"] + 1
@@ -100,7 +61,7 @@ class PalindromeGenerator(Shitpost):
             state["target"] += 5
             self._append_record(plugin_dir, length, raw_output)
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": tick,
