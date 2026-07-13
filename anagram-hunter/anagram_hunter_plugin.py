@@ -18,15 +18,6 @@ class AnagramHunterPlugin(Shitpost):
         self._logged_sigs_file_name = "logged_sigs.json"
         self._words_file_name = "words.txt"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at tick 0."""
-        path = os.path.join(plugin_dir, "anagram_state.json")
-        return self._load_persisted_state({"tick": 0, "word_length": 2})
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, "anagram_state.json")
-        self._save_persisted_state(state)
-
     def _load_logged_sigs(self, plugin_dir: str) -> set:
         """Load the set of logged anagram signatures."""
         path = os.path.join(plugin_dir, self._logged_sigs_file_name)
@@ -82,7 +73,7 @@ class AnagramHunterPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"tick": 0, "word_length": 2})
         logged_sigs = self._load_logged_sigs(plugin_dir)
         words = self._load_words(plugin_dir)
         index = self._build_sorted_letter_index(words)
@@ -106,7 +97,7 @@ class AnagramHunterPlugin(Shitpost):
                 state["tick"] += 1
                 state["word_length"] += 1
 
-                self._save_state(plugin_dir, state)
+                self._save_persisted_state(state)
                 self._save_logged_sigs(plugin_dir, logged_sigs)
 
                 return {
