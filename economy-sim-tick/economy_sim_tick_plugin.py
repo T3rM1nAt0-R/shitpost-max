@@ -1,7 +1,10 @@
 import json
 import os
+import random
 import sys
 from datetime import datetime, timezone
+
+import yaml
 
 from harness.shitpost_base import Shitpost
 
@@ -87,11 +90,11 @@ class EconomySimTickPlugin(Shitpost):
         # Apply shock if enabled
         if os.getenv("SHOCK_ENABLED", "false").lower() == "true":
             shock_stddev = float(os.getenv("SHOCK_STDDEV", "0.05"))
-            state["price"] += np.random.normal(0, shock_stddev)
+            state["price"] += random.gauss(0, shock_stddev)
 
         # Compute surpluses
-        consumer_surplus = 0.5 * (state["prev_price"] + state["price"]) * (state["quantity"] - curves["demand"]["intercept"] / curves["demand"]["slope"])
-        producer_surplus = 0.5 * (state["price"] - curves["supply"]["intercept"] / curves["supply"]["slope"]) * state["quantity"]
+        consumer_surplus = 0.5 * (curves["demand"]["intercept"] - state["price"]) * state["quantity"]
+        producer_surplus = 0.5 * (state["price"] - curves["supply"]["intercept"]) * state["quantity"]
         total_surplus = consumer_surplus + producer_surplus
 
         # Determine regime

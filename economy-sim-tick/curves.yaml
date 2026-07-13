@@ -1,0 +1,11 @@
+# Supply and demand curves for the economy sim tick.
+# Demand:  P = a_d - b_d * Q
+# Supply:  Q = (P - a_s) / b_s   (i.e. P = a_s + b_s * Q)
+#
+# With b_d/b_s < 1 the cobweb converges; > 1 diverges; = 1 oscillates.
+demand:
+  intercept: 100.0
+  slope: 1.0
+supply:
+  intercept: 0.0
+  slope: 2.0
