@@ -1,7 +1,6 @@
 import json
 import os
 import random
-import sys
 from datetime import datetime, timezone
 from typing import Dict, List, Optional
 
@@ -17,9 +16,11 @@ class BalanceWitnessPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "balance_state.json"
         self._log_file_name = "match_log.jsonl"
         self._stats_file_name = "balance_stats.json"
+
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "balance_state.json")
 
     @staticmethod
     def _default_roster() -> Dict[str, Dict]:
@@ -37,47 +38,6 @@ class BalanceWitnessPlugin(Shitpost):
             "archetype_stats": {}
         }
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at default values."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: balance state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"total_matches", "unit_stats", "archetype_stats"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: balance state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "total_matches": 0,
-            "unit_stats": {},
-            "archetype_stats": {}
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
-
     def _append_log(self, plugin_dir: str, log_entry: Dict) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
         with open(path, "a", encoding="utf-8") as f:
@@ -86,7 +46,7 @@ class BalanceWitnessPlugin(Shitpost):
 
     def _update_stats(self, plugin_dir: str, winner_archetype: str, loser_archetype: str) -> None:
         path = os.path.join(plugin_dir, self._stats_file_name)
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"total_matches": 0, "unit_stats": {}, "archetype_stats": {}})
 
         # Update total matches
         state["total_matches"] += 1
@@ -111,7 +71,7 @@ class BalanceWitnessPlugin(Shitpost):
             state["archetype_stats"][loser_archetype] = {"wins": 0, "losses": 0}
         state["archetype_stats"][loser_archetype]["losses"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
     def _simulate_combat(self, team1: List[str], team2: List[str]):
         """Simulate combat and return (winner_team_str, turn_count)."""
@@ -138,7 +98,7 @@ class BalanceWitnessPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"total_matches": 0, "unit_stats": {}, "archetype_stats": {}})
 
         # Compose two random teams
         roster = list(self._default_roster().keys())
