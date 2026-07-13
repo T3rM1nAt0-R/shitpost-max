@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -16,10 +14,6 @@ class DigitsOfTauPlugin(Shitpost):
     def __init__(self):
         super().__init__()
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running τ state, or initialise it at digit 0."""
-        return self._load_persisted_state(self._default_state())
-
     @staticmethod
     def _default_state() -> dict:
         return {
@@ -28,9 +22,6 @@ class DigitsOfTauPlugin(Shitpost):
             "total_digits_seen": 0,
             "tick": 0,
         }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        self._save_persisted_state(state)
 
     def _append_digit(self, plugin_dir: str, digit: int) -> None:
         path = os.path.join(plugin_dir, "tau_digits.txt")
@@ -42,7 +33,7 @@ class DigitsOfTauPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state(self._default_state())
 
         # Emit the next digit.
         tau_digit = (state["digit"] * 2) % 10
@@ -52,7 +43,7 @@ class DigitsOfTauPlugin(Shitpost):
         state["total_digits_seen"] += 1
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._append_digit(plugin_dir, tau_digit)
 
         return {
