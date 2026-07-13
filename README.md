@@ -33,6 +33,7 @@ commit-poet | commit-poet plugin: one LLM-generated line of an infinite poem per
 fibonacci-full | Fibonacci plugin: one full Fibonacci number per tick.
 github-trending | 
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
+graph-of-the-day | 
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
 weather-blr | 
 
