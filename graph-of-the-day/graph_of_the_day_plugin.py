@@ -74,7 +74,7 @@ class GraphOfTheDayPlugin(Shitpost):
                 if (u, v) not in edges and (v, u) not in edges:
                     edges.append((u, v))
 
-        edges.sort(key=lambda x: len(x[0]) + len(x[1]))
+        edges.sort(key=lambda x: x[0] + x[1])
 
         parent = list(range(len(graph)))
         rank = [0] * len(graph)
@@ -100,7 +100,7 @@ class GraphOfTheDayPlugin(Shitpost):
         for u, v in edges:
             if find(u) != find(v):
                 union(u, v)
-                mst_weight += len(u) + len(v)
+                mst_weight += 1
 
         return mst_weight
 
