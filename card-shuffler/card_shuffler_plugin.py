@@ -5,7 +5,6 @@ from datetime import datetime, timezone
 from typing import List, Tuple
 
 import math
-import sys
 
 from harness.shitpost_base import Shitpost
 
@@ -61,59 +60,18 @@ class CardShufflerPlugin(Shitpost):
     internal = False
     commit_template = "shuffle: {algorithm} — entropy {entropy:.4f}"
 
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "card_shuffler_state.json"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at tick 0."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: card-shuffler state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick", "algo_index", "recent_signatures", "total_shuffles", "algorithm_counts"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: card-shuffler state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "algo_index": 0,
-            "recent_signatures": [],
-            "total_shuffles": 0,
-            "algorithm_counts": {}
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
-
     def produce(self) -> dict:
         """Return the next shuffled deck and update persistent files."""
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "tick": 0,
+            "algo_index": 0,
+            "recent_signatures": [],
+            "total_shuffles": 0,
+            "algorithm_counts": {}
+        })
 
         rng = random.Random()
         naive_swaps = int(os.environ.get("NAIVE_SWAPS", 52))
@@ -144,7 +102,7 @@ class CardShufflerPlugin(Shitpost):
         state["algo_index"] += 1
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         avg_entropy_per_algorithm = {
             algo: state["entropy_sums"][algo] / state["algorithm_counts"][algo]
