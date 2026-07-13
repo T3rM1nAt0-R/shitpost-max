@@ -34,6 +34,7 @@ bloom-filter-demo |
 commit-poet | commit-poet plugin: one LLM-generated line of an infinite poem per tick.
 compound-clock | 
 fibonacci-full | Fibonacci plugin: one full Fibonacci number per tick.
+git-hook-theater | 
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
 
