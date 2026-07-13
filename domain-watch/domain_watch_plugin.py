@@ -3,7 +3,8 @@ import os
 import sys
 from datetime import datetime, timezone
 import socket
-import requests
+import urllib.error
+import urllib.request
 from urllib.parse import urlparse
 
 from harness.shitpost_base import Shitpost
@@ -73,9 +74,10 @@ class DomainWatchPlugin(Shitpost):
         domain = state["domain"]
 
         try:
-            response = requests.get(f"https://rdap.org/domain/{domain}", timeout=10)
-            response.raise_for_status()
-            rdap_data = response.json()
+            response = urllib.request.urlopen(
+                f"https://rdap.org/domain/{domain}", timeout=10
+            )
+            rdap_data = json.loads(response.read().decode())
 
             expires = None
             status = "unknown"
@@ -90,7 +92,7 @@ class DomainWatchPlugin(Shitpost):
             else:
                 status = "unknown"
 
-        except (requests.RequestException, KeyError):
+        except (OSError, KeyError):
             try:
                 whois_info = socket.gethostbyname(domain)
                 status = "available" if whois_info == domain else "unknown"
