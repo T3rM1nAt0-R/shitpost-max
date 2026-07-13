@@ -3,3 +3,10 @@ __pycache__/
 .venv/
 .pytest_cache/
 *.egg-info/
+
+# Plugin runtime state files
+anagram-hunter/anagram_state.json
+anagram-hunter/logged_sigs.json
+**/state.jsonl
+**/summary.json
+*.lock
