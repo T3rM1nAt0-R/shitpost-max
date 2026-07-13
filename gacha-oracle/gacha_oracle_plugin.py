@@ -16,51 +16,12 @@ class GachaOraclePlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "gacha_state.json"
         self._log_file_name = "gacha_log.jsonl"
         self._stats_file_name = "gacha_stats.json"
 
-    def _load_state(self, plugin_dir: str) -> Dict:
-        """Load the running gacha state."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: gacha state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"pity", "total_pulls", "total_5star", "current_pity"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: gacha state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> Dict:
-        return {
-            "pity": 0,
-            "total_pulls": 0,
-            "total_5star": 0,
-            "current_pity": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: Dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        """Override to preserve the original custom state filename."""
+        return os.path.join(self._plugin_dir(), "gacha_state.json")
 
     def _log_pull(self, plugin_dir: str, tick: int, outcome: str, rarity: str, pity_at_pull: int, guarantee_used: bool) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
@@ -84,7 +45,7 @@ class GachaOraclePlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"pity": 0, "total_pulls": 0, "total_5star": 0, "current_pity": 0})
         tick = state["total_pulls"] + 1
 
         # Increment pity counter
@@ -117,14 +78,14 @@ class GachaOraclePlugin(Shitpost):
         state["total_pulls"] += 1
         if outcome == "hit":
             state["total_5star"] += 1
-        state["pity_histogram"] = self._load_state(plugin_dir)["pity_histogram"]
+        state["pity_histogram"] = self._load_persisted_state({"pity": 0, "total_pulls": 0, "total_5star": 0, "current_pity": 0})["pity_histogram"]
         state["pity_histogram"][state["current_pity"]] = state["pity_histogram"].get(state["current_pity"], 0) + 1
 
         # Reset pity counter if guaranteed hit
         if guarantee_used:
             state["current_pity"] = 0
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._update_stats(plugin_dir, state)
 
         return {
