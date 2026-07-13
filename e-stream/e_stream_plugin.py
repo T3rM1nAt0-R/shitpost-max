@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -16,21 +14,6 @@ class EStreamPlugin(Shitpost):
     def __init__(self):
         super().__init__()
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running e state, or initialise it at digit 0."""
-        return self._load_persisted_state(self._default_state())
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "digit": 0,
-            "total_digits_seen": 0,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        self._save_persisted_state(state)
-
     def _append_digit(self, plugin_dir: str, digit: int) -> None:
         path = os.path.join(plugin_dir, "e_digits.txt")
         with open(path, "a", encoding="utf-8") as f:
@@ -41,7 +24,7 @@ class EStreamPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"digit": 0, "total_digits_seen": 0, "tick": 0})
 
         # Emit the next digit
         digit = state["digit"]
@@ -53,7 +36,7 @@ class EStreamPlugin(Shitpost):
         state["total_digits_seen"] += 1
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._append_digit(plugin_dir, digit)
 
         return {
