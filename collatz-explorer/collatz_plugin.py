@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -15,53 +13,10 @@ class CollatzExplorerPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "collatz_state.json"
         self._records_file_name = "records.txt"
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running collatz state, or initialise it for the first tick."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: collatz state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            required = {
-                "current_n",
-                "max_steps",
-                "tick",
-            }
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: collatz state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        # Start with current_n=1, max_steps=-1 (no record yet), and tick=0
-        return {
-            "current_n": 1,
-            "max_steps": -1,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "collatz_state.json")
 
     def _append_record(self, plugin_dir: str, n: int, steps: int) -> None:
         path = os.path.join(plugin_dir, self._records_file_name)
@@ -84,7 +39,11 @@ class CollatzExplorerPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "current_n": 1,
+            "max_steps": -1,
+            "tick": 0,
+        })
         n = state["current_n"]
         steps = self._collatz_stopping_time(n)
 
@@ -97,7 +56,7 @@ class CollatzExplorerPlugin(Shitpost):
 
         state["current_n"] += 1
         state["tick"] += 1
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
