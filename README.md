@@ -91,6 +91,7 @@ perfect-numbers |
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
 playtest-bot | 
 primes-forever | 
+prompt-injection-lab | 
 rag-decay | 
 rate-limit-lab | 
 reddit-titles | 
@@ -106,6 +107,7 @@ spotify-charts |
 sqrt2-stream | 
 steam-playercount | 
 subscription-audit | 
+temperature-lab | 
 thought-leader | 
 token-golf | 
 translation-telephone | 
