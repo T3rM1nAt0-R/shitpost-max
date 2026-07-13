@@ -17,7 +17,6 @@ class DiffEnginePlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "state.jsonl"
         self._samples_dir = "samples"
         self._sample_pairs = [
             ("poem_old.txt", "poem_new.txt"),
@@ -30,28 +29,8 @@ class DiffEnginePlugin(Shitpost):
 
     def _load_state(self, plugin_dir: str) -> dict:
         """Load the running state, or initialise it at the first sample pair."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    states = [json.loads(line) for line in f]
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"timestamp", "pair_name", "lines_a", "lines_b", "edits", "inserts", "deletes"}
-            if not all(required.issubset(state.keys()) for state in states):
-                print(
-                    "warning: state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return states[-1]
-
-        return self._default_state()
+        path = os.path.join(plugin_dir, "state.jsonl")
+        return self._load_persisted_state({})
 
     @staticmethod
     def _default_state() -> dict:
@@ -66,12 +45,8 @@ class DiffEnginePlugin(Shitpost):
         }
 
     def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            for line in json.dumps(state).splitlines():
-                f.write(line + "\n")
-        os.replace(tmp_path, path)
+        path = os.path.join(plugin_dir, "state.jsonl")
+        self._save_persisted_state(state)
 
     def _load_sample_texts(self, plugin_dir: str) -> tuple:
         pair = self._sample_pairs[self._current_pair_index]
