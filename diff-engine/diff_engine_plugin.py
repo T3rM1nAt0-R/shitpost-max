@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-import json
 import os
-import sys
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -26,27 +24,6 @@ class DiffEnginePlugin(Shitpost):
             ("data_old.csv", "data_new.csv"),
         ]
         self._current_pair_index = 0
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at the first sample pair."""
-        path = os.path.join(plugin_dir, "state.jsonl")
-        return self._load_persisted_state({})
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "timestamp": None,
-            "pair_name": None,
-            "lines_a": [],
-            "lines_b": [],
-            "edits": 0,
-            "inserts": 0,
-            "deletes": 0
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, "state.jsonl")
-        self._save_persisted_state(state)
 
     def _load_sample_texts(self, plugin_dir: str) -> tuple:
         pair = self._sample_pairs[self._current_pair_index]
@@ -79,7 +56,15 @@ class DiffEnginePlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state(default={
+            "timestamp": None,
+            "pair_name": None,
+            "lines_a": [],
+            "lines_b": [],
+            "edits": 0,
+            "inserts": 0,
+            "deletes": 0
+        })
         lines_a, lines_b = self._load_sample_texts(plugin_dir)
 
         diff_result = self._myers_diff(lines_a, lines_b)
@@ -93,7 +78,7 @@ class DiffEnginePlugin(Shitpost):
         state["inserts"] = diff_result["inserts"]
         state["deletes"] = diff_result["deletes"]
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "timestamp": state["timestamp"],
