@@ -16,60 +16,11 @@ class MetaTrackerPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "meta_state.json"
         self._log_file_name = "meta_log.jsonl"
         self._history_file_name = "meta_history.json"
 
-    def _load_state(self, plugin_dir: str) -> Dict:
-        """Load the running meta state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: meta state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"strategies", "matrix", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: meta state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> Dict:
-        strategies = [
-            {"name": "Rock", "wins": 0, "losses": 0},
-            {"name": "Paper", "wins": 0, "losses": 0},
-            {"name": "Scissors", "wins": 0, "losses": 0},
-        ]
-        matrix = [
-            [0.5, 1.0, 0.0],
-            [0.0, 0.5, 1.0],
-            [1.0, 0.0, 0.5],
-        ]
-        return {
-            "strategies": strategies,
-            "matrix": matrix,
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: Dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        return os.path.join(self._plugin_dir(), "meta_state.json")
 
     def _append_log(self, plugin_dir: str, log_entry: Dict) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
@@ -116,7 +67,19 @@ class MetaTrackerPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "strategies": [
+                {"name": "Rock", "wins": 0, "losses": 0},
+                {"name": "Paper", "wins": 0, "losses": 0},
+                {"name": "Scissors", "wins": 0, "losses": 0},
+            ],
+            "matrix": [
+                [0.5, 1.0, 0.0],
+                [0.0, 0.5, 1.0],
+                [1.0, 0.0, 0.5],
+            ],
+            "tick": 0,
+        })
         matrix = state["matrix"]
         strategies = state["strategies"]
 
@@ -144,12 +107,13 @@ class MetaTrackerPlugin(Shitpost):
 
         # Find leader
         leader_name = max(strategies, key=lambda x: x["wins"])["name"]
-        leader_rate = strategies[strategy.index({"name": leader_name})]["wins"] / total_matches
+        leader_idx = next(i for i, s in enumerate(strategies) if s["name"] == leader_name)
+        leader_rate = strategies[leader_idx]["wins"] / total_matches
 
         state["matrix"] = matrix
         state["tick"] += 1
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
