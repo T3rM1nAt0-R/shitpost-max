@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -19,57 +18,8 @@ class TemperatureLabPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "temperature_lab_state.json"
         self._output_dir = os.path.join(self._plugin_dir(), "outputs")
         os.makedirs(self._output_dir, exist_ok=True)
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "prompts": [
-                {"id": "poem", "prompt": "Write a poem about the moon."},
-                {"id": "story", "prompt": "Tell me a story about a dragon."},
-                {"id": "dialogue", "prompt": "Conduct a conversation between two characters."},
-                {"id": "idea", "prompt": "What's an interesting idea for a new product?"},
-                {"id": "question", "prompt": "What is the meaning of life, the universe, and everything?"}
-            ],
-            "temperatures": [0.0, 0.3, 0.7, 1.0, 1.5, 2.0],
-            "max_tokens": 512
-        }
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at default."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: temperature-lab state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick", "prompts", "temperatures", "max_tokens"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: temperature-lab state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def _send_prompt(self, prompt: str, temperature: float) -> str:
         model = os.getenv("MODEL", "qwen2.5:7b")
@@ -112,7 +62,18 @@ class TemperatureLabPlugin(Shitpost):
     def produce(self) -> dict:
         """Run prompts at different temperatures and log output variance."""
         plugin_dir = self._plugin_dir()
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({
+            "tick": 0,
+            "prompts": [
+                {"id": "poem", "prompt": "Write a poem about the moon."},
+                {"id": "story", "prompt": "Tell me a story about a dragon."},
+                {"id": "dialogue", "prompt": "Conduct a conversation between two characters."},
+                {"id": "idea", "prompt": "What's an interesting idea for a new product?"},
+                {"id": "question", "prompt": "What is the meaning of life, the universe, and everything?"}
+            ],
+            "temperatures": [0.0, 0.3, 0.7, 1.0, 1.5, 2.0],
+            "max_tokens": 512
+        })
 
         tick = state["tick"] + 1
         results = []
@@ -140,7 +101,7 @@ class TemperatureLabPlugin(Shitpost):
                 })
 
         state["tick"] = tick
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": tick,
