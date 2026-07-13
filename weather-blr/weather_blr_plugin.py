@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -14,58 +13,16 @@ class WeatherBlrPlugin(Shitpost):
     internal = False
     commit_template = "weather-blr: {temperature_c}°C, {conditions}"
 
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "weather_blr_state.json"
+    def produce(self) -> dict:
+        """Fetch weather and update persistent state."""
+        os.makedirs(self._plugin_dir(), exist_ok=True)
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running weather state."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: weather-blr state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"timestamp", "temperature_c", "conditions", "humidity"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: weather-blr state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
+        state = self._load_persisted_state({
             "timestamp": None,
             "temperature_c": None,
             "conditions": None,
             "humidity": None,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
-
-    def produce(self) -> dict:
-        """Fetch weather and update persistent state."""
-        plugin_dir = self._plugin_dir()
-        os.makedirs(plugin_dir, exist_ok=True)
-
-        state = self._load_state(plugin_dir)
+        })
 
         # Fetch current weather from Open-Meteo API
         response = requests.get(
@@ -86,7 +43,7 @@ class WeatherBlrPlugin(Shitpost):
         state["conditions"] = conditions
         state["humidity"] = humidity
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": len(state),
