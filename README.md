@@ -38,6 +38,7 @@ git-hook-theater |
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
 green-square-maxxer | 
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
+primes-forever | 
 
 <!-- PLUGIN_TABLE_END -->
 
