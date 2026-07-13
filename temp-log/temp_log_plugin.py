@@ -71,6 +71,7 @@ class TempLogPlugin(Shitpost):
 
     def _discover_sensors(self) -> dict:
         """Discover CPU thermal sensors."""
+        hwmon_dir = None
         try:
             with open("/sys/class/hwmon/hwmon*/name", "r") as f:
                 for line in f:
