@@ -80,21 +80,27 @@ class CompressionLabPlugin(Shitpost):
         sibling_count = 0
         raw_bytes = 0
 
+        content_chunks: list[bytes] = []
         for sibling in os.listdir(".."):
             sibling_path = os.path.join("..", sibling)
             if os.path.isdir(sibling_path) and "state.jsonl" in os.listdir(sibling_path):
                 sibling_count += 1
                 with open(os.path.join(sibling_path, "state.jsonl"), "r", encoding="utf-8") as f:
                     for line in f:
-                        log = json.loads(line)
-                        raw_bytes += len(json.dumps(log).encode("utf-8"))
+                        try:
+                            log = json.loads(line)
+                        except json.JSONDecodeError:
+                            continue
+                        encoded = json.dumps(log).encode("utf-8")
+                        raw_bytes += len(encoded)
+                        content_chunks.append(encoded)
 
         if sibling_count == 0:
             state["raw_bytes"] = 0
         else:
-            data = bytes(raw_bytes)
+            data = b"\n".join(content_chunks)
             ratios = self._compress_data(data)
-            state.update(ratios)
+            state["algorithms"] = ratios
 
         state["tick"] += 1
 
