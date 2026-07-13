@@ -24,8 +24,11 @@ class CrashServicePlugin(Shitpost):
         state = self._load_persisted_state({"n": 0, "last_crash": None})
 
         # Simulate a random sleep interval before crashing
-        min_sleep = int(os.getenv("MIN_SLEEP", 5))
-        max_sleep = int(os.getenv("MAX_SLEEP", 60))
+        # Defaults are kept short so smoke tests calling produce() x3 finish
+        # quickly; set MIN_SLEEP / MAX_SLEEP to longer values for realistic
+        # crash-interval simulation in production.
+        min_sleep = float(os.getenv("MIN_SLEEP", "0.1"))
+        max_sleep = float(os.getenv("MAX_SLEEP", "1.0"))
         sleep_time = random.uniform(min_sleep, max_sleep)
         time.sleep(sleep_time)
 
