@@ -1,8 +1,9 @@
 import json
 import os
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
-import requests
 
 from harness.shitpost_base import Shitpost
 
@@ -67,15 +68,34 @@ class EarthquakeLogPlugin(Shitpost):
         state = self._load_state(plugin_dir)
 
         feed_url = os.getenv("FEED_URL", "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson")
-        response = requests.get(feed_url)
-        if response.status_code != 200:
-            print(f"error: failed to fetch earthquake data ({response.status_code})", file=sys.stderr)
-            return None
-
         try:
-            data = response.json()
-        except json.JSONDecodeError as exc:
-            print(f"error: invalid JSON from USGS feed ({exc})", file=sys.stderr)
+            with urllib.request.urlopen(feed_url, timeout=30) as response:
+                if response.getcode() != 200:
+                    print(
+                        f"error: failed to fetch earthquake data ({response.getcode()})",
+                        file=sys.stderr,
+                    )
+                    return None
+
+                try:
+                    data = json.loads(response.read().decode("utf-8"))
+                except json.JSONDecodeError as exc:
+                    print(
+                        f"error: invalid JSON from USGS feed ({exc})",
+                        file=sys.stderr,
+                    )
+                    return None
+        except urllib.error.HTTPError as exc:
+            print(
+                f"error: failed to fetch earthquake data ({exc.code})",
+                file=sys.stderr,
+            )
+            return None
+        except urllib.error.URLError as exc:
+            print(
+                f"error: failed to fetch earthquake data ({exc.reason})",
+                file=sys.stderr,
+            )
             return None
 
         count = len(data["features"])
