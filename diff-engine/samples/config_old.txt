@@ -1,0 +1,16 @@
+# Application Configuration
+server.host=0.0.0.0
+server.port=8080
+server.workers=4
+
+database.url=jdbc:postgresql://localhost:5432/app
+database.user=admin
+database.password=secret
+database.pool_size=10
+
+logging.level=INFO
+logging.file=/var/log/app.log
+
+cache.enabled=true
+cache.ttl_seconds=3600
+cache.max_size=1000

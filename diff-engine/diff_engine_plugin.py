@@ -22,7 +22,9 @@ class DiffEnginePlugin(Shitpost):
         self._sample_pairs = [
             ("poem_old.txt", "poem_new.txt"),
             ("config_old.txt", "config_new.txt"),
-            ("code_old.py", "code_new.py")
+            ("code_old.py", "code_new.py"),
+            ("readme_old.md", "readme_new.md"),
+            ("data_old.csv", "data_new.csv"),
         ]
         self._current_pair_index = 0
 
