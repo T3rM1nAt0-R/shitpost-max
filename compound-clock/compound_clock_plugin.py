@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 from datetime import datetime, timezone
 from decimal import Decimal, getcontext
 
@@ -24,45 +22,12 @@ class CompoundClockPlugin(Shitpost):
         daily_rate = annual_rate / Decimal(365)
         return principal * (Decimal(1) + daily_rate) ** day
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running compound clock state, or initialise it at day 0."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: compound clock state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"day", "tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: compound clock state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
     @staticmethod
     def _default_state() -> dict:
         return {
             "day": 0,
             "tick": 0,
         }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def produce(self) -> dict:
         """Return the compound value and update persistent files."""
