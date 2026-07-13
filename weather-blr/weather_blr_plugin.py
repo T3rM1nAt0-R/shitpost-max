@@ -24,19 +24,22 @@ class WeatherBlrPlugin(Shitpost):
             "humidity": None,
         })
 
-        # Fetch current weather from Open-Meteo API
+        # Fetch current weather from Open-Meteo API (using modern current=
+        # parameter syntax which supports relative_humidity_2m, unlike the
+        # deprecated current_weather=true which only returned a fixed subset)
         response = requests.get(
-            "https://api.open-meteo.com/v1/forecast?latitude=12.97&longitude=77.59&current_weather=true"
+            "https://api.open-meteo.com/v1/forecast?"
+            "latitude=12.97&longitude=77.59&current=temperature_2m,relative_humidity_2m,weather_code"
         )
         if response.status_code != 200:
             print(f"error: failed to fetch weather ({response.status_code})", file=sys.stderr)
             return None
 
         data = response.json()
-        current_weather = data["current_weather"]
-        temperature_c = current_weather["temperature"]
-        conditions = self._map_conditions(current_weather["weathercode"])
-        humidity = data.get("daily", {}).get("humidity_2m")[0]
+        current = data["current"]
+        temperature_c = current["temperature_2m"]
+        conditions = self._map_conditions(current["weather_code"])
+        humidity = current["relative_humidity_2m"]
 
         state["timestamp"] = datetime.now(timezone.utc).isoformat()
         state["temperature_c"] = temperature_c
