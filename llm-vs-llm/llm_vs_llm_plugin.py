@@ -51,14 +51,25 @@ class LLMvsLLMPlugin(Shitpost):
     def _ask_llm(self, model: str, question: str) -> str:
         """Ask a local LLM via HTTP."""
         import requests
-        response = requests.post(
-            os.getenv("LLM_ENDPOINT"),
-            json={"model": model, "prompt": question},
-            timeout=30,
-        )
+        endpoint = os.getenv("LLM_ENDPOINT", "http://localhost:11434/api/generate")
+        try:
+            response = requests.post(
+                endpoint,
+                json={"model": model, "prompt": question},
+                timeout=30,
+            )
+        except requests.exceptions.ConnectionError as exc:
+            return f"(connection error: {exc})"
+        except requests.exceptions.Timeout:
+            return "(timeout)"
+        except requests.exceptions.RequestException as exc:
+            return f"(request failed: {exc})"
         if response.status_code != 200:
-            raise Exception(f"Failed to ask {model}: {response.text}")
-        return response.json()["choices"][0]["text"].strip()
+            return f"(HTTP {response.status_code})"
+        try:
+            return response.json()["choices"][0]["text"].strip()
+        except (KeyError, TypeError, ValueError) as exc:
+            return f"(parse error: {exc})"
 
     def _compare_answers(self, answer_a: str, answer_b: str, reference: str) -> bool:
         """Compare answers with exact match and semantic similarity."""
@@ -83,8 +94,14 @@ class LLMvsLLMPlugin(Shitpost):
         reference = question["reference"]
 
         # Ask both models.
-        answer_a = self._ask_llm(os.getenv("LLM_A_MODEL"), question["question"])
-        answer_b = self._ask_llm(os.getenv("LLM_B_MODEL"), question["question"])
+        answer_a = self._ask_llm(
+            os.getenv("LLM_A_MODEL", "qwen2.5-coder:7b-instruct-q6_K"),
+            question["question"],
+        )
+        answer_b = self._ask_llm(
+            os.getenv("LLM_B_MODEL", "llama3.1:8b"),
+            question["question"],
+        )
 
         # Compare answers.
         disagreement = self._compare_answers(answer_a, answer_b, reference)
