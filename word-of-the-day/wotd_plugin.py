@@ -24,49 +24,6 @@ class WordOfTheDayPlugin(Shitpost):
     internal = False
     commit_template = "wotd: {word}"
 
-    def __init__(self):
-        super().__init__()
-        self._state_file_name = "word_of_the_day_state.json"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running state, or initialise it at tick 0."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: word of the day state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: word of the day state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
-
     def _call_ollama(self, prompt: str) -> str:
         """Call Ollama API and return the response."""
         url = "http://localhost:1601/api/generate"
@@ -82,7 +39,7 @@ class WordOfTheDayPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"tick": 0})
 
         # Pick a random entry from WORDLIST
         word_entry = random.choice(WORDLIST)
@@ -102,7 +59,7 @@ class WordOfTheDayPlugin(Shitpost):
             source = "ollama"
 
         state["tick"] += 1
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
