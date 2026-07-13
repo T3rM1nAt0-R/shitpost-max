@@ -1,5 +1,6 @@
 import json
 import os
+import shlex
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -18,7 +19,11 @@ class ModelDiffPlugin(Shitpost):
 
     def _detect_model(self) -> dict:
         import subprocess
-        result = subprocess.run([os.getenv("MODEL_DETECT_CMD", "ollama list")], capture_output=True, text=True)
+        try:
+            cmd = shlex.split(os.getenv("MODEL_DETECT_CMD", "ollama list"))
+            result = subprocess.run(cmd, capture_output=True, text=True)
+        except FileNotFoundError:
+            return None
         models = json.loads(result.stdout)
         for model in models:
             if model["name"] == os.getenv("MODEL_NAME"):
