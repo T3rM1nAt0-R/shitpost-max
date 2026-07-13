@@ -15,51 +15,14 @@ class LootTableFuzzerPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "loot_state.json"
         self._log_file_name = "loot_log.jsonl"
         self._rates_file_name = "loot_rates.json"
         self._tick_seconds = int(os.getenv("TICK_SECONDS", 60))
         self._check_interval = int(os.getenv("CHECK_INTERVAL", 1000))
 
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running loot state."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: loot state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"total_rolls", "items"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: loot state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "total_rolls": 0,
-            "items": {}
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
+    def _persisted_state_path(self) -> str:
+        """Override to keep the original ``loot_state.json`` filename."""
+        return os.path.join(self._plugin_dir(), "loot_state.json")
 
     def _append_log(self, plugin_dir: str, item: str, weight: float) -> None:
         path = os.path.join(plugin_dir, self._log_file_name)
@@ -103,7 +66,7 @@ class LootTableFuzzerPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"total_rolls": 0, "items": {}})
         loot_table = [
             {"item": "Common Item", "weight": 80},
             {"item": "Uncommon Item", "weight": 15},
@@ -122,7 +85,7 @@ class LootTableFuzzerPlugin(Shitpost):
                 break
 
         state["total_rolls"] += 1
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
         self._append_log(plugin_dir, selected_item["item"], selected_item["weight"])
         self._update_rates(plugin_dir, selected_item["item"], selected_item["weight"])
 
