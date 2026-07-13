@@ -56,39 +56,60 @@ plugin_files = [
     and f != "__init__.py"
 ]
 
-if len(plugin_files) != 1:
-    print(
-        "expected 1 plugin module in %s, found %d: %s"
-        % (plugin_name, len(plugin_files), plugin_files),
-        file=sys.stderr,
-    )
+if not plugin_files:
+    print("expected at least 1 plugin module in %s, found 0" % plugin_name, file=sys.stderr)
     sys.exit(1)
-
-module_path = os.path.join(plugin_dir, plugin_files[0])
-module_name = plugin_files[0].replace(".py", "")
-spec = importlib.util.spec_from_file_location(module_name, module_path)
-mod = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(mod)
 
 from harness.shitpost_base import Shitpost  # noqa: E402
 
-candidates = [
-    obj for name in dir(mod)
-    if isinstance((obj := getattr(mod, name)), type)
-    and issubclass(obj, Shitpost)
-    and obj is not Shitpost
-]
+# Relaxed 2026-07-13: a plugin's logic may reasonably span more than one file
+# (e.g. a separate cache class or workload generator alongside the Shitpost
+# subclass itself) -- import every non-tick/test module in the directory and
+# look for the Shitpost subclass across all of them, rather than requiring
+# exactly one file. Still require exactly one Shitpost subclass total, so a
+# plugin can't accidentally define (or fail to define) its entrypoint class.
+all_candidates = []  # list of (class, owning_module) pairs
+for fname in plugin_files:
+    module_path = os.path.join(plugin_dir, fname)
+    module_name = fname.replace(".py", "")
+    spec = importlib.util.spec_from_file_location(module_name, module_path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
 
-if len(candidates) != 1:
+    candidates = [
+        obj for name in dir(mod)
+        if isinstance((obj := getattr(mod, name)), type)
+        and issubclass(obj, Shitpost)
+        and obj is not Shitpost
+    ]
+    for c in candidates:
+        all_candidates.append((c, mod))
+
+# Dedup by the class's own declared `name` attribute (its real plugin
+# identity), not Python object identity -- a second entrypoint file that
+# isn't literally called tick.py but imports the real plugin class to call
+# run_tick() re-imports it as a genuinely separate object (Python doesn't
+# cache across two independent spec_from_file_location loads under different
+# module names), so id()-based dedup does NOT catch this in practice
+# (verified directly against crypto-tick's real run.py, 2026-07-13).
+seen_names = set()
+unique_candidates = []
+for c, mod in all_candidates:
+    if getattr(c, "name", None) not in seen_names:
+        seen_names.add(getattr(c, "name", None))
+        unique_candidates.append((c, mod))
+all_candidates = unique_candidates
+
+if len(all_candidates) != 1:
     print(
-        "expected 1 Shitpost subclass in %s, found %d"
-        % (plugin_name, len(candidates)),
+        "expected 1 Shitpost subclass across %s (%s), found %d"
+        % (plugin_name, plugin_files, len(all_candidates)),
         file=sys.stderr,
     )
     sys.exit(1)
 
-cls = candidates[0]
-doc = mod.__doc__ or ""
+cls, owning_module = all_candidates[0]
+doc = owning_module.__doc__ or ""
 first_line = doc.strip().splitlines()[0].strip() if doc.strip() else ""
 print(json.dumps({"name": cls.name, "internal": cls.internal, "description": first_line}))
 """
