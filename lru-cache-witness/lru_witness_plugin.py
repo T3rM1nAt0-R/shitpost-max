@@ -1,11 +1,40 @@
 import json
 import os
+import random
 import sys
+from collections import OrderedDict
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
-from workload import zipfian_keys
-from lru_cache import LRUCache
+
+
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.cache = OrderedDict()
+        self.capacity = capacity
+
+    def get(self, key):
+        if key not in self.cache:
+            return None
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key, value) -> None:
+        if key in self.cache:
+            del self.cache[key]
+        elif len(self.cache) >= self.capacity:
+            self.cache.popitem(last=False)
+        self.cache[key] = value
+
+    def __len__(self):
+        return len(self.cache)
+
+
+def zipfian_keys(n: int, keyspace: int, s: float, seed: int) -> list[int]:
+    rng = random.Random(seed)
+    weights = [1 / (i + 1) ** s for i in range(keyspace)]
+    return rng.choices(range(keyspace), weights=weights, k=n)
+
 
 class LRUCacheWitnessPlugin(Shitpost):
     name = "lru-cache-witness"
@@ -61,8 +90,7 @@ class LRUCacheWitnessPlugin(Shitpost):
 
         state = self._load_state(plugin_dir)
 
-        tick = state["tick"]
-        tick += 1
+        tick = state["tick"] + 1
         state["tick"] = tick
 
         cache = LRUCache(capacity=100)
@@ -97,4 +125,5 @@ class LRUCacheWitnessPlugin(Shitpost):
             "cumulative_misses": cumulative_misses,
             "cumulative_hit_rate": cumulative_hit_rate,
             "cache_size": len(cache),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
         }
