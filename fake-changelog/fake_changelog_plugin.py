@@ -1,6 +1,4 @@
-import json
 import os
-import sys
 from datetime import datetime, timezone
 import random
 
@@ -16,49 +14,7 @@ class FakeChangelogPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "fake_changelog_state.json"
         self._changelog_file_name = "CHANGELOG.md"
-
-    def _load_state(self, plugin_dir: str) -> dict:
-        """Load the running changelog state, or initialise it."""
-        path = os.path.join(plugin_dir, self._state_file_name)
-        if os.path.exists(path):
-            try:
-                with open(path, "r", encoding="utf-8") as f:
-                    state = json.load(f)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"warning: fake-changelog state file is corrupt ({exc}); starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            # Guard against manual tampering / old versions.
-            required = {"tick", "product_name", "version"}
-            if not required.issubset(state.keys()):
-                print(
-                    "warning: fake-changelog state missing keys; starting fresh",
-                    file=sys.stderr,
-                )
-                return self._default_state()
-            return state
-
-        return self._default_state()
-
-    @staticmethod
-    def _default_state() -> dict:
-        return {
-            "tick": 0,
-            "product_name": "",
-            "version": ""
-        }
-
-    def _save_state(self, plugin_dir: str, state: dict) -> None:
-        path = os.path.join(plugin_dir, self._state_file_name)
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(state, f, separators=(",", ":"), sort_keys=True)
-            f.write("\n")
-        os.replace(tmp_path, path)
 
     def _append_changelog(self, plugin_dir: str, product_name: str, version: str, changelog_text: str) -> None:
         path = os.path.join(plugin_dir, self._changelog_file_name)
@@ -70,7 +26,7 @@ class FakeChangelogPlugin(Shitpost):
         plugin_dir = self._plugin_dir()
         os.makedirs(plugin_dir, exist_ok=True)
 
-        state = self._load_state(plugin_dir)
+        state = self._load_persisted_state({"tick": 0, "product_name": "", "version": ""})
 
         # Generate a new product name and version
         product_name = f"Product{random.randint(100, 999)}"
@@ -87,7 +43,7 @@ class FakeChangelogPlugin(Shitpost):
         state["product_name"] = product_name
         state["version"] = version
 
-        self._save_state(plugin_dir, state)
+        self._save_persisted_state(state)
 
         return {
             "tick": state["tick"],
