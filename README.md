@@ -36,6 +36,7 @@ compound-clock |
 fibonacci-full | Fibonacci plugin: one full Fibonacci number per tick.
 git-hook-theater | 
 golden-ratio | Golden-ratio spigot plugin: one decimal digit of φ per tick.
+green-square-maxxer | 
 pi-spigot | Pi spigot plugin: one decimal digit of π per tick.
 
 <!-- PLUGIN_TABLE_END -->
