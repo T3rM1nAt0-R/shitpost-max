@@ -819,3 +819,4 @@
 {"match_ok":false,"match_test":"(f++|(s+|((k|h)|u)+))","nonmatch_ok":true,"nonmatch_test":"(f++|(s+|((k|h)1u)+))","pattern":"(f++|(s+|((k|h)|u)+))","tick":751,"timestamp":"2026-07-14T23:21:40.445652+00:00"}
 {"match_ok":false,"match_test":"q+","nonmatch_ok":true,"nonmatch_test":"r+","pattern":"q+","tick":752,"timestamp":"2026-07-14T23:22:40.590344+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":753,"timestamp":"2026-07-14T23:23:40.155025+00:00"}
+{"match_ok":false,"match_test":"(n|l+)","nonmatch_ok":true,"nonmatch_test":"(n|l0)","pattern":"(n|l+)","tick":754,"timestamp":"2026-07-14T23:24:40.844390+00:00"}
