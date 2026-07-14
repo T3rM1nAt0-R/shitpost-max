@@ -154,3 +154,24 @@ def test_state_missing_keys_self_heals(capsys):
         assert result["total_digits_seen"] == 1
         captured = capsys.readouterr()
         assert "spigot state missing keys" in captured.err
+
+
+def test_save_state_survives_state_ints_past_default_str_digit_limit(tmp_path):
+    """The spigot's q/r/t/l state ints grow with every tick and are
+    persisted via json.dump. Python 3.11+'s default int->str conversion
+    limit is 4300 digits (CVE-2020-10735 guard) -- this actually broke
+    pi-spigot in production on 2026-07-14 after 860 ticks: every save
+    since threw ValueError and silently failed (caught by run_tick's
+    per-plugin exception isolation), so the plugin looked frozen rather
+    than erroring. harness.shitpost_base disables the limit at import
+    time since these are our own algorithm's state, not untrusted input;
+    confirm a state well past that threshold still round-trips."""
+    plugin = _plugin_in(str(tmp_path))
+    huge_int = int("7" * 5000)
+    state = {
+        "q": huge_int, "r": huge_int, "t": huge_int, "k": 1,
+        "n": 3, "l": huge_int, "tick": 860, "total_digits_seen": 860,
+    }
+    plugin._save_state(str(tmp_path), state)
+    reloaded = plugin._load_state(str(tmp_path))
+    assert reloaded["q"] == huge_int

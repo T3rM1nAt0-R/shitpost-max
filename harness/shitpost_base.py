@@ -18,6 +18,20 @@ import traceback
 from abc import ABC, abstractmethod
 from datetime import datetime, timezone
 
+# Several plugins (pi-spigot, golden-ratio, sqrt2-stream, e-stream,
+# digits-of-tau) are unbounded-integer digit spigots whose persisted state
+# includes big ints that grow with every tick. Python 3.11+ refuses to
+# str()/json-serialize an int over 4300 digits by default (the
+# CVE-2020-10735 guard against attacker-supplied huge-int DoS) -- but these
+# ints are our own algorithm's internal state, not untrusted input, and
+# will only ever grow larger the longer any of these plugins keep running.
+# pi-spigot hit this wall in production on 2026-07-14 after 860 ticks: every
+# tick since has thrown ValueError inside json.dump and silently failed to
+# save (caught by run_tick's per-plugin exception isolation, so it looked
+# like the plugin had simply stopped rather than erroring). Disable the
+# limit repo-wide, once, here -- every plugin imports this module.
+sys.set_int_max_str_digits(0)
+
 # Every plugin lives as a sibling directory in the same shared repo, so
 # git operations (add/commit/push) touch one shared .git regardless of
 # which plugin is ticking. The per-plugin .tick.lock below only prevents
