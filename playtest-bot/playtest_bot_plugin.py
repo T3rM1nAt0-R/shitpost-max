@@ -250,6 +250,7 @@ class PlaytestBotPlugin(Shitpost):
 
         return {
             "tick": tick,
+            "agent": "heuristic" if agent == 0 else "random",
             **result,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
