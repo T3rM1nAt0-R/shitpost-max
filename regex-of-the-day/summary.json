@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(x|(t|(i|w+)))+","nonmatch_ok":true,"nonmatch_test":"5x|(t|(i|w+)))+","pattern":"(x|(t|(i|w+)))+","tick":410,"timestamp":"2026-07-14T17:09:40.125966+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":411,"timestamp":"2026-07-14T17:11:39.439047+00:00"}
