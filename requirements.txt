@@ -1,2 +1,12 @@
 pytest
 docker
+requests
+pyyaml
+psutil
+beautifulsoup4
+feedparser
+numpy
+nltk
+pyopenssl
+cryptography
+fpdf2
