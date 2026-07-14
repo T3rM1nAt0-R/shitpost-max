@@ -538,3 +538,4 @@
 {"match_ok":false,"match_test":"(h|((e|o)|o++))","nonmatch_ok":true,"nonmatch_test":"(h|((e|o)|o+0))","pattern":"(h|((e|o)|o++))","tick":490,"timestamp":"2026-07-14T18:40:39.783885+00:00"}
 {"match_ok":false,"match_test":"q++","nonmatch_ok":true,"nonmatch_test":"r++","pattern":"q++","tick":491,"timestamp":"2026-07-14T18:41:39.561000+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":492,"timestamp":"2026-07-14T18:42:40.251673+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":493,"timestamp":"2026-07-14T18:43:39.949129+00:00"}
