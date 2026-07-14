@@ -1,1 +1,1 @@
-{"algorithm":"merge_sort","elapsed_ms":0.4554449988063425,"list_size":200,"sorted_prefix":[8,69,78,150,261],"sorted_suffix":[9702,9755,9865,9964,9975],"tick":440}
+{"algorithm":"bubble_sort","elapsed_ms":1.079967973055318,"list_size":200,"sorted_prefix":[53,58,154,166,306],"sorted_suffix":[9770,9885,9890,9942,9944],"tick":441}
