@@ -2,3 +2,4 @@
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":2,"timestamp":"2026-07-14T04:30:08.671584+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":3,"timestamp":"2026-07-14T04:30:31.949972+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":4,"timestamp":"2026-07-14T04:30:54.300442+00:00"}
+{"match_ok":false,"match_test":"i*","nonmatch_ok":true,"nonmatch_test":"i1","pattern":"i*","tick":5,"timestamp":"2026-07-14T04:31:17.377810+00:00"}
