@@ -3,3 +3,4 @@
 {"accepted":false,"length":0,"palindrome":"Here is a 12-character long palindrome: \"Step on no pets.\"","target":10,"tick":3,"timestamp":"2026-07-14T04:30:27.431932+00:00"}
 {"accepted":true,"length":17,"palindrome":"\"Madam, in Eden, I'm Adam.\"","target":15,"tick":4,"timestamp":"2026-07-14T04:30:49.871920+00:00"}
 {"accepted":true,"length":19,"palindrome":"Able was I ere I saw Elba.","target":20,"tick":5,"timestamp":"2026-07-14T04:31:12.730230+00:00"}
+{"accepted":false,"length":0,"palindrome":"Here's a 21-character palindrome for you:\n\n\"Was it a car or a cat I saw?\"","target":20,"tick":6,"timestamp":"2026-07-14T04:31:35.522567+00:00"}
