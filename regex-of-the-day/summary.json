@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(e+|f)?","nonmatch_ok":true,"nonmatch_test":"(e+4f)?","pattern":"(e+|f)?","tick":339,"timestamp":"2026-07-14T15:55:39.812848+00:00"}
+{"match_ok":false,"match_test":"q+","nonmatch_ok":true,"nonmatch_test":"q0","pattern":"q+","tick":340,"timestamp":"2026-07-14T15:56:42.044235+00:00"}
