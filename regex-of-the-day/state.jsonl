@@ -793,3 +793,4 @@
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":727,"timestamp":"2026-07-14T22:55:39.295101+00:00"}
 {"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"b+","pattern":"a+","tick":728,"timestamp":"2026-07-14T22:56:42.157881+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":729,"timestamp":"2026-07-14T22:57:41.438225+00:00"}
+{"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":730,"timestamp":"2026-07-14T22:58:40.451847+00:00"}
