@@ -9,7 +9,7 @@ class MetaPlugin(Shitpost):
 
     name = "shitpost-max-meta"
     internal = True
-    commit_template = "meta: daily status report {date}"
+    commit_template = "meta: daily status report {timestamp}"
 
     def __init__(self):
         super().__init__()

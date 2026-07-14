@@ -81,7 +81,11 @@ class DiskCanaryPlugin(Shitpost):
 
         self._save_state(plugin_dir, state)
 
+        root_state = state.get("/", {})
+        data_state = state.get("/mnt/data", {})
         return {
             **state,
+            "root_pct": root_state.get("used_percent", 0),
+            "data_pct": data_state.get("used_percent", 0),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }

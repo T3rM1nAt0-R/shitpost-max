@@ -129,6 +129,7 @@ class BalanceWitnessPlugin(Shitpost):
             "tick": state["total_matches"],
             "winner_team": winner_team,
             "winner_archetype": winner_archetype,
+            "loser_archetype": loser_archetype,
             "survivors": winner_team,
             "turns": turns,
             "timestamp": datetime.now(timezone.utc).isoformat()

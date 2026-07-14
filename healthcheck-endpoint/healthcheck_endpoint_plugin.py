@@ -13,7 +13,7 @@ class HealthcheckPlugin(Shitpost):
 
     name = "healthcheck-endpoint"
     internal = False
-    commit_template = "health: tick {t} uptime {u}s requests {r}"
+    commit_template = "health: tick {tick} uptime {uptime}s requests {requests}"
 
     # Class-level state so the Handler inner class and static methods
     # can access them via HealthcheckPlugin._xxx.

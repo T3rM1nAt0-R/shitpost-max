@@ -12,7 +12,7 @@ class MetaTrackerPlugin(Shitpost):
 
     name = "meta-tracker"
     internal = False
-    commit_template = "meta: {n_strategies} strategies — leader {leader_name} ({leader_rate:.1%})"
+    commit_template = "meta: {total_matches} matches — leader {leader_name} ({leader_rate:.1%})"
 
     def __init__(self):
         super().__init__()

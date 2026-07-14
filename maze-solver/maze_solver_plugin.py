@@ -12,7 +12,7 @@ class MazeSolverPlugin(Shitpost):
 
     name = "maze-solver"
     internal = False
-    commit_template = "maze-solver: {size}x{size} — BFS {bfs_path_len} ({bfs_visited} visited), DFS {dfs_path_len} ({dfs_visited} visited), A* {astar_path_len} ({astar_visited} visited)"
+    commit_template = "maze-solver: {size}x{size} — BFS {solutions[bfs][path_len]} ({solutions[bfs][visited]} visited), DFS {solutions[dfs][path_len]} ({solutions[dfs][visited]} visited), A* {solutions[astar][path_len]} ({solutions[astar][visited]} visited)"
 
     def __init__(self):
         super().__init__()

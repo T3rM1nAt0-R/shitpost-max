@@ -11,7 +11,7 @@ class LootTableFuzzerPlugin(Shitpost):
 
     name = "loot-table-fuzzer"
     internal = False
-    commit_template = "loot: {item} (observed {observed_rate:.2%} vs expected {weight:.2%})"
+    commit_template = "loot: {item} (weight {weight:.2%})"
 
     def __init__(self):
         super().__init__()
