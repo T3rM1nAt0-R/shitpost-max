@@ -48,13 +48,13 @@ plugin_dir = sys.argv[2]
 plugin_name = os.path.basename(plugin_dir)
 sys.path.insert(0, repo_root)
 
-plugin_files = [
+plugin_files = sorted(
     f for f in os.listdir(plugin_dir)
     if f.endswith(".py")
     and f != "tick.py"
     and not f.startswith("test")
     and f != "__init__.py"
-]
+)
 
 if not plugin_files:
     print("expected at least 1 plugin module in %s, found 0" % plugin_name, file=sys.stderr)
@@ -92,13 +92,21 @@ for fname in plugin_files:
 # cache across two independent spec_from_file_location loads under different
 # module names), so id()-based dedup does NOT catch this in practice
 # (verified directly against crypto-tick's real run.py, 2026-07-13).
-seen_names = set()
-unique_candidates = []
+#
+# Prefer whichever module actually *defines* the class (c.__module__ ==
+# mod.__name__) over one that merely imports/re-exports it -- otherwise
+# which module's docstring ends up in the table depends on directory listing
+# order, which os.listdir() does not guarantee is stable across filesystems,
+# making the generated README non-deterministic between environments
+# (caught 2026-07-14: crypto-tick's table entry differed between a local run
+# and CI purely from listdir ordering, failing the --check step every time).
+by_name = {}
 for c, mod in all_candidates:
-    if getattr(c, "name", None) not in seen_names:
-        seen_names.add(getattr(c, "name", None))
-        unique_candidates.append((c, mod))
-all_candidates = unique_candidates
+    name = getattr(c, "name", None)
+    defines_it = getattr(c, "__module__", None) == mod.__name__
+    if name not in by_name or (defines_it and not by_name[name][2]):
+        by_name[name] = (c, mod, defines_it)
+all_candidates = [(c, mod) for c, mod, _ in by_name.values()]
 
 if len(all_candidates) != 1:
     print(
