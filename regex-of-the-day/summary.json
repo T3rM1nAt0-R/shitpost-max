@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(z|((w*|z)|u)+)*?","nonmatch_ok":true,"nonmatch_test":"(z|((w*|z)|u)4)*?","pattern":"(z|((w*|z)|u)+)*?","tick":323,"timestamp":"2026-07-14T15:38:39.822098+00:00"}
+{"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":324,"timestamp":"2026-07-14T15:39:39.667833+00:00"}
