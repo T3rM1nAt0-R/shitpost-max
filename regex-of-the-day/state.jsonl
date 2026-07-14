@@ -350,3 +350,4 @@
 {"match_ok":false,"match_test":"w*+","nonmatch_ok":true,"nonmatch_test":"w*6","pattern":"w*+","tick":317,"timestamp":"2026-07-14T15:32:39.648426+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":318,"timestamp":"2026-07-14T15:33:39.409054+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":319,"timestamp":"2026-07-14T15:34:38.823787+00:00"}
+{"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":320,"timestamp":"2026-07-14T15:35:39.752730+00:00"}
