@@ -195,3 +195,4 @@
 {"seed_bigram":"the park.","sentence":"the park. the cat chased the dog around the park.","tick":195,"timestamp":"2026-07-14T12:54:24.643156+00:00","word_count":10}
 {"seed_bigram":"dog around","sentence":"dog around the park.","tick":196,"timestamp":"2026-07-14T12:55:26.252178+00:00","word_count":4}
 {"seed_bigram":"the park.","sentence":"the park. the cat chased the dog ran in the park.","tick":197,"timestamp":"2026-07-14T12:56:26.234979+00:00","word_count":11}
+{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":198,"timestamp":"2026-07-14T12:57:29.402899+00:00","word_count":4}
