@@ -1,1 +1,1 @@
-{"accepted":false,"length":0,"palindrome":"Here is a 167-character palindrome:\n\n\"Was it a car or a cat I saw? Yes, it was a car.\"\n\nThis sentence, when reversed, still forms the same message, making it both a palindrome and an interesting phrase about cars and cats. It's worth noting that not all palindromes have to be meaningful sentences; some are simply constructed to meet the requirement of symmetry in their characters.","target":165,"tick":125}
+{"accepted":true,"length":19,"palindrome":"Able was I ere I saw Elba.","target":170,"tick":126}
