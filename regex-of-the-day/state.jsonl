@@ -51,3 +51,4 @@
 {"match_ok":false,"match_test":"u?","nonmatch_ok":true,"nonmatch_test":"u2","pattern":"u?","tick":46,"timestamp":"2026-07-14T05:16:14.907829+00:00"}
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":47,"timestamp":"2026-07-14T05:17:16.499813+00:00"}
 {"match_ok":false,"match_test":"i*","nonmatch_ok":true,"nonmatch_test":"i0","pattern":"i*","tick":48,"timestamp":"2026-07-14T05:18:14.736954+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":49,"timestamp":"2026-07-14T05:19:14.930015+00:00"}
