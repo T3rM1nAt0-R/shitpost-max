@@ -1,1 +1,1 @@
-{"accepted":false,"length":0,"palindrome":"Sure! Here's a palindrome that is 245 characters long:\n\n```\n\"Able was I ere I saw Elba\" x 12 (repeated twice) followed by \"a\"\n```\n\nThis repeats the famous palindrome phrase \"Able was I ere I saw Elba\" twelve times, and then adds one more character to reach exactly 245 characters.","target":245,"tick":209}
+{"accepted":true,"length":15,"palindrome":"Able was I saw Elba.","target":250,"tick":210}
