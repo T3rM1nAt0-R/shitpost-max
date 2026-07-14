@@ -199,3 +199,4 @@
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":177,"timestamp":"2026-07-14T12:58:24.391051+00:00"}
 {"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"r8","pattern":"r+","tick":178,"timestamp":"2026-07-14T12:59:24.571813+00:00"}
 {"match_ok":false,"match_test":"q+","nonmatch_ok":true,"nonmatch_test":"r+","pattern":"q+","tick":179,"timestamp":"2026-07-14T13:00:24.372197+00:00"}
+{"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":180,"timestamp":"2026-07-14T13:01:25.196022+00:00"}
