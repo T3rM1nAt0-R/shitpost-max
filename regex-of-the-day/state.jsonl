@@ -502,3 +502,4 @@
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":456,"timestamp":"2026-07-14T18:04:39.949944+00:00"}
 {"match_ok":false,"match_test":"n+","nonmatch_ok":true,"nonmatch_test":"n4","pattern":"n+","tick":457,"timestamp":"2026-07-14T18:05:39.952052+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":458,"timestamp":"2026-07-14T18:06:43.025397+00:00"}
+{"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":459,"timestamp":"2026-07-14T18:07:41.196570+00:00"}
