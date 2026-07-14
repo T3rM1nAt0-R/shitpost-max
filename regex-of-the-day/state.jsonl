@@ -579,3 +579,4 @@
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":527,"timestamp":"2026-07-14T19:21:40.320363+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":528,"timestamp":"2026-07-14T19:22:40.410912+00:00"}
 {"match_ok":false,"match_test":"(d|b)","nonmatch_ok":true,"nonmatch_test":"(d|b5","pattern":"(d|b)","tick":529,"timestamp":"2026-07-14T19:23:40.366529+00:00"}
+{"match_ok":false,"match_test":"(j|z)","nonmatch_ok":true,"nonmatch_test":"(k|z)","pattern":"(j|z)","tick":530,"timestamp":"2026-07-14T19:24:40.353207+00:00"}
