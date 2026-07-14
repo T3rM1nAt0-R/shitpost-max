@@ -20,7 +20,7 @@ class LogRotatorPlugin(Shitpost):
 
     name = "log-rotator"
     internal = False
-    commit_template = "rotate: {files_kept} files kept, old_size={old_size} gz_size={gz_size}"
+    commit_template = "tick {tick} @ {timestamp}"
 
     def __init__(self):
         super().__init__()
