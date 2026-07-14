@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cron entry point for the rag-decay plugin."""
+"""Cron entry point for the crypto-tick plugin."""
 
 import os
 import sys
@@ -8,8 +8,8 @@ import sys
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _REPO_ROOT)
 
-from rag_decay_plugin import RagDecayPlugin  # noqa: E402
+from crypto_tick_plugin import CryptoTickPlugin  # noqa: E402
 
 
 if __name__ == "__main__":
-    RagDecayPlugin().run_tick()
+    CryptoTickPlugin().run_tick()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cron entry point for the rag-decay plugin."""
+"""Cron entry point for the model-diff plugin."""
 
 import os
 import sys
@@ -8,8 +8,8 @@ import sys
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _REPO_ROOT)
 
-from rag_decay_plugin import RagDecayPlugin  # noqa: E402
+from model_diff_plugin import ModelDiffPlugin  # noqa: E402
 
 
 if __name__ == "__main__":
-    RagDecayPlugin().run_tick()
+    ModelDiffPlugin().run_tick()

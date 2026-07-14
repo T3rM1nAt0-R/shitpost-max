@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Cron entry point for the 10x-engineer plugin."""
 
+import importlib.util
 import os
 import sys
 
@@ -8,7 +9,14 @@ import sys
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _REPO_ROOT)
 
-from 10x_engineer_plugin import TenXEngineerPlugin  # noqa: E402
+# "10x_engineer_plugin" isn't a valid Python identifier (starts with a
+# digit), so a literal `from 10x_engineer_plugin import ...` is a syntax
+# error, not just a missing-module error -- load it by file path instead.
+_MODULE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "10x_engineer_plugin.py")
+_spec = importlib.util.spec_from_file_location("tenx_engineer_plugin", _MODULE_PATH)
+_mod = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_mod)
+TenXEngineerPlugin = _mod.TenXEngineerPlugin
 
 
 if __name__ == "__main__":
