@@ -835,3 +835,4 @@
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":766,"timestamp":"2026-07-14T23:37:40.776494+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":767,"timestamp":"2026-07-14T23:38:40.644007+00:00"}
 {"match_ok":false,"match_test":"((c|c)|h)+","nonmatch_ok":true,"nonmatch_test":"((c1c)|h)+","pattern":"((c|c)|h)+","tick":768,"timestamp":"2026-07-14T23:39:40.577652+00:00"}
+{"match_ok":false,"match_test":"(i|i++)","nonmatch_ok":true,"nonmatch_test":"(i|j++)","pattern":"(i|i++)","tick":769,"timestamp":"2026-07-14T23:40:40.970106+00:00"}
