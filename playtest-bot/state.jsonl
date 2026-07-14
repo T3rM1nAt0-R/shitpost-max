@@ -1,2 +1,3 @@
 {"agent":"heuristic","final_score":3852,"game_length":298,"max_tile":256,"tick":0,"timestamp":"2026-07-14T04:13:01.363324+00:00"}
 {"agent":"heuristic","final_score":4048,"game_length":312,"max_tile":256,"tick":0,"timestamp":"2026-07-14T04:23:54.061132+00:00"}
+{"agent":"random","final_score":632,"game_length":80,"max_tile":64,"tick":1,"timestamp":"2026-07-14T04:30:04.285332+00:00"}
