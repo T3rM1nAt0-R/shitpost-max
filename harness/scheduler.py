@@ -184,7 +184,26 @@ PLUGINS = [
 PUSH_CADENCE_SECONDS = 20
 
 
-def run_tick_subprocess(plugin_dir: str, repo_root: Path = REPO_ROOT) -> None:
+# Hard ceiling on how long any single plugin's tick.py may run. This is
+# the shared thread pool's only defense against a plugin whose own logic
+# hangs (an infinite retry loop, a stuck network call) rather than crashing:
+# each of the pool's workers blocks on subprocess.run() until the child
+# exits, so one hung tick can quietly occupy a worker forever, and once
+# enough of them pile up (silicon-valley-buzzword-bot did exactly this on
+# 2026-07-14 -- its buzzword-uniqueness loop could never terminate once its
+# small fixed vocabulary was exhausted) the *entire* pool is starved and no
+# other plugin ticks at all, even though each one's own per-plugin flock
+# only prevents that one plugin's ticks from overlapping. 120s is far above
+# every plugin's real cadence-appropriate runtime (the slowest legitimate
+# work, real local LLM inference, is documented above as ~4 minutes at the
+# high end for a couple of plugins -- generous headroom is intentional; the
+# goal is only to bound a genuine hang, not to race normal ticks).
+TICK_TIMEOUT_SECONDS = 300
+
+
+def run_tick_subprocess(
+    plugin_dir: str, repo_root: Path = REPO_ROOT, timeout: float = TICK_TIMEOUT_SECONDS
+) -> None:
     """Run one plugin's tick.py as a subprocess, exactly like cron would."""
     try:
         result = subprocess.run(
@@ -192,12 +211,18 @@ def run_tick_subprocess(plugin_dir: str, repo_root: Path = REPO_ROOT) -> None:
             cwd=repo_root / plugin_dir,
             capture_output=True,
             text=True,
+            timeout=timeout,
         )
         if result.returncode != 0:
             print(
                 f"[{plugin_dir}] tick.py exited {result.returncode}: {result.stderr}",
                 file=sys.stderr,
             )
+    except subprocess.TimeoutExpired:
+        print(
+            f"[{plugin_dir}] tick.py timed out after {timeout}s, killed",
+            file=sys.stderr,
+        )
     except Exception as exc:
         # Runs inside a thread pool worker (see _TICK_EXECUTOR) - an
         # exception here would otherwise be silently swallowed by
