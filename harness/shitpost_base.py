@@ -268,7 +268,18 @@ class Shitpost(ABC):
         plugin_dir = self._plugin_dir()
         with _repo_git_lock(self._repo_git_lock_path()):
             subprocess.run(
-                ["git", "add", "state.jsonl", "summary.json"],
+                # -f: .gitignore blanket-ignores **/state.jsonl and
+                # **/summary.json (added 2026-07-13) so these two specific,
+                # deliberately-tracked files aren't accidentally caught by
+                # that same blanket rule for a brand-new plugin whose state
+                # files have never been committed before -- git doesn't
+                # retroactively apply .gitignore to already-tracked files,
+                # which is why this only ever showed up for a plugin's very
+                # first tick (caught 2026-07-14 registering 93 new plugins
+                # in the scheduler for the first time; the 6 pre-existing
+                # ones never hit this because their state files predated
+                # the gitignore rule).
+                ["git", "add", "-f", "state.jsonl", "summary.json"],
                 cwd=plugin_dir,
                 check=True,
             )
