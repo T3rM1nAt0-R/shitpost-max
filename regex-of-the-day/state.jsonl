@@ -653,3 +653,4 @@
 {"match_ok":false,"match_test":"q*","nonmatch_ok":true,"nonmatch_test":"q2","pattern":"q*","tick":594,"timestamp":"2026-07-14T20:35:40.058956+00:00"}
 {"match_ok":false,"match_test":"(s+|s*)","nonmatch_ok":true,"nonmatch_test":"(s+|s6)","pattern":"(s+|s*)","tick":595,"timestamp":"2026-07-14T20:36:41.877905+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":596,"timestamp":"2026-07-14T20:37:39.797423+00:00"}
+{"match_ok":false,"match_test":"(f+|r+)","nonmatch_ok":true,"nonmatch_test":"9f+|r+)","pattern":"(f+|r+)","tick":597,"timestamp":"2026-07-14T20:38:50.362773+00:00"}
