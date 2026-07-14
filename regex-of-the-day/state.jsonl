@@ -660,3 +660,4 @@
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":601,"timestamp":"2026-07-14T20:42:40.588734+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":602,"timestamp":"2026-07-14T20:43:40.300104+00:00"}
 {"match_ok":false,"match_test":"(i|t+)","nonmatch_ok":true,"nonmatch_test":"(i|t+0","pattern":"(i|t+)","tick":603,"timestamp":"2026-07-14T20:44:40.745196+00:00"}
+{"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":604,"timestamp":"2026-07-14T20:45:40.535832+00:00"}
