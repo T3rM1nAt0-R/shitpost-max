@@ -368,3 +368,4 @@
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":334,"timestamp":"2026-07-14T15:50:39.336529+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":335,"timestamp":"2026-07-14T15:51:39.222919+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":336,"timestamp":"2026-07-14T15:52:40.154154+00:00"}
+{"match_ok":false,"match_test":"((b+|(g|e))*|((s|h)|(l|c)+))","nonmatch_ok":true,"nonmatch_test":"((b+|(g|e))*|((s|i)|(l|c)+))","pattern":"((b+|(g|e))*|((s|h)|(l|c)+))","tick":337,"timestamp":"2026-07-14T15:53:39.349829+00:00"}
