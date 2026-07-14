@@ -561,3 +561,4 @@
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":511,"timestamp":"2026-07-14T19:03:40.100596+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":512,"timestamp":"2026-07-14T19:04:40.539327+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":513,"timestamp":"2026-07-14T19:05:39.971152+00:00"}
+{"match_ok":false,"match_test":"f+","nonmatch_ok":true,"nonmatch_test":"f1","pattern":"f+","tick":514,"timestamp":"2026-07-14T19:06:41.802430+00:00"}
