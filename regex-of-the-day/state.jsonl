@@ -800,3 +800,4 @@
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":734,"timestamp":"2026-07-14T23:02:40.438364+00:00"}
 {"match_ok":false,"match_test":"(h|i)","nonmatch_ok":true,"nonmatch_test":"1h|i)","pattern":"(h|i)","tick":735,"timestamp":"2026-07-14T23:04:06.373725+00:00"}
 {"match_ok":false,"match_test":"((d|b)|(j+|(y|a)++))","nonmatch_ok":true,"nonmatch_test":"((d|b)|(j+|(z|a)++))","pattern":"((d|b)|(j+|(y|a)++))","tick":736,"timestamp":"2026-07-14T23:04:40.918361+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":737,"timestamp":"2026-07-14T23:05:41.554269+00:00"}
