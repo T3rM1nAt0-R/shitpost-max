@@ -10,3 +10,4 @@
 {"seed_bigram":"the cat","sentence":"the cat sat on the mat.","tick":10,"timestamp":"2026-07-14T04:33:13.179628+00:00","word_count":6}
 {"seed_bigram":"the mat.","sentence":"the mat. the dog around the park.","tick":11,"timestamp":"2026-07-14T04:34:08.506901+00:00","word_count":7}
 {"seed_bigram":"in the","sentence":"in the park.","tick":12,"timestamp":"2026-07-14T04:39:07.283183+00:00","word_count":3}
+{"seed_bigram":"on the","sentence":"on the mat.","tick":13,"timestamp":"2026-07-14T04:39:30.514131+00:00","word_count":3}
