@@ -318,3 +318,4 @@
 {"match_ok":false,"match_test":"c+","nonmatch_ok":true,"nonmatch_test":"d+","pattern":"c+","tick":289,"timestamp":"2026-07-14T15:00:39.284967+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":290,"timestamp":"2026-07-14T15:01:39.241325+00:00"}
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":291,"timestamp":"2026-07-14T15:02:39.162828+00:00"}
+{"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":292,"timestamp":"2026-07-14T15:03:39.394711+00:00"}
