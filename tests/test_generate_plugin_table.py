@@ -45,7 +45,11 @@ def _first_docstring_line(plugin_dir_name: str) -> str:
 def test_discover_plugin_dirs_includes_known_public_plugins():
     dirs = set(discover_plugin_dirs(REPO_ROOT))
     assert KNOWN_PUBLIC_PLUGINS <= dirs
-    assert "uptime-witness" in dirs
+    # tunnel-health is an arbitrary still-existing internal plugin, just
+    # confirming discovery finds internal dirs too, not only public ones
+    # (uptime-witness used to be the example here, retired 2026-07-14
+    # in favor of the already-live Uptime Kuma instance).
+    assert "tunnel-health" in dirs
     assert "harness" not in dirs
     assert "tests" not in dirs
     assert "tools" not in dirs
@@ -67,7 +71,7 @@ def test_public_plugins_appear_with_real_docstring_descriptions():
 
 def test_internal_plugin_is_skipped():
     rows = dict(collect_plugin_rows(REPO_ROOT))
-    assert "uptime-witness" not in rows
+    assert "tunnel-health" not in rows
 
 
 def test_check_passes_when_readme_is_fresh():

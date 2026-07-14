@@ -80,7 +80,6 @@ from harness.shitpost_base import git_push  # noqa: E402
 # produce() call can itself take minutes.
 PLUGINS = [
     ("pi-spigot", 60),
-    ("uptime-witness", 60),
     ("golden-ratio", 60),
     ("fibonacci-full", 60),
     ("base-converter", 60),
@@ -107,8 +106,6 @@ PLUGINS = [
     ("dice-fairness", 60),
     ("diff-engine", 60),
     ("digits-of-tau", 60),
-    ("disk-canary", 600),
-    ("docker-census", 600),
     ("domain-watch", 600),
     ("dungeon-of-the-day", 60),
     ("e-stream", 60),
@@ -151,7 +148,6 @@ PLUGINS = [
     ("primes-forever", 60),
     ("prompt-injection-lab", 600),
     ("rag-decay", 600),
-    ("ram-witness", 60),
     ("rate-limit-lab", 60),
     ("reddit-titles", 600),
     ("regex-of-the-day", 60),
@@ -167,7 +163,6 @@ PLUGINS = [
     ("sqrt2-stream", 60),
     ("steam-playercount", 600),
     ("subscription-audit", 60),
-    ("temp-log", 600),
     ("temperature-lab", 600),
     ("thought-leader", 60),
     ("token-golf", 60),
