@@ -548,3 +548,4 @@
 {"match_ok":false,"match_test":"(k|z)","nonmatch_ok":true,"nonmatch_test":"(l|z)","pattern":"(k|z)","tick":500,"timestamp":"2026-07-14T18:50:40.241598+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":501,"timestamp":"2026-07-14T18:51:40.395404+00:00"}
 {"match_ok":false,"match_test":"(((q|s)+|v+)|j)","nonmatch_ok":true,"nonmatch_test":"(((q|s)+|w+)|j)","pattern":"(((q|s)+|v+)|j)","tick":502,"timestamp":"2026-07-14T18:52:39.662476+00:00"}
+{"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":503,"timestamp":"2026-07-14T18:53:40.274609+00:00"}
