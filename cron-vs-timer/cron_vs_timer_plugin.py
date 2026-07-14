@@ -9,7 +9,7 @@ class CronVsTimerPlugin(Shitpost):
 
     name = "cron-vs-timer"
     internal = False
-    commit_template = "cron={c} timer={t} diff={d}"
+    commit_template = "cron={cron} timer={timer}"
 
     def __init__(self):
         super().__init__()
