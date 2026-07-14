@@ -339,3 +339,4 @@
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":308,"timestamp":"2026-07-14T15:21:40.269568+00:00"}
 {"match_ok":false,"match_test":"d++","nonmatch_ok":true,"nonmatch_test":"d+1","pattern":"d++","tick":309,"timestamp":"2026-07-14T15:22:39.713704+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":310,"timestamp":"2026-07-14T15:23:39.306412+00:00"}
+{"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":311,"timestamp":"2026-07-14T15:24:39.224887+00:00"}
