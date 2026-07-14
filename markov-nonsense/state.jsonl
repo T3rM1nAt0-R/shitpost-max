@@ -377,3 +377,4 @@
 {"seed_bigram":"in the","sentence":"in the park.","tick":377,"timestamp":"2026-07-14T15:59:39.433531+00:00","word_count":3}
 {"seed_bigram":"around the","sentence":"around the park.","tick":378,"timestamp":"2026-07-14T16:00:39.876774+00:00","word_count":3}
 {"seed_bigram":"dog around","sentence":"dog around the park.","tick":379,"timestamp":"2026-07-14T16:01:39.233186+00:00","word_count":4}
+{"seed_bigram":"the dog","sentence":"the dog ran in the park.","tick":380,"timestamp":"2026-07-14T16:02:38.872025+00:00","word_count":6}
