@@ -233,3 +233,4 @@
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":209,"timestamp":"2026-07-14T13:32:24.932396+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":210,"timestamp":"2026-07-14T13:33:25.313544+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":211,"timestamp":"2026-07-14T13:34:24.672275+00:00"}
+{"match_ok":false,"match_test":"n*","nonmatch_ok":true,"nonmatch_test":"n3","pattern":"n*","tick":212,"timestamp":"2026-07-14T13:35:27.542678+00:00"}
