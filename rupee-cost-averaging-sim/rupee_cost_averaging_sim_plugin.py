@@ -38,6 +38,7 @@ class RupeeCostAveragingSimPlugin(Shitpost):
 
         return {
             "timestamp": datetime.now(timezone.utc).isoformat(),
+            "tick": state["tick"],
             "price": price,
             "invested": investment_amount,
             "units_bought": units_bought,
