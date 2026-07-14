@@ -599,3 +599,4 @@
 {"match_ok":false,"match_test":"j+","nonmatch_ok":true,"nonmatch_test":"j1","pattern":"j+","tick":546,"timestamp":"2026-07-14T19:41:40.384235+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":547,"timestamp":"2026-07-14T19:42:39.961617+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":548,"timestamp":"2026-07-14T19:43:40.321419+00:00"}
+{"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":549,"timestamp":"2026-07-14T19:44:40.344206+00:00"}
