@@ -337,3 +337,4 @@
 {"seed_bigram":"dog around","sentence":"dog around the park.","tick":337,"timestamp":"2026-07-14T15:19:39.121829+00:00","word_count":4}
 {"seed_bigram":"sat on","sentence":"sat on the mat.","tick":338,"timestamp":"2026-07-14T15:20:38.581120+00:00","word_count":4}
 {"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":339,"timestamp":"2026-07-14T15:21:39.350470+00:00","word_count":5}
+{"seed_bigram":"on the","sentence":"on the mat.","tick":340,"timestamp":"2026-07-14T15:22:38.898124+00:00","word_count":3}
