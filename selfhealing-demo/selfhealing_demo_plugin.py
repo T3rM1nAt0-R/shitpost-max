@@ -9,7 +9,7 @@ from harness.shitpost_base import Shitpost
 class CrashServicePlugin(Shitpost):
     """Simulate a service that crashes at random intervals."""
 
-    name = "crash-service"
+    name = "selfhealing-demo"
     internal = False
     commit_template = "selfheal: cycle {tick} crashed after {secs}s"
 

@@ -100,7 +100,7 @@ regression-canary |
 retry-with-backoff | 
 rss-firehose | 
 rupee-cost-averaging-sim | 
-crash-service | 
+selfhealing-demo | 
 silicon-valley-buzzword-bot | 
 sorting-race | 
 spotify-charts | 

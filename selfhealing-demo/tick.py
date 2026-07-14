@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cron entry point for the crash-service plugin."""
+"""Cron entry point for the selfhealing-demo plugin."""
 
 import os
 import sys
