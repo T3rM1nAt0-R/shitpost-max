@@ -593,3 +593,4 @@
 {"match_ok":false,"match_test":"v++","nonmatch_ok":true,"nonmatch_test":"v+7","pattern":"v++","tick":540,"timestamp":"2026-07-14T19:35:40.197757+00:00"}
 {"match_ok":false,"match_test":"q*+","nonmatch_ok":true,"nonmatch_test":"q*5","pattern":"q*+","tick":541,"timestamp":"2026-07-14T19:36:42.443075+00:00"}
 {"match_ok":false,"match_test":"c+","nonmatch_ok":true,"nonmatch_test":"c2","pattern":"c+","tick":542,"timestamp":"2026-07-14T19:37:40.263110+00:00"}
+{"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":543,"timestamp":"2026-07-14T19:38:40.214126+00:00"}
