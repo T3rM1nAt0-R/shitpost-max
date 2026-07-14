@@ -508,3 +508,4 @@
 {"match_ok":false,"match_test":"i++","nonmatch_ok":true,"nonmatch_test":"i+5","pattern":"i++","tick":461,"timestamp":"2026-07-14T18:10:40.147295+00:00"}
 {"match_ok":false,"match_test":"(r+|b+)+","nonmatch_ok":true,"nonmatch_test":"2r+|b+)+","pattern":"(r+|b+)+","tick":462,"timestamp":"2026-07-14T18:11:40.365527+00:00"}
 {"match_ok":false,"match_test":"(w|y)","nonmatch_ok":true,"nonmatch_test":"(w|y9","pattern":"(w|y)","tick":463,"timestamp":"2026-07-14T18:12:40.215400+00:00"}
+{"match_ok":false,"match_test":"y*+","nonmatch_ok":true,"nonmatch_test":"y0+","pattern":"y*+","tick":464,"timestamp":"2026-07-14T18:13:39.837362+00:00"}
