@@ -2,7 +2,7 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 from harness.shitpost_base import Shitpost
 
@@ -24,7 +24,11 @@ class WikipediaFeatured(Shitpost):
         url = f"https://api.wikimedia.org/feed/v1/wikipedia/en/featured/{today}"
 
         try:
-            with urlopen(url) as response:
+            # Wikimedia's API rejects requests with no descriptive User-Agent
+            # (their own API etiquette policy) with a 403 -- not an auth
+            # issue, just a required identifying header.
+            req = Request(url, headers={"User-Agent": "shitpost-max/1.0 (https://github.com/T3rM1nAt0-R/shitpost-max)"})
+            with urlopen(req) as response:
                 data = json.loads(response.read().decode("utf-8"))
                 tfa = data.get("tfa", {})
                 title = tfa.get("title", "")

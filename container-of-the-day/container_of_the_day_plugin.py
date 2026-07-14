@@ -12,7 +12,7 @@ class ContainerOfTheDayPlugin(Shitpost):
 
     name = "container-of-the-day"
     internal = False
-    commit_template = "cotd: build {id} size={size} duration={dur}s"
+    commit_template = "cotd: day {day} built in {build_duration_s:.2f}s, size={image_size_bytes}B"
 
     def __init__(self):
         super().__init__()
@@ -50,7 +50,17 @@ class ContainerOfTheDayPlugin(Shitpost):
             container_output = run_output.stdout.strip()
 
             build_duration_s = (end_time - start_time).total_seconds()
-            image_size_bytes = int(subprocess.run(["du", "-b", f"/var/lib/docker/overlay2/{image_id}/merged"], capture_output=True, text=True, check=True).stdout.split()[0])
+            # docker build -q returns a full sha256:<digest> image ID, not an
+            # overlay2 directory name (those use internal opaque layer IDs) --
+            # `docker inspect` is the correct, portable way to get an image's
+            # real size, not guessing a filesystem path under
+            # /var/lib/docker/overlay2.
+            image_size_bytes = int(
+                subprocess.run(
+                    ["docker", "inspect", "-f", "{{.Size}}", image_id],
+                    capture_output=True, text=True, check=True,
+                ).stdout.strip()
+            )
 
             log_entry = {
                 "date": datetime.now(timezone.utc).isoformat(),
