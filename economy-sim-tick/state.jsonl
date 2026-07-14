@@ -3,3 +3,4 @@
 {"consumer_surplus":312.5,"prev_price":75.0,"price":75.0,"producer_surplus":937.5,"quantity":25.0,"regime":"diverging","tick":3,"timestamp":"2026-07-14T04:30:25.042038+00:00","total_surplus":1250.0}
 {"consumer_surplus":703.125,"prev_price":62.5,"price":62.5,"producer_surplus":1171.875,"quantity":37.5,"regime":"diverging","tick":4,"timestamp":"2026-07-14T04:30:47.574505+00:00","total_surplus":1875.0}
 {"consumer_surplus":488.28125,"prev_price":68.75,"price":68.75,"producer_surplus":1074.21875,"quantity":31.25,"regime":"oscillating","tick":5,"timestamp":"2026-07-14T04:31:10.626289+00:00","total_surplus":1562.5}
+{"consumer_surplus":590.8203125,"prev_price":65.625,"price":65.625,"producer_surplus":1127.9296875,"quantity":34.375,"regime":"oscillating","tick":6,"timestamp":"2026-07-14T04:31:32.813941+00:00","total_surplus":1718.75}
