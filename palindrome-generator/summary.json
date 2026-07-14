@@ -1,1 +1,1 @@
-{"accepted":false,"length":0,"palindrome":"Here is a palindrome that's at least 190 characters long:\n\n```\nAble was I ere I saw Elba, no lemon, no melon, madam In Eden, I'm Adam. A Toyota\u2019s race fast, a car on a map, a man in a can, racefast, fastcar, and a civic.\n```","target":190,"tick":139}
+{"accepted":true,"length":19,"palindrome":"Able was I ere I saw Elba.","target":195,"tick":140}
