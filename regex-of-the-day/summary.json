@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((b+|(g|e))*|((s|h)|(l|c)+))","nonmatch_ok":true,"nonmatch_test":"((b+|(g|e))*|((s|i)|(l|c)+))","pattern":"((b+|(g|e))*|((s|h)|(l|c)+))","tick":337,"timestamp":"2026-07-14T15:53:39.349820+00:00"}
+{"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":338,"timestamp":"2026-07-14T15:54:39.779138+00:00"}
