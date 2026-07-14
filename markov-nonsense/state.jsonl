@@ -828,3 +828,4 @@
 {"seed_bigram":"chased the","sentence":"chased the dog around the park.","tick":828,"timestamp":"2026-07-14T23:30:39.125351+00:00","word_count":6}
 {"seed_bigram":"the cat","sentence":"the cat chased the dog around the park.","tick":829,"timestamp":"2026-07-14T23:31:38.406144+00:00","word_count":8}
 {"seed_bigram":"ran in","sentence":"ran in the park.","tick":830,"timestamp":"2026-07-14T23:32:38.515039+00:00","word_count":4}
+{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":831,"timestamp":"2026-07-14T23:33:38.991810+00:00","word_count":5}
