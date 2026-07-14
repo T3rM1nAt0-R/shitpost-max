@@ -1,2 +1,3 @@
 {"match_ok":false,"match_test":"o+?","nonmatch_ok":true,"nonmatch_test":"o2?","pattern":"o+?","tick":1,"timestamp":"2026-07-14T04:24:02.732858+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":2,"timestamp":"2026-07-14T04:30:08.671584+00:00"}
+{"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":3,"timestamp":"2026-07-14T04:30:31.949972+00:00"}
