@@ -49,9 +49,22 @@ class SiliconValleyBuzzwordBotPlugin(Shitpost):
 
         state = self._load_persisted_state({"last_generated": "0"})
 
+        # Only 4 prefixes x 4 roots x 4 suffixes = 64 possible buzzwords
+        # exist, and buzzwords.txt never prunes old entries -- so once all
+        # 64 have been seen, this used to spin forever looking for a "new"
+        # one that could never exist (confirmed in production on
+        # 2026-07-14: pegged 8 CPU cores for 5+ hours and starved every
+        # other plugin's tick behind it). Bound the search and start a
+        # fresh cycle instead of hanging once the vocabulary is exhausted.
         buzzword = self._generate_buzzword()
-        while not self._is_unique(buzzword):
+        attempts = 1
+        while not self._is_unique(buzzword) and attempts < 200:
             buzzword = self._generate_buzzword()
+            attempts += 1
+        if not self._is_unique(buzzword):
+            path = os.path.join(plugin_dir, self._buzzwords_file_name)
+            if os.path.exists(path):
+                os.remove(path)
 
         state["last_generated"] = str(datetime.now(timezone.utc).timestamp())
 

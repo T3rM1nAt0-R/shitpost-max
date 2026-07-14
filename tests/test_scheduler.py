@@ -243,3 +243,26 @@ def test_run_tick_subprocess_logs_unhandled_exception_instead_of_crashing_the_po
         run_tick_subprocess("this-plugin-directory-does-not-exist")
 
     assert "unhandled exception" in stderr.getvalue()
+
+
+def test_run_tick_subprocess_kills_and_logs_a_hung_tick_instead_of_blocking_forever(tmp_path):
+    """A plugin whose own logic hangs (e.g. an infinite retry loop) must
+    not be able to occupy a shared executor worker forever -- confirmed in
+    production on 2026-07-14: silicon-valley-buzzword-bot's uniqueness
+    retry loop could never terminate once its small fixed vocabulary was
+    exhausted, and 8 hung ticks (one per worker) starved every other
+    plugin's tick behind them. A bounded ``timeout=`` on subprocess.run is
+    the pool's only defense against a plugin bug of this shape."""
+    import io
+    import contextlib
+
+    from harness.scheduler import run_tick_subprocess
+
+    # A fake "tick.py" that just sleeps well past the test's short timeout.
+    (tmp_path / "tick.py").write_text("import time\ntime.sleep(30)\n")
+
+    stderr = io.StringIO()
+    with contextlib.redirect_stderr(stderr):
+        run_tick_subprocess(".", repo_root=tmp_path, timeout=0.2)
+
+    assert "timed out after 0.2s, killed" in stderr.getvalue()
