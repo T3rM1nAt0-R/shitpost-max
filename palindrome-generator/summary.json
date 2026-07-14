@@ -1,1 +1,1 @@
-{"accepted":false,"length":0,"palindrome":"Able was I saw Elba. Able was I saw Elba.\nAble was I saw Elba. Able was I saw Elba.\nAble was I saw Elba. Able was I saw Elba.\n\nThis sentence is repeated three times, making it a palindrome that is 235 characters long.","target":235,"tick":198}
+{"accepted":true,"length":19,"palindrome":"Able was I ere I saw Elba","target":240,"tick":199}
