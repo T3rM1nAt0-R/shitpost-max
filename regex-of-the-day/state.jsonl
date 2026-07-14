@@ -103,3 +103,4 @@
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":91,"timestamp":"2026-07-14T11:55:39.669169+00:00"}
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":92,"timestamp":"2026-07-14T11:55:43.159755+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":93,"timestamp":"2026-07-14T11:55:46.372846+00:00"}
+{"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":94,"timestamp":"2026-07-14T11:55:49.709902+00:00"}
