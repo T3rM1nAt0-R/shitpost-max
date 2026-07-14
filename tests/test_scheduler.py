@@ -1,4 +1,6 @@
-from harness.scheduler import Scheduler
+import time
+
+from harness.scheduler import Scheduler, submit_tick
 
 
 class FakeClock:
@@ -158,3 +160,86 @@ def test_scheduler_runs_standalone_exactly_as_systemd_invokes_it():
     assert result.returncode == 0, f"stderr: {result.stderr}"
     assert "Import check OK" in result.stdout
     assert "ModuleNotFoundError" not in result.stderr
+
+
+def test_step_does_not_block_on_a_slow_action():
+    """The whole point of offloading ticks to a thread pool (submit_tick):
+    step() returning should not require the actual work to have finished.
+    Regression test for the pre-2026-07-14 design, where a single slow
+    plugin (real LLM inference, real network calls) blocked every other
+    due job behind it in the same single-threaded loop."""
+    clock = FakeClock(start=0.0)
+    started = []
+    finished = []
+    release = []
+
+    def slow_action():
+        started.append(clock.now)
+        # Block this thread (not the scheduler's) until the test lets go.
+        while not release:
+            time.sleep(0.01)
+        finished.append(clock.now)
+
+    import concurrent.futures
+
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+    scheduler = Scheduler(
+        [("slow", 60, lambda: executor.submit(slow_action))],
+        clock=clock,
+        sleeper=lambda s: clock.advance(s),
+    )
+
+    ran = scheduler.step()
+    assert ran == "slow"
+    # step() must have returned already, well before slow_action releases -
+    # proving the scheduler's own loop isn't the thing blocked.
+    deadline = time.monotonic() + 2
+    while not started and time.monotonic() < deadline:
+        time.sleep(0.01)
+    assert started == [0.0]
+    assert finished == []  # still running in the background
+
+    release.append(True)
+    executor.shutdown(wait=True)
+    assert finished == [0.0]
+
+
+def test_submit_tick_dispatches_to_the_shared_executor(monkeypatch):
+    """submit_tick itself (not the generic Scheduler class) is what actually
+    offloads a plugin's tick.py subprocess call to _TICK_EXECUTOR - confirm
+    it does that rather than calling run_tick_subprocess inline."""
+    import concurrent.futures
+
+    import harness.scheduler as scheduler_module
+
+    calls = []
+    monkeypatch.setattr(
+        scheduler_module, "run_tick_subprocess", lambda p: calls.append(p)
+    )
+    test_executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+    monkeypatch.setattr(scheduler_module, "_TICK_EXECUTOR", test_executor)
+
+    submit_tick("some-plugin")
+    test_executor.shutdown(wait=True)
+
+    assert calls == ["some-plugin"]
+
+
+def test_run_tick_subprocess_logs_unhandled_exception_instead_of_crashing_the_pool():
+    """run_tick_subprocess runs inside a thread pool worker (via
+    submit_tick) - an unhandled exception there would otherwise be silently
+    swallowed by concurrent.futures unless something calls .result() on the
+    future, which nothing does (fire-and-forget by design). Confirm it's
+    caught and logged instead."""
+    import io
+    import contextlib
+
+    from harness.scheduler import run_tick_subprocess
+
+    stderr = io.StringIO()
+    with contextlib.redirect_stderr(stderr):
+        # A plugin directory that doesn't exist makes subprocess.run's cwd=
+        # argument raise FileNotFoundError before tick.py ever runs.
+        run_tick_subprocess("this-plugin-directory-does-not-exist")
+
+    assert "unhandled exception" in stderr.getvalue()

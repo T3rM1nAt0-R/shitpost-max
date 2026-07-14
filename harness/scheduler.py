@@ -24,8 +24,29 @@ Two kinds of job share the same heap:
   push into one network round trip. This is what actually lets the whole
   thing scale past a few dozen plugins - see ``git_push``'s docstring in
   ``shitpost_base.py`` for why per-tick pushing doesn't.
+
+2026-07-14: plugin ticks are dispatched to a bounded thread pool
+(``_TICK_EXECUTOR``) instead of running inline inside ``step()``. Before
+this, the whole scheduler was single-threaded and strictly sequential - one
+slow plugin (real network calls, real local LLM inference taking minutes)
+blocked every other plugin's on-time tick behind it. This was invisible at
+6 plugins but became a real, observed problem registering the other 93:
+every job starts "due now" on a cold start, so the first pass ran through
+~99 jobs in alphabetical order, and a handful of genuinely slow ones
+(temperature-lab's real LLM inference alone can take 4+ minutes) delayed
+everything alphabetically after them by that much. Running ticks
+concurrently is safe: ``Shitpost._git_commit`` and ``git_push`` already
+share one repo-wide lock (``.git-push.lock``) for the git operations
+themselves, so concurrent ticks only ever serialize on the actual
+add+commit (milliseconds), while each tick's real work (subprocess spawn,
+network I/O, LLM inference) genuinely runs in parallel. The push job itself
+stays inline in the main loop, not offloaded - it's already fast
+(network round trip, not the bottleneck) and this way it's never starved
+behind a queue of slow tick threads.
 """
+import concurrent.futures
 import heapq
+import os
 import subprocess
 import sys
 import time
@@ -165,17 +186,49 @@ PUSH_CADENCE_SECONDS = 20
 
 def run_tick_subprocess(plugin_dir: str, repo_root: Path = REPO_ROOT) -> None:
     """Run one plugin's tick.py as a subprocess, exactly like cron would."""
-    result = subprocess.run(
-        [sys.executable, "tick.py"],
-        cwd=repo_root / plugin_dir,
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        print(
-            f"[{plugin_dir}] tick.py exited {result.returncode}: {result.stderr}",
-            file=sys.stderr,
+    try:
+        result = subprocess.run(
+            [sys.executable, "tick.py"],
+            cwd=repo_root / plugin_dir,
+            capture_output=True,
+            text=True,
         )
+        if result.returncode != 0:
+            print(
+                f"[{plugin_dir}] tick.py exited {result.returncode}: {result.stderr}",
+                file=sys.stderr,
+            )
+    except Exception as exc:
+        # Runs inside a thread pool worker (see _TICK_EXECUTOR) - an
+        # exception here would otherwise be silently swallowed by
+        # concurrent.futures unless something calls .result() on the
+        # future, which nothing does (fire-and-forget by design).
+        print(f"[{plugin_dir}] unhandled exception dispatching tick: {exc}", file=sys.stderr)
+
+
+# Bounded worker pool plugin ticks are dispatched to, so a burst of
+# simultaneously-due jobs (every job starts "due now" on a cold start) runs
+# concurrently instead of piling up behind a single sequential loop. Kept
+# modest by default - this is spawning real subprocesses (each with its own
+# interpreter startup cost) and some plugins do real local LLM inference,
+# which is itself CPU/GPU-bound on the same host running this scheduler, so
+# unbounded concurrency would just trade "slow scheduler" for "slow
+# everything else on the box." Override via SCHEDULER_MAX_WORKERS if needed.
+_TICK_EXECUTOR = concurrent.futures.ThreadPoolExecutor(
+    max_workers=int(os.environ.get("SCHEDULER_MAX_WORKERS", "8")),
+    thread_name_prefix="tick",
+)
+
+
+def submit_tick(plugin_dir: str) -> None:
+    """Dispatch one plugin's tick to the background thread pool and return
+    immediately, instead of blocking the scheduler's main loop until it
+    finishes. Safe even if the same plugin's previous tick is still
+    running when this one is submitted: Shitpost.run_tick's own
+    ``.tick.lock`` (non-blocking flock) makes the second invocation log
+    "tick already in progress, skipping" and return immediately, rather
+    than racing on the same plugin's own state files."""
+    _TICK_EXECUTOR.submit(run_tick_subprocess, plugin_dir)
 
 
 def push_job(repo_root: Path = REPO_ROOT) -> None:
@@ -235,9 +288,11 @@ class Scheduler:
 
 def default_jobs():
     jobs = [
-        (plugin_dir, cadence, lambda p=plugin_dir: run_tick_subprocess(p))
+        (plugin_dir, cadence, lambda p=plugin_dir: submit_tick(p))
         for plugin_dir, cadence in PLUGINS
     ]
+    # push is NOT offloaded to _TICK_EXECUTOR - stays inline in the main
+    # scheduler loop (see module docstring for why).
     jobs.append(("push", PUSH_CADENCE_SECONDS, push_job))
     return jobs
 
