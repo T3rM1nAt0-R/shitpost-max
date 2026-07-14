@@ -708,3 +708,4 @@
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":647,"timestamp":"2026-07-14T21:30:40.519649+00:00"}
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":648,"timestamp":"2026-07-14T21:31:40.288960+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":649,"timestamp":"2026-07-14T21:32:39.701817+00:00"}
+{"match_ok":false,"match_test":"k+","nonmatch_ok":true,"nonmatch_test":"l+","pattern":"k+","tick":650,"timestamp":"2026-07-14T21:33:40.527190+00:00"}
