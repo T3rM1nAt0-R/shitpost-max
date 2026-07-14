@@ -11,7 +11,7 @@ class AnagramHunterPlugin(Shitpost):
 
     name = "anagram-hunter"
     internal = False
-    commit_template = "anagram: {word1} <-> {word2}"
+    commit_template = "anagram: {set_size} word(s) matching '{signature}'"
 
     def __init__(self):
         super().__init__()
