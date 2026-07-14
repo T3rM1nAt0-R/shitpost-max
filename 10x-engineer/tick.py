@@ -15,6 +15,11 @@ sys.path.insert(0, _REPO_ROOT)
 _MODULE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "10x_engineer_plugin.py")
 _spec = importlib.util.spec_from_file_location("tenx_engineer_plugin", _MODULE_PATH)
 _mod = importlib.util.module_from_spec(_spec)
+# _plugin_dir() (harness/shitpost_base.py) looks itself up via
+# sys.modules[self.__class__.__module__] -- must be registered there
+# under the same name passed to spec_from_file_location, or that lookup
+# KeyErrors.
+sys.modules[_spec.name] = _mod
 _spec.loader.exec_module(_mod)
 TenXEngineerPlugin = _mod.TenXEngineerPlugin
 

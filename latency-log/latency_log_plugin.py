@@ -12,7 +12,7 @@ class LatencyLogPlugin(Shitpost):
 
     name = "latency-log"
     internal = True
-    commit_template = "latency: cloudflare {cf_avg_ms}ms, domain {domain_avg_ms}ms"
+    commit_template = "latency: cloudflare {cloudflare_avg_ms}ms, domain {domain_avg_ms}ms"
 
     def __init__(self):
         super().__init__()
@@ -59,15 +59,15 @@ class LatencyLogPlugin(Shitpost):
         })
         tick = state["tick"] + 1
 
-        targets = ["1.1.1.1", "nirajsangani.com"]
+        targets = [("1.1.1.1", "cloudflare"), ("nirajsangani.com", "domain")]
         ping_count = 3
 
-        for target in targets:
+        for target, state_key in targets:
             result = self._ping(target, ping_count)
             avg_ms = result["avg_ms"]
             packet_loss = result["packet_loss"]
 
-            target_state = state.setdefault(target, {})
+            target_state = state.setdefault(state_key, {})
             target_state["avg_ms"] = avg_ms
             target_state["packet_loss"] = packet_loss
 
