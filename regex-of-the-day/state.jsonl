@@ -851,3 +851,4 @@
 {"match_ok":false,"match_test":"c++","nonmatch_ok":true,"nonmatch_test":"c+4","pattern":"c++","tick":781,"timestamp":"2026-07-14T23:53:40.915674+00:00"}
 {"match_ok":false,"match_test":"v+","nonmatch_ok":true,"nonmatch_test":"w+","pattern":"v+","tick":782,"timestamp":"2026-07-14T23:54:40.959589+00:00"}
 {"match_ok":false,"match_test":"(e+|v)","nonmatch_ok":true,"nonmatch_test":"9e+|v)","pattern":"(e+|v)","tick":783,"timestamp":"2026-07-14T23:55:40.878953+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":784,"timestamp":"2026-07-14T23:56:43.516822+00:00"}
