@@ -3,7 +3,6 @@ import os
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
 
@@ -89,7 +88,6 @@ class EarthquakeLogPlugin(Shitpost):
         self._save_persisted_state(state)
 
         return {
-            "tick": datetime.now(timezone.utc).isoformat(),
             "count": count,
             "max_magnitude": max_magnitude,
             "top_event": top_event,
