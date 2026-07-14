@@ -185,3 +185,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":165,"timestamp":"2026-07-14T12:44:24.839645+00:00"}
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"a+","pattern":"z+","tick":166,"timestamp":"2026-07-14T12:45:27.043223+00:00"}
 {"match_ok":false,"match_test":"(d*|(l|r))","nonmatch_ok":true,"nonmatch_test":"(d*0(l|r))","pattern":"(d*|(l|r))","tick":167,"timestamp":"2026-07-14T12:46:25.195916+00:00"}
+{"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":168,"timestamp":"2026-07-14T12:47:24.791877+00:00"}
