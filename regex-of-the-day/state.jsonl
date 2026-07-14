@@ -10,3 +10,4 @@
 {"match_ok":false,"match_test":"(a|(y|z))","nonmatch_ok":true,"nonmatch_test":"(a|(y|z3)","pattern":"(a|(y|z))","tick":9,"timestamp":"2026-07-14T04:33:18.780348+00:00"}
 {"match_ok":false,"match_test":"l+","nonmatch_ok":true,"nonmatch_test":"m+","pattern":"l+","tick":10,"timestamp":"2026-07-14T04:34:19.143282+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":11,"timestamp":"2026-07-14T04:39:13.469582+00:00"}
+{"match_ok":false,"match_test":"(g|n)","nonmatch_ok":true,"nonmatch_test":"(g|o)","pattern":"(g|n)","tick":12,"timestamp":"2026-07-14T04:39:35.905986+00:00"}
