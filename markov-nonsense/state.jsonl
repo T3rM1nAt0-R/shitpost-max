@@ -219,3 +219,4 @@
 {"seed_bigram":"in the","sentence":"in the park.","tick":219,"timestamp":"2026-07-14T13:18:24.408722+00:00","word_count":3}
 {"seed_bigram":"around the","sentence":"around the park.","tick":220,"timestamp":"2026-07-14T13:19:24.113432+00:00","word_count":3}
 {"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":221,"timestamp":"2026-07-14T13:20:24.267813+00:00","word_count":5}
+{"seed_bigram":"mat. the","sentence":"mat. the dog around the park.","tick":222,"timestamp":"2026-07-14T13:21:24.175693+00:00","word_count":6}
