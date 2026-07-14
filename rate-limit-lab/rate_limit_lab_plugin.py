@@ -9,7 +9,7 @@ class RateLimitLabPlugin(Shitpost):
 
     name = "rate-limit-lab"
     internal = False
-    commit_template = "ratelimit: aggressive={a_429s}/{a_total} compliant={c_429s}/{c_total}"
+    commit_template = "ratelimit: aggressive={aggressive_429s}/{aggressive_total} compliant={compliant_429s}/{compliant_total}"
 
     def _persisted_state_path(self) -> str:
         """Preserve legacy filename so existing persisted state is not lost."""
