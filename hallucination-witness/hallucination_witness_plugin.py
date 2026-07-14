@@ -142,4 +142,6 @@ class HallucinationWitnessPlugin(Shitpost):
             "verdict": verdict,
             "category": fact["category"],
             "timestamp": datetime.now(timezone.utc).isoformat(),
+            "acc_30": summary["acc_30"],
+            "acc_all": summary["acc_all"],
         }
