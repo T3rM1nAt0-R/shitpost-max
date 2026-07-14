@@ -12,7 +12,7 @@ class GachaOraclePlugin(Shitpost):
 
     name = "gacha-oracle"
     internal = False
-    commit_template = "gacha: pull {n} = {outcome} (pity {pity_at_pull})"
+    commit_template = "gacha: pull {tick} = {outcome} (pity {pity_at_pull})"
 
     def __init__(self):
         super().__init__()
