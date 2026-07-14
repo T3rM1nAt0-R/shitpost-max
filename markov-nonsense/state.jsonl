@@ -781,3 +781,4 @@
 {"seed_bigram":"park. the","sentence":"park. the cat sat on the mat.","tick":781,"timestamp":"2026-07-14T22:43:39.346512+00:00","word_count":7}
 {"seed_bigram":"sat on","sentence":"sat on the mat.","tick":782,"timestamp":"2026-07-14T22:46:24.428480+00:00","word_count":4}
 {"seed_bigram":"the park.","sentence":"the park. the cat chased the dog around the park.","tick":783,"timestamp":"2026-07-14T22:46:28.775235+00:00","word_count":10}
+{"seed_bigram":"dog around","sentence":"dog around the park.","tick":784,"timestamp":"2026-07-14T22:46:50.316547+00:00","word_count":4}
