@@ -157,3 +157,4 @@
 {"match_ok":false,"match_test":"(p++|(f|e))","nonmatch_ok":true,"nonmatch_test":"(p++|(g|e))","pattern":"(p++|(f|e))","tick":141,"timestamp":"2026-07-14T12:16:25.524953+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":142,"timestamp":"2026-07-14T12:17:25.421356+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":143,"timestamp":"2026-07-14T12:18:25.762672+00:00"}
+{"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":144,"timestamp":"2026-07-14T12:19:25.506454+00:00"}
