@@ -451,3 +451,4 @@
 {"match_ok":false,"match_test":"(c|p)","nonmatch_ok":true,"nonmatch_test":"(d|p)","pattern":"(c|p)","tick":413,"timestamp":"2026-07-14T17:13:39.987458+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":414,"timestamp":"2026-07-14T17:14:39.872613+00:00"}
 {"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"s3","pattern":"s+","tick":415,"timestamp":"2026-07-14T17:15:40.181883+00:00"}
+{"match_ok":false,"match_test":"d+","nonmatch_ok":true,"nonmatch_test":"e+","pattern":"d+","tick":416,"timestamp":"2026-07-14T17:16:41.313882+00:00"}
