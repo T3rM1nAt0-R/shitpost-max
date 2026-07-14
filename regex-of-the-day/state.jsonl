@@ -515,3 +515,4 @@
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":468,"timestamp":"2026-07-14T18:17:40.269054+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":469,"timestamp":"2026-07-14T18:18:40.109964+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":470,"timestamp":"2026-07-14T18:19:39.547243+00:00"}
+{"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"s1","pattern":"s+","tick":471,"timestamp":"2026-07-14T18:20:40.084840+00:00"}
