@@ -11,7 +11,7 @@ class CrashServicePlugin(Shitpost):
 
     name = "crash-service"
     internal = False
-    commit_template = "selfheal: cycle {n} crashed after {secs}s"
+    commit_template = "selfheal: cycle {tick} crashed after {secs}s"
 
     def _persisted_state_path(self) -> str:
         return os.path.join(self._plugin_dir(), "crash_state.json")
