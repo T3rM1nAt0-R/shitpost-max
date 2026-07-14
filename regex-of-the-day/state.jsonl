@@ -437,3 +437,4 @@
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":400,"timestamp":"2026-07-14T16:59:41.352926+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":401,"timestamp":"2026-07-14T17:00:39.961528+00:00"}
 {"match_ok":false,"match_test":"((d|d+)|e)+","nonmatch_ok":true,"nonmatch_test":"((d|d+)|f)+","pattern":"((d|d+)|e)+","tick":402,"timestamp":"2026-07-14T17:01:40.273467+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":403,"timestamp":"2026-07-14T17:02:39.526569+00:00"}
