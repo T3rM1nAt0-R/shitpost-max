@@ -938,3 +938,4 @@
 {"match_ok":false,"match_test":"u+","nonmatch_ok":true,"nonmatch_test":"v+","pattern":"u+","tick":866,"timestamp":"2026-07-15T01:20:41.445819+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":867,"timestamp":"2026-07-15T01:21:41.312137+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":868,"timestamp":"2026-07-15T01:22:42.216626+00:00"}
+{"match_ok":false,"match_test":"x*","nonmatch_ok":true,"nonmatch_test":"x1","pattern":"x*","tick":869,"timestamp":"2026-07-15T01:23:42.078457+00:00"}
