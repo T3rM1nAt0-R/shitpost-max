@@ -923,3 +923,4 @@
 {"match_ok":false,"match_test":"i?","nonmatch_ok":true,"nonmatch_test":"j?","pattern":"i?","tick":851,"timestamp":"2026-07-15T01:05:40.906438+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":852,"timestamp":"2026-07-15T01:06:42.870508+00:00"}
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":853,"timestamp":"2026-07-15T01:07:41.319450+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":854,"timestamp":"2026-07-15T01:08:41.905503+00:00"}
