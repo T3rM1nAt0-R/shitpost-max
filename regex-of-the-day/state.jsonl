@@ -1133,3 +1133,5 @@
 {"match_ok":true,"match_test":"j","nonmatch_ok":true,"nonmatch_test":"k","pattern":"j","tick":1043,"timestamp":"2026-07-15T04:35:50.319719+00:00"}
 {"match_ok":false,"match_test":"((a|f)++|e)+","nonmatch_ok":true,"nonmatch_test":"((a|f)+0|e)+","pattern":"((a|f)++|e)+","tick":1044,"timestamp":"2026-07-15T04:37:09.617627+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":1045,"timestamp":"2026-07-15T04:37:54.748660+00:00"}
+{"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":1046,"timestamp":"2026-07-15T04:38:56.413537+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":1047,"timestamp":"2026-07-15T04:40:16.744661+00:00"}
