@@ -954,3 +954,4 @@
 {"match_ok":false,"match_test":"((j|q)|i*)","nonmatch_ok":true,"nonmatch_test":"((j|r)|i*)","pattern":"((j|q)|i*)","tick":881,"timestamp":"2026-07-15T01:36:45.489667+00:00"}
 {"match_ok":false,"match_test":"g*","nonmatch_ok":true,"nonmatch_test":"h*","pattern":"g*","tick":882,"timestamp":"2026-07-15T01:37:53.626542+00:00"}
 {"match_ok":false,"match_test":"v?","nonmatch_ok":true,"nonmatch_test":"w?","pattern":"v?","tick":883,"timestamp":"2026-07-15T01:38:48.525953+00:00"}
+{"match_ok":false,"match_test":"(l|l)+","nonmatch_ok":true,"nonmatch_test":"(l|m)+","pattern":"(l|l)+","tick":884,"timestamp":"2026-07-15T01:39:44.141454+00:00"}
