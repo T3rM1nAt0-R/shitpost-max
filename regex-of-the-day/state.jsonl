@@ -1015,3 +1015,4 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":937,"timestamp":"2026-07-15T02:37:41.621143+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":938,"timestamp":"2026-07-15T02:38:42.081245+00:00"}
 {"match_ok":false,"match_test":"(h|x)","nonmatch_ok":true,"nonmatch_test":"(i|x)","pattern":"(h|x)","tick":939,"timestamp":"2026-07-15T02:39:41.478683+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":940,"timestamp":"2026-07-15T02:40:41.543306+00:00"}
