@@ -889,3 +889,4 @@
 {"match_ok":false,"match_test":"(r|(a|l+))","nonmatch_ok":true,"nonmatch_test":"(r|(a|l+)5","pattern":"(r|(a|l+))","tick":818,"timestamp":"2026-07-15T00:31:40.904656+00:00"}
 {"match_ok":false,"match_test":"(n|v)","nonmatch_ok":true,"nonmatch_test":"(o|v)","pattern":"(n|v)","tick":819,"timestamp":"2026-07-15T00:32:39.757609+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":820,"timestamp":"2026-07-15T00:33:40.604495+00:00"}
+{"match_ok":false,"match_test":"(g+|x++)+","nonmatch_ok":true,"nonmatch_test":"(g+8x++)+","pattern":"(g+|x++)+","tick":821,"timestamp":"2026-07-15T00:34:41.044571+00:00"}
