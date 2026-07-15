@@ -1038,3 +1038,4 @@
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":959,"timestamp":"2026-07-15T03:00:40.583332+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":960,"timestamp":"2026-07-15T03:01:41.662605+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":961,"timestamp":"2026-07-15T03:02:39.962340+00:00"}
+{"match_ok":false,"match_test":"(p|t++)+","nonmatch_ok":true,"nonmatch_test":"(p|t+8)+","pattern":"(p|t++)+","tick":962,"timestamp":"2026-07-15T03:03:41.752490+00:00"}
