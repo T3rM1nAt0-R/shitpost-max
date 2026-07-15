@@ -868,3 +868,4 @@
 {"match_ok":false,"match_test":"l?","nonmatch_ok":true,"nonmatch_test":"l7","pattern":"l?","tick":797,"timestamp":"2026-07-15T00:10:41.594712+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":798,"timestamp":"2026-07-15T00:11:39.906157+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":799,"timestamp":"2026-07-15T00:12:41.232697+00:00"}
+{"match_ok":false,"match_test":"c+?","nonmatch_ok":true,"nonmatch_test":"c5?","pattern":"c+?","tick":800,"timestamp":"2026-07-15T00:13:40.775293+00:00"}
