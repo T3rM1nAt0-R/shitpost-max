@@ -968,3 +968,4 @@
 {"match_ok":false,"match_test":"(u|(m|p)+)","nonmatch_ok":true,"nonmatch_test":"(u0(m|p)+)","pattern":"(u|(m|p)+)","tick":894,"timestamp":"2026-07-15T01:50:41.372796+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":895,"timestamp":"2026-07-15T01:51:41.409004+00:00"}
 {"match_ok":false,"match_test":"(r|((o+|h)+|a))","nonmatch_ok":true,"nonmatch_test":"(r|((o+|h)+9a))","pattern":"(r|((o+|h)+|a))","tick":896,"timestamp":"2026-07-15T01:52:39.880836+00:00"}
+{"match_ok":false,"match_test":"(t++|(r+|(k*|(m|e?))))","nonmatch_ok":true,"nonmatch_test":"(t++|(s+|(k*|(m|e?))))","pattern":"(t++|(r+|(k*|(m|e?))))","tick":897,"timestamp":"2026-07-15T01:53:41.704533+00:00"}
