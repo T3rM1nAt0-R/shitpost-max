@@ -928,3 +928,4 @@
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"n+","pattern":"m+","tick":856,"timestamp":"2026-07-15T01:10:48.197084+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":857,"timestamp":"2026-07-15T01:11:44.447219+00:00"}
 {"match_ok":false,"match_test":"n*","nonmatch_ok":true,"nonmatch_test":"n8","pattern":"n*","tick":858,"timestamp":"2026-07-15T01:12:40.788371+00:00"}
+{"match_ok":false,"match_test":"(z+|e+)+","nonmatch_ok":true,"nonmatch_test":"(z+|e+)5","pattern":"(z+|e+)+","tick":859,"timestamp":"2026-07-15T01:13:39.946908+00:00"}
