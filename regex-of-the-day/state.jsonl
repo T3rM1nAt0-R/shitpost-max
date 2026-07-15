@@ -920,3 +920,4 @@
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":848,"timestamp":"2026-07-15T01:02:39.988561+00:00"}
 {"match_ok":false,"match_test":"((f+|e)+|(i|o*))","nonmatch_ok":true,"nonmatch_test":"((f+|e)+5(i|o*))","pattern":"((f+|e)+|(i|o*))","tick":849,"timestamp":"2026-07-15T01:03:41.269528+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":850,"timestamp":"2026-07-15T01:04:40.888911+00:00"}
+{"match_ok":false,"match_test":"i?","nonmatch_ok":true,"nonmatch_test":"j?","pattern":"i?","tick":851,"timestamp":"2026-07-15T01:05:40.906438+00:00"}
