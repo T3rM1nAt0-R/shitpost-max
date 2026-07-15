@@ -910,3 +910,4 @@
 {"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"t+","pattern":"s+","tick":838,"timestamp":"2026-07-15T00:52:41.133990+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":839,"timestamp":"2026-07-15T00:53:40.658117+00:00"}
 {"match_ok":false,"match_test":"(a|x)","nonmatch_ok":true,"nonmatch_test":"(a|y)","pattern":"(a|x)","tick":840,"timestamp":"2026-07-15T00:54:41.645390+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":841,"timestamp":"2026-07-15T00:55:41.098671+00:00"}
