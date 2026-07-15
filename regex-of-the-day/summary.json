@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(t++|(r+|(k*|(m|e?))))","nonmatch_ok":true,"nonmatch_test":"(t++|(s+|(k*|(m|e?))))","pattern":"(t++|(r+|(k*|(m|e?))))","tick":897,"timestamp":"2026-07-15T01:53:41.704527+00:00"}
+{"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":898,"timestamp":"2026-07-15T01:54:39.913697+00:00"}
