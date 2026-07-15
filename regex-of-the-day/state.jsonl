@@ -892,3 +892,4 @@
 {"match_ok":false,"match_test":"(g+|x++)+","nonmatch_ok":true,"nonmatch_test":"(g+8x++)+","pattern":"(g+|x++)+","tick":821,"timestamp":"2026-07-15T00:34:41.044571+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":822,"timestamp":"2026-07-15T00:35:41.040323+00:00"}
 {"match_ok":false,"match_test":"n+","nonmatch_ok":true,"nonmatch_test":"o+","pattern":"n+","tick":823,"timestamp":"2026-07-15T00:36:43.100820+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":824,"timestamp":"2026-07-15T00:37:40.965041+00:00"}
