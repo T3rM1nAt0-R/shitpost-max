@@ -1113,3 +1113,4 @@
 {"match_ok":false,"match_test":"((b|(e++|l))|b)","nonmatch_ok":true,"nonmatch_test":"7(b|(e++|l))|b)","pattern":"((b|(e++|l))|b)","tick":1024,"timestamp":"2026-07-15T04:15:42.621245+00:00"}
 {"match_ok":false,"match_test":"(i|n+)","nonmatch_ok":true,"nonmatch_test":"(i|n0)","pattern":"(i|n+)","tick":1025,"timestamp":"2026-07-15T04:16:44.168394+00:00"}
 {"match_ok":false,"match_test":"k*","nonmatch_ok":true,"nonmatch_test":"k6","pattern":"k*","tick":1026,"timestamp":"2026-07-15T04:17:43.224565+00:00"}
+{"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":1027,"timestamp":"2026-07-15T04:18:43.446652+00:00"}
