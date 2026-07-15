@@ -1010,3 +1010,4 @@
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":932,"timestamp":"2026-07-15T02:32:40.358902+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":933,"timestamp":"2026-07-15T02:33:47.280340+00:00"}
 {"match_ok":false,"match_test":"((o+|((u*|(o|((o|z)|y?)+))|(j+|y+)))+|u)","nonmatch_ok":true,"nonmatch_test":"((o+|((u*|(o|((o|z)|y?)+)9|(j+|y+)))+|u)","pattern":"((o+|((u*|(o|((o|z)|y?)+))|(j+|y+)))+|u)","tick":934,"timestamp":"2026-07-15T02:34:42.123065+00:00"}
+{"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":935,"timestamp":"2026-07-15T02:35:40.341456+00:00"}
