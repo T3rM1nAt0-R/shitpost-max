@@ -973,3 +973,4 @@
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":899,"timestamp":"2026-07-15T01:55:41.534638+00:00"}
 {"match_ok":false,"match_test":"f+","nonmatch_ok":true,"nonmatch_test":"f4","pattern":"f+","tick":900,"timestamp":"2026-07-15T01:56:43.237822+00:00"}
 {"match_ok":false,"match_test":"(h*+|m+)","nonmatch_ok":true,"nonmatch_test":"(h*+1m+)","pattern":"(h*+|m+)","tick":901,"timestamp":"2026-07-15T01:57:41.607073+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":902,"timestamp":"2026-07-15T01:58:40.033797+00:00"}
