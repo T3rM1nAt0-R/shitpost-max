@@ -927,3 +927,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":855,"timestamp":"2026-07-15T01:09:43.140867+00:00"}
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"n+","pattern":"m+","tick":856,"timestamp":"2026-07-15T01:10:48.197084+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":857,"timestamp":"2026-07-15T01:11:44.447219+00:00"}
+{"match_ok":false,"match_test":"n*","nonmatch_ok":true,"nonmatch_test":"n8","pattern":"n*","tick":858,"timestamp":"2026-07-15T01:12:40.788371+00:00"}
