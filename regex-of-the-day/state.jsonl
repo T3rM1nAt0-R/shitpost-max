@@ -905,3 +905,4 @@
 {"match_ok":false,"match_test":"v*","nonmatch_ok":true,"nonmatch_test":"v3","pattern":"v*","tick":833,"timestamp":"2026-07-15T00:47:43.608696+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":834,"timestamp":"2026-07-15T00:48:47.199228+00:00"}
 {"match_ok":false,"match_test":"((i+|w?)|s)+","nonmatch_ok":true,"nonmatch_test":"((i+|w?)|s)6","pattern":"((i+|w?)|s)+","tick":835,"timestamp":"2026-07-15T00:49:43.577510+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":836,"timestamp":"2026-07-15T00:50:41.088591+00:00"}
