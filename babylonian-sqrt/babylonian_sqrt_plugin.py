@@ -17,9 +17,6 @@ class BabylonianSqrtPlugin(Shitpost):
     _MAX_ITERATIONS = 20
     _CONVERGED_TOLERANCE = 1e-12
 
-    def _persisted_state_path(self) -> str:
-        return os.path.join(self._plugin_dir(), "babylonian_sqrt_state.json")
-
     @staticmethod
     def _is_perfect_square(n: int) -> bool:
         r = math.isqrt(n)
