@@ -1953,3 +1953,4 @@
 {"match_ok":false,"match_test":"j*+","nonmatch_ok":true,"nonmatch_test":"j7+","pattern":"j*+","tick":275,"timestamp":"2026-07-16T18:14:12.956288+00:00"}
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"z1","pattern":"z+","tick":276,"timestamp":"2026-07-16T18:15:13.139317+00:00"}
 {"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":277,"timestamp":"2026-07-16T18:16:12.429446+00:00"}
+{"match_ok":false,"match_test":"u+","nonmatch_ok":true,"nonmatch_test":"u9","pattern":"u+","tick":278,"timestamp":"2026-07-16T18:17:13.543554+00:00"}
