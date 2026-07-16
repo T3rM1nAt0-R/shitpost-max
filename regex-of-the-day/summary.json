@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(r|(j|c++))?","nonmatch_ok":true,"nonmatch_test":"(r|(j|c+2))?","pattern":"(r|(j|c++))?","tick":296,"timestamp":"2026-07-16T18:37:13.467608+00:00"}
+{"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":297,"timestamp":"2026-07-16T18:38:13.166338+00:00"}

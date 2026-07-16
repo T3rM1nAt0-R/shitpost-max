@@ -1974,3 +1974,4 @@
 {"match_ok":false,"match_test":"(o+|m)+","nonmatch_ok":true,"nonmatch_test":"(o+|m)5","pattern":"(o+|m)+","tick":294,"timestamp":"2026-07-16T18:35:13.768261+00:00"}
 {"match_ok":false,"match_test":"d+","nonmatch_ok":true,"nonmatch_test":"e+","pattern":"d+","tick":295,"timestamp":"2026-07-16T18:36:12.596571+00:00"}
 {"match_ok":false,"match_test":"(r|(j|c++))?","nonmatch_ok":true,"nonmatch_test":"(r|(j|c+2))?","pattern":"(r|(j|c++))?","tick":296,"timestamp":"2026-07-16T18:37:13.467615+00:00"}
+{"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":297,"timestamp":"2026-07-16T18:38:13.166346+00:00"}
