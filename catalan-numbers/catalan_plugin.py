@@ -3,7 +3,7 @@
 import os
 from datetime import datetime, timezone
 
-from harness.shitpost_base import Shitpost
+from harness.shitpost_base import Shitpost, summarize_big_int
 
 
 class CatalanNumbersPlugin(Shitpost):
@@ -50,6 +50,6 @@ class CatalanNumbersPlugin(Shitpost):
         return {
             "tick": state["tick"],
             "n": n,
-            "catalan": catalan,
+            "catalan": summarize_big_int(catalan),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }

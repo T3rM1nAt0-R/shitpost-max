@@ -43,6 +43,31 @@ sys.set_int_max_str_digits(0)
 _GIT_LOCK_TIMEOUT_SECONDS = 30
 
 
+def summarize_big_int(value: int, digit_threshold: int = 500) -> int | dict:
+    """Return ``value`` as-is while it's small, else a bounded summary dict.
+
+    Several plugins compute a number that grows exponentially forever
+    (Catalan numbers, Fibonacci, Mersenne-derived perfect numbers, Pascal's
+    triangle rows) and log the full value into state.jsonl -- and the git
+    commit message -- every single tick, unbounded, forever. Left
+    unchecked, that's exactly what grew pascal-row/state.jsonl to 164MB and
+    silently broke every push since GitHub's 100MB per-file limit was
+    crossed (~1142 ticks in, discovered 2026-07-16). Call this on any such
+    value before returning it from produce(); it has no effect on whatever
+    full-precision archive file the plugin keeps locally (untracked) --
+    this only bounds what git is asked to store forever per tick.
+    """
+    text = str(value)
+    if len(text) <= digit_threshold:
+        return value
+    return {
+        "digit_count": len(text),
+        "first_10": text[:10],
+        "last_10": text[-10:],
+        "truncated": True,
+    }
+
+
 class Shitpost(ABC):
     """Abstract base for a shitpost-max plugin.
 

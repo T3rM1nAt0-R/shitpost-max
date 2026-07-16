@@ -11,7 +11,7 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from harness.shitpost_base import Shitpost
+from harness.shitpost_base import Shitpost, summarize_big_int
 
 
 class FibonacciPlugin(Shitpost):
@@ -95,6 +95,6 @@ class FibonacciPlugin(Shitpost):
         return {
             "tick": state["tick"],
             "n": n,
-            "fibonacci": fib,
+            "fibonacci": summarize_big_int(fib),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }

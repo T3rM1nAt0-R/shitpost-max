@@ -3,7 +3,7 @@
 import os
 from datetime import datetime, timezone
 
-from harness.shitpost_base import Shitpost
+from harness.shitpost_base import Shitpost, summarize_big_int
 
 
 class PerfectNumbersPlugin(Shitpost):
@@ -72,6 +72,6 @@ class PerfectNumbersPlugin(Shitpost):
         return {
             "tick": state["tick"],
             "p": p,
-            "perfect_number": perfect_number if commit_message else None,
+            "perfect_number": summarize_big_int(perfect_number) if commit_message else None,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         } if commit_message else None

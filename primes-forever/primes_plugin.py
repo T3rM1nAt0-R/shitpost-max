@@ -3,7 +3,7 @@
 import os
 from datetime import datetime, timezone
 
-from harness.shitpost_base import Shitpost
+from harness.shitpost_base import Shitpost, summarize_big_int
 
 
 class PrimesForeverPlugin(Shitpost):
@@ -59,7 +59,7 @@ class PrimesForeverPlugin(Shitpost):
 
         return {
             "tick": state["tick"],
-            "prime": candidate,
-            "candidate": candidate,
+            "prime": summarize_big_int(candidate),
+            "candidate": summarize_big_int(candidate),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
