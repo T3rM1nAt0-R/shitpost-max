@@ -1914,3 +1914,4 @@
 {"match_ok":false,"match_test":"v+","nonmatch_ok":true,"nonmatch_test":"w+","pattern":"v+","tick":241,"timestamp":"2026-07-16T17:35:13.358469+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":242,"timestamp":"2026-07-16T17:36:12.918057+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":243,"timestamp":"2026-07-16T17:37:13.490344+00:00"}
+{"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":244,"timestamp":"2026-07-16T17:38:13.577808+00:00"}
