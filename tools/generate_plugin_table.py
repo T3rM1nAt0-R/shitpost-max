@@ -53,7 +53,6 @@ plugin_files = sorted(
     f for f in os.listdir(plugin_dir)
     if f.endswith(".py")
     and f != "tick.py"
-    and not f.startswith("test")
     and f != "__init__.py"
 )
 
