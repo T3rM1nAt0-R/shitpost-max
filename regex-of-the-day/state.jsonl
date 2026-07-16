@@ -1970,3 +1970,4 @@
 {"match_ok":false,"match_test":"(m|(u|h))+","nonmatch_ok":true,"nonmatch_test":"(m|(v|h))+","pattern":"(m|(u|h))+","tick":290,"timestamp":"2026-07-16T18:31:14.609021+00:00"}
 {"match_ok":false,"match_test":"((g|(k|p)*)*?|i)+","nonmatch_ok":true,"nonmatch_test":"((g|(k|p)*)*?|i)1","pattern":"((g|(k|p)*)*?|i)+","tick":291,"timestamp":"2026-07-16T18:32:13.896115+00:00"}
 {"match_ok":false,"match_test":"(p|a)","nonmatch_ok":true,"nonmatch_test":"(p|a6","pattern":"(p|a)","tick":292,"timestamp":"2026-07-16T18:33:13.273459+00:00"}
+{"match_ok":false,"match_test":"c*","nonmatch_ok":true,"nonmatch_test":"c1","pattern":"c*","tick":293,"timestamp":"2026-07-16T18:34:13.000929+00:00"}
