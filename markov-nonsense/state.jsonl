@@ -1421,3 +1421,4 @@
 {"seed_bigram":"the cat","sentence":"the cat sat on the mat.","tick":91,"timestamp":"2026-07-16T14:35:12.179472+00:00","word_count":6}
 {"seed_bigram":"the cat","sentence":"the cat sat on the mat.","tick":92,"timestamp":"2026-07-16T14:36:11.847542+00:00","word_count":6}
 {"seed_bigram":"on the","sentence":"on the mat.","tick":93,"timestamp":"2026-07-16T14:37:11.553765+00:00","word_count":3}
+{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":94,"timestamp":"2026-07-16T14:38:11.620166+00:00","word_count":4}
