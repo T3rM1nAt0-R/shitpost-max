@@ -1971,3 +1971,4 @@
 {"match_ok":false,"match_test":"((g|(k|p)*)*?|i)+","nonmatch_ok":true,"nonmatch_test":"((g|(k|p)*)*?|i)1","pattern":"((g|(k|p)*)*?|i)+","tick":291,"timestamp":"2026-07-16T18:32:13.896115+00:00"}
 {"match_ok":false,"match_test":"(p|a)","nonmatch_ok":true,"nonmatch_test":"(p|a6","pattern":"(p|a)","tick":292,"timestamp":"2026-07-16T18:33:13.273459+00:00"}
 {"match_ok":false,"match_test":"c*","nonmatch_ok":true,"nonmatch_test":"c1","pattern":"c*","tick":293,"timestamp":"2026-07-16T18:34:13.000929+00:00"}
+{"match_ok":false,"match_test":"(o+|m)+","nonmatch_ok":true,"nonmatch_test":"(o+|m)5","pattern":"(o+|m)+","tick":294,"timestamp":"2026-07-16T18:35:13.768261+00:00"}
