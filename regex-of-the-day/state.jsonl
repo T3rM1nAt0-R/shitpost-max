@@ -2269,3 +2269,4 @@
 {"match_ok":false,"match_test":"(f+|v?)","nonmatch_ok":true,"nonmatch_test":"2f+|v?)","pattern":"(f+|v?)","tick":559,"timestamp":"2026-07-16T23:30:13.015825+00:00"}
 {"match_ok":false,"match_test":"(n+|c?)","nonmatch_ok":true,"nonmatch_test":"(o+|c?)","pattern":"(n+|c?)","tick":560,"timestamp":"2026-07-16T23:31:12.956085+00:00"}
 {"match_ok":false,"match_test":"d*","nonmatch_ok":true,"nonmatch_test":"e*","pattern":"d*","tick":561,"timestamp":"2026-07-16T23:32:38.378405+00:00"}
+{"match_ok":false,"match_test":"f+","nonmatch_ok":true,"nonmatch_test":"f9","pattern":"f+","tick":562,"timestamp":"2026-07-16T23:33:13.702809+00:00"}
