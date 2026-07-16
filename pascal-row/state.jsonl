@@ -1585,3 +1585,4 @@
 {"row":{"first_3":[1,254,32131],"last_3":[32131,254,1],"max_value_digit_count":76,"row_length":255,"truncated":true},"row_index":254,"tick":255,"timestamp":"2026-07-16T17:19:13.629850+00:00"}
 {"row":{"first_3":[1,255,32385],"last_3":[32385,255,1],"max_value_digit_count":76,"row_length":256,"truncated":true},"row_index":255,"tick":256,"timestamp":"2026-07-16T17:20:12.353136+00:00"}
 {"row":{"first_3":[1,256,32640],"last_3":[32640,256,1],"max_value_digit_count":76,"row_length":257,"truncated":true},"row_index":256,"tick":257,"timestamp":"2026-07-16T17:21:12.804920+00:00"}
+{"row":{"first_3":[1,257,32896],"last_3":[32896,257,1],"max_value_digit_count":77,"row_length":258,"truncated":true},"row_index":257,"tick":258,"timestamp":"2026-07-16T17:22:12.463124+00:00"}
