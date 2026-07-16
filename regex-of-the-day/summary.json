@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((l|x+)|k)++","nonmatch_ok":true,"nonmatch_test":"((l|x+3|k)++","pattern":"((l|x+)|k)++","tick":370,"timestamp":"2026-07-16T20:06:12.729537+00:00"}
+{"match_ok":false,"match_test":"(((o|t++)|a)|(i|k))*","nonmatch_ok":true,"nonmatch_test":"(((p|t++)|a)|(i|k))*","pattern":"(((o|t++)|a)|(i|k))*","tick":372,"timestamp":"2026-07-16T20:15:53.737502+00:00"}
