@@ -1992,3 +1992,4 @@
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":308,"timestamp":"2026-07-16T18:53:13.406508+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":309,"timestamp":"2026-07-16T18:54:13.973906+00:00"}
 {"match_ok":false,"match_test":"(q+|t)*","nonmatch_ok":true,"nonmatch_test":"(q+8t)*","pattern":"(q+|t)*","tick":310,"timestamp":"2026-07-16T18:56:53.526320+00:00"}
+{"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":311,"timestamp":"2026-07-16T18:56:57.803922+00:00"}
