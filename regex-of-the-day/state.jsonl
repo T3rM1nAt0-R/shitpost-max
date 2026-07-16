@@ -1996,3 +1996,4 @@
 {"match_ok":false,"match_test":"((x|n)?|(u|(((v|(f|(c|(u*|(d|n))?)))+|c)|s+)))*","nonmatch_ok":true,"nonmatch_test":"((x|n)?|(u|(((v|(f|(c|(u*|(d|n))?)))+|d)|s+)))*","pattern":"((x|n)?|(u|(((v|(f|(c|(u*|(d|n))?)))+|c)|s+)))*","tick":312,"timestamp":"2026-07-16T18:57:17.635347+00:00"}
 {"match_ok":false,"match_test":"y++","nonmatch_ok":true,"nonmatch_test":"y+9","pattern":"y++","tick":313,"timestamp":"2026-07-16T18:58:13.733477+00:00"}
 {"match_ok":false,"match_test":"b+","nonmatch_ok":true,"nonmatch_test":"b5","pattern":"b+","tick":314,"timestamp":"2026-07-16T18:59:15.557814+00:00"}
+{"match_ok":false,"match_test":"(h++|o)","nonmatch_ok":true,"nonmatch_test":"(h9+|o)","pattern":"(h++|o)","tick":315,"timestamp":"2026-07-16T19:00:14.212596+00:00"}
