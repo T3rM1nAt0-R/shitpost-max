@@ -1929,3 +1929,4 @@
 {"agent":"heuristic","final_score":2828,"game_length":219,"max_tile":256,"tick":284,"timestamp":"2026-07-16T17:49:14.535110+00:00"}
 {"agent":"random","final_score":620,"game_length":81,"max_tile":64,"tick":285,"timestamp":"2026-07-16T17:50:12.713358+00:00"}
 {"agent":"heuristic","final_score":2724,"game_length":210,"max_tile":256,"tick":286,"timestamp":"2026-07-16T17:51:13.306981+00:00"}
+{"agent":"random","final_score":976,"game_length":100,"max_tile":128,"tick":287,"timestamp":"2026-07-16T17:52:13.502233+00:00"}
