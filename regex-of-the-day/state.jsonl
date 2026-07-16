@@ -2209,3 +2209,4 @@
 {"match_ok":false,"match_test":"l?","nonmatch_ok":true,"nonmatch_test":"m?","pattern":"l?","tick":503,"timestamp":"2026-07-16T22:30:13.967392+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":504,"timestamp":"2026-07-16T22:31:13.025574+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":505,"timestamp":"2026-07-16T22:32:12.334702+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":506,"timestamp":"2026-07-16T22:33:12.788719+00:00"}
