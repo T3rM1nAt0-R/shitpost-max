@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(f+|(((i?+|o+)|w)+|a)+)*","nonmatch_ok":true,"nonmatch_test":"(f+|3((i?+|o+)|w)+|a)+)*","pattern":"(f+|(((i?+|o+)|w)+|a)+)*","tick":432,"timestamp":"2026-07-16T21:12:13.005466+00:00"}
+{"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":433,"timestamp":"2026-07-16T21:14:14.072787+00:00"}
