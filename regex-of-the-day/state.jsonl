@@ -2004,3 +2004,4 @@
 {"match_ok":false,"match_test":"(j|b++)","nonmatch_ok":true,"nonmatch_test":"(k|b++)","pattern":"(j|b++)","tick":319,"timestamp":"2026-07-16T19:05:13.280089+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":320,"timestamp":"2026-07-16T19:06:13.219302+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":321,"timestamp":"2026-07-16T19:07:13.900491+00:00"}
+{"match_ok":false,"match_test":"((r+|(i|h++)++)*|i++)","nonmatch_ok":true,"nonmatch_test":"((r2|(i|h++)++)*|i++)","pattern":"((r+|(i|h++)++)*|i++)","tick":322,"timestamp":"2026-07-16T19:08:13.505567+00:00"}
