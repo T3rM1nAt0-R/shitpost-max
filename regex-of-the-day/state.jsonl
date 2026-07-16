@@ -1933,3 +1933,4 @@
 {"match_ok":false,"match_test":"(b|(l*|h))?","nonmatch_ok":true,"nonmatch_test":"(b|(l9|h))?","pattern":"(b|(l*|h))?","tick":258,"timestamp":"2026-07-16T17:54:13.367521+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":259,"timestamp":"2026-07-16T17:55:13.124426+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":260,"timestamp":"2026-07-16T17:56:13.588923+00:00"}
+{"match_ok":false,"match_test":"(d|z+)","nonmatch_ok":true,"nonmatch_test":"(d|a+)","pattern":"(d|z+)","tick":261,"timestamp":"2026-07-16T17:57:13.206401+00:00"}
