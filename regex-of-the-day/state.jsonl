@@ -1918,3 +1918,4 @@
 {"match_ok":false,"match_test":"p?","nonmatch_ok":true,"nonmatch_test":"p5","pattern":"p?","tick":245,"timestamp":"2026-07-16T17:39:14.991619+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":246,"timestamp":"2026-07-16T17:40:13.440129+00:00"}
 {"match_ok":false,"match_test":"h++","nonmatch_ok":true,"nonmatch_test":"h+0","pattern":"h++","tick":247,"timestamp":"2026-07-16T17:41:12.289524+00:00"}
+{"match_ok":false,"match_test":"u+","nonmatch_ok":true,"nonmatch_test":"u8","pattern":"u+","tick":248,"timestamp":"2026-07-16T17:42:13.178552+00:00"}
