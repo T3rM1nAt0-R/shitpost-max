@@ -1707,3 +1707,4 @@
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":57,"timestamp":"2026-07-16T14:08:12.659615+00:00"}
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":58,"timestamp":"2026-07-16T14:09:14.877252+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":59,"timestamp":"2026-07-16T14:10:12.304533+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":60,"timestamp":"2026-07-16T14:11:12.427645+00:00"}
