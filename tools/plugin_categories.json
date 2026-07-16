@@ -2,35 +2,132 @@
   "categories": [
     {
       "name": "Number Theory & Sequences",
-      "plugins": ["pi-spigot", "golden-ratio", "e-stream", "digits-of-tau", "sqrt2-stream", "fibonacci-full", "catalan-numbers", "pascal-row", "twin-primes", "perfect-numbers", "primes-forever", "collatz-explorer", "base-converter"]
+      "plugins": [
+        "pi-spigot",
+        "golden-ratio",
+        "e-stream",
+        "digits-of-tau",
+        "sqrt2-stream",
+        "fibonacci-full",
+        "catalan-numbers",
+        "pascal-row",
+        "twin-primes",
+        "perfect-numbers",
+        "primes-forever",
+        "collatz-explorer",
+        "base-converter"
+      ]
     },
     {
       "name": "Algorithms & Data Structures",
-      "plugins": ["maze-solver", "sorting-race", "diff-engine", "lru-cache-witness", "hash-collision-hunt", "compression-lab", "dice-fairness", "card-shuffler", "regex-of-the-day", "graph-of-the-day", "bloom-filter-demo", "retry-with-backoff", "rate-limit-lab"]
+      "plugins": [
+        "maze-solver",
+        "sorting-race",
+        "diff-engine",
+        "lru-cache-witness",
+        "hash-collision-hunt",
+        "compression-lab",
+        "dice-fairness",
+        "card-shuffler",
+        "regex-of-the-day",
+        "graph-of-the-day",
+        "bloom-filter-demo",
+        "retry-with-backoff",
+        "rate-limit-lab"
+      ]
     },
     {
       "name": "Games & Simulations",
-      "plugins": ["gacha-oracle", "loot-table-fuzzer", "playtest-bot", "meta-tracker", "balance-witness", "economy-sim-tick", "dungeon-of-the-day", "selfhealing-demo"]
+      "plugins": [
+        "gacha-oracle",
+        "loot-table-fuzzer",
+        "playtest-bot",
+        "meta-tracker",
+        "balance-witness",
+        "economy-sim-tick",
+        "dungeon-of-the-day",
+        "selfhealing-demo",
+        "schelling-segregation"
+      ]
     },
     {
       "name": "Local LLM Experiments",
-      "plugins": ["llm-vs-llm", "hallucination-witness", "prompt-injection-lab", "json-mode-witness", "regression-canary", "temperature-lab", "rag-decay", "emoji-summary", "haiku-daily", "token-golf", "model-diff"]
+      "plugins": [
+        "llm-vs-llm",
+        "hallucination-witness",
+        "prompt-injection-lab",
+        "json-mode-witness",
+        "regression-canary",
+        "temperature-lab",
+        "rag-decay",
+        "emoji-summary",
+        "haiku-daily",
+        "token-golf",
+        "model-diff"
+      ]
     },
     {
       "name": "Live Data Feeds",
-      "plugins": ["weather-blr", "aqi-blr", "usd-inr", "crypto-tick", "npm-downloads", "github-trending", "hn-frontpage", "reddit-titles", "spotify-charts", "steam-playercount", "iss-tracker", "earthquake-log", "wikipedia-featured", "fear-greed-index", "gas-prices", "domain-watch", "rss-firehose"]
+      "plugins": [
+        "weather-blr",
+        "aqi-blr",
+        "usd-inr",
+        "crypto-tick",
+        "npm-downloads",
+        "github-trending",
+        "hn-frontpage",
+        "reddit-titles",
+        "spotify-charts",
+        "steam-playercount",
+        "iss-tracker",
+        "earthquake-log",
+        "wikipedia-featured",
+        "fear-greed-index",
+        "gas-prices",
+        "domain-watch",
+        "rss-firehose"
+      ]
     },
     {
       "name": "Language & Text Generators",
-      "plugins": ["markov-nonsense", "name-generator", "anagram-hunter", "palindrome-generator", "word-of-the-day", "translation-telephone", "silicon-valley-buzzword-bot", "thought-leader", "fake-changelog", "high-iq-certifier", "commit-poet", "certificate-mill", "agile-theater"]
+      "plugins": [
+        "markov-nonsense",
+        "name-generator",
+        "anagram-hunter",
+        "palindrome-generator",
+        "word-of-the-day",
+        "translation-telephone",
+        "silicon-valley-buzzword-bot",
+        "thought-leader",
+        "fake-changelog",
+        "high-iq-certifier",
+        "commit-poet",
+        "certificate-mill",
+        "agile-theater"
+      ]
     },
     {
       "name": "Personal Finance Toys",
-      "plugins": ["compound-clock", "rupee-cost-averaging-sim", "subscription-audit", "networth-witness"]
+      "plugins": [
+        "compound-clock",
+        "rupee-cost-averaging-sim",
+        "subscription-audit",
+        "networth-witness"
+      ]
     },
     {
       "name": "Dev & Meta Tools",
-      "plugins": ["10x-engineer", "commit-batcher", "commit-driven-development", "cron-vs-timer", "git-hook-theater", "healthcheck-endpoint", "log-rotator", "green-square-maxxer", "container-of-the-day"]
+      "plugins": [
+        "10x-engineer",
+        "commit-batcher",
+        "commit-driven-development",
+        "cron-vs-timer",
+        "git-hook-theater",
+        "healthcheck-endpoint",
+        "log-rotator",
+        "green-square-maxxer",
+        "container-of-the-day"
+      ]
     }
   ]
 }

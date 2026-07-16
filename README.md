@@ -187,7 +187,7 @@ rate-limit-lab | Ran a rate-limited endpoint against an aggressive and a complia
 </details>
 
 <details>
-<summary><strong>Games & Simulations</strong> <sub>(8)</sub></summary>
+<summary><strong>Games & Simulations</strong> <sub>(9)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -199,6 +199,7 @@ balance-witness | Runs toy auto-battler matches to audit game balance nobody's p
 economy-sim-tick | Models a full supply-and-demand economy, one tick at a time. Inflation is a choice and I chose it.
 dungeon-of-the-day | Procedurally generates a new dungeon daily using BSP, because roguelikes deserve CI/CD too.
 selfhealing-demo | Built a service that crashes on purpose, then heals itself, to demonstrate resilience I do not personally have.
+schelling-segregation | AI-driven agent-based urban dynamics platform modeling emergent segregation patterns. Every relocation is a market-clearing decision.
 
 </details>
 
