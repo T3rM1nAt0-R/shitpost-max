@@ -1723,3 +1723,4 @@
 {"match_ok":false,"match_test":"u+","nonmatch_ok":true,"nonmatch_test":"u8","pattern":"u+","tick":69,"timestamp":"2026-07-16T14:24:13.230286+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":70,"timestamp":"2026-07-16T14:25:12.508020+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":71,"timestamp":"2026-07-16T14:26:12.729478+00:00"}
+{"match_ok":false,"match_test":"b++","nonmatch_ok":true,"nonmatch_test":"c++","pattern":"b++","tick":72,"timestamp":"2026-07-16T14:27:12.714890+00:00"}
