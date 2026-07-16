@@ -166,7 +166,7 @@ base-converter | Built a universal number-base translation layer. Counts up, con
 </details>
 
 <details>
-<summary><strong>Algorithms & Data Structures</strong> <sub>(13)</sub></summary>
+<summary><strong>Algorithms & Data Structures</strong> <sub>(14)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -183,6 +183,7 @@ graph-of-the-day | Spins up a random graph and computes a graph-theoretic proper
 bloom-filter-demo | Deployed a probabilistic data structure that can lie to you, on purpose, for performance. Maybe it's in the set. Who's to say.
 retry-with-backoff | Built exponential backoff so my failures fail more gracefully than my successes succeed. Resilience-as-a-service.
 rate-limit-lab | Ran a rate-limited endpoint against an aggressive and a compliant client, just to prove good citizens finish last. Data doesn't lie.
+binary-heap-demo | AI-driven priority queue management platform for enterprise task orchestration. Every sift-up is a leadership decision.
 
 </details>
 
