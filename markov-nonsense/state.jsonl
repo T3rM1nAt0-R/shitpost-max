@@ -1829,3 +1829,4 @@
 {"seed_bigram":"the mat.","sentence":"the mat. the dog around the park.","tick":499,"timestamp":"2026-07-16T21:23:12.910242+00:00","word_count":7}
 {"seed_bigram":"around the","sentence":"around the park.","tick":500,"timestamp":"2026-07-16T21:24:11.886708+00:00","word_count":3}
 {"seed_bigram":"dog around","sentence":"dog around the park.","tick":501,"timestamp":"2026-07-16T21:25:12.292890+00:00","word_count":4}
+{"seed_bigram":"on the","sentence":"on the mat.","tick":502,"timestamp":"2026-07-16T21:26:11.846141+00:00","word_count":3}
