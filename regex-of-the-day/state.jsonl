@@ -2155,3 +2155,4 @@
 {"match_ok":false,"match_test":"k++","nonmatch_ok":true,"nonmatch_test":"l++","pattern":"k++","tick":452,"timestamp":"2026-07-16T21:36:12.729870+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":453,"timestamp":"2026-07-16T21:37:12.704512+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":454,"timestamp":"2026-07-16T21:38:12.990067+00:00"}
+{"match_ok":false,"match_test":"(h|x*)","nonmatch_ok":true,"nonmatch_test":"(h|x4)","pattern":"(h|x*)","tick":455,"timestamp":"2026-07-16T21:39:14.825645+00:00"}
