@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(q|(k|(y|(w+|j)+)))","nonmatch_ok":true,"nonmatch_test":"(q|(k|6y|(w+|j)+)))","pattern":"(q|(k|(y|(w+|j)+)))","tick":548,"timestamp":"2026-07-16T23:19:15.618605+00:00"}
+{"match_ok":false,"match_test":"(l|m)+","nonmatch_ok":true,"nonmatch_test":"(l|m5+","pattern":"(l|m)+","tick":549,"timestamp":"2026-07-16T23:20:13.042635+00:00"}
