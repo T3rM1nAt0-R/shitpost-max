@@ -2169,3 +2169,4 @@
 {"match_ok":false,"match_test":"(c++|x+?)","nonmatch_ok":true,"nonmatch_test":"(d++|x+?)","pattern":"(c++|x+?)","tick":466,"timestamp":"2026-07-16T21:50:13.124345+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":467,"timestamp":"2026-07-16T21:51:12.879079+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":468,"timestamp":"2026-07-16T21:52:12.970711+00:00"}
+{"match_ok":false,"match_test":"h+","nonmatch_ok":true,"nonmatch_test":"h1","pattern":"h+","tick":469,"timestamp":"2026-07-16T21:53:13.503046+00:00"}
