@@ -1965,3 +1965,4 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":286,"timestamp":"2026-07-16T18:26:13.242297+00:00"}
 {"match_ok":false,"match_test":"(m|(k|d)+)","nonmatch_ok":true,"nonmatch_test":"(m|(k1d)+)","pattern":"(m|(k|d)+)","tick":287,"timestamp":"2026-07-16T18:27:12.532531+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":288,"timestamp":"2026-07-16T18:28:12.918863+00:00"}
+{"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":289,"timestamp":"2026-07-16T18:29:15.399889+00:00"}
