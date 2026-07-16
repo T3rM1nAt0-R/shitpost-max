@@ -2008,3 +2008,4 @@
 {"match_ok":false,"match_test":"(r|p)","nonmatch_ok":true,"nonmatch_test":"(s|p)","pattern":"(r|p)","tick":323,"timestamp":"2026-07-16T19:09:15.232791+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":324,"timestamp":"2026-07-16T19:10:13.062116+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":325,"timestamp":"2026-07-16T19:11:14.862939+00:00"}
+{"match_ok":false,"match_test":"g++","nonmatch_ok":true,"nonmatch_test":"g+5","pattern":"g++","tick":326,"timestamp":"2026-07-16T19:12:13.842045+00:00"}
