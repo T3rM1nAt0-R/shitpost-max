@@ -1935,3 +1935,4 @@
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":260,"timestamp":"2026-07-16T17:56:13.588923+00:00"}
 {"match_ok":false,"match_test":"(d|z+)","nonmatch_ok":true,"nonmatch_test":"(d|a+)","pattern":"(d|z+)","tick":261,"timestamp":"2026-07-16T17:57:13.206401+00:00"}
 {"match_ok":false,"match_test":"(l+|t)","nonmatch_ok":true,"nonmatch_test":"(m+|t)","pattern":"(l+|t)","tick":262,"timestamp":"2026-07-16T17:58:13.486019+00:00"}
+{"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":263,"timestamp":"2026-07-16T17:59:15.122980+00:00"}
