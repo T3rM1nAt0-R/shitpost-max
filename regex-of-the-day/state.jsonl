@@ -1729,3 +1729,4 @@
 {"match_ok":false,"match_test":"p+","nonmatch_ok":true,"nonmatch_test":"q+","pattern":"p+","tick":74,"timestamp":"2026-07-16T14:30:12.437682+00:00"}
 {"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":75,"timestamp":"2026-07-16T14:31:12.700431+00:00"}
 {"match_ok":false,"match_test":"j*","nonmatch_ok":true,"nonmatch_test":"j1","pattern":"j*","tick":76,"timestamp":"2026-07-16T14:32:12.350544+00:00"}
+{"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":77,"timestamp":"2026-07-16T14:33:12.445355+00:00"}
