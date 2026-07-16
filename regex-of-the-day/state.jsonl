@@ -1801,3 +1801,4 @@
 {"match_ok":false,"match_test":"(x*+|((j|h+)|x))*","nonmatch_ok":true,"nonmatch_test":"(x9+|((j|h+)|x))*","pattern":"(x*+|((j|h+)|x))*","tick":139,"timestamp":"2026-07-16T15:42:13.443325+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":140,"timestamp":"2026-07-16T15:43:13.810546+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":141,"timestamp":"2026-07-16T15:44:12.425692+00:00"}
+{"match_ok":false,"match_test":"(l|(y|((b|u)|a))+)","nonmatch_ok":true,"nonmatch_test":"(l|(y|((b|u)|b))+)","pattern":"(l|(y|((b|u)|a))+)","tick":142,"timestamp":"2026-07-16T15:45:12.470147+00:00"}
