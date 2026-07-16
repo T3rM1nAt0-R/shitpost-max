@@ -2208,3 +2208,4 @@
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":502,"timestamp":"2026-07-16T22:29:15.284019+00:00"}
 {"match_ok":false,"match_test":"l?","nonmatch_ok":true,"nonmatch_test":"m?","pattern":"l?","tick":503,"timestamp":"2026-07-16T22:30:13.967392+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":504,"timestamp":"2026-07-16T22:31:13.025574+00:00"}
+{"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":505,"timestamp":"2026-07-16T22:32:12.334702+00:00"}
