@@ -1457,3 +1457,4 @@
 {"seed_bigram":"in the","sentence":"in the park.","tick":127,"timestamp":"2026-07-16T15:11:11.199417+00:00","word_count":3}
 {"seed_bigram":"chased the","sentence":"chased the dog around the park.","tick":128,"timestamp":"2026-07-16T15:12:11.658619+00:00","word_count":6}
 {"seed_bigram":"park. the","sentence":"park. the cat sat on the mat.","tick":129,"timestamp":"2026-07-16T15:13:11.644568+00:00","word_count":7}
+{"seed_bigram":"the cat","sentence":"the cat sat on the mat.","tick":130,"timestamp":"2026-07-16T15:14:11.250746+00:00","word_count":6}
