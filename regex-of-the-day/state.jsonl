@@ -1958,3 +1958,4 @@
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":279,"timestamp":"2026-07-16T18:19:15.909283+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":280,"timestamp":"2026-07-16T18:20:13.298926+00:00"}
 {"match_ok":false,"match_test":"(y|j)+","nonmatch_ok":true,"nonmatch_test":"(y|j9+","pattern":"(y|j)+","tick":281,"timestamp":"2026-07-16T18:21:13.660271+00:00"}
+{"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"r4","pattern":"r+","tick":282,"timestamp":"2026-07-16T18:22:14.388561+00:00"}
