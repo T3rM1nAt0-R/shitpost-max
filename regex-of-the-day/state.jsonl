@@ -1648,3 +1648,4 @@
 {"match_ok":false,"match_test":"(k|(p|s))","nonmatch_ok":true,"nonmatch_test":"(k|7p|s))","pattern":"(k|(p|s))","tick":5,"timestamp":"2026-07-16T13:09:14.957520+00:00"}
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":6,"timestamp":"2026-07-16T13:10:13.247069+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":7,"timestamp":"2026-07-16T13:11:12.477586+00:00"}
+{"match_ok":false,"match_test":"((g|(q|(k|z)*))|o)+","nonmatch_ok":true,"nonmatch_test":"((g|(q|(k|z)*)8|o)+","pattern":"((g|(q|(k|z)*))|o)+","tick":8,"timestamp":"2026-07-16T13:12:12.396606+00:00"}
