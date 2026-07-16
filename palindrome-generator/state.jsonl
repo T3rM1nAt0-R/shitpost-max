@@ -1392,3 +1392,5 @@
 {"accepted":true,"length":15,"palindrome":"Able was I saw Elba","target":25,"tick":11,"timestamp":"2026-07-16T13:15:12.810661+00:00"}
 {"accepted":false,"length":0,"palindrome":"Here is a palindrome that is at least 25 characters long:\n\n\"Was it a car or a cat I saw?\"","target":25,"tick":12,"timestamp":"2026-07-16T13:16:14.054396+00:00"}
 {"accepted":false,"length":0,"palindrome":"Here is an example of a palindrome that is 27 characters long:\n\n\"Able was I ere I saw Elba\"\n\nThis sentence reads the same forwards and backwards, and has 27 characters.","target":25,"tick":13,"timestamp":"2026-07-16T13:17:13.469001+00:00"}
+{"accepted":false,"length":0,"palindrome":"Sure! Here is a 27-character palindrome:\n\n\"Able was I ere I saw Elba.\"","target":25,"tick":14,"timestamp":"2026-07-16T13:18:32.972739+00:00"}
+{"accepted":false,"length":0,"palindrome":"Sure! Here's a palindrome that is 25 characters long:\n\n```\nA man, a plan, a canal: Panama -> amanaplanacanalpanama\n```","target":25,"tick":15,"timestamp":"2026-07-16T13:19:22.420991+00:00"}
