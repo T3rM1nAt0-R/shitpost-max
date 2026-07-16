@@ -1705,3 +1705,4 @@
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"m1","pattern":"m+","tick":55,"timestamp":"2026-07-16T14:07:17.519716+00:00"}
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"n+","pattern":"m+","tick":56,"timestamp":"2026-07-16T14:07:21.397750+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":57,"timestamp":"2026-07-16T14:08:12.659615+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":58,"timestamp":"2026-07-16T14:09:14.877252+00:00"}
