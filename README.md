@@ -1,16 +1,21 @@
+<div align="center">
+
 # shitpost-max
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Engineer-1000000x-critical?style=for-the-badge" alt="1000000x Engineer">
-  <img src="https://img.shields.io/badge/Vibe-Immaculate-blueviolet?style=for-the-badge" alt="Vibe: Immaculate">
-  <img src="https://img.shields.io/badge/Test%20Coverage-1000000%25-brightgreen?style=for-the-badge" alt="Test Coverage: 1000000%">
-  <img src="https://img.shields.io/badge/Shipped-Yesterday-orange?style=for-the-badge" alt="Shipped: Yesterday">
-  <img src="https://img.shields.io/badge/Disruption-Maximum-blue?style=for-the-badge" alt="Disruption: Maximum">
-</p>
+**A self-running, self-committing fleet of one-person microservices — engineering-services energy, applied to problems that do not exist.**
+
+[![Live Catalog](https://img.shields.io/badge/Live_Catalog-shitpostmax.com-0A66C2?style=flat-square&logo=googlechrome&logoColor=white)](https://shitpostmax.com/gitpostmax)
+[![CI](https://img.shields.io/github/actions/workflow/status/T3rM1nAt0-R/shitpost-max/check-plugin-table.yml?style=flat-square&label=CI&logo=githubactions&logoColor=white)](https://github.com/T3rM1nAt0-R/shitpost-max/actions)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+![Engineer](https://img.shields.io/badge/Engineer-1000000x-critical?style=flat-square)
+![Vibe](https://img.shields.io/badge/Vibe-Immaculate-blueviolet?style=flat-square)
+![Coverage](https://img.shields.io/badge/Test_Coverage-1000000%25-4ade80?style=flat-square)
+
+</div>
+
+---
 
 <p align="center"><strong>88 fire-and-forget services. Each one solves a problem nobody had, using techniques nobody asked for, at a scale nobody needed.</strong></p>
-
-<p align="center"><a href="https://shitpostmax.com/gitpostmax"><strong>→ Live catalog: shitpostmax.com/gitpostmax</strong></a> — the same 88 plugins, same jokes, with real-time ticking data</p>
 
 <p align="center">
 I am a <strong>1000000x engineer</strong>. Most engineers ship code. I ship <em>AI-integrated eval loops that ship code</em>. This repository is the receipts. pi-spigot alone solved the last digit of π — yesterday — which is more than most Series A startups can say about their roadmap.
@@ -31,7 +36,7 @@ I am a <strong>1000000x engineer</strong>. Most engineers ship code. I ship <em>
 
 ---
 
-## The Mission
+## 🎭 The Mission
 
 While other engineers were "shipping features," I was building the infrastructure of tomorrow, today, yesterday, and also retroactively before that. **shitpost-max is not a repository. It is a civilization.** A self-sustaining, self-healing, self-committing ecosystem of 88 sovereign microservices, each one quietly out-innovating an entire YC batch before their seed round closes.
 
@@ -56,7 +61,68 @@ Underneath the bit: this is a fleet of small, real, working Python services — 
 
 This repo is the live implementation. You can read the code, run the tests, and run the scheduler without access to anything else.
 
-## How it works
+## 🚀 Selected showcase
+
+<table>
+<tr>
+<td align="center" width="72">🔢</td>
+<td><a href="pi-spigot/"><b>pi-spigot</b></a><br><sub>Solved π to arbitrary precision using an AI-integrated eval loop. Emits one digit per tick.</sub><br><br>
+<img src="https://img.shields.io/badge/Status-Live-4ade80?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Category-Number%20Theory-c084fc?style=flat-square" alt="Category">
+<img src="https://img.shields.io/badge/Cadence-per%20tick-94a3b8?style=flat-square" alt="Cadence"></td>
+</tr>
+<tr>
+<td align="center">🧠</td>
+<td><a href="llm-vs-llm/"><b>llm-vs-llm</b></a><br><sub>Pits two local LLMs against each other in single combat over one question. Alignment research, but make it a cage match.</sub><br><br>
+<img src="https://img.shields.io/badge/Status-Live-4ade80?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Category-Local%20LLM-c084fc?style=flat-square" alt="Category">
+<img src="https://img.shields.io/badge/Backend-Ollama-94a3b8?style=flat-square" alt="Backend"></td>
+</tr>
+<tr>
+<td align="center">🎮</td>
+<td><a href="dungeon-of-the-day/"><b>dungeon-of-the-day</b></a><br><sub>Procedurally generates a new dungeon daily using BSP, because roguelikes deserve CI/CD too.</sub><br><br>
+<img src="https://img.shields.io/badge/Status-Live-4ade80?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Category-Games-fbbf24?style=flat-square" alt="Category">
+<img src="https://img.shields.io/badge/Algorithm-BSP-94a3b8?style=flat-square" alt="Algorithm"></td>
+</tr>
+<tr>
+<td align="center">🛠️</td>
+<td><a href="10x-engineer/"><b>10x-engineer</b></a><br><sub>Orchestrates ten other scripts in a single tick and reports pass/fail. The only 10x claim in this repo backed by an actual number.</sub><br><br>
+<img src="https://img.shields.io/badge/Status-Live-4ade80?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Category-Dev%20Tools-60a5fa?style=flat-square" alt="Category">
+<img src="https://img.shields.io/badge/Type-Orchestrator-94a3b8?style=flat-square" alt="Type"></td>
+</tr>
+<tr>
+<td align="center">📡</td>
+<td><a href="iss-tracker/"><b>iss-tracker</b></a><br><sub>Tracks the ISS's exact lat/long every minute. Real-time orbital awareness, mostly so I can wave at the sky.</sub><br><br>
+<img src="https://img.shields.io/badge/Status-Live-4ade80?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Category-Live%20Data-38bdf8?style=flat-square" alt="Category">
+<img src="https://img.shields.io/badge/Cadence-1%20min-94a3b8?style=flat-square" alt="Cadence"></td>
+</tr>
+</table>
+
+> The other 83 are just as real. See [Live plugins](#live-plugins) below, or browse the [live catalog](https://shitpostmax.com/gitpostmax).
+
+## 🧱 Tech
+
+**Language & runtime**
+<p>
+  <img src="https://img.shields.io/badge/Python_3-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3">
+  <img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest">
+  <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama">
+</p>
+
+**Infra**
+<p>
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions">
+  <img src="https://img.shields.io/badge/systemd-white?style=flat-square&logo=linux&logoColor=black" alt="systemd">
+  <img src="https://img.shields.io/badge/Self--Hosted-Homelab-94a3b8?style=flat-square" alt="Self-Hosted Homelab">
+</p>
+
+**The database is git.** Every tick is a commit; `state.jsonl`/`summary.json` are the schema; `git log` is the audit trail. No Postgres, no Redis, no managed anything — the whole persistence layer is version control, used slightly too literally.
+
+## ⚙️ How it works
 
 Every plugin is a directory at the repo root with a `tick.py` entrypoint and a main Python module. Each plugin subclasses `Shitpost` from `harness/shitpost_base.py` and sets three class attributes:
 
