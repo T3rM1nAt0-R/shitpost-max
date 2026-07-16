@@ -2065,3 +2065,4 @@
 {"match_ok":false,"match_test":"((l|x+)|k)++","nonmatch_ok":true,"nonmatch_test":"((l|x+3|k)++","pattern":"((l|x+)|k)++","tick":370,"timestamp":"2026-07-16T20:06:12.729543+00:00"}
 {"match_ok":false,"match_test":"(u+|q)","nonmatch_ok":true,"nonmatch_test":"(u+5q)","pattern":"(u+|q)","tick":371,"timestamp":"2026-07-16T20:07:42.761155+00:00"}
 {"match_ok":false,"match_test":"(((o|t++)|a)|(i|k))*","nonmatch_ok":true,"nonmatch_test":"(((p|t++)|a)|(i|k))*","pattern":"(((o|t++)|a)|(i|k))*","tick":372,"timestamp":"2026-07-16T20:15:53.737509+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":373,"timestamp":"2026-07-16T20:15:59.908933+00:00"}
