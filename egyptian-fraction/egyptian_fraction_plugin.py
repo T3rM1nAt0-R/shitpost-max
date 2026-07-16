@@ -17,9 +17,6 @@ class EgyptianFractionPlugin(Shitpost):
     # Fixed, deterministic sequence of rationals to expand (never user-supplied).
     _BASE_RATIONALS = [(4, 17), (5, 21), (3, 11), (7, 23), (2, 7), (5, 12), (3, 8), (7, 15)]
 
-    def _persisted_state_path(self) -> str:
-        return os.path.join(self._plugin_dir(), "egyptian_fraction_state.json")
-
     def _next_rational(self, rational_index: int) -> tuple:
         """Return the (numerator, denominator) for the given index, cycling and
         offsetting the base list deterministically once exhausted."""
