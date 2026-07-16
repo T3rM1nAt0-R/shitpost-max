@@ -1,3 +1,5 @@
+"""Procedurally generates a new dungeon daily using BSP, because roguelikes deserve CI/CD too."""
+
 import json
 import os
 import sys

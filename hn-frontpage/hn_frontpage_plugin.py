@@ -1,3 +1,5 @@
+"""Archives the Hacker News front page hourly, preserving humanity's finest arguments about whether Rust was necessary."""
+
 import os
 import sys
 from datetime import datetime, timezone

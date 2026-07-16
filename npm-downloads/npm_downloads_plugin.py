@@ -1,3 +1,5 @@
+"""Tracks daily downloads of one npm package like it's a stock ticker. Line goes up, dopamine goes up."""
+
 import os
 import sys
 from datetime import datetime, timezone

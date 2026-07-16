@@ -1,3 +1,5 @@
+"""Benchmarks every sorting algorithm from CS101, live, per tick. O(n log n) supremacy, re-decided daily."""
+
 import os
 import random
 import time

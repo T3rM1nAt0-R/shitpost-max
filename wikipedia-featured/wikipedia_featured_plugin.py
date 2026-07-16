@@ -1,3 +1,5 @@
+"""Archives Wikipedia's daily featured article, building an unsolicited highlight reel of human knowledge."""
+
 import json
 import os
 import sys

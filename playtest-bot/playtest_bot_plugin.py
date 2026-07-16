@@ -1,3 +1,5 @@
+"""Autonomous agent plays 2048 forever so I don't have to. Genuinely closer to AGI than most of my other tools."""
+
 import itertools
 import json
 import os

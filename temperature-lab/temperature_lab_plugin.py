@@ -1,3 +1,5 @@
+"""Cranked the temperature knob on a local LLM to quantify chaos, scientifically. Peer-reviewed by nobody, trusted by me."""
+
 import os
 import sys
 from datetime import datetime, timezone

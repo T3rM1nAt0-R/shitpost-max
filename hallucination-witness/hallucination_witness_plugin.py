@@ -1,3 +1,5 @@
+"""Fact-checks a local LLM daily against ground truth, because someone has to hold it accountable. Spoiler: it still lies sometimes."""
+
 import json
 import os
 import sys

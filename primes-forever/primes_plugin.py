@@ -1,3 +1,5 @@
+"""Enumerating every prime number that will ever exist, forever, on a cron schedule. Infinite scale, infinite commits."""
+
 import os
 from datetime import datetime, timezone
 

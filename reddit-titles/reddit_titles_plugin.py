@@ -1,3 +1,5 @@
+"""Snapshots hot post titles from a subreddit hourly. Peer-reviewed vibes, sourced from strangers."""
+
 import os
 from datetime import datetime, timezone
 import requests

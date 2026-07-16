@@ -1,3 +1,5 @@
+"""Charts a manually-entered net worth number over time. Data integrity: as honest as I am that day."""
+
 import json
 import os
 import sys

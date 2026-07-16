@@ -1,3 +1,5 @@
+"""Snapshots trending GitHub repos daily so I always know what everyone else shipped instead of this."""
+
 import os
 from datetime import datetime, timezone
 

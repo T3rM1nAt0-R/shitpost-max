@@ -1,3 +1,5 @@
+"""Logs regional Spotify top tracks daily so future archaeologists know exactly what we were vibing to."""
+
 import os
 import sys
 from datetime import datetime, timezone

@@ -1,3 +1,5 @@
+"""Deployed a probabilistic data structure that can lie to you, on purpose, for performance. Maybe it's in the set. Who's to say."""
+
 import os
 import hashlib
 import secrets

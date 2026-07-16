@@ -1,3 +1,5 @@
+"""Tracks Bangalore's air quality hourly so I can quantify exactly how much I'm suffering, with receipts."""
+
 import json
 import os
 import sys

@@ -15,6 +15,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 README_PATH = REPO_ROOT / "README.md"
+CATEGORIES_PATH = REPO_ROOT / "tools" / "plugin_categories.json"
 
 # Directories that are never plugin directories.
 SKIP_DIRS = {
@@ -184,14 +185,50 @@ def collect_plugin_rows(repo_root: Path) -> list[tuple[str, str]]:
     return rows
 
 
-def format_table(rows: list[tuple[str, str]]) -> str:
-    """Format rows as a markdown table with pipe-escaped descriptions."""
-    lines = ["Plugin | Description", "--- | ---"]
-    for name, description in rows:
-        # Escape literal pipes so the description cannot break the table.
-        safe_description = description.replace("|", "\\|")
-        lines.append(f"{name} | {safe_description}")
-    return "\n".join(lines) + "\n"
+def load_categories(categories_path: Path) -> list[dict]:
+    """Load the category -> ordered plugin-name-list mapping.
+
+    This is the single source of truth for grouping shared with
+    tools/generate_gitpostmax_catalog.py -- keep both generators reading
+    the same file so the README and the /gitpostmax dashboard never drift
+    out of sync on which category a plugin lives in (a real mismatch, not
+    hypothetical: gitpostmax_catalog.json referenced a "crash-service"
+    plugin that had been renamed to "selfhealing-demo", caught 2026-07-16).
+    """
+    return json.loads(categories_path.read_text(encoding="utf-8"))["categories"]
+
+
+def format_table(rows: list[tuple[str, str]], categories_path: Path = CATEGORIES_PATH) -> str:
+    """Format rows as collapsible per-category markdown tables.
+
+    Raises ValueError if a public plugin isn't assigned to exactly one
+    category, or a category lists a plugin that isn't a real public row --
+    both indicate plugin_categories.json has drifted from the live plugin
+    set and needs a human to reconcile it, not a silent skip.
+    """
+    row_map = dict(rows)
+    categories = load_categories(categories_path)
+
+    categorized = {name for cat in categories for name in cat["plugins"]}
+    uncategorized = set(row_map) - categorized
+    if uncategorized:
+        raise ValueError(f"plugins missing from plugin_categories.json: {sorted(uncategorized)}")
+    unknown = categorized - set(row_map)
+    if unknown:
+        raise ValueError(f"plugin_categories.json references unknown/internal plugins: {sorted(unknown)}")
+
+    blocks = []
+    for cat in categories:
+        lines = ["Plugin | Description", "--- | ---"]
+        for name in cat["plugins"]:
+            safe_description = row_map[name].replace("|", "\\|")
+            lines.append(f"{name} | {safe_description}")
+        table = "\n".join(lines)
+        blocks.append(
+            f"<details>\n<summary><strong>{cat['name']}</strong> "
+            f"<sub>({len(cat['plugins'])})</sub></summary>\n\n{table}\n\n</details>"
+        )
+    return "\n\n".join(blocks) + "\n"
 
 
 def regenerate_readme(readme_path: Path, table: str) -> str:

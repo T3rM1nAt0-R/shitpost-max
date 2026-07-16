@@ -1,3 +1,5 @@
+"""Measures how badly my RAG pipeline forgets things over time, so I can watch knowledge rot in real time. Very zen."""
+
 import json
 import os
 import sys

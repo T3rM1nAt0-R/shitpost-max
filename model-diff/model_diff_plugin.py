@@ -1,3 +1,5 @@
+"""Runs a fixed eval suite against every new model version and commits the scorecard. Rigorous benchmarking, zero peer review."""
+
 import json
 import os
 import shlex

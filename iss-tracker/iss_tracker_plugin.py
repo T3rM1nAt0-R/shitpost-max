@@ -1,3 +1,5 @@
+"""Tracks the ISS's exact lat/long every minute. Real-time orbital awareness, mostly so I can wave at the sky."""
+
 import os
 from datetime import datetime, timezone
 import requests

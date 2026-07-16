@@ -1,3 +1,5 @@
+"""Built a service that crashes on purpose, then heals itself, to demonstrate resilience I do not personally have."""
+
 import os
 import random
 import time

@@ -1,3 +1,5 @@
+"""Benchmarks cron against systemd timers to settle an argument literally nobody is having, definitively."""
+
 import os
 from datetime import datetime, timezone
 

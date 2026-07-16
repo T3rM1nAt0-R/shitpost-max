@@ -1,3 +1,5 @@
+"""Counted every way to parenthesize an expression so you don't have to. One full Catalan number per tick, zero regrets."""
+
 import os
 from datetime import datetime, timezone
 

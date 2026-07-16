@@ -1,3 +1,5 @@
+"""Tallies recurring subscription costs monthly, so I can be quietly horrified on a schedule."""
+
 import hashlib
 import json
 import os

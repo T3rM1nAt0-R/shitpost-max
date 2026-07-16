@@ -1,3 +1,5 @@
+"""Lints this repo's own generated content so the shitposts themselves meet production code-quality bars. Standards, but ironic."""
+
 import json
 import os
 import subprocess

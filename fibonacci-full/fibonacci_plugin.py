@@ -1,4 +1,4 @@
-"""Fibonacci plugin: one full Fibonacci number per tick.
+"""Rebuilt nature's favorite sequence as a microservice. One full Fibonacci number per tick — rabbits optional.
 
 Uses Python's arbitrary-precision integers so the sequence never
 overflows or truncates.  The running state is persisted in

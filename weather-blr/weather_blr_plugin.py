@@ -1,3 +1,5 @@
+"""Built a real-time weather intelligence platform for exactly one city. Meteorology, minus the meteorologists."""
+
 import os
 import sys
 from datetime import datetime, timezone

@@ -1,3 +1,5 @@
+"""Generates a new regular expression daily so future-me has a fresh problem to have, without a cause. Now two problems."""
+
 import json
 import os
 import random

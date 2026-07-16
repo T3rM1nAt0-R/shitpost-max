@@ -1,3 +1,5 @@
+"""Compresses an entire day of human thought into exactly 3 emojis using a local model. Ultimate summarization benchmark, SOTA."""
+
 import os
 from datetime import datetime, timezone
 

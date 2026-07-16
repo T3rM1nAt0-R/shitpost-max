@@ -1,3 +1,5 @@
+"""Derived Euler's number from an integer-only streaming spigot so pure it doesn't even trust floats. Big-brain math, zero floating-point anxiety."""
+
 import os
 from datetime import datetime, timezone
 

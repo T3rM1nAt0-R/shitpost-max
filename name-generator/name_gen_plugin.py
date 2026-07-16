@@ -1,3 +1,5 @@
+"""Generates names using an n-gram model, for every character, product, and pet that doesn't exist yet."""
+
 import os
 import random
 from datetime import datetime, timezone

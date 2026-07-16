@@ -1,3 +1,5 @@
+"""Watches a specific domain for the split second it becomes available, because domain sniping is a legitimate engineering discipline."""
+
 import json
 import os
 import sys

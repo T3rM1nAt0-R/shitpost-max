@@ -1,3 +1,5 @@
+"""Logs the market fear/greed index daily so I can watch collective emotion get a number."""
+
 import json
 import os
 import sys

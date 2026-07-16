@@ -1,3 +1,5 @@
+"""Shuffles a deck using multiple algorithms and measures the entropy, because a fair game of solitaire deserves rigor."""
+
 import json
 import os
 import random

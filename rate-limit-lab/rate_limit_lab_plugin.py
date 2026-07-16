@@ -1,3 +1,5 @@
+"""Ran a rate-limited endpoint against an aggressive and a compliant client, just to prove good citizens finish last. Data doesn't lie."""
+
 import os
 from datetime import datetime, timezone
 

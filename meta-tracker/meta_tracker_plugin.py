@@ -1,3 +1,5 @@
+"""Simulates an entire esports meta via tournament sims, per tick, to track which strategy is 'meta' this week. Balance patch not included."""
+
 import json
 import os
 import random

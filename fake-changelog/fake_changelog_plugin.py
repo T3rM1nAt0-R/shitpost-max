@@ -1,3 +1,5 @@
+"""Generates a plausible changelog entry for a product that does not exist, more convincing than most real ones."""
+
 import os
 from datetime import datetime, timezone
 import random

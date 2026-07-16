@@ -1,3 +1,5 @@
+"""Sends the same prompt to the same model every day and diffs the output, because silent regressions are how empires fall."""
+
 import json
 import os
 import sys

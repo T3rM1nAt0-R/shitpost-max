@@ -1,3 +1,5 @@
+"""Commits exactly once per calendar day to keep the GitHub contribution graph green. Engineering discipline, or an addiction — undecided."""
+
 import os
 from datetime import datetime, timezone
 

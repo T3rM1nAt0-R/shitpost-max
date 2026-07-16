@@ -1,3 +1,5 @@
+"""Streams the USD/INR exchange rate live, because knowing the exact moment the rupee disappoints me feels empowering."""
+
 import os
 import sys
 from datetime import datetime, timezone

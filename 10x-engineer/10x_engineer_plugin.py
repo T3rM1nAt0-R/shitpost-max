@@ -1,3 +1,5 @@
+"""Orchestrates ten other scripts in a single tick and reports pass/fail. The only 10x claim in this repo backed by an actual number."""
+
 import json
 import os
 import sys

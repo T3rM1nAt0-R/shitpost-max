@@ -1,3 +1,5 @@
+"""Disrupted π itself by doubling it. τ evangelists rejoice — one digit per tick, same carry chain, twice the disruption."""
+
 import os
 from datetime import datetime, timezone
 

@@ -1,3 +1,5 @@
+"""Solved the maze problem three different ways (BFS, DFS, A*) because consensus algorithms build trust. Rat not included."""
+
 import json
 import os
 import random

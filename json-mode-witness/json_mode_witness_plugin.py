@@ -1,3 +1,5 @@
+"""Measures whether the model's 'JSON mode' actually produces JSON. Groundbreaking research, one malformed brace at a time."""
+
 import json
 import os
 from datetime import datetime, timezone

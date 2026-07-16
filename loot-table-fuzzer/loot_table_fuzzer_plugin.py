@@ -1,3 +1,5 @@
+"""Fuzz-tested a weighted loot table until the drop rates confessed. RNG has never been this observable."""
+
 import json
 import os
 import random

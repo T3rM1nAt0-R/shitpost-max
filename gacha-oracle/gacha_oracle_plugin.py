@@ -1,3 +1,5 @@
+"""Simulated gacha pulls at scale to quantify the house edge nobody asked me to quantify. Pity timer: honest. Wallet: hypothetical."""
+
 import json
 import os
 import random

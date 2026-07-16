@@ -1,3 +1,5 @@
+"""Red-teaming my own local model with adversarial prompts before the internet gets the chance. Responsible disclosure: to myself."""
+
 import json
 import os
 import sys

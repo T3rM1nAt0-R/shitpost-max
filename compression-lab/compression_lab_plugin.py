@@ -1,3 +1,5 @@
+"""Compresses my own logs to prove I understand entropy better than Shannon did. Ratio: modest. Ego: uncompressed."""
+
 import json
 import os
 import gzip

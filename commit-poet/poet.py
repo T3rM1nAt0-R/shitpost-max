@@ -1,4 +1,4 @@
-"""commit-poet plugin: one LLM-generated line of an infinite poem per tick.
+"""Writes one line of an infinite poem per tick via LLM. e. e. cummings would've automated it too, probably.
 
 Each tick reads the most recent lines from ``poem.txt``, asks a local Ollama
 instance to continue the poem, and appends the new line to ``poem.txt``.  The

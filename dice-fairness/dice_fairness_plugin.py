@@ -1,3 +1,5 @@
+"""Audits the fairness of virtual dice because trust, but verify. Rolling forever until the p-value forgives us."""
+
 import json
 import os
 import random

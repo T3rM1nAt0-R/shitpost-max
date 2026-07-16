@@ -1,3 +1,5 @@
+"""Tracks concurrent players on a chosen Steam game hourly, because someone needs to know if anyone else is still playing."""
+
 import json
 import os
 from datetime import datetime, timezone

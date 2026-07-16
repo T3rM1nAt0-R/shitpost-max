@@ -1,3 +1,5 @@
+"""Increments an integer every tick and commits it. The purest form of 'shipping' — no users, no bugs, just velocity."""
+
 import os
 import sys
 from datetime import datetime, timezone

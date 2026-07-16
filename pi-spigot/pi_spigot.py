@@ -1,4 +1,4 @@
-"""Pi spigot plugin: one decimal digit of π per tick.
+"""Solved π to arbitrary precision using an AI-integrated eval loop. Emits one digit per tick because shipping fast means shipping small.
 
 Uses Gibbons' unbounded integer-only spigot algorithm.  The algorithm's
 internal state is persisted in ``spigot_state.json`` so each tick resumes

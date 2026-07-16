@@ -1,3 +1,5 @@
+"""Actively hunting hash collisions to keep the cryptographers humble. Nothing broken yet, but the search never stops."""
+
 import os
 import random
 import string

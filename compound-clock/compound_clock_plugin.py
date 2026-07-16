@@ -1,3 +1,5 @@
+"""Compounds a hypothetical investment per tick, because watching imaginary money grow is still money growing."""
+
 import os
 from datetime import datetime, timezone
 from decimal import Decimal, getcontext

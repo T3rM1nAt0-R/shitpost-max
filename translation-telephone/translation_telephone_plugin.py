@@ -1,3 +1,5 @@
+"""Translates a sentence through 5 languages and back, so you can watch meaning degrade in real time, on purpose, for content."""
+
 import os
 from datetime import datetime, timezone
 

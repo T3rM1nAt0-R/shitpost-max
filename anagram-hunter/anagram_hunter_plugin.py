@@ -1,3 +1,5 @@
+"""Scans an entire wordlist to find the largest anagram set, settling bar arguments nobody was having."""
+
 import json
 import os
 import sys

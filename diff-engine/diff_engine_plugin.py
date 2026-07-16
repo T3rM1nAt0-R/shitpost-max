@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Hand-rolled a diff algorithm from scratch because trusting `git diff` is for junior engineers. Ships the diff of things nobody changed."""
+
 
 import os
 from datetime import datetime, timezone

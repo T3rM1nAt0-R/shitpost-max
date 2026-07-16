@@ -1,3 +1,5 @@
+"""Farming Mersenne primes and their perfect-number offspring. Euclid called it a theorem; I call it a background job."""
+
 import os
 from datetime import datetime, timezone
 

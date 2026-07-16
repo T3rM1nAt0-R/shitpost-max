@@ -1,4 +1,4 @@
-"""Golden-ratio spigot plugin: one decimal digit of φ per tick.
+"""Reverse-engineered the golden ratio from first principles (Gibbons already did it in 1985, I just run his code). One φ digit per tick, infinite aesthetic.
 
 Uses the continued-fraction convergents of φ = [1; 1, 1, 1, ...].
 The recurrence is the Fibonacci recurrence:

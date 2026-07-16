@@ -1,3 +1,5 @@
+"""Built exponential backoff so my failures fail more gracefully than my successes succeed. Resilience-as-a-service."""
+
 import json
 import os
 import subprocess

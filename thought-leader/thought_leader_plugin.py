@@ -1,3 +1,5 @@
+"""Generates one LinkedIn-style platitude daily, indistinguishable from 90% of my actual feed."""
+
 import os
 import random
 from datetime import datetime, timezone

@@ -1,3 +1,5 @@
+"""Pulls the USGS earthquake feed and logs every tremor on Earth, because I like knowing when the ground disagrees."""
+
 import json
 import os
 import sys

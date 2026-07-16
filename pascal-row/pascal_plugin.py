@@ -1,3 +1,5 @@
+"""Turned a 17th-century triangle into a tick-based data pipeline. One row per tick — binomial coefficients as a service."""
+
 import json
 import os
 from datetime import datetime, timezone
@@ -23,6 +25,31 @@ class PascalRowPlugin(Shitpost):
         path = os.path.join(plugin_dir, self._numbers_file_name)
         with open(path, "a", encoding="utf-8") as f:
             f.write(json.dumps(row) + "\n")
+
+    @staticmethod
+    def _row_for_logging(row: list) -> list | dict:
+        """Return the row as-is while it's small, else a bounded summary.
+
+        Pascal's triangle rows grow exponentially in digit-length forever,
+        but this value is force-committed into state.jsonl (and the commit
+        message itself) every single tick -- unbounded, forever. Left
+        unchecked, that's exactly what grew pascal-row/state.jsonl to
+        164MB and silently broke every push since GitHub's 100MB
+        per-file limit was crossed (~1142 ticks in, discovered 2026-07-16).
+        The full, untruncated row is still appended in full to
+        ``pascal.txt`` via ``_append_number`` above -- nothing is lost,
+        this only bounds what git is asked to store forever per tick.
+        """
+        serialized = json.dumps(row)
+        if len(serialized) <= 2000:
+            return row
+        return {
+            "row_length": len(row),
+            "max_value_digit_count": len(str(max(row))),
+            "first_3": row[:3],
+            "last_3": row[-3:],
+            "truncated": True,
+        }
 
     def produce(self) -> dict:
         """Return the next row of Pascal's triangle and update persistent files."""
@@ -51,6 +78,6 @@ class PascalRowPlugin(Shitpost):
         return {
             "tick": state["tick"],
             "row_index": row_index,
-            "row": pascal_row,
+            "row": self._row_for_logging(pascal_row),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }

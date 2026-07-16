@@ -1,3 +1,5 @@
+"""Pits two local LLMs against each other in single combat over one question. Alignment research, but make it a cage match."""
+
 import json
 import os
 from typing import Dict, List

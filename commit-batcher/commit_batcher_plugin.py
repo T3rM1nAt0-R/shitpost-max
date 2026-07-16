@@ -1,3 +1,5 @@
+"""Generates tiny files every second and batches the commits, because respecting the git log is a choice I make selectively."""
+
 import json
 import os
 import random

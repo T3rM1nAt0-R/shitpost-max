@@ -1,3 +1,5 @@
+"""Polls ~20 RSS feeds and commits only genuinely new items, deduplicated. RSS isn't dead, it's just self-hosted."""
+
 import json
 import os
 import sys

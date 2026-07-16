@@ -1,3 +1,5 @@
+"""Generates palindromes of arbitrary length, because some sentences deserve to read the same backwards. Racecar. Always racecar."""
+
 import json
 import os
 import re

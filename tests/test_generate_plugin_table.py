@@ -92,7 +92,7 @@ def test_check_fails_when_table_is_stale():
         shutil.copy(README_PATH, readme)
         assert main(["--readme", str(readme)]) == 0
         stale_content = readme.read_text(encoding="utf-8").replace(
-            "Pi spigot plugin", "Pee spigot plugin"
+            "Solved π to arbitrary precision", "Solved pee to arbitrary precision"
         )
         readme.write_text(stale_content, encoding="utf-8")
         assert main(["--readme", str(readme), "--check"]) == 1

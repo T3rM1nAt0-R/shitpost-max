@@ -1,3 +1,5 @@
+"""Generates sentences via bigram Markov chain. Not an LLM, doesn't need to be — coherence was always overrated."""
+
 import json
 import os
 import random

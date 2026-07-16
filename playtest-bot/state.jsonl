@@ -1640,7 +1640,9 @@
 {"agent":"heuristic","final_score":2800,"game_length":217,"max_tile":256,"tick":1638,"timestamp":"2026-07-16T10:20:57.490598+00:00"}
 {"agent":"random","final_score":1152,"game_length":121,"max_tile":128,"tick":1639,"timestamp":"2026-07-16T10:24:30.850284+00:00"}
 {"agent":"heuristic","final_score":3716,"game_length":286,"max_tile":256,"tick":1640,"timestamp":"2026-07-16T10:28:01.346324+00:00"}
-{"agent":"heuristic","final_score":1392,"game_length":148,"max_tile":128,"tick":0,"timestamp":"2026-07-16T12:35:47.210945+00:00"}
-{"agent":"random","final_score":848,"game_length":98,"max_tile":64,"tick":1,"timestamp":"2026-07-16T12:39:30.478526+00:00"}
-{"agent":"heuristic","final_score":3132,"game_length":247,"max_tile":256,"tick":2,"timestamp":"2026-07-16T12:42:55.116871+00:00"}
-{"agent":"random","final_score":1192,"game_length":116,"max_tile":128,"tick":3,"timestamp":"2026-07-16T12:46:24.582557+00:00"}
+{"agent":"heuristic","final_score":3880,"game_length":304,"max_tile":256,"tick":1668,"timestamp":"2026-07-16T12:12:32.449692+00:00"}
+{"agent":"random","final_score":1092,"game_length":115,"max_tile":128,"tick":1669,"timestamp":"2026-07-16T12:16:10.341789+00:00"}
+{"agent":"heuristic","final_score":3824,"game_length":295,"max_tile":256,"tick":1670,"timestamp":"2026-07-16T12:19:40.818667+00:00"}
+{"agent":"random","final_score":1124,"game_length":116,"max_tile":128,"tick":1671,"timestamp":"2026-07-16T12:23:09.604379+00:00"}
+{"agent":"heuristic","final_score":3308,"game_length":257,"max_tile":256,"tick":1672,"timestamp":"2026-07-16T12:26:39.688351+00:00"}
+{"agent":"random","final_score":404,"game_length":63,"max_tile":32,"tick":1673,"timestamp":"2026-07-16T12:30:52.609926+00:00"}

@@ -1,3 +1,5 @@
+"""Simulates rupee-cost-averaging into an index over time, proving discipline works even when I only simulate having it."""
+
 import os
 from datetime import datetime, timezone
 

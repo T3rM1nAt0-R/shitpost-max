@@ -1,3 +1,5 @@
+"""Appends 'still high IQ' to a file every tick, which is either the most honest metric in this repo or the least."""
+
 import os
 import sys
 from datetime import datetime, timezone

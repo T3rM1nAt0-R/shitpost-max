@@ -1,3 +1,5 @@
+"""Hunting twin primes at scale so mathematicians can retire. Streaming pairs, zero conjectures actually resolved."""
+
 import os
 from datetime import datetime, timezone
 

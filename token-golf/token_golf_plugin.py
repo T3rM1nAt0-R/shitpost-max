@@ -1,3 +1,5 @@
+"""Shrinks prompts to the theoretical token minimum while maintaining quality, because every token costs money and I refuse to pay for words."""
+
 import json
 import os
 from typing import Dict, List, Optional

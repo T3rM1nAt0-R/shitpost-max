@@ -1,3 +1,5 @@
+"""Runs an HTTP server whose entire job is a /health endpoint. 200 OK, forever, about nothing."""
+
 import http.server
 import json
 import os

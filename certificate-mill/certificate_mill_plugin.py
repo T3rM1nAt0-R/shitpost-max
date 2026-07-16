@@ -1,3 +1,5 @@
+"""Issues one fake AI certification daily. Fully credentialed, fully fictional, fully LinkedIn-postable."""
+
 import json
 import os
 from datetime import datetime, timezone

@@ -1,3 +1,5 @@
+"""Generates a daily standup update for a team of one. Blockers: none. Velocity: fabricated."""
+
 import json
 import os
 import random

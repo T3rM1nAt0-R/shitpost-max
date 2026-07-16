@@ -1,3 +1,5 @@
+"""Runs toy auto-battler matches to audit game balance nobody's playing. Peer review for a game with one player: me."""
+
 import json
 import os
 import random

@@ -1,3 +1,5 @@
+"""Generates a syllable-perfect haiku daily via local LLM. 5-7-5 discipline the model doesn't even know it's following."""
+
 import json
 import os
 import sys

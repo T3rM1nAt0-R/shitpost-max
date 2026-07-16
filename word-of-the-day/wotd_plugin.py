@@ -1,3 +1,5 @@
+"""Emits one random word per tick from a fixed list, technically indistinguishable from a real word-of-the-day calendar."""
+
 import json
 import os
 import random

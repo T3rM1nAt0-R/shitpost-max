@@ -1,3 +1,5 @@
+"""Spins up a random graph and computes a graph-theoretic property per tick. Peak whiteboard-interview energy, zero interview."""
+
 import random
 from datetime import datetime, timezone
 from typing import Dict, List, Set

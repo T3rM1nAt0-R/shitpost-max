@@ -1,3 +1,5 @@
+"""Models a full supply-and-demand economy, one tick at a time. Inflation is a choice and I chose it."""
+
 import json
 import os
 import random

@@ -1,3 +1,5 @@
+"""Generates one novel Silicon Valley buzzword per tick, feeding the exact ecosystem this joke repo is making fun of."""
+
 import os
 import random
 from datetime import datetime, timezone

@@ -1,3 +1,5 @@
+"""Tracks fuel costs daily, turning inflation into a very sad but very well-logged JSONL file."""
+
 import os
 import sys
 from datetime import datetime, timezone

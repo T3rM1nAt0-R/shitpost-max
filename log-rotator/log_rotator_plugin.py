@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cron entry point for the log-rotator plugin."""
+"""Generates logs and rotates them hourly, ensuring the evidence of this repo's nonsense is always neatly archived."""
 
 import json
 import os

@@ -1,3 +1,5 @@
+"""Proved sqrt(2) is irrational (again) one digit per tick. Pythagoras workshopped this for years; I automated it before lunch."""
+
 import os
 from datetime import datetime, timezone
 

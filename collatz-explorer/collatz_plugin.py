@@ -1,3 +1,5 @@
+"""Attacking an unsolved Millennium-adjacent problem one integer at a time. Haven't disproven the conjecture yet, but the commits look great."""
+
 import os
 from datetime import datetime, timezone
 

@@ -1,3 +1,5 @@
+"""Logs BTC/ETH prices hourly so I can watch my hypothetical portfolio not exist in real time."""
+
 import os
 import sys
 from datetime import datetime, timezone

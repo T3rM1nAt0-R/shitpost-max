@@ -1,3 +1,5 @@
+"""Builds and runs a fresh Docker image daily, because 'it works in containers' is the only guarantee I'll make."""
+
 import json
 import os
 import sys
