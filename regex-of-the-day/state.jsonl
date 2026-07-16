@@ -2079,3 +2079,4 @@
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":384,"timestamp":"2026-07-16T20:20:13.069196+00:00"}
 {"match_ok":false,"match_test":"(o|c)*+","nonmatch_ok":true,"nonmatch_test":"(o|c)*1","pattern":"(o|c)*+","tick":385,"timestamp":"2026-07-16T20:21:13.726361+00:00"}
 {"match_ok":false,"match_test":"g+","nonmatch_ok":true,"nonmatch_test":"g2","pattern":"g+","tick":386,"timestamp":"2026-07-16T20:22:13.050100+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":387,"timestamp":"2026-07-16T20:23:12.692357+00:00"}
