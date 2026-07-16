@@ -205,8 +205,19 @@ def format_table(rows: list[tuple[str, str]], categories_path: Path = CATEGORIES
     category, or a category lists a plugin that isn't a real public row --
     both indicate plugin_categories.json has drifted from the live plugin
     set and needs a human to reconcile it, not a silent skip.
+
+    Falls back to a single flat table (the pre-categorization behavior) if
+    categories_path doesn't exist at all -- keeps this usable against an
+    isolated/synthetic repo root (as several tests construct) that has no
+    reason to carry its own plugin_categories.json.
     """
     row_map = dict(rows)
+    if not categories_path.exists():
+        lines = ["Plugin | Description", "--- | ---"]
+        for name, description in rows:
+            lines.append(f"{name} | {description.replace('|', '\\|')}")
+        return "\n".join(lines) + "\n"
+
     categories = load_categories(categories_path)
 
     categorized = {name for cat in categories for name in cat["plugins"]}
@@ -272,7 +283,7 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         rows = collect_plugin_rows(REPO_ROOT)
-        table = format_table(rows)
+        table = format_table(rows, categories_path=REPO_ROOT / "tools" / "plugin_categories.json")
 
         if args.check:
             current = args.readme.read_text(encoding="utf-8")
