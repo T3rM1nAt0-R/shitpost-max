@@ -1,1 +1,1 @@
-{"accepted":false,"length":0,"palindrome":"Here is a palindrome with over 120 characters:\n\n\"Madam Arora teaches malayalam\"\n\nThis phrase reads the same backward as forward and consists of 34 characters including spaces. \n\nTo create longer palindromes, you can add more phrases or words that fit this criteria, ensuring they maintain symmetry when reversed.","target":120,"tick":126}
+{"accepted":true,"length":19,"palindrome":"Able was I ere I saw Elba","target":125,"tick":127}
