@@ -1611,3 +1611,8 @@
 {"bits_set":1000,"capacity":1000,"false_positives":100,"fp_rate":1.0,"probes":100,"tick":1606,"timestamp":"2026-07-16T08:17:24.180932+00:00"}
 {"bits_set":1000,"capacity":1000,"false_positives":100,"fp_rate":1.0,"probes":100,"tick":1607,"timestamp":"2026-07-16T08:20:54.259887+00:00"}
 {"bits_set":1000,"capacity":1000,"false_positives":100,"fp_rate":1.0,"probes":100,"tick":1608,"timestamp":"2026-07-16T08:24:24.816589+00:00"}
+{"bits_set":138,"capacity":1000,"false_positives":1,"fp_rate":0.01,"probes":100,"tick":1,"timestamp":"2026-07-16T12:32:53.045456+00:00"}
+{"bits_set":258,"capacity":1000,"false_positives":1,"fp_rate":0.01,"probes":100,"tick":2,"timestamp":"2026-07-16T12:36:55.884671+00:00"}
+{"bits_set":358,"capacity":1000,"false_positives":7,"fp_rate":0.07,"probes":100,"tick":3,"timestamp":"2026-07-16T12:40:32.743698+00:00"}
+{"bits_set":442,"capacity":1000,"false_positives":9,"fp_rate":0.09,"probes":100,"tick":4,"timestamp":"2026-07-16T12:43:55.257698+00:00"}
+{"bits_set":506,"capacity":1000,"false_positives":15,"fp_rate":0.15,"probes":100,"tick":5,"timestamp":"2026-07-16T12:47:24.701441+00:00"}

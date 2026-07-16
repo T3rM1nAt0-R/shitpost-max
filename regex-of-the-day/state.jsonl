@@ -1639,3 +1639,7 @@
 {"match_ok":false,"match_test":"(x|z)*","nonmatch_ok":true,"nonmatch_test":"(x|a)*","pattern":"(x|z)*","tick":1502,"timestamp":"2026-07-16T10:21:06.714507+00:00"}
 {"match_ok":false,"match_test":"k+","nonmatch_ok":true,"nonmatch_test":"k2","pattern":"k+","tick":1503,"timestamp":"2026-07-16T10:24:37.157491+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1504,"timestamp":"2026-07-16T10:28:05.219394+00:00"}
+{"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":1,"timestamp":"2026-07-16T12:36:01.839891+00:00"}
+{"match_ok":false,"match_test":"r*","nonmatch_ok":true,"nonmatch_test":"r1","pattern":"r*","tick":2,"timestamp":"2026-07-16T12:39:43.631934+00:00"}
+{"match_ok":false,"match_test":"u*","nonmatch_ok":true,"nonmatch_test":"v*","pattern":"u*","tick":3,"timestamp":"2026-07-16T12:43:07.987295+00:00"}
+{"match_ok":false,"match_test":"(((l|(((u+?|e)|d)|c))|k*)|y)+","nonmatch_ok":true,"nonmatch_test":"(((l|(((u+?|e)|d)|c))|l*)|y)+","pattern":"(((l|(((u+?|e)|d)|c))|k*)|y)+","tick":4,"timestamp":"2026-07-16T12:46:35.017073+00:00"}
