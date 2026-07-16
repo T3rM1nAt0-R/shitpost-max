@@ -1,1 +1,1 @@
-{"accepted":false,"length":0,"palindrome":"Here is a palindrome 100 characters long:\n\n\"A man, a plan, a canal: Panama, never odd or even.\"\n\nThis sentence reads the same forwards and backwards when spaces and punctuation are ignored.","target":100,"tick":87}
+{"accepted":false,"length":0,"palindrome":"Here is an example of a palindrome:\n\nA man a plan a canal Panama\n\nThis sentence reads the same forwards and backwards. Note that spaces and punctuation are not considered when checking for palindromes.","target":100,"tick":88}
