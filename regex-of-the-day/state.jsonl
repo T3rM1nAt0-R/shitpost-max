@@ -2098,3 +2098,4 @@
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":402,"timestamp":"2026-07-16T20:39:17.341539+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":403,"timestamp":"2026-07-16T20:40:15.470913+00:00"}
 {"match_ok":false,"match_test":"g+","nonmatch_ok":true,"nonmatch_test":"g5","pattern":"g+","tick":404,"timestamp":"2026-07-16T20:41:16.467019+00:00"}
+{"match_ok":false,"match_test":"f+","nonmatch_ok":true,"nonmatch_test":"f4","pattern":"f+","tick":405,"timestamp":"2026-07-16T20:42:12.831052+00:00"}
