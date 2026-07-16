@@ -1915,3 +1915,4 @@
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":242,"timestamp":"2026-07-16T17:36:12.918057+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":243,"timestamp":"2026-07-16T17:37:13.490344+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":244,"timestamp":"2026-07-16T17:38:13.577808+00:00"}
+{"match_ok":false,"match_test":"p?","nonmatch_ok":true,"nonmatch_test":"p5","pattern":"p?","tick":245,"timestamp":"2026-07-16T17:39:14.991619+00:00"}
