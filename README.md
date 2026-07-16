@@ -10,6 +10,8 @@
 
 <p align="center"><strong>88 fire-and-forget services. Each one solves a problem nobody had, using techniques nobody asked for, at a scale nobody needed.</strong></p>
 
+<p align="center"><a href="https://shitpostmax.com/gitpostmax"><strong>→ Live catalog: shitpostmax.com/gitpostmax</strong></a> — the same 88 plugins, same jokes, with real-time ticking data</p>
+
 <p align="center">
 I am a <strong>1000000x engineer</strong>. Most engineers ship code. I ship <em>AI-integrated eval loops that ship code</em>. This repository is the receipts. pi-spigot alone solved the last digit of π — yesterday — which is more than most Series A startups can say about their roadmap.
 </p>
