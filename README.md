@@ -203,7 +203,7 @@ selfhealing-demo | Built a service that crashes on purpose, then heals itself, t
 </details>
 
 <details>
-<summary><strong>Local LLM Experiments</strong> <sub>(11)</sub></summary>
+<summary><strong>Local LLM Experiments</strong> <sub>(12)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -218,6 +218,7 @@ emoji-summary | Compresses an entire day of human thought into exactly 3 emojis 
 haiku-daily | Generates a syllable-perfect haiku daily via local LLM. 5-7-5 discipline the model doesn't even know it's following.
 token-golf | Shrinks prompts to the theoretical token minimum while maintaining quality, because every token costs money and I refuse to pay for words.
 model-diff | Runs a fixed eval suite against every new model version and commits the scorecard. Rigorous benchmarking, zero peer review.
+token-counter-demo | Estimates token count and cost for fixed sample texts using a chars-per-token heuristic. No network dependency.
 
 </details>
 
