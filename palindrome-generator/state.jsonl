@@ -1386,3 +1386,4 @@
 {"accepted":false,"length":0,"palindrome":"Here is a palindrome for you:\n\n\"Step on no pets\"\n\nThis famous palindrome is only 9 characters long, but it's one of the most well-known. If you're looking for a longer palindrome, let me know!","target":15,"tick":5,"timestamp":"2026-07-16T13:09:48.987116+00:00"}
 {"accepted":false,"length":0,"palindrome":"Here's a 15-character palindrome: \"Able , was I saw Elba\"","target":15,"tick":6,"timestamp":"2026-07-16T13:10:18.178076+00:00"}
 {"accepted":true,"length":15,"palindrome":"Able was I saw Elba","target":20,"tick":7,"timestamp":"2026-07-16T13:11:28.658735+00:00"}
+{"accepted":false,"length":0,"palindrome":"Here's a 20-character palindrome: \n\n\"madam arora teaches malayalam\"","target":20,"tick":8,"timestamp":"2026-07-16T13:12:33.874789+00:00"}
