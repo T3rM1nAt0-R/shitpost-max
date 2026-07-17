@@ -3019,3 +3019,4 @@
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1243,"timestamp":"2026-07-17T12:38:36.629807+00:00"}
 {"match_ok":false,"match_test":"(b|a)+","nonmatch_ok":true,"nonmatch_test":"(b|a)0","pattern":"(b|a)+","tick":1244,"timestamp":"2026-07-17T12:39:52.693788+00:00"}
 {"match_ok":false,"match_test":"y++","nonmatch_ok":true,"nonmatch_test":"y+6","pattern":"y++","tick":1245,"timestamp":"2026-07-17T12:41:04.343447+00:00"}
+{"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1246,"timestamp":"2026-07-17T12:42:10.666712+00:00"}
