@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((j++|(f|q))|o)??","nonmatch_ok":true,"nonmatch_test":"((j2+|(f|q))|o)??","pattern":"((j++|(f|q))|o)??","tick":1388,"timestamp":"2026-07-17T15:14:58.081906+00:00"}
+{"match_ok":false,"match_test":"v*","nonmatch_ok":true,"nonmatch_test":"v3","pattern":"v*","tick":1389,"timestamp":"2026-07-17T15:15:34.929368+00:00"}
