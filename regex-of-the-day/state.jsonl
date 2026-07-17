@@ -3511,3 +3511,4 @@
 {"match_ok":false,"match_test":"((((l|((i|(h|t++)+)++|s))+|n)|n)|l)","nonmatch_ok":true,"nonmatch_test":"((((l2((i|(h|t++)+)++|s))+|n)|n)|l)","pattern":"((((l|((i|(h|t++)+)++|s))+|n)|n)|l)","tick":1696,"timestamp":"2026-07-17T21:38:34.111658+00:00"}
 {"match_ok":false,"match_test":"z*","nonmatch_ok":true,"nonmatch_test":"z3","pattern":"z*","tick":1697,"timestamp":"2026-07-17T21:39:29.490550+00:00"}
 {"match_ok":false,"match_test":"h??","nonmatch_ok":true,"nonmatch_test":"h?5","pattern":"h??","tick":1698,"timestamp":"2026-07-17T21:40:29.312313+00:00"}
+{"match_ok":false,"match_test":"(n+|t*)","nonmatch_ok":true,"nonmatch_test":"(n+|t*8","pattern":"(n+|t*)","tick":1699,"timestamp":"2026-07-17T21:41:31.096710+00:00"}
