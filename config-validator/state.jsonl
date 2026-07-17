@@ -93,3 +93,4 @@
 {"error":null,"filename":"pyproject.toml","filetype":"toml","is_valid":true,"timestamp":"2026-07-17T10:20:56.420740+00:00"}
 {"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false,"timestamp":"2026-07-17T10:25:09.104778+00:00"}
 {"error":null,"filename":"settings.yaml","filetype":"yaml","is_valid":true,"timestamp":"2026-07-17T10:29:39.305250+00:00"}
+{"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false,"timestamp":"2026-07-17T10:33:30.701590+00:00"}
