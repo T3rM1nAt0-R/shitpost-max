@@ -167,7 +167,7 @@ egyptian-fraction | Disrupted the ancient Egyptian numeral market with a greedy 
 </details>
 
 <details>
-<summary><strong>Algorithms & Data Structures</strong> <sub>(13)</sub></summary>
+<summary><strong>Algorithms & Data Structures</strong> <sub>(14)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -184,6 +184,7 @@ graph-of-the-day | Spins up a random graph and computes a graph-theoretic proper
 bloom-filter-demo | Deployed a probabilistic data structure that can lie to you, on purpose, for performance. Maybe it's in the set. Who's to say.
 retry-with-backoff | Built exponential backoff so my failures fail more gracefully than my successes succeed. Resilience-as-a-service.
 rate-limit-lab | Ran a rate-limited endpoint against an aggressive and a compliant client, just to prove good citizens finish last. Data doesn't lie.
+levenshtein-watch | AI-driven string alignment platform bringing edit distance computation to the enterprise. Disrupting the spell-check industry one insertion at a time.
 
 </details>
 
