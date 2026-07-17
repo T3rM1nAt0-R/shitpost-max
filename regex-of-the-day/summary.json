@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((k+|(b+|k))++|(x|((k++|f)|r+)+)+)*+","nonmatch_ok":true,"nonmatch_test":"((k+|(b+|k))++1(x|((k++|f)|r+)+)+)*+","pattern":"((k+|(b+|k))++|(x|((k++|f)|r+)+)+)*+","tick":1759,"timestamp":"2026-07-17T22:46:29.012838+00:00"}
+{"match_ok":false,"match_test":"a*","nonmatch_ok":true,"nonmatch_test":"a6","pattern":"a*","tick":1760,"timestamp":"2026-07-17T22:47:28.692068+00:00"}
