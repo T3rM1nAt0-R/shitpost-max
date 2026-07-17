@@ -2809,3 +2809,4 @@
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1054,"timestamp":"2026-07-17T09:08:37.035540+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1055,"timestamp":"2026-07-17T09:09:34.668611+00:00"}
 {"match_ok":false,"match_test":"w++","nonmatch_ok":true,"nonmatch_test":"x++","pattern":"w++","tick":1056,"timestamp":"2026-07-17T09:10:34.934077+00:00"}
+{"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":1057,"timestamp":"2026-07-17T09:11:34.601998+00:00"}
