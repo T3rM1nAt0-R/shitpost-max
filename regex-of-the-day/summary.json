@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((d|w*)|((f+|w?)+|d++))","nonmatch_ok":true,"nonmatch_test":"((d|w3)|((f+|w?)+|d++))","pattern":"((d|w*)|((f+|w?)+|d++))","tick":1184,"timestamp":"2026-07-17T11:35:33.456327+00:00"}
+{"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":1185,"timestamp":"2026-07-17T11:36:52.909227+00:00"}
