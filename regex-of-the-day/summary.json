@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((n|o)?|g)","nonmatch_ok":true,"nonmatch_test":"9(n|o)?|g)","pattern":"((n|o)?|g)","tick":954,"timestamp":"2026-07-17T06:57:08.466100+00:00"}
+{"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"b+","pattern":"a+","tick":955,"timestamp":"2026-07-17T06:58:08.689581+00:00"}
