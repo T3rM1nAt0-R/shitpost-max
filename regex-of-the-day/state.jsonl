@@ -2755,3 +2755,4 @@
 {"match_ok":false,"match_test":"f*","nonmatch_ok":true,"nonmatch_test":"g*","pattern":"f*","tick":1007,"timestamp":"2026-07-17T08:14:13.551662+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":1008,"timestamp":"2026-07-17T08:15:12.331124+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":1009,"timestamp":"2026-07-17T08:16:15.873190+00:00"}
+{"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":1010,"timestamp":"2026-07-17T08:17:13.772994+00:00"}
