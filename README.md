@@ -250,7 +250,7 @@ rss-firehose | Polls ~20 RSS feeds and commits only genuinely new items, dedupli
 </details>
 
 <details>
-<summary><strong>Language & Text Generators</strong> <sub>(13)</sub></summary>
+<summary><strong>Language & Text Generators</strong> <sub>(14)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -267,6 +267,7 @@ high-iq-certifier | Appends 'still high IQ' to a file every tick, which is eithe
 commit-poet | Writes one line of an infinite poem per tick via LLM. e. e. cummings would've automated it too, probably.
 certificate-mill | Issues one fake AI certification daily. Fully credentialed, fully fictional, fully LinkedIn-postable.
 agile-theater | Generates a daily standup update for a team of one. Blockers: none. Velocity: fabricated.
+haiku-stream | Revolutionizing Japanese poetic form generation with AI-enhanced 5-7-5 syllable optimization. Every haiku is a literary NFT.
 
 </details>
 
