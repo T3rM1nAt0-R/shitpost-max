@@ -22,3 +22,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-17T05:09:51.798236+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T05:14:01.791996+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-17T05:18:15.749741+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-17T05:22:23.427501+00:00"}
