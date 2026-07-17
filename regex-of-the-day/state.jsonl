@@ -3164,3 +3164,4 @@
 {"match_ok":false,"match_test":"(i|i)*","nonmatch_ok":true,"nonmatch_test":"2i|i)*","pattern":"(i|i)*","tick":1378,"timestamp":"2026-07-17T15:03:56.011659+00:00"}
 {"match_ok":false,"match_test":"n++","nonmatch_ok":true,"nonmatch_test":"n3+","pattern":"n++","tick":1379,"timestamp":"2026-07-17T15:04:37.421038+00:00"}
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":1380,"timestamp":"2026-07-17T15:05:35.923825+00:00"}
+{"match_ok":false,"match_test":"(s|y)","nonmatch_ok":true,"nonmatch_test":"9s|y)","pattern":"(s|y)","tick":1381,"timestamp":"2026-07-17T15:06:36.012607+00:00"}
