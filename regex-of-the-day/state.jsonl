@@ -2929,3 +2929,4 @@
 {"match_ok":false,"match_test":"((i|s)|o)","nonmatch_ok":true,"nonmatch_test":"((i|s)|o0","pattern":"((i|s)|o)","tick":1159,"timestamp":"2026-07-17T11:08:38.186582+00:00"}
 {"match_ok":false,"match_test":"(u+|c)?","nonmatch_ok":true,"nonmatch_test":"3u+|c)?","pattern":"(u+|c)?","tick":1160,"timestamp":"2026-07-17T11:09:34.836462+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":1161,"timestamp":"2026-07-17T11:10:34.984883+00:00"}
+{"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1162,"timestamp":"2026-07-17T11:11:34.762118+00:00"}
