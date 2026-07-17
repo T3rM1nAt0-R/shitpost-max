@@ -3153,3 +3153,4 @@
 {"seed_bigram":"the park.","sentence":"the park. the cat chased the dog ran in the park.","tick":1824,"timestamp":"2026-07-17T20:53:28.263707+00:00","word_count":11}
 {"seed_bigram":"in the","sentence":"in the park.","tick":1825,"timestamp":"2026-07-17T20:54:28.671971+00:00","word_count":3}
 {"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":1826,"timestamp":"2026-07-17T20:55:28.066539+00:00","word_count":5}
+{"seed_bigram":"the dog","sentence":"the dog ran in the park.","tick":1827,"timestamp":"2026-07-17T20:56:27.572313+00:00","word_count":6}
