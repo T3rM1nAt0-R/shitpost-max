@@ -3630,3 +3630,4 @@
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":1802,"timestamp":"2026-07-17T23:37:28.581278+00:00"}
 {"match_ok":false,"match_test":"(w|x+)","nonmatch_ok":true,"nonmatch_test":"1w|x+)","pattern":"(w|x+)","tick":1803,"timestamp":"2026-07-17T23:38:31.645370+00:00"}
 {"match_ok":false,"match_test":"(m|l+)+","nonmatch_ok":true,"nonmatch_test":"(m|m+)+","pattern":"(m|l+)+","tick":1804,"timestamp":"2026-07-17T23:39:29.829296+00:00"}
+{"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":1805,"timestamp":"2026-07-17T23:40:30.999575+00:00"}
