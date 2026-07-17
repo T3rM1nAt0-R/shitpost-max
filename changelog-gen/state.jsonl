@@ -8,3 +8,4 @@
 {"grouped":{"chore":[],"docs":[],"feat":["export to CSV","keyboard shortcuts"],"fix":["crash on empty input"],"other":[]},"timestamp":"2026-07-17T04:08:59.778899+00:00","version":"v1.3.0"}
 {"grouped":{"chore":["update readme"],"docs":["fix typo"],"feat":[],"fix":["timezone bug"],"other":[]},"timestamp":"2026-07-17T04:13:09.772387+00:00","version":"v1.4.0"}
 {"grouped":{"chore":["bump deps"],"docs":[],"feat":["add dark mode"],"fix":["login redirect loop"],"other":[]},"timestamp":"2026-07-17T04:17:19.788033+00:00","version":"v1.2.0"}
+{"grouped":{"chore":[],"docs":[],"feat":["export to CSV","keyboard shortcuts"],"fix":["crash on empty input"],"other":[]},"timestamp":"2026-07-17T04:21:29.785287+00:00","version":"v1.3.0"}
