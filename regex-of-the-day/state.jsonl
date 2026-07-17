@@ -3210,3 +3210,4 @@
 {"match_ok":false,"match_test":"u*?","nonmatch_ok":true,"nonmatch_test":"v*?","pattern":"u*?","tick":1423,"timestamp":"2026-07-17T15:49:36.162515+00:00"}
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"z3","pattern":"z+","tick":1424,"timestamp":"2026-07-17T15:50:36.119271+00:00"}
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1425,"timestamp":"2026-07-17T15:51:34.983485+00:00"}
+{"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":1426,"timestamp":"2026-07-17T15:52:36.071593+00:00"}
