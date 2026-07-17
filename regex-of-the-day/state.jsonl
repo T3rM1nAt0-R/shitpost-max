@@ -3640,3 +3640,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":1810,"timestamp":"2026-07-17T23:47:27.591089+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":1811,"timestamp":"2026-07-17T23:48:36.523386+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":1812,"timestamp":"2026-07-17T23:49:30.011578+00:00"}
+{"match_ok":false,"match_test":"z++","nonmatch_ok":true,"nonmatch_test":"z0+","pattern":"z++","tick":1813,"timestamp":"2026-07-17T23:50:29.143134+00:00"}
