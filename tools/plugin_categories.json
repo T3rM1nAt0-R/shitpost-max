@@ -53,7 +53,8 @@
         "kdtree-builder",
         "radix-sort-tick",
         "binary-heap-demo",
-        "knuth-morris-pratt"
+        "knuth-morris-pratt",
+        "cuckoo-filter"
       ]
     },
     {
