@@ -2843,3 +2843,4 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1084,"timestamp":"2026-07-17T09:42:54.383640+00:00"}
 {"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":1085,"timestamp":"2026-07-17T09:43:52.062736+00:00"}
 {"match_ok":false,"match_test":"q*","nonmatch_ok":true,"nonmatch_test":"q5","pattern":"q*","tick":1086,"timestamp":"2026-07-17T09:44:34.391363+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":1087,"timestamp":"2026-07-17T09:45:33.612127+00:00"}
