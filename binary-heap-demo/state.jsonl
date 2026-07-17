@@ -10,3 +10,4 @@
 {"heap":[3,8,5,8],"op":"push","tick":10,"timestamp":"2026-07-17T03:47:19.818354+00:00","value":8}
 {"heap":[5,8,8],"op":"extract","tick":11,"timestamp":"2026-07-17T03:48:10.053814+00:00","value":3}
 {"heap":[1,5,8,8],"op":"push","tick":12,"timestamp":"2026-07-17T03:49:20.735443+00:00","value":1}
+{"heap":[5,8,8],"op":"extract","tick":13,"timestamp":"2026-07-17T03:49:52.962103+00:00","value":1}
