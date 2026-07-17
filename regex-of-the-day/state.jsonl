@@ -3088,3 +3088,4 @@
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":1307,"timestamp":"2026-07-17T13:47:34.288684+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1308,"timestamp":"2026-07-17T13:48:38.626272+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1309,"timestamp":"2026-07-17T13:49:35.381786+00:00"}
+{"match_ok":false,"match_test":"(b|s)","nonmatch_ok":true,"nonmatch_test":"1b|s)","pattern":"(b|s)","tick":1310,"timestamp":"2026-07-17T13:50:36.104833+00:00"}
