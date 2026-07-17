@@ -2460,3 +2460,4 @@
 {"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"s+","pattern":"r+","tick":733,"timestamp":"2026-07-17T02:41:15.191958+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":734,"timestamp":"2026-07-17T02:42:18.943576+00:00"}
 {"match_ok":false,"match_test":"k*+","nonmatch_ok":true,"nonmatch_test":"l*+","pattern":"k*+","tick":735,"timestamp":"2026-07-17T02:43:15.207561+00:00"}
+{"match_ok":false,"match_test":"(e|q)","nonmatch_ok":true,"nonmatch_test":"(f|q)","pattern":"(e|q)","tick":736,"timestamp":"2026-07-17T02:44:13.116667+00:00"}
