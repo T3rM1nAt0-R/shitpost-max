@@ -2728,3 +2728,4 @@
 {"match_ok":false,"match_test":"(e|h*)","nonmatch_ok":true,"nonmatch_test":"(e|h*5","pattern":"(e|h*)","tick":983,"timestamp":"2026-07-17T07:28:08.562365+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":984,"timestamp":"2026-07-17T07:29:08.578376+00:00"}
 {"match_ok":false,"match_test":"e*+","nonmatch_ok":true,"nonmatch_test":"e7+","pattern":"e*+","tick":985,"timestamp":"2026-07-17T07:30:09.557816+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":986,"timestamp":"2026-07-17T07:31:08.879093+00:00"}
