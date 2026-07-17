@@ -79,3 +79,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-07-17T09:22:38.397043+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-17T09:26:45.067344+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-17T09:30:55.051880+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-07-17T09:35:05.059295+00:00"}
