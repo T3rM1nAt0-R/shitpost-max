@@ -227,3 +227,4 @@
 {"error":null,"filename":"settings.yaml","filetype":"yaml","is_valid":true,"timestamp":"2026-07-17T20:24:09.242512+00:00"}
 {"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false,"timestamp":"2026-07-17T20:28:24.377165+00:00"}
 {"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-07-17T20:32:30.279685+00:00"}
+{"error":"Expecting ',' delimiter: line 1 column 29 (char 28)","filename":"broken.json","filetype":"json","is_valid":false,"timestamp":"2026-07-17T20:36:39.230351+00:00"}
