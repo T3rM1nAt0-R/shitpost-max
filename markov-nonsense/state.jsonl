@@ -2525,3 +2525,4 @@
 {"seed_bigram":"park. the","sentence":"park. the cat sat on the mat.","tick":1195,"timestamp":"2026-07-17T09:37:33.052070+00:00","word_count":7}
 {"seed_bigram":"the mat.","sentence":"the mat. the dog around the park.","tick":1196,"timestamp":"2026-07-17T09:38:38.866184+00:00","word_count":7}
 {"seed_bigram":"the cat","sentence":"the cat chased the dog around the park.","tick":1197,"timestamp":"2026-07-17T09:39:54.130599+00:00","word_count":8}
+{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":1198,"timestamp":"2026-07-17T09:41:12.274394+00:00","word_count":4}
