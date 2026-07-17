@@ -3343,3 +3343,4 @@
 {"match_ok":false,"match_test":"(r+|(((s|(a|p+))|d)+|l)+)","nonmatch_ok":true,"nonmatch_test":"(r+|(((s|(b|p+))|d)+|l)+)","pattern":"(r+|(((s|(a|p+))|d)+|l)+)","tick":1541,"timestamp":"2026-07-17T18:50:56.165458+00:00"}
 {"match_ok":false,"match_test":"(v|p+)","nonmatch_ok":true,"nonmatch_test":"(v6p+)","pattern":"(v|p+)","tick":1542,"timestamp":"2026-07-17T18:51:31.681279+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1543,"timestamp":"2026-07-17T18:52:30.343364+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":1544,"timestamp":"2026-07-17T18:53:30.056800+00:00"}
