@@ -300,6 +300,12 @@ PLUGINS += [
     ("equilibrium-drift", 90),
 ]
 
+# 2026-07-17: wikipedia-trending, the auth-free replacement for
+# reddit-titles/spotify-charts (both retired the same day above).
+PLUGINS += [
+    ("wikipedia-trending", 1800),
+]
+
 # How often the pusher runs, independent of any plugin's own cadence.
 PUSH_CADENCE_SECONDS = 20
 
