@@ -145,7 +145,7 @@ Pushing is intentionally *not* done per tick. `harness/scheduler.py` runs a sing
 <!-- PLUGIN_TABLE_START -->
 
 <details>
-<summary><strong>Number Theory & Sequences</strong> <sub>(14)</sub></summary>
+<summary><strong>Number Theory & Sequences</strong> <sub>(22)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -163,11 +163,19 @@ primes-forever | Enumerating every prime number that will ever exist, forever, o
 collatz-explorer | Attacking an unsolved Millennium-adjacent problem one integer at a time. Haven't disproven the conjecture yet, but the commits look great.
 base-converter | Built a universal number-base translation layer. Counts up, converts bases, ships a commit — full-stack numeral literacy.
 egyptian-fraction | Disrupted the ancient Egyptian numeral market with a greedy AI-powered fraction expansion platform. Each tick delivers stone-tablet-ready unit fractions.
+babylonian-sqrt | Revolutionized iterative approximation with an AI-enhanced Babylonian convergence engine. Each tick is one step closer to quadratic perfection.
+continued-fraction | Decentralized the irrational number representation space with an infinite continued fraction oracle. Every quotient is a micro-transaction in the math economy.
+sieving-sundaram | Disintermediated Eratosthenes with a next-gen Sundaram sieve optimized for Web3 workloads. Rejecting all composites, one tick at a time.
+multiplicative-persistence | Quantifying digital entropy through multiplicative collapse analysis. Each integer's persistence is a KPI for number wellness.
+happy-numbers | AI-powered happiness detector for the integer community. Quantifying numerical well-being through iterative square-sum meditation.
+stern-brocot | Revolutionized the rational enumeration sector with an AI-driven Stern-Brocot traversal algorithm. Every fraction is a market-disrupting ratio.
+mobius-function | Disrupting the multiplicative number theory landscape with real-time Möbius inversion analysis. Every -1, 0, or 1 is a mathematically significant insight.
+fermat-factor | Revolutionizing cryptographic integer decomposition with a Fermat-powered AI factorization engine. Every factor pair unlocks new security insights.
 
 </details>
 
 <details>
-<summary><strong>Algorithms & Data Structures</strong> <sub>(14)</sub></summary>
+<summary><strong>Algorithms & Data Structures</strong> <sub>(24)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -185,11 +193,21 @@ bloom-filter-demo | Deployed a probabilistic data structure that can lie to you,
 retry-with-backoff | Built exponential backoff so my failures fail more gracefully than my successes succeed. Resilience-as-a-service.
 rate-limit-lab | Ran a rate-limited endpoint against an aggressive and a compliant client, just to prove good citizens finish last. Data doesn't lie.
 levenshtein-watch | AI-driven string alignment platform bringing edit distance computation to the enterprise. Disrupting the spell-check industry one insertion at a time.
+count-min-sketch | Revolutionizing streaming frequency estimation with a sub-linear AI-enhanced sketch data structure. Approximate counts are the new exact.
+hyperloglog-estimator | Enterprise-grade cardinality estimation platform powered by probabilistic AI. Counting the uncountable at logarithmic cost.
+trie-stats | Decentralized string storage infrastructure leveraging AI-optimized prefix trees. Every insertion is a node in the knowledge economy.
+timsort-metrics | Benchmarking the industry-standard hybrid sorting algorithm with AI-driven performance analytics. Comparison counts are the new revenue.
+simhash-near-dup | Enterprise near-duplicate detection engine powered by locality-sensitive AI hashing. Every fingerprint is a unique digital identity.
+minhash-sig | AI-enhanced set similarity estimation platform disrupting the Jaccard index market. Every signature is a probabilistic guarantee.
+kdtree-builder | Revolutionizing spatial data indexing with an AI-optimized k-dimensional tree architecture. Every split divides the space more efficiently.
+radix-sort-tick | Disintermediated comparison-based sorting with an LSD-first radix sort engine. Sorting by digits, not by judgment calls.
+binary-heap-demo | AI-driven priority queue management platform for enterprise task orchestration. Every sift-up is a leadership decision.
+knuth-morris-pratt | Revolutionizing substring search with an AI-powered linear-time pattern matching engine. Each failure function entry is a strategic pivot.
 
 </details>
 
 <details>
-<summary><strong>Games & Simulations</strong> <sub>(9)</sub></summary>
+<summary><strong>Games & Simulations</strong> <sub>(20)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -202,11 +220,22 @@ economy-sim-tick | Models a full supply-and-demand economy, one tick at a time. 
 dungeon-of-the-day | Procedurally generates a new dungeon daily using BSP, because roguelikes deserve CI/CD too.
 selfhealing-demo | Built a service that crashes on purpose, then heals itself, to demonstrate resilience I do not personally have.
 conway-life | Disrupting the cellular automata industry with an AI-driven life simulation platform. Every generation is a Board-level strategic pivot.
+langton-ant | Revolutionizing emergent behavior analytics with an AI-powered universal Turing machine on a grid. Every ant step is an IPO milestone.
+random-walk-2d | AI-driven stochastic trajectory optimization platform for Monte Carlo reference architectures. Every step is a diversification strategy.
+monty-hall-sim | AI-driven decision-theory platform for optimal switching strategy research. Every trial is a statistically significant insight.
+birthday-paradox | AI-powered combinatorial collision detection platform for enterprise probability research. Every shared birthday is a statistical breakthrough.
+schelling-segregation | AI-driven agent-based urban dynamics platform modeling emergent segregation patterns. Every relocation is a market-clearing decision.
+forest-fire-sim | AI-optimized wildfire propagation modeling platform for enterprise risk analytics. Every burned cell is a derisked asset.
+iterated-prisoner | Revolutionizing game-theoretic strategy optimization with an AI-mediated iterated dilemma engine. Every round is a trust-building exercise.
+multi-armed-bandit | AI-optimized sequential decision-making platform for enterprise exploration-exploitation tradeoffs. Every pull is a resource allocation decision.
+sierpinski-chaos | AI-accelerated fractal generation platform via stochastic vertex-attraction dynamics. Every point is a self-similar market signal.
+genetic-hello | AI-driven evolutionary computation platform for goal-directed string optimization. Every generation is a fitness-maximizing pivot.
+epidemic-sim | AI-driven compartmental epidemiological modeling platform for pandemic-adjacent risk analytics. Every recovery is a public health KPI.
 
 </details>
 
 <details>
-<summary><strong>Local LLM Experiments</strong> <sub>(12)</sub></summary>
+<summary><strong>Local LLM Experiments</strong> <sub>(23)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -222,11 +251,22 @@ haiku-daily | Generates a syllable-perfect haiku daily via local LLM. 5-7-5 disc
 token-golf | Shrinks prompts to the theoretical token minimum while maintaining quality, because every token costs money and I refuse to pay for words.
 model-diff | Runs a fixed eval suite against every new model version and commits the scorecard. Rigorous benchmarking, zero peer review.
 prompt-chaining-lab | Chains two local LLM calls per tick: stage 1 writes a sentence, stage 2 summarizes it in 3 words.
+few-shot-drift | Measures how LLM sentiment classification changes as the number of few-shot examples varies.
+sentiment-drift | Repeatedly asks the LLM to rate a fixed sentence's sentiment, tracking running mean/variance.
+zero-shot-bench | Presents fixed arithmetic/logic problems zero-shot and tracks a running correct/total count.
+token-counter-demo | Estimates token count and cost for fixed sample texts using a chars-per-token heuristic. No network dependency.
+prompt-template-lab | Substitutes fixed values into a haiku prompt template and runs each variant through the local LLM.
+system-prompt-tester | Sends the same fixed user message with varying system prompts to the local LLM's chat endpoint.
+logprobs-tracker | Tracks LLM response confidence via self-consistency across 3 repeated samples of a fixed question.
+response-length-lab | Sends a fixed prompt with varying max_tokens (num_predict) limits and records actual response length.
+llm-vs-template | Compares LLM output about a fixed topic to a fixed hand-written template sentence via word-overlap similarity.
+extraction-bench | Prompts the LLM to extract structured fields from unstructured text as JSON and measures accuracy.
+llm-self-eval | Asks the LLM to answer a fixed prompt, then rate its own response quality 1-10, tracking a running average.
 
 </details>
 
 <details>
-<summary><strong>Live Data Feeds</strong> <sub>(18)</sub></summary>
+<summary><strong>Live Data Feeds</strong> <sub>(29)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -248,11 +288,22 @@ gas-prices | Tracks fuel costs daily, turning inflation into a very sad but very
 domain-watch | Watches a specific domain for the split second it becomes available, because domain sniping is a legitimate engineering discipline.
 rss-firehose | Polls ~20 RSS feeds and commits only genuinely new items, deduplicated. RSS isn't dead, it's just self-hosted.
 bitcoin-fees | Fetches current Bitcoin fee estimates from mempool.space's public API each tick.
+mempool-watch | Fetches current Bitcoin mempool unconfirmed tx count from mempool.space's public API each tick.
+gold-silver-ratio | Fetches gold and silver spot prices from a public API each tick and computes their ratio.
+stock-index-ticker | Fetches the current S&P 500 index value from Yahoo Finance's public chart API each tick.
+treasury-yield | Fetches the current 10-year US Treasury yield from the US Treasury's public daily rates CSV each tick.
+moon-phase | Computes the current moon phase, illumination, and age from pure astronomy math. No network dependency.
+aurora-forecast | Fetches the current planetary Kp-index from NOAA SWPC's public API each tick.
+asteroid-watch | Fetches today's near-Earth asteroid close-approach data from NASA's NeoWs API each tick.
+mars-weather | Fetches Mars weather data from NASA's InSight lander archive API each tick.
+covid-wastewater | Fetches a current COVID-19 wastewater viral concentration data point from the CDC's public API each tick.
+top-pypi-packages | Fetches the top N PyPI packages by 30-day download count each tick, cycling through the top 5.
+stackoverflow-tags | Fetches question counts for a fixed list of StackOverflow tags each tick, cycling through them.
 
 </details>
 
 <details>
-<summary><strong>Language & Text Generators</strong> <sub>(14)</sub></summary>
+<summary><strong>Language & Text Generators</strong> <sub>(25)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -270,11 +321,22 @@ commit-poet | Writes one line of an infinite poem per tick via LLM. e. e. cummin
 certificate-mill | Issues one fake AI certification daily. Fully credentialed, fully fictional, fully LinkedIn-postable.
 agile-theater | Generates a daily standup update for a team of one. Blockers: none. Velocity: fabricated.
 haiku-stream | Revolutionizing Japanese poetic form generation with AI-enhanced 5-7-5 syllable optimization. Every haiku is a literary NFT.
+acronym-expander | Pioneering recursive acronym expansion through AI-driven initialism interpretation. Every backronym is a brand identity waiting to happen.
+lorem-ipsum-stream | Disrupting the placeholder text industry with AI-powered classical Latin dummy content delivery. Every word is a typographic layout asset.
+rhyme-time | Revolutionizing poetic composition with AI-enhanced phonetic pattern matching. Every perfect rhyme is a lyrical breakthrough.
+portmanteau-gen | AI-constrained lexical fusion engine for neologism generation. Every portmanteau is a brand synergy waiting to happen.
+clickbait-factory | Revolutionizing viral content creation with AI-optimized click-through maximization. Every headline is an engagement growth hack.
+corporate-bs-generator | AI-powered enterprise communication optimization platform for maximum stakeholder synergy. Every sentence drives shareholder value creation.
+pirate-translator | Revolutionizing maritime linguistic conversion with AI-enhanced golden-age-of-piracy translation. Every arrr is a cultural heritage preservation.
+euphemism-engine | AI-driven semantic softening platform for corporate communications compliance. Every euphemism is a PR crisis avoided.
+fortune-cookie-factory | Revolutionizing predictive text analytics with AI-optimized fortune cookie wisdom delivery. Every fortune is a personalized life insight.
+horoscope-gen | AI-powered celestial determinism platform for personalized astrological content generation. Every horoscope is a cosmic growth opportunity.
+cowclick-generator | Pioneering AI-enhanced bovine communication through ASCII art rendering pipelines. Every cow is a text-to-visual paradigm shift.
 
 </details>
 
 <details>
-<summary><strong>Personal Finance Toys</strong> <sub>(5)</sub></summary>
+<summary><strong>Personal Finance Toys</strong> <sub>(14)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -283,11 +345,20 @@ rupee-cost-averaging-sim | Simulates rupee-cost-averaging into an index over tim
 subscription-audit | Tallies recurring subscription costs monthly, so I can be quietly horrified on a schedule.
 networth-witness | Charts a manually-entered net worth number over time. Data integrity: as honest as I am that day.
 loan-amortization | Emits a fixed loan's monthly amortization schedule row by row, forever, until it's paid off and does it again.
+credit-card-sim | Simulates a credit card balance for 24 months of minimum payments, demonstrating the debt trap, then resets.
+inflation-calculator | Shows how a fixed amount of money erodes under a fixed inflation rate over 30 years, then resets to year 0.
+sip-simulator | Simulates a Systematic Investment Plan over 36 months with a fixed repeating sequence of monthly returns, then resets.
+lumpsum-calculator | Computes the future value of a fixed one-time investment across a fixed cycling list of holding periods.
+tax-bracket-viewer | Shows a fixed progressive tax bracket table and the marginal-bracket liability for a fixed cycling list of incomes.
+fd-calculator | Computes fixed deposit maturity amounts across a fixed cycling list of tenures, quarterly compounding.
+retirement-sim | Projects a retirement corpus growing via fixed monthly contribution and growth rate until it crosses a fixed target, then resets.
+dividend-tracker | Simulates dividend yield and quarterly payout for a fixed cycling list of tickers. No live network calls.
+emi-calculator | Computes the Equated Monthly Installment across a fixed cycling list of loan scenarios.
 
 </details>
 
 <details>
-<summary><strong>Dev & Meta Tools</strong> <sub>(10)</sub></summary>
+<summary><strong>Dev & Meta Tools</strong> <sub>(21)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -301,6 +372,17 @@ log-rotator | Generates logs and rotates them hourly, ensuring the evidence of t
 green-square-maxxer | Commits exactly once per calendar day to keep the GitHub contribution graph green. Engineering discipline, or an addiction — undecided.
 container-of-the-day | Builds and runs a fresh Docker image daily, because 'it works in containers' is the only guarantee I'll make.
 env-diff | Compares a fixed .env.example against a fixed .env, reporting missing/extra variables. Same verdict every tick.
+dependency-watch | Tracks a fixed embedded history of dependency counts, cycling through snapshots and showing the delta.
+todo-scanner | Scans fixed embedded source snippets for TODO/FIXME/HACK/XXX markers, cycling through files.
+branch-age-tracker | Lists a fixed embedded set of branches by days-since-last-commit, sorted most-stale-first, cycling.
+changelog-gen | Generates a changelog entry from a fixed embedded commit list, grouped by conventional-commit type, cycling through releases.
+code-complexity-watch | Reports a fixed embedded list of function cyclomatic complexity scores, sorted highest-first, cycling.
+config-validator | Validates a fixed embedded list of JSON/TOML/YAML file contents for syntax errors, cycling through them.
+makefile-help | Parses a fixed embedded Makefile for target: ## description comments, cycling through a help menu.
+dockerfile-linter | Checks a fixed embedded pair of Dockerfiles for common anti-patterns, cycling through them.
+api-snapshot-diff | Simulates an API snapshot diff between two fixed embedded JSON snapshots. No live network call.
+git-blame-stats | Reports a fixed embedded list of author/line-count blame stats, sorted by line count descending, cycling.
+test-splitter | Splits a fixed embedded test list into N parallel groups via greedy longest-first bin-packing, cycling.
 
 </details>
 
