@@ -2710,3 +2710,4 @@
 {"match_ok":false,"match_test":"b++","nonmatch_ok":true,"nonmatch_test":"b1+","pattern":"b++","tick":966,"timestamp":"2026-07-17T07:10:08.324588+00:00"}
 {"match_ok":false,"match_test":"h*+","nonmatch_ok":true,"nonmatch_test":"h0+","pattern":"h*+","tick":967,"timestamp":"2026-07-17T07:11:33.275688+00:00"}
 {"match_ok":false,"match_test":"o*","nonmatch_ok":true,"nonmatch_test":"p*","pattern":"o*","tick":968,"timestamp":"2026-07-17T07:12:07.741410+00:00"}
+{"match_ok":false,"match_test":"(s|j++)","nonmatch_ok":true,"nonmatch_test":"(s|j+1)","pattern":"(s|j++)","tick":969,"timestamp":"2026-07-17T07:13:07.960096+00:00"}
