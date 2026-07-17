@@ -102,3 +102,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-17T10:58:29.329719+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T11:03:13.616598+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-17T11:06:45.069411+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-17T11:10:55.050964+00:00"}
