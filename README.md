@@ -285,7 +285,7 @@ loan-amortization | Emits a fixed loan's monthly amortization schedule row by ro
 </details>
 
 <details>
-<summary><strong>Dev & Meta Tools</strong> <sub>(9)</sub></summary>
+<summary><strong>Dev & Meta Tools</strong> <sub>(10)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -298,6 +298,7 @@ healthcheck-endpoint | Runs an HTTP server whose entire job is a /health endpoin
 log-rotator | Generates logs and rotates them hourly, ensuring the evidence of this repo's nonsense is always neatly archived.
 green-square-maxxer | Commits exactly once per calendar day to keep the GitHub contribution graph green. Engineering discipline, or an addiction — undecided.
 container-of-the-day | Builds and runs a fresh Docker image daily, because 'it works in containers' is the only guarantee I'll make.
+env-diff | Compares a fixed .env.example against a fixed .env, reporting missing/extra variables. Same verdict every tick.
 
 </details>
 
