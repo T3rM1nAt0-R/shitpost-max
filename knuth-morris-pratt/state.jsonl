@@ -937,3 +937,4 @@
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":938,"timestamp":"2026-07-17T20:28:28.688629+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":939,"timestamp":"2026-07-17T20:29:27.332979+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":940,"timestamp":"2026-07-17T20:30:26.929388+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":941,"timestamp":"2026-07-17T20:31:26.703076+00:00"}
