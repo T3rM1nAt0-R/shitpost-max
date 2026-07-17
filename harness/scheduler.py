@@ -149,17 +149,23 @@ PLUGINS = [
     ("prompt-injection-lab", 600),
     ("rag-decay", 600),
     ("rate-limit-lab", 60),
-    ("reddit-titles", 600),
     ("regex-of-the-day", 60),
     ("regression-canary", 600),
     ("retry-with-backoff", 600),
     ("rss-firehose", 600),
     ("rupee-cost-averaging-sim", 60),
     ("selfhealing-demo", 60),
+    # ("reddit-titles", 600) and ("spotify-charts", 600) retired 2026-07-17:
+    # both had never produced a single tick since being built, in both
+    # cases because they required real OAuth app credentials
+    # (REDDIT_CLIENT_ID/SECRET, Spotify client credentials) that were never
+    # configured -- not a code bug, a genuine "needs a real account" gap.
+    # Rather than leave them permanently dormant or fabricate credentials,
+    # removed entirely; see wikipedia-trending for their auth-free
+    # replacement (Wikimedia's public pageviews API, no key needed).
     ("shitpost-max-meta", 60),
     ("silicon-valley-buzzword-bot", 60),
     ("sorting-race", 60),
-    ("spotify-charts", 600),
     ("sqrt2-stream", 60),
     ("steam-playercount", 600),
     ("subscription-audit", 60),
