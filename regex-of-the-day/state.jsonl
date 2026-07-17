@@ -2803,3 +2803,4 @@
 {"match_ok":false,"match_test":"(q|s)","nonmatch_ok":true,"nonmatch_test":"(r|s)","pattern":"(q|s)","tick":1048,"timestamp":"2026-07-17T09:02:36.876127+00:00"}
 {"match_ok":false,"match_test":"g+","nonmatch_ok":true,"nonmatch_test":"h+","pattern":"g+","tick":1049,"timestamp":"2026-07-17T09:03:35.183335+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":1050,"timestamp":"2026-07-17T09:04:34.789501+00:00"}
+{"match_ok":false,"match_test":"x+","nonmatch_ok":true,"nonmatch_test":"y+","pattern":"x+","tick":1051,"timestamp":"2026-07-17T09:05:33.024061+00:00"}
