@@ -3470,3 +3470,4 @@
 {"match_ok":false,"match_test":"(l|z)","nonmatch_ok":true,"nonmatch_test":"(l|a)","pattern":"(l|z)","tick":1657,"timestamp":"2026-07-17T20:57:28.588845+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":1658,"timestamp":"2026-07-17T20:58:32.309277+00:00"}
 {"match_ok":false,"match_test":"((k|i)|g+)","nonmatch_ok":true,"nonmatch_test":"((k|i)|g+6","pattern":"((k|i)|g+)","tick":1659,"timestamp":"2026-07-17T20:59:29.247281+00:00"}
+{"match_ok":false,"match_test":"z?","nonmatch_ok":true,"nonmatch_test":"z8","pattern":"z?","tick":1660,"timestamp":"2026-07-17T21:00:30.099636+00:00"}
