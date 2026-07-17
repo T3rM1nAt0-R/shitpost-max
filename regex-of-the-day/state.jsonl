@@ -2800,3 +2800,4 @@
 {"match_ok":false,"match_test":"q+","nonmatch_ok":true,"nonmatch_test":"q8","pattern":"q+","tick":1045,"timestamp":"2026-07-17T09:01:43.914766+00:00"}
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":1046,"timestamp":"2026-07-17T09:02:00.357125+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":1047,"timestamp":"2026-07-17T09:02:16.474179+00:00"}
+{"match_ok":false,"match_test":"(q|s)","nonmatch_ok":true,"nonmatch_test":"(r|s)","pattern":"(q|s)","tick":1048,"timestamp":"2026-07-17T09:02:36.876127+00:00"}
