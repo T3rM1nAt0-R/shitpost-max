@@ -49,3 +49,4 @@
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":49,"timestamp":"2026-07-17T04:27:55.950768+00:00"}
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":50,"timestamp":"2026-07-17T04:28:56.545322+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":51,"timestamp":"2026-07-17T04:30:17.585928+00:00"}
+{"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":52,"timestamp":"2026-07-17T04:30:57.506101+00:00"}
