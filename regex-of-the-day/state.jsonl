@@ -2840,3 +2840,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":1081,"timestamp":"2026-07-17T09:40:40.072885+00:00"}
 {"match_ok":false,"match_test":"p+","nonmatch_ok":true,"nonmatch_test":"p3","pattern":"p+","tick":1082,"timestamp":"2026-07-17T09:41:23.218272+00:00"}
 {"match_ok":false,"match_test":"j*","nonmatch_ok":true,"nonmatch_test":"j4","pattern":"j*","tick":1083,"timestamp":"2026-07-17T09:42:36.193652+00:00"}
+{"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1084,"timestamp":"2026-07-17T09:42:54.383640+00:00"}
