@@ -123,8 +123,6 @@
         "npm-downloads",
         "github-trending",
         "hn-frontpage",
-        "reddit-titles",
-        "spotify-charts",
         "steam-playercount",
         "iss-tracker",
         "earthquake-log",
@@ -144,7 +142,8 @@
         "mars-weather",
         "covid-wastewater",
         "top-pypi-packages",
-        "stackoverflow-tags"
+        "stackoverflow-tags",
+        "wikipedia-trending"
       ]
     },
     {
