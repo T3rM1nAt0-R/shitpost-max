@@ -2708,3 +2708,4 @@
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":964,"timestamp":"2026-07-17T07:08:08.664004+00:00"}
 {"match_ok":false,"match_test":"(c++|a)*","nonmatch_ok":true,"nonmatch_test":"(c++|a3*","pattern":"(c++|a)*","tick":965,"timestamp":"2026-07-17T07:09:08.726886+00:00"}
 {"match_ok":false,"match_test":"b++","nonmatch_ok":true,"nonmatch_test":"b1+","pattern":"b++","tick":966,"timestamp":"2026-07-17T07:10:08.324588+00:00"}
+{"match_ok":false,"match_test":"h*+","nonmatch_ok":true,"nonmatch_test":"h0+","pattern":"h*+","tick":967,"timestamp":"2026-07-17T07:11:33.275688+00:00"}
