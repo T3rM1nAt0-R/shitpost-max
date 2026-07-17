@@ -5,3 +5,4 @@
 {"heap":[1,8,5],"op":"push","tick":5,"timestamp":"2026-07-17T03:43:09.799981+00:00","value":1}
 {"heap":[5,8],"op":"extract","tick":6,"timestamp":"2026-07-17T03:43:59.776738+00:00","value":1}
 {"heap":[8],"op":"extract","tick":7,"timestamp":"2026-07-17T03:44:49.784221+00:00","value":5}
+{"heap":[5,8],"op":"push","tick":8,"timestamp":"2026-07-17T03:45:39.762565+00:00","value":5}
