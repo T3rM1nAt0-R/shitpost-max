@@ -2355,3 +2355,4 @@
 {"row":{"first_3":[1,1024,523776],"last_3":[523776,1024,1],"max_value_digit_count":307,"row_length":1025,"truncated":true},"row_index":1024,"tick":1025,"timestamp":"2026-07-17T06:25:22.158032+00:00"}
 {"row":{"first_3":[1,1025,524800],"last_3":[524800,1025,1],"max_value_digit_count":307,"row_length":1026,"truncated":true},"row_index":1025,"tick":1026,"timestamp":"2026-07-17T06:26:22.666575+00:00"}
 {"row":{"first_3":[1,1026,525825],"last_3":[525825,1026,1],"max_value_digit_count":308,"row_length":1027,"truncated":true},"row_index":1026,"tick":1027,"timestamp":"2026-07-17T06:27:22.821746+00:00"}
+{"row":{"first_3":[1,1027,526851],"last_3":[526851,1027,1],"max_value_digit_count":308,"row_length":1028,"truncated":true},"row_index":1027,"tick":1028,"timestamp":"2026-07-17T06:28:23.037767+00:00"}
