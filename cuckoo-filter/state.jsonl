@@ -43,3 +43,4 @@
 {"fill_count":5,"item":"fig","op_index":6,"operation":"lookup","result":false,"timestamp":"2026-07-17T05:56:17.807335+00:00"}
 {"fill_count":4,"item":"banana","op_index":7,"operation":"delete","result":true,"timestamp":"2026-07-17T05:57:41.795378+00:00"}
 {"fill_count":4,"item":"banana","op_index":8,"operation":"lookup","result":false,"timestamp":"2026-07-17T05:59:17.368342+00:00"}
+{"fill_count":1,"item":"apple","op_index":0,"operation":"insert","result":true,"timestamp":"2026-07-17T06:00:41.801840+00:00"}
