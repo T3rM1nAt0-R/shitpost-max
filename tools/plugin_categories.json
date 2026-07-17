@@ -24,7 +24,9 @@
         "happy-numbers",
         "stern-brocot",
         "mobius-function",
-        "fermat-factor"
+        "fermat-factor",
+        "aliquot-sequences",
+        "look-and-say"
       ]
     },
     {
@@ -53,7 +55,8 @@
         "kdtree-builder",
         "radix-sort-tick",
         "binary-heap-demo",
-        "knuth-morris-pratt"
+        "knuth-morris-pratt",
+        "cuckoo-filter"
       ]
     },
     {
