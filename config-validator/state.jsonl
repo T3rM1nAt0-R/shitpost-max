@@ -66,3 +66,5 @@
 {"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false,"timestamp":"2026-07-17T08:28:29.453856+00:00"}
 {"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-07-17T08:32:35.655378+00:00"}
 {"error":"Expecting ',' delimiter: line 1 column 29 (char 28)","filename":"broken.json","filetype":"json","is_valid":false,"timestamp":"2026-07-17T08:36:51.562556+00:00"}
+{"error":null,"filename":"pyproject.toml","filetype":"toml","is_valid":true,"timestamp":"2026-07-17T08:48:58.058256+00:00"}
+{"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false,"timestamp":"2026-07-17T08:51:24.985183+00:00"}
