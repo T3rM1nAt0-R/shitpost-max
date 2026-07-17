@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(v?|l+)+?","nonmatch_ok":true,"nonmatch_test":"(v?|l+)+2","pattern":"(v?|l+)+?","tick":834,"timestamp":"2026-07-17T04:40:58.475835+00:00"}
+{"match_ok":false,"match_test":"((v+|o++)|(n|(d|u)))++","nonmatch_ok":true,"nonmatch_test":"((v+|o++)|(n|3d|u)))++","pattern":"((v+|o++)|(n|(d|u)))++","tick":835,"timestamp":"2026-07-17T04:42:01.417616+00:00"}
