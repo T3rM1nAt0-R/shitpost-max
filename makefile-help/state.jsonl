@@ -1,2 +1,3 @@
 {"description":"Build the project","target":"build","timestamp":"2026-07-17T03:40:03.769178+00:00"}
 {"description":"Run the test suite","target":"test","timestamp":"2026-07-17T03:44:00.536951+00:00"}
+{"description":"Remove build artifacts","target":"clean","timestamp":"2026-07-17T03:48:16.653797+00:00"}
