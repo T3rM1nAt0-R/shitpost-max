@@ -3138,3 +3138,4 @@
 {"match_ok":false,"match_test":"(o|y)*","nonmatch_ok":true,"nonmatch_test":"5o|y)*","pattern":"(o|y)*","tick":1355,"timestamp":"2026-07-17T14:37:34.873358+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1356,"timestamp":"2026-07-17T14:38:38.920699+00:00"}
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1357,"timestamp":"2026-07-17T14:39:38.064227+00:00"}
+{"match_ok":true,"match_test":"j","nonmatch_ok":true,"nonmatch_test":"k","pattern":"j","tick":1358,"timestamp":"2026-07-17T14:40:36.193354+00:00"}
