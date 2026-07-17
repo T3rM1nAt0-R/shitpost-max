@@ -2319,3 +2319,4 @@
 {"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"r0","pattern":"r+","tick":602,"timestamp":"2026-07-17T00:20:13.631897+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":603,"timestamp":"2026-07-17T00:21:13.314651+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":604,"timestamp":"2026-07-17T00:22:14.059427+00:00"}
+{"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":605,"timestamp":"2026-07-17T00:23:13.017527+00:00"}
