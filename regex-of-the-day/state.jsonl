@@ -3195,3 +3195,4 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1408,"timestamp":"2026-07-17T15:34:36.688519+00:00"}
 {"match_ok":false,"match_test":"p*","nonmatch_ok":true,"nonmatch_test":"q*","pattern":"p*","tick":1409,"timestamp":"2026-07-17T15:35:33.837111+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":1410,"timestamp":"2026-07-17T15:36:33.848227+00:00"}
+{"match_ok":false,"match_test":"x+","nonmatch_ok":true,"nonmatch_test":"x2","pattern":"x+","tick":1411,"timestamp":"2026-07-17T15:37:34.872510+00:00"}
