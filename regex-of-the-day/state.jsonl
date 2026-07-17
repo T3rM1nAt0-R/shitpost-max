@@ -2410,3 +2410,4 @@
 {"match_ok":false,"match_test":"a+?","nonmatch_ok":true,"nonmatch_test":"a+5","pattern":"a+?","tick":686,"timestamp":"2026-07-17T01:51:13.149099+00:00"}
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":687,"timestamp":"2026-07-17T01:52:12.657964+00:00"}
 {"match_ok":false,"match_test":"x+","nonmatch_ok":true,"nonmatch_test":"y+","pattern":"x+","tick":688,"timestamp":"2026-07-17T01:53:12.978295+00:00"}
+{"match_ok":false,"match_test":"n*+","nonmatch_ok":true,"nonmatch_test":"o*+","pattern":"n*+","tick":689,"timestamp":"2026-07-17T01:54:12.958558+00:00"}
