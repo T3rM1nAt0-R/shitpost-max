@@ -145,7 +145,7 @@ Pushing is intentionally *not* done per tick. `harness/scheduler.py` runs a sing
 <!-- PLUGIN_TABLE_START -->
 
 <details>
-<summary><strong>Number Theory & Sequences</strong> <sub>(23)</sub></summary>
+<summary><strong>Number Theory & Sequences</strong> <sub>(24)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -172,6 +172,7 @@ stern-brocot | Revolutionized the rational enumeration sector with an AI-driven 
 mobius-function | Disrupting the multiplicative number theory landscape with real-time Möbius inversion analysis. Every -1, 0, or 1 is a mathematically significant insight.
 fermat-factor | Revolutionizing cryptographic integer decomposition with a Fermat-powered AI factorization engine. Every factor pair unlocks new security insights.
 aliquot-sequences | Computes the aliquot sequence for a fixed cycling list of starting integers, capped at 30 steps or 1e8.
+look-and-say | Generates consecutive terms of the look-and-say sequence, capped at 15 terms then reset.
 
 </details>
 
