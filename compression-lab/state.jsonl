@@ -2767,3 +2767,4 @@
 {"bzip2":{"compressed_bytes":4954027,"ratio":0.08915821177029558},"gzip":{"compressed_bytes":6463407,"ratio":0.11632270273529208},"raw_bytes":55338238,"sibling_count":184,"tick":1457,"timestamp":"2026-07-17T14:20:53.176789+00:00"}
 {"bzip2":{"compressed_bytes":4953369,"ratio":0.08910956920684737},"gzip":{"compressed_bytes":6466244,"ratio":0.11632572037866785},"raw_bytes":55361065,"sibling_count":184,"tick":1458,"timestamp":"2026-07-17T14:21:55.745971+00:00"}
 {"bzip2":{"compressed_bytes":4953714,"ratio":0.08907761582601781},"gzip":{"compressed_bytes":6468727,"ratio":0.11632055839101504},"raw_bytes":55384759,"sibling_count":184,"tick":1459,"timestamp":"2026-07-17T14:22:57.393527+00:00"}
+{"bzip2":{"compressed_bytes":4955446,"ratio":0.0890707802363634},"gzip":{"compressed_bytes":6471374,"ratio":0.11631855768003849},"raw_bytes":55408339,"sibling_count":184,"tick":1460,"timestamp":"2026-07-17T14:23:55.775216+00:00"}
