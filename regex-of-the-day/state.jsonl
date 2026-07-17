@@ -2646,3 +2646,4 @@
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":909,"timestamp":"2026-07-17T06:03:26.004572+00:00"}
 {"match_ok":true,"match_test":"j","nonmatch_ok":true,"nonmatch_test":"k","pattern":"j","tick":910,"timestamp":"2026-07-17T06:04:23.115927+00:00"}
 {"match_ok":false,"match_test":"((s|r)|(w|(h+|((i+|n)+|((x|(s|t+))*+|u)))))+","nonmatch_ok":true,"nonmatch_test":"((s3r)|(w|(h+|((i+|n)+|((x|(s|t+))*+|u)))))+","pattern":"((s|r)|(w|(h+|((i+|n)+|((x|(s|t+))*+|u)))))+","tick":911,"timestamp":"2026-07-17T06:05:23.363656+00:00"}
+{"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":912,"timestamp":"2026-07-17T06:06:23.009614+00:00"}
