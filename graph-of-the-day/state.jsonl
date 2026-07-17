@@ -2857,3 +2857,4 @@
 {"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-07-17T10:29:43.502106+00:00","vertices":100}
 {"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-07-17T10:30:31.892227+00:00","vertices":100}
 {"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-07-17T10:31:31.738210+00:00","vertices":100}
+{"edges":30,"property_name":"Diameter","property_value":"5","timestamp":"2026-07-17T10:32:31.636031+00:00","vertices":100}
