@@ -272,7 +272,7 @@ haiku-stream | Revolutionizing Japanese poetic form generation with AI-enhanced 
 </details>
 
 <details>
-<summary><strong>Personal Finance Toys</strong> <sub>(4)</sub></summary>
+<summary><strong>Personal Finance Toys</strong> <sub>(5)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -280,6 +280,7 @@ compound-clock | Compounds a hypothetical investment per tick, because watching 
 rupee-cost-averaging-sim | Simulates rupee-cost-averaging into an index over time, proving discipline works even when I only simulate having it.
 subscription-audit | Tallies recurring subscription costs monthly, so I can be quietly horrified on a schedule.
 networth-witness | Charts a manually-entered net worth number over time. Data integrity: as honest as I am that day.
+loan-amortization | Emits a fixed loan's monthly amortization schedule row by row, forever, until it's paid off and does it again.
 
 </details>
 
