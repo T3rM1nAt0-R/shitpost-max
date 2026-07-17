@@ -288,6 +288,12 @@ PLUGINS += [
     ("cuckoo-filter", 90),
 ]
 
+# 2026-07-17: equilibrium-drift, a user-suggested idea (coin-toss return-to-
+# parity random walk) built via the new shitpost-plugin skill.
+PLUGINS += [
+    ("equilibrium-drift", 90),
+]
+
 # How often the pusher runs, independent of any plugin's own cadence.
 PUSH_CADENCE_SECONDS = 20
 
