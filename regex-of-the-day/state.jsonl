@@ -2585,3 +2585,4 @@
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":851,"timestamp":"2026-07-17T05:02:21.798787+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":852,"timestamp":"2026-07-17T05:03:26.178752+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":853,"timestamp":"2026-07-17T05:04:22.317852+00:00"}
+{"match_ok":false,"match_test":"(p|(q++|y))","nonmatch_ok":true,"nonmatch_test":"(p|(q+3|y))","pattern":"(p|(q++|y))","tick":854,"timestamp":"2026-07-17T05:05:47.407031+00:00"}
