@@ -1,2 +1,3 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-17T03:39:53.552751+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-17T03:43:59.968147+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-07-17T03:48:09.796841+00:00"}
