@@ -41,3 +41,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-17T06:29:01.796693+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-17T06:33:16.792388+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T06:36:03.288615+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-07-17T06:40:10.683609+00:00"}
