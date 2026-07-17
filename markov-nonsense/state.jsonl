@@ -2677,3 +2677,4 @@
 {"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":1347,"timestamp":"2026-07-17T12:09:42.336939+00:00","word_count":8}
 {"seed_bigram":"the park.","sentence":"the park. the cat chased the dog ran in the park.","tick":1348,"timestamp":"2026-07-17T12:10:58.722482+00:00","word_count":11}
 {"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":1349,"timestamp":"2026-07-17T12:12:03.113636+00:00","word_count":8}
+{"seed_bigram":"chased the","sentence":"chased the dog ran in the park.","tick":1350,"timestamp":"2026-07-17T12:12:45.271004+00:00","word_count":7}
