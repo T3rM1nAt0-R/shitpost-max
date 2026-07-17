@@ -3110,3 +3110,4 @@
 {"match_ok":false,"match_test":"((e|b+)*|(h|x*+))","nonmatch_ok":true,"nonmatch_test":"((e|b8)*|(h|x*+))","pattern":"((e|b+)*|(h|x*+))","tick":1329,"timestamp":"2026-07-17T14:09:52.672906+00:00"}
 {"match_ok":false,"match_test":"((a|v)|r)+","nonmatch_ok":true,"nonmatch_test":"((a|v)3r)+","pattern":"((a|v)|r)+","tick":1330,"timestamp":"2026-07-17T14:10:35.632634+00:00"}
 {"match_ok":false,"match_test":"x++","nonmatch_ok":true,"nonmatch_test":"y++","pattern":"x++","tick":1331,"timestamp":"2026-07-17T14:11:36.113167+00:00"}
+{"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":1332,"timestamp":"2026-07-17T14:12:36.053091+00:00"}
