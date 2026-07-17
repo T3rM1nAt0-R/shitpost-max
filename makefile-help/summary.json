@@ -1,1 +1,1 @@
-{"description":"Build the project","target":"build"}
+{"description":"Remove build artifacts","target":"clean"}
