@@ -97,4 +97,6 @@
 {"timestamp": "2026-07-17T14:58:32.971767+00:00", "score": 39.4571428571429, "classification": "fear"}
 {"classification": "fear", "score": 39.4571428571429, "tick": 97, "timestamp": "2026-07-17T14:58:32.973367+00:00"}
 {"timestamp": "2026-07-17T15:08:33.974388+00:00", "score": 38.9142857142857, "classification": "fear"}
-{"classification":"fear","score":38.9142857142857,"tick":99,"timestamp":"2026-07-17T15:08:33.975931+00:00"}
+{"classification": "fear", "score": 38.9142857142857, "tick": 99, "timestamp": "2026-07-17T15:08:33.975931+00:00"}
+{"timestamp": "2026-07-17T15:18:32.389339+00:00", "score": 38.4, "classification": "fear"}
+{"classification":"fear","score":38.4,"tick":101,"timestamp":"2026-07-17T15:18:32.390742+00:00"}
