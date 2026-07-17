@@ -258,3 +258,4 @@
 {"capped":false,"return_time":2,"running_mean":159.9612,"running_trial_count":258,"timestamp":"2026-07-17T13:19:51.123002+00:00","trial_index":258,"windowed_median":2.0}
 {"capped":false,"return_time":2,"running_mean":159.3514,"running_trial_count":259,"timestamp":"2026-07-17T13:21:01.700891+00:00","trial_index":259,"windowed_median":2.0}
 {"capped":false,"return_time":2,"running_mean":158.7462,"running_trial_count":260,"timestamp":"2026-07-17T13:22:31.927169+00:00","trial_index":260,"windowed_median":2.0}
+{"capped":false,"return_time":10,"running_mean":158.1762,"running_trial_count":261,"timestamp":"2026-07-17T13:23:55.057642+00:00","trial_index":261,"windowed_median":2.0}
