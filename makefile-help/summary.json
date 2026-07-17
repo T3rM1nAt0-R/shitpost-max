@@ -1,1 +1,1 @@
-{"description":"Run the test suite","target":"test"}
+{"description":"Remove build artifacts","target":"clean"}
