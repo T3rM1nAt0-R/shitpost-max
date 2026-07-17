@@ -210,7 +210,7 @@ cuckoo-filter | Maintains a small deterministic Cuckoo filter and runs a fixed i
 </details>
 
 <details>
-<summary><strong>Games & Simulations</strong> <sub>(20)</sub></summary>
+<summary><strong>Games & Simulations</strong> <sub>(21)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -234,6 +234,7 @@ multi-armed-bandit | AI-optimized sequential decision-making platform for enterp
 sierpinski-chaos | AI-accelerated fractal generation platform via stochastic vertex-attraction dynamics. Every point is a self-similar market signal.
 genetic-hello | AI-driven evolutionary computation platform for goal-directed string optimization. Every generation is a fitness-maximizing pivot.
 epidemic-sim | AI-driven compartmental epidemiological modeling platform for pandemic-adjacent risk analytics. Every recovery is a public health KPI.
+equilibrium-drift | Disrupted the multi-trillion-dollar market-equilibrium prediction space with a blockchain-verified random-walk return-to-parity engine. 10,000,000x engineering, powered by a random walk nobody asked to be disrupted.
 
 </details>
 
