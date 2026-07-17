@@ -3500,3 +3500,4 @@
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1685,"timestamp":"2026-07-17T21:27:29.568989+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":1686,"timestamp":"2026-07-17T21:28:32.291949+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":1687,"timestamp":"2026-07-17T21:29:30.246939+00:00"}
+{"match_ok":false,"match_test":"(x?|c)","nonmatch_ok":true,"nonmatch_test":"(x?|c8","pattern":"(x?|c)","tick":1688,"timestamp":"2026-07-17T21:30:29.281581+00:00"}
