@@ -2849,3 +2849,4 @@
 {"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":1519,"timestamp":"2026-07-17T15:03:14.248763+00:00","word_count":5}
 {"seed_bigram":"dog around","sentence":"dog around the park.","tick":1520,"timestamp":"2026-07-17T15:03:35.751633+00:00","word_count":4}
 {"seed_bigram":"around the","sentence":"around the park.","tick":1521,"timestamp":"2026-07-17T15:03:54.021754+00:00","word_count":3}
+{"seed_bigram":"the dog","sentence":"the dog around the park.","tick":1522,"timestamp":"2026-07-17T15:04:35.657839+00:00","word_count":5}
