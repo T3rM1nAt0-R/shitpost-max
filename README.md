@@ -189,7 +189,7 @@ levenshtein-watch | AI-driven string alignment platform bringing edit distance c
 </details>
 
 <details>
-<summary><strong>Games & Simulations</strong> <sub>(8)</sub></summary>
+<summary><strong>Games & Simulations</strong> <sub>(9)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -201,6 +201,7 @@ balance-witness | Runs toy auto-battler matches to audit game balance nobody's p
 economy-sim-tick | Models a full supply-and-demand economy, one tick at a time. Inflation is a choice and I chose it.
 dungeon-of-the-day | Procedurally generates a new dungeon daily using BSP, because roguelikes deserve CI/CD too.
 selfhealing-demo | Built a service that crashes on purpose, then heals itself, to demonstrate resilience I do not personally have.
+conway-life | Disrupting the cellular automata industry with an AI-driven life simulation platform. Every generation is a Board-level strategic pivot.
 
 </details>
 
