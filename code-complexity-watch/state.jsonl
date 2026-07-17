@@ -38,3 +38,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T06:21:08.511282+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-17T06:22:27.455036+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-17T06:24:51.801927+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-17T06:29:01.796693+00:00"}
