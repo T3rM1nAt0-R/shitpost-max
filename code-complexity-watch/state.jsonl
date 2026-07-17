@@ -248,3 +248,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T21:51:46.994239+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-17T21:55:49.490316+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-17T21:59:59.238408+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-17T22:04:09.245787+00:00"}
