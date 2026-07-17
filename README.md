@@ -270,7 +270,7 @@ llm-self-eval | Asks the LLM to answer a fixed prompt, then rate its own respons
 </details>
 
 <details>
-<summary><strong>Live Data Feeds</strong> <sub>(29)</sub></summary>
+<summary><strong>Live Data Feeds</strong> <sub>(28)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -281,8 +281,6 @@ crypto-tick | Logs BTC/ETH prices hourly so I can watch my hypothetical portfoli
 npm-downloads | Tracks daily downloads of one npm package like it's a stock ticker. Line goes up, dopamine goes up.
 github-trending | Snapshots trending GitHub repos daily so I always know what everyone else shipped instead of this.
 hn-frontpage | Archives the Hacker News front page hourly, preserving humanity's finest arguments about whether Rust was necessary.
-reddit-titles | Snapshots hot post titles from a subreddit hourly. Peer-reviewed vibes, sourced from strangers.
-spotify-charts | Logs regional Spotify top tracks daily so future archaeologists know exactly what we were vibing to.
 steam-playercount | Tracks concurrent players on a chosen Steam game hourly, because someone needs to know if anyone else is still playing.
 iss-tracker | Tracks the ISS's exact lat/long every minute. Real-time orbital awareness, mostly so I can wave at the sky.
 earthquake-log | Pulls the USGS earthquake feed and logs every tremor on Earth, because I like knowing when the ground disagrees.
@@ -303,6 +301,7 @@ mars-weather | Fetches Mars weather data from NASA's InSight lander archive API 
 covid-wastewater | Fetches a current COVID-19 wastewater viral concentration data point from the CDC's public API each tick.
 top-pypi-packages | Fetches the top N PyPI packages by 30-day download count each tick, cycling through the top 5.
 stackoverflow-tags | Fetches question counts for a fixed list of StackOverflow tags each tick, cycling through them.
+wikipedia-trending | Fetches yesterday's top viewed English Wikipedia articles daily, filtering out navigation/meta pages -- because "Main_Page" being #1 forever isn't trending, it's just the URL bar.
 
 </details>
 
