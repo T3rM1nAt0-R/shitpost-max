@@ -3509,3 +3509,4 @@
 {"match_ok":false,"match_test":"(y|(t|l+))?","nonmatch_ok":true,"nonmatch_test":"(y|0t|l+))?","pattern":"(y|(t|l+))?","tick":1694,"timestamp":"2026-07-17T21:36:29.094120+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":1695,"timestamp":"2026-07-17T21:37:27.485371+00:00"}
 {"match_ok":false,"match_test":"((((l|((i|(h|t++)+)++|s))+|n)|n)|l)","nonmatch_ok":true,"nonmatch_test":"((((l2((i|(h|t++)+)++|s))+|n)|n)|l)","pattern":"((((l|((i|(h|t++)+)++|s))+|n)|n)|l)","tick":1696,"timestamp":"2026-07-17T21:38:34.111658+00:00"}
+{"match_ok":false,"match_test":"z*","nonmatch_ok":true,"nonmatch_test":"z3","pattern":"z*","tick":1697,"timestamp":"2026-07-17T21:39:29.490550+00:00"}

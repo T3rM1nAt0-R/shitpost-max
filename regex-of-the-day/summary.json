@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((((l|((i|(h|t++)+)++|s))+|n)|n)|l)","nonmatch_ok":true,"nonmatch_test":"((((l2((i|(h|t++)+)++|s))+|n)|n)|l)","pattern":"((((l|((i|(h|t++)+)++|s))+|n)|n)|l)","tick":1696,"timestamp":"2026-07-17T21:38:34.111647+00:00"}
+{"match_ok":false,"match_test":"z*","nonmatch_ok":true,"nonmatch_test":"z3","pattern":"z*","tick":1697,"timestamp":"2026-07-17T21:39:29.490543+00:00"}
