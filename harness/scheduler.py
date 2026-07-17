@@ -277,6 +277,17 @@ PLUGINS += [
     ("zero-shot-bench", 900),
 ]
 
+# 2026-07-17: the 3 backlog ideas that were skipped/missed in the marathon
+# above -- aliquot-sequences and look-and-say were originally flagged
+# "unbounded" (open-ended growth risk) and made safely bounded via a hard
+# step/term cap + reset (see each plugin's own proposal.md for the exact
+# reasoning); cuckoo-filter was marked bounded but simply never got built.
+PLUGINS += [
+    ("aliquot-sequences", 90),
+    ("look-and-say", 60),
+    ("cuckoo-filter", 90),
+]
+
 # How often the pusher runs, independent of any plugin's own cadence.
 PUSH_CADENCE_SECONDS = 20
 
