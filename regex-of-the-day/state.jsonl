@@ -2458,3 +2458,4 @@
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":731,"timestamp":"2026-07-17T02:39:37.105347+00:00"}
 {"match_ok":false,"match_test":"w+","nonmatch_ok":true,"nonmatch_test":"w6","pattern":"w+","tick":732,"timestamp":"2026-07-17T02:40:14.293493+00:00"}
 {"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"s+","pattern":"r+","tick":733,"timestamp":"2026-07-17T02:41:15.191958+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":734,"timestamp":"2026-07-17T02:42:18.943576+00:00"}
