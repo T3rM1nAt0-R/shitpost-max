@@ -3431,3 +3431,4 @@
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":1623,"timestamp":"2026-07-17T20:18:46.184095+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":1624,"timestamp":"2026-07-17T20:19:28.072237+00:00"}
 {"match_ok":false,"match_test":"(z+|n)","nonmatch_ok":true,"nonmatch_test":"(z+9n)","pattern":"(z+|n)","tick":1625,"timestamp":"2026-07-17T20:20:31.047166+00:00"}
+{"match_ok":false,"match_test":"d+","nonmatch_ok":true,"nonmatch_test":"e+","pattern":"d+","tick":1626,"timestamp":"2026-07-17T20:21:29.209640+00:00"}
