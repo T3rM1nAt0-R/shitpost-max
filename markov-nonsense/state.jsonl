@@ -2252,3 +2252,4 @@
 {"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":922,"timestamp":"2026-07-17T04:40:00.309485+00:00","word_count":5}
 {"seed_bigram":"chased the","sentence":"chased the dog around the park.","tick":923,"timestamp":"2026-07-17T04:40:57.175344+00:00","word_count":6}
 {"seed_bigram":"the mat.","sentence":"the mat. the dog ran in the park.","tick":924,"timestamp":"2026-07-17T04:41:57.901774+00:00","word_count":8}
+{"seed_bigram":"mat. the","sentence":"mat. the dog around the park.","tick":925,"timestamp":"2026-07-17T04:42:56.503450+00:00","word_count":6}
