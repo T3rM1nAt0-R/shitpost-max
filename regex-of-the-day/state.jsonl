@@ -2630,3 +2630,4 @@
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":894,"timestamp":"2026-07-17T05:47:29.253616+00:00"}
 {"match_ok":false,"match_test":"(f+|q?)","nonmatch_ok":true,"nonmatch_test":"(f+6q?)","pattern":"(f+|q?)","tick":895,"timestamp":"2026-07-17T05:48:28.081858+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":896,"timestamp":"2026-07-17T05:49:22.262433+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":897,"timestamp":"2026-07-17T05:50:22.112485+00:00"}
