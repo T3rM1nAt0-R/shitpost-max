@@ -2475,3 +2475,4 @@
 {"match_ok":false,"match_test":"(s|t*+)","nonmatch_ok":true,"nonmatch_test":"(s|t*5)","pattern":"(s|t*+)","tick":748,"timestamp":"2026-07-17T02:56:12.653946+00:00"}
 {"match_ok":false,"match_test":"(k|a*)","nonmatch_ok":true,"nonmatch_test":"(l|a*)","pattern":"(k|a*)","tick":749,"timestamp":"2026-07-17T02:57:12.691220+00:00"}
 {"match_ok":false,"match_test":"(n++|e)","nonmatch_ok":true,"nonmatch_test":"(n+3|e)","pattern":"(n++|e)","tick":750,"timestamp":"2026-07-17T02:58:28.021048+00:00"}
+{"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"r1","pattern":"r+","tick":751,"timestamp":"2026-07-17T02:59:16.364925+00:00"}
