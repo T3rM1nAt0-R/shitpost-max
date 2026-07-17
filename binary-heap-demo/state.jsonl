@@ -3,3 +3,4 @@
 {"heap":[3,5,8],"op":"push","tick":3,"timestamp":"2026-07-17T03:41:29.783183+00:00","value":8}
 {"heap":[5,8],"op":"extract","tick":4,"timestamp":"2026-07-17T03:42:19.784676+00:00","value":3}
 {"heap":[1,8,5],"op":"push","tick":5,"timestamp":"2026-07-17T03:43:09.799981+00:00","value":1}
+{"heap":[5,8],"op":"extract","tick":6,"timestamp":"2026-07-17T03:43:59.776738+00:00","value":1}
