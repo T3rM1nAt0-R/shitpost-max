@@ -3228,3 +3228,4 @@
 {"match_ok":false,"match_test":"o+","nonmatch_ok":true,"nonmatch_test":"p+","pattern":"o+","tick":1439,"timestamp":"2026-07-17T16:07:34.966250+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":1440,"timestamp":"2026-07-17T16:08:53.338031+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":1441,"timestamp":"2026-07-17T16:09:55.920061+00:00"}
+{"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1442,"timestamp":"2026-07-17T16:10:36.201464+00:00"}
