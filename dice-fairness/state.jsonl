@@ -2894,3 +2894,4 @@
 {"chi2":15.760217898832684,"df":5,"fair":true,"p_value":0.4325856342966885,"rolls_this_tick":100,"tick":128500,"timestamp":"2026-07-17T11:05:30.240823+00:00","total_rolls":128500}
 {"chi2":15.531197511664077,"df":5,"fair":true,"p_value":0.887561372648429,"rolls_this_tick":100,"tick":128600,"timestamp":"2026-07-17T11:06:29.399410+00:00","total_rolls":128600}
 {"chi2":15.812494172494173,"df":5,"fair":true,"p_value":0.951657962463416,"rolls_this_tick":100,"tick":128700,"timestamp":"2026-07-17T11:07:31.324290+00:00","total_rolls":128700}
+{"chi2":15.780900621118011,"df":5,"fair":false,"p_value":0.003544257233143444,"rolls_this_tick":100,"tick":128800,"timestamp":"2026-07-17T11:08:30.071890+00:00","total_rolls":128800}
