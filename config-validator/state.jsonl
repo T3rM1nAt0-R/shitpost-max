@@ -214,3 +214,4 @@
 {"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false,"timestamp":"2026-07-17T19:30:06.030807+00:00"}
 {"error":null,"filename":"settings.yaml","filetype":"yaml","is_valid":true,"timestamp":"2026-07-17T19:34:44.230093+00:00"}
 {"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false,"timestamp":"2026-07-17T19:38:24.391166+00:00"}
+{"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-07-17T19:42:31.513846+00:00"}
