@@ -2748,3 +2748,4 @@
 {"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"t+","pattern":"s+","tick":1000,"timestamp":"2026-07-17T08:07:14.012807+00:00"}
 {"match_ok":false,"match_test":"f+","nonmatch_ok":true,"nonmatch_test":"g+","pattern":"f+","tick":1001,"timestamp":"2026-07-17T08:08:13.644115+00:00"}
 {"match_ok":false,"match_test":"(t|b+)+","nonmatch_ok":true,"nonmatch_test":"(t|c+)+","pattern":"(t|b+)+","tick":1002,"timestamp":"2026-07-17T08:09:13.892799+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":1003,"timestamp":"2026-07-17T08:10:12.966044+00:00"}
