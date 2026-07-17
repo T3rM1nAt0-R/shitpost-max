@@ -225,7 +225,7 @@ model-diff | Runs a fixed eval suite against every new model version and commits
 </details>
 
 <details>
-<summary><strong>Live Data Feeds</strong> <sub>(17)</sub></summary>
+<summary><strong>Live Data Feeds</strong> <sub>(18)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -246,6 +246,7 @@ fear-greed-index | Logs the market fear/greed index daily so I can watch collect
 gas-prices | Tracks fuel costs daily, turning inflation into a very sad but very well-logged JSONL file.
 domain-watch | Watches a specific domain for the split second it becomes available, because domain sniping is a legitimate engineering discipline.
 rss-firehose | Polls ~20 RSS feeds and commits only genuinely new items, deduplicated. RSS isn't dead, it's just self-hosted.
+bitcoin-fees | Fetches current Bitcoin fee estimates from mempool.space's public API each tick.
 
 </details>
 
