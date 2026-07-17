@@ -2860,3 +2860,4 @@
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":1100,"timestamp":"2026-07-17T09:59:34.811938+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":1101,"timestamp":"2026-07-17T10:00:34.090700+00:00"}
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"m5","pattern":"m+","tick":1102,"timestamp":"2026-07-17T10:01:33.864677+00:00"}
+{"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":1103,"timestamp":"2026-07-17T10:02:34.642991+00:00"}
