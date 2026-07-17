@@ -206,7 +206,7 @@ conway-life | Disrupting the cellular automata industry with an AI-driven life s
 </details>
 
 <details>
-<summary><strong>Local LLM Experiments</strong> <sub>(11)</sub></summary>
+<summary><strong>Local LLM Experiments</strong> <sub>(12)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -221,6 +221,7 @@ emoji-summary | Compresses an entire day of human thought into exactly 3 emojis 
 haiku-daily | Generates a syllable-perfect haiku daily via local LLM. 5-7-5 discipline the model doesn't even know it's following.
 token-golf | Shrinks prompts to the theoretical token minimum while maintaining quality, because every token costs money and I refuse to pay for words.
 model-diff | Runs a fixed eval suite against every new model version and commits the scorecard. Rigorous benchmarking, zero peer review.
+prompt-chaining-lab | Chains two local LLM calls per tick: stage 1 writes a sentence, stage 2 summarizes it in 3 words.
 
 </details>
 
