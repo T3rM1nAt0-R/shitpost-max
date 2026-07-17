@@ -1,0 +1,7 @@
+{
+  "model": "local/qwen2.5-coder:7b-instruct-q6_K",
+  "task": "tone_copy",
+  "elapsed_sec": 29.87,
+  "exit_code": 0,
+  "raw_output": "\"Unbelievable! Q4 TAM missed by 15% due to that Skip Intro click? My Series Infinity is on the fritz again! This is unacceptable! Board meeting now!\""
+}

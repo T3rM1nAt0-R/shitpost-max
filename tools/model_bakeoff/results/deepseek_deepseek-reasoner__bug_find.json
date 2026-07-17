@@ -1,0 +1,7 @@
+{
+  "model": "deepseek/deepseek-reasoner",
+  "task": "bug_find",
+  "elapsed_sec": 5.61,
+  "exit_code": 0,
+  "raw_output": "• The bug is in the `build_search_url` function. When a `language` is provided, the code appends `&q=language:{language}` to the URL. However, the URL already contains a `q` parameter from the initial `q` variable. The GitHub API only allows one `q` parameter — having two `q` parameters means the second one will override the first (or GitHub will only recognize one of them).\n\n  So the search query `created:>2023-01-01` will be lost when a language filter is provided, because the language filter uses `&q=` which creates a duplicate `q` parameter instead of appending to the existing one.\n\n• The bug is that the function uses `&q=language:{language}` when a language is specified, creating a second `q` parameter. The GitHub API only accepts a single `q` parameter, so the original query (`created:>2023-01-01`) is overwritten or ignored, breaking the intended date filter. The language term should instead be appended into the existing `q` value, e.g. `url += f\"+language:{language}\"`.\n\nTo resume this session: kimi -r session_5c9f61ac-1576-4999-8cd7-f9212464a346"
+}

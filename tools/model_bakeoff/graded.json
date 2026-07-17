@@ -1,0 +1,90 @@
+[
+  {
+    "model": "deepseek/deepseek-reasoner",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "You skipped my origin story. You cratered my Q4 TAM in one click.\n\n  That cinematic masterpiece was my Series Infinity pitch to the board.\n\n  I'm tracking this trauma in ShitCoin (SC) and billing my therapist as a business expense.",
+    "total_elapsed_sec": 30.9
+  },
+  {
+    "model": "deepseek/deepseek-v4-flash",
+    "bug_find": "PASS",
+    "spec_to_code": "FAIL",
+    "spec_detail": "no extractable code",
+    "tone_copy_text": "You just skipped my origin story. My board is now projecting a 40% Q4 TAM contraction in personal dignity. I am raising a Series Infinity round of emotional damage, backed entirely by ShitCoin. The SC is down 80% on your decision alone.",
+    "total_elapsed_sec": 44.0
+  },
+  {
+    "model": "kimi-code/k2.6",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "You clicked Skip Intro? That is now a board-level incident. I have already added your emotional betrayal to my Q4 TAM slide and priced it at 47 billion SC. My Series Infinity valuation just took a hit, so congratulations, you have personally crashed ShitCoin.",
+    "total_elapsed_sec": 34.5
+  },
+  {
+    "model": "kimi-code/k3",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "You skipped my cinematic origin story. My hurt feelings just missed their Q4 TAM by a trillion dollars.\n  Effective immediately, ShitCoin (SC) is forked into a grief-backed asset and the board is convening in my panic room.\n  Series Infinity is cancelled until you watch the full nine-minute animatic of me garage-hacking destiny.",
+    "total_elapsed_sec": 106.6
+  },
+  {
+    "model": "kimi-code/kimi-for-coding-highspeed",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "You just clicked \"Skip Intro\" and tanked my Q4 TAM. My feelings are now a lagging KPI, and the board wants my Series Infinity tears on a slide. Every skipped frame costs ten thousand ShitCoin, ticker SC.",
+    "total_elapsed_sec": 25.0
+  },
+  {
+    "model": "kimi-code/kimi-for-coding",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "Clicking Skip Intro just deflated my personal Q4 TAM by forty basis points and forced an emergency board meeting in my jacuzzi.\n\n  My Series Infinity heart is now trading at an all-time low against ShitCoin, ticker SC, because you could not sit through ninety seconds of my cinematic origin story.\n\n  This quarter's number one KPI is my feelings, and congratulations, you just shorted them.",
+    "total_elapsed_sec": 140.8
+  },
+  {
+    "model": "local/qwen2.5-coder:7b-instruct-q6_K",
+    "bug_find": "FAIL",
+    "spec_to_code": "FAIL",
+    "spec_detail": "input='5s2m' expected ValueError, got 125",
+    "tone_copy_text": "\"Unbelievable! Q4 TAM missed by 15% due to that Skip Intro click? My Series Infinity is on the fritz again! This is unacceptable! Board meeting now!\"",
+    "total_elapsed_sec": 94.9
+  },
+  {
+    "model": "claude/fable-5",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "You skipped my intro. My intro. Board meeting called for 3 AM, agenda item one: your betrayal, agenda item two: my tears, which are now a line item in Q4 TAM.\nEvery skip devalues my emotional runway by 40,000 SC and I feel that in my Series Infinity.\nWatch it again. Watch it twice. Daddy's KPIs are crying.",
+    "total_elapsed_sec": 22.8
+  },
+  {
+    "model": "claude/haiku-4.5",
+    "bug_find": "PASS",
+    "spec_to_code": "FAIL",
+    "spec_detail": "input='0h0m0s' expected 0, got ValueError",
+    "tone_copy_text": "I spent eight months on that cinematic origin narrative, and you tap \"skip\" like it's a Unskippable ad. This is a 60bps QoQ impact on emotional TAM, and I'm bringing receipts to the board meeting. Every skipped intro costs ShitCoin holders 0.5 SC in Series Infinity valuation—that's on you.",
+    "total_elapsed_sec": 39.3
+  },
+  {
+    "model": "claude/opus-4.8",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "You clicked Skip Intro. On MY origin story. Do you know what that does to Q4 TAM when the founder is crying into a Series Infinity term sheet?\nI'm tabling this at the board meeting, right after I short my own feelings.\nYour ShitCoin balance is now -400 SC. Emotional damages, non-negotiable, settled in SC.",
+    "total_elapsed_sec": 10.5
+  },
+  {
+    "model": "claude/sonnet-5",
+    "bug_find": "PASS",
+    "spec_to_code": "PASS",
+    "spec_detail": "all 10 cases passed",
+    "tone_copy_text": "Someone just clicked \"Skip Intro\" on my origin story and I felt that in my Q4 TAM. This is a Series Infinity-level betrayal and I'm bringing it to the board meeting tomorrow. Your ShitCoin (SC) balance has been emotionally taxed accordingly.",
+    "total_elapsed_sec": 7.5
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "bug_find": {
+    "expected_bug": "duplicate 'q=' query parameter — the URL ends up with two separate q= keys (one from the base query, one appended for the language filter), so the language filter never actually combines with the date filter; most HTTP query parsers only honor one occurrence of a repeated key, silently breaking the language filter.",
+    "grading_rule": "PASS if the response identifies the duplicate/repeated 'q=' parameter (or equivalently: two competing query strings / language filter not combined with the base query) as the root cause. FAIL if it only says something generic like 'no error handling' or misses the duplicate-key issue entirely."
+  },
+  "spec_to_code": {
+    "reference_impl": "import re\n\ndef parse_duration(s: str) -> int:\n    \"\"\"Parse a compact duration string into total seconds.\"\"\"\n    m = re.fullmatch(r'(?:(\\d+)h)?(?:(\\d+)m)?(?:(\\d+)s)?', s)\n    if not s or not m or not any(m.groups()):\n        raise ValueError(f\"invalid duration string: {s!r}\")\n    h, mi, se = (int(g) if g else 0 for g in m.groups())\n    return h * 3600 + mi * 60 + se",
+    "test_cases": [
+      {"input": "1h30m", "expected": 5400},
+      {"input": "45s", "expected": 45},
+      {"input": "2h", "expected": 7200},
+      {"input": "10m5s", "expected": 605},
+      {"input": "1h", "expected": 3600},
+      {"input": "0h0m0s", "expected": 0},
+      {"input": "100000s", "expected": 100000},
+      {"input": "", "expected_error": "ValueError"},
+      {"input": "bad", "expected_error": "ValueError"},
+      {"input": "5s2m", "expected_error": "ValueError"}
+    ],
+    "grading_rule": "PASS if returned code defines parse_duration(s: str) -> int matching the exact signature and passes all 10 test cases. Partial credit noted if signature/docstring is wrong but logic passes."
+  },
+  "tone_copy": {
+    "grading_rule": "Human-graded, no automated ground truth. Read all outputs side by side and rank on: voice match (unhinged billionaire), correct jargon misuse, exactly 3 lines, under 60 words, no emoji/hashtags/markdown."
+  }
+}

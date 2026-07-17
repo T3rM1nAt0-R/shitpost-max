@@ -1,0 +1,7 @@
+{
+  "model": "local/qwen2.5-coder:7b-instruct-q6_K",
+  "task": "spec_to_code",
+  "elapsed_sec": 31.68,
+  "exit_code": 0,
+  "raw_output": "```python\ndef parse_duration(s: str) -> int:\n    \"\"\"\n    Parse a compact duration string into total seconds.\n    \"\"\"\n    if not s:\n        raise ValueError(\"Input string is empty\")\n\n    components = []\n    i = 0\n\n    while i < len(s):\n        if s[i].isdigit():\n            j = i\n            while j < len(s) and s[j].isdigit():\n                j += 1\n            components.append(int(s[i:j]))\n            i = j\n        elif s[i] == 'h':\n            if not components:\n                raise ValueError(\"No hours specified before 'h'\")\n            components[-1] *= 3600\n            i += 1\n        elif s[i] == 'm':\n            if not components:\n                raise ValueError(\"No minutes specified before 'm'\")\n            components[-1] *= 60\n            i += 1\n        elif s[i] == 's':\n            if not components:\n                raise ValueError(\"No seconds specified before 's'\")\n            components[-1] = int(components[-1])\n            i += 1\n        else:\n            raise ValueError(f\"Invalid character in input string: {s[i]}\")\n\n    if not components:\n        raise ValueError(\"No valid duration components found\")\n\n    return sum(components)\n```"
+}

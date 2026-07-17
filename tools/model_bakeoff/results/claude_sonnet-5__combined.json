@@ -1,0 +1,5 @@
+{
+  "model": "claude/sonnet-5",
+  "elapsed_sec_total_call": 7.5,
+  "raw_output": "TASK 1:\nThe function appends a second `&q=` parameter instead of combining the language filter into the existing `q` value (e.g. with a `+` or space separator), so the URL ends up with two conflicting `q` params and the GitHub API will only honor one of them (the `created:>2023-01-01` filter effectively gets dropped/ignored).\n\nTASK 2:\n```python\nimport re\n\ndef parse_duration(s: str) -> int:\n    \"\"\"Parse a compact duration string into total seconds.\"\"\"\n    match = re.fullmatch(r'(?:(\\d+)h)?(?:(\\d+)m)?(?:(\\d+)s)?', s)\n    if not match or not any(match.groups()):\n        raise ValueError(f\"Invalid duration string: {s!r}\")\n    hours, minutes, seconds = (int(g) if g else 0 for g in match.groups())\n    return hours * 3600 + minutes * 60 + seconds\n```\n\nTASK 3:\nSomeone just clicked \"Skip Intro\" on my origin story and I felt that in my Q4 TAM. This is a Series Infinity-level betrayal and I'm bringing it to the board meeting tomorrow. Your ShitCoin (SC) balance has been emotionally taxed accordingly."
+}
