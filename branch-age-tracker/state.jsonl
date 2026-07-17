@@ -75,3 +75,4 @@
 {"branch":"main","days_stale":0,"timestamp":"2026-07-17T09:05:55.056179+00:00"}
 {"branch":"archive/old-api","days_stale":400,"timestamp":"2026-07-17T09:10:05.052151+00:00"}
 {"branch":"experiment/rewrite","days_stale":145,"timestamp":"2026-07-17T09:14:38.332440+00:00"}
+{"branch":"fix/login-bug","days_stale":12,"timestamp":"2026-07-17T09:18:29.196094+00:00"}
