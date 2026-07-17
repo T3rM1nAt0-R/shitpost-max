@@ -31,13 +31,29 @@ class GithubTrending(Shitpost):
 
         # Fetch trending repositories
         language = os.getenv("LANGUAGE", "")
-        url = f"https://api.github.com/search/repositories?q=created:>2023-04-01&sort=stars&order=desc"
+        # Real bug (DeepSeek review, 2026-07-17): appending a second "&q="
+        # parameter doesn't add to the existing search query -- GitHub's
+        # API only honors one q= value, so the language filter was silently
+        # ignored (or clobbered the date filter, depending on parse order)
+        # whenever LANGUAGE was set. GitHub's search syntax combines
+        # multiple terms with a space inside the single q= value.
+        query = "created:>2023-04-01"
         if language:
-            url += f"&q=language:{language}"
-        headers = {
-            "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",
-            "Accept": "application/vnd.github.v3+json",
-        }
+            query += f" language:{language}"
+        url = f"https://api.github.com/search/repositories?q={query}&sort=stars&order=desc"
+        headers = {"Accept": "application/vnd.github.v3+json"}
+        # Real bug, found 2026-07-17: this used to always set
+        # Authorization: token None when GITHUB_TOKEN wasn't set, instead of
+        # omitting the header -- GitHub correctly 401s a literal "token
+        # None" credential (confirmed live: identical request with no auth
+        # header at all returns 200). GITHUB_TOKEN was never actually
+        # configured for this plugin, so it had never produced a tick.
+        # Unauthenticated search API calls work fine, just at a lower rate
+        # limit (10/min vs 30/min) -- acceptable for a plugin that only
+        # ticks once per its own cadence anyway.
+        github_token = os.getenv("GITHUB_TOKEN")
+        if github_token:
+            headers["Authorization"] = f"token {github_token}"
         response = requests.get(url, headers=headers)
         if response.status_code != 200:
             print(f"error: failed to fetch trending repositories ({response.status_code})")

@@ -3,7 +3,7 @@
 import json
 import os
 import sys
-import urllib.request
+import requests
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -50,19 +50,24 @@ class FearGreedIndexPlugin(Shitpost):
 
     def _fetch_fear_greed_index(self) -> dict:
         url = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata"
-        req = urllib.request.Request(url, headers={
+        headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
             "Referer": "https://edition.cnn.com/markets/fear-and-greed",
-        })
-        with urllib.request.urlopen(req) as response:
-            if response.status == 200:
-                data = json.loads(response.read().decode("utf-8"))
-                return {
-                    "score": data["fear_and_greed"]["score"],
-                    "classification": data["fear_and_greed"]["rating"]
-                }
-            else:
-                raise Exception(f"Failed to fetch fear/greed index: {response.status}")
+        }
+        # Real bug, found 2026-07-17: urllib.request got a 418 from this
+        # endpoint with these exact headers every single time (confirmed
+        # live), while `requests` with the identical headers gets a clean
+        # 200 -- CNN's edge is fingerprinting the HTTP client itself, not
+        # just headers. This plugin had never produced a tick as a result.
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            return {
+                "score": data["fear_and_greed"]["score"],
+                "classification": data["fear_and_greed"]["rating"]
+            }
+        else:
+            raise Exception(f"Failed to fetch fear/greed index: {response.status_code}")
 
     def produce(self) -> dict:
         """Fetch the daily fear/greed index and update persistent files."""

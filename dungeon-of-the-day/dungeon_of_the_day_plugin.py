@@ -20,8 +20,16 @@ class DungeonOfTheDayPlugin(Shitpost):
 
     @staticmethod
     def _default_state() -> dict:
+        # "date" must NOT be today's date -- this is the fallback used only
+        # when no state file exists yet (the very first tick ever). If it
+        # defaults to today, produce()'s "state['date'] != current_date"
+        # check is always False on that first tick, so the dungeon never
+        # generates and _save_persisted_state() never runs -- meaning the
+        # state file never gets created, so every future tick re-loads this
+        # same "today" default again, forever. A real bug found 2026-07-17:
+        # this plugin had never produced a single tick since it was built.
         return {
-            "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "date": None,
             "seed": None,
         }
 

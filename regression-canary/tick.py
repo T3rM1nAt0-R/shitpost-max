@@ -12,6 +12,9 @@ from regression_canary_plugin import RegressionCanaryPlugin
 
 
 if __name__ == "__main__":
-    plugin = RegressionCanaryPlugin()
-    result = plugin.produce()
-    print(result)
+    # Real bug, found 2026-07-17: this called produce() directly and printed
+    # the result, never .run_tick() -- so the harness's persistence
+    # (_append_state/_write_summary) and git commit never happened,
+    # regardless of what produce() returned. Every other plugin's tick.py
+    # calls .run_tick(); this one never did.
+    RegressionCanaryPlugin().run_tick()

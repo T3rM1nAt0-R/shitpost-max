@@ -19,8 +19,18 @@ class RegressionCanaryPlugin(Shitpost):
 
     def __init__(self):
         super().__init__()
-        self._state_file_name = "state.jsonl"
-        self._summary_file_name = "summary.json"
+        # Real bug, found 2026-07-17: these used to be "state.jsonl" and
+        # "summary.json" -- the exact filenames the harness's own
+        # _append_state()/_write_summary() write to automatically. This
+        # plugin's own _save_state() truncates-and-rewrites that same file
+        # (open(..., "w")) every tick with only its own tracked prompt
+        # history, which then made _load_state()'s required-keys check fail
+        # on the harness's differently-shaped appended line, silently
+        # discarding all history on the very next tick. Renamed to distinct
+        # filenames so the plugin's own state and the harness's automatic
+        # log never collide.
+        self._state_file_name = "regression_canary_prompt_history.jsonl"
+        self._summary_file_name = "regression_canary_summary.json"
         self.prompts = [
             {"id": "joke", "prompt": "Tell me a joke."},
             {"id": "weather", "prompt": "What's the weather like today?"},
@@ -165,14 +175,24 @@ class RegressionCanaryPlugin(Shitpost):
 
     def send_prompt(self, prompt: str) -> str:
         """Send a prompt to the LLM and return the response."""
-        model = os.getenv("MODEL", "qwen2.5:7b")
-        endpoint = os.getenv("LLM_ENDPOINT", "http://localhost:11434/api/generate")
+        # Real bugs, found 2026-07-17, all three causing this to fail on
+        # every single call: (1) port 11434 is Ollama's own internal
+        # default, but this host's actual Ollama container only exposes
+        # port 1601 -- 11434 is unreachable, every request connection-
+        # refused. (2) "qwen2.5:7b" isn't a pulled model tag on this host;
+        # the actual tag is "qwen2.5-coder:7b-instruct-q6_K". (3) "stream"
+        # wasn't set to false, so Ollama's default streaming response
+        # (newline-delimited JSON chunks) would have broken response.json()
+        # even once the first two bugs were fixed -- confirmed live.
+        model = os.getenv("MODEL", "qwen2.5-coder:7b-instruct-q6_K")
+        endpoint = os.getenv("LLM_ENDPOINT", "http://localhost:1601/api/generate")
         temperature = float(os.getenv("TEMPERATURE", 0.0))
 
         payload = {
             "model": model,
             "prompt": prompt,
-            "temperature": temperature
+            "stream": False,
+            "options": {"temperature": temperature},
         }
 
         try:
@@ -184,16 +204,24 @@ class RegressionCanaryPlugin(Shitpost):
             return ""
 
     def diff_outputs(self, previous_output: str, current_output: str) -> tuple:
-        """Compute the edit ratio and similarity between two outputs."""
+        """Compute the edit ratio and similarity between two outputs.
+
+        Real bug fixed 2026-07-17 (DeepSeek review): this imported
+        `Levenshtein` and `sentence_transformers` (which pulls in torch) --
+        neither is installed, neither is in requirements.txt, and this path
+        is only reachable once a previous_output actually exists (i.e.
+        never on a plugin's very first tick, which is all my own earlier
+        fix-verification runs happened to exercise) -- so this would have
+        ImportError'd and silently failed every tick from the second one
+        onward. Replaced with stdlib difflib.SequenceMatcher, which gives a
+        comparable 0-1 similarity ratio with no new dependency.
+        """
         if not previous_output or not current_output:
             return 1.0, 0.0
 
-        from Levenshtein import distance
-        from sentence_transformers import SentenceTransformer, util
+        from difflib import SequenceMatcher
 
-        levenshtein_ratio = distance(previous_output, current_output) / max(len(previous_output), len(current_output))
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        embeddings = model.encode([previous_output, current_output])
-        similarity = util.cos_sim(embeddings[0], embeddings[1])[0][0]
+        similarity = SequenceMatcher(None, previous_output, current_output).ratio()
+        edit_ratio = similarity  # same 0-1 scale this plugin's own "changed = edit_ratio < 0.98" check expects
 
-        return levenshtein_ratio, similarity
+        return edit_ratio, similarity
