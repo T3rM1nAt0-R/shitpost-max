@@ -3233,3 +3233,4 @@
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":1444,"timestamp":"2026-07-17T16:12:52.228032+00:00"}
 {"match_ok":false,"match_test":"w*","nonmatch_ok":true,"nonmatch_test":"x*","pattern":"w*","tick":1445,"timestamp":"2026-07-17T16:14:31.579032+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":1446,"timestamp":"2026-07-17T16:15:12.565696+00:00"}
+{"match_ok":false,"match_test":"(d|(y|g))*","nonmatch_ok":true,"nonmatch_test":"(d|(y|g))7","pattern":"(d|(y|g))*","tick":1447,"timestamp":"2026-07-17T16:15:36.749015+00:00"}
