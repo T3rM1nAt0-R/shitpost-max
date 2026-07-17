@@ -274,3 +274,4 @@
 {"fill_count":4,"item":"date","op_index":3,"operation":"insert","result":true,"timestamp":"2026-07-17T12:02:55.033878+00:00"}
 {"fill_count":5,"item":"elderberry","op_index":4,"operation":"insert","result":true,"timestamp":"2026-07-17T12:04:30.211279+00:00"}
 {"fill_count":5,"item":"apple","op_index":5,"operation":"lookup","result":true,"timestamp":"2026-07-17T12:05:55.053378+00:00"}
+{"fill_count":5,"item":"fig","op_index":6,"operation":"lookup","result":false,"timestamp":"2026-07-17T12:07:29.532818+00:00"}
