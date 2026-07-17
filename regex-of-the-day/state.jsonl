@@ -3553,3 +3553,4 @@
 {"match_ok":false,"match_test":"q?","nonmatch_ok":true,"nonmatch_test":"q5","pattern":"q?","tick":1734,"timestamp":"2026-07-17T22:20:29.846191+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1735,"timestamp":"2026-07-17T22:21:29.185750+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":1736,"timestamp":"2026-07-17T22:22:30.052188+00:00"}
+{"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":1737,"timestamp":"2026-07-17T22:23:28.840476+00:00"}
