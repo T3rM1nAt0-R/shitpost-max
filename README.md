@@ -145,7 +145,7 @@ Pushing is intentionally *not* done per tick. `harness/scheduler.py` runs a sing
 <!-- PLUGIN_TABLE_START -->
 
 <details>
-<summary><strong>Number Theory & Sequences</strong> <sub>(13)</sub></summary>
+<summary><strong>Number Theory & Sequences</strong> <sub>(14)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -162,6 +162,7 @@ perfect-numbers | Farming Mersenne primes and their perfect-number offspring. Eu
 primes-forever | Enumerating every prime number that will ever exist, forever, on a cron schedule. Infinite scale, infinite commits.
 collatz-explorer | Attacking an unsolved Millennium-adjacent problem one integer at a time. Haven't disproven the conjecture yet, but the commits look great.
 base-converter | Built a universal number-base translation layer. Counts up, converts bases, ships a commit — full-stack numeral literacy.
+egyptian-fraction | Disrupted the ancient Egyptian numeral market with a greedy AI-powered fraction expansion platform. Each tick delivers stone-tablet-ready unit fractions.
 
 </details>
 
