@@ -3365,3 +3365,4 @@
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":1562,"timestamp":"2026-07-17T19:12:31.478232+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":1563,"timestamp":"2026-07-17T19:13:29.950742+00:00"}
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":1564,"timestamp":"2026-07-17T19:14:28.322259+00:00"}
+{"match_ok":false,"match_test":"t++","nonmatch_ok":true,"nonmatch_test":"u++","pattern":"t++","tick":1565,"timestamp":"2026-07-17T19:15:28.432303+00:00"}
