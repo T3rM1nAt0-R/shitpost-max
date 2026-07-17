@@ -2574,3 +2574,4 @@
 {"match_ok":false,"match_test":"(m+|n)","nonmatch_ok":true,"nonmatch_test":"(m4|n)","pattern":"(m+|n)","tick":841,"timestamp":"2026-07-17T04:48:58.395699+00:00"}
 {"match_ok":false,"match_test":"a++","nonmatch_ok":true,"nonmatch_test":"a0+","pattern":"a++","tick":842,"timestamp":"2026-07-17T04:50:01.677188+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":843,"timestamp":"2026-07-17T04:53:39.744198+00:00"}
+{"match_ok":false,"match_test":"(z|b++)","nonmatch_ok":true,"nonmatch_test":"(z|b++5","pattern":"(z|b++)","tick":844,"timestamp":"2026-07-17T04:54:22.332188+00:00"}
