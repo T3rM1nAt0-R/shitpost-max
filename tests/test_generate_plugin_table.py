@@ -56,8 +56,16 @@ def test_discover_plugin_dirs_includes_known_public_plugins():
 
 
 def test_public_plugins_appear_with_real_docstring_descriptions():
+    # Pre-existing bug, found 2026-07-17: this asserted exact equality
+    # against KNOWN_PUBLIC_PLUGINS (a small 5-plugin baseline), which meant
+    # it broke the moment the real roster grew past 5 plugins -- long
+    # before this session, and unrelated to tonight's changes (this file
+    # isn't part of CI's check-plugin-table.yml gate, which is why it went
+    # unnoticed). KNOWN_PUBLIC_PLUGINS is meant as "these should always be
+    # present," same as its sibling test below -- a subset check, not an
+    # exhaustive one.
     rows = dict(collect_plugin_rows(REPO_ROOT))
-    assert set(rows) == KNOWN_PUBLIC_PLUGINS
+    assert KNOWN_PUBLIC_PLUGINS <= set(rows)
 
     for plugin_dir_name in KNOWN_PUBLIC_PLUGINS:
         meta = introspect_plugin(REPO_ROOT, plugin_dir_name)

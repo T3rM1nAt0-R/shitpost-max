@@ -124,13 +124,27 @@ print(json.dumps({"name": cls.name, "internal": cls.internal, "description": fir
 
 
 def discover_plugin_dirs(repo_root: Path) -> list[str]:
-    """Return sorted plugin directory names, excluding special directories."""
-    return sorted(
+    """Return sorted plugin directory names, excluding special directories.
+
+    A directory containing only "__pycache__" (no real files at all) is
+    also excluded -- found the hard way 2026-07-17: removing a retired
+    plugin's tracked files (git rm) leaves its untracked __pycache__/
+    behind (gitignored, so git rm never touches it), and this function
+    used to still count that now-empty-of-real-content directory as a
+    plugin candidate, failing introspection with "expected at least 1
+    plugin module, found 0" -- for a plugin that was supposed to be
+    completely gone, not just code-empty.
+    """
+    candidates = [
         entry.name
         for entry in repo_root.iterdir()
         if entry.is_dir()
         and not entry.name.startswith(".")
         and entry.name not in SKIP_DIRS
+    ]
+    return sorted(
+        name for name in candidates
+        if any(child.name != "__pycache__" for child in (repo_root / name).iterdir())
     )
 
 
