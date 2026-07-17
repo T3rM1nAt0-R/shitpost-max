@@ -2639,3 +2639,4 @@
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":903,"timestamp":"2026-07-17T05:56:22.434880+00:00"}
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":904,"timestamp":"2026-07-17T05:57:22.815136+00:00"}
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":905,"timestamp":"2026-07-17T05:58:22.795033+00:00"}
+{"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":906,"timestamp":"2026-07-17T05:59:21.429596+00:00"}
