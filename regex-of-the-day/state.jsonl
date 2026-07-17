@@ -3170,3 +3170,4 @@
 {"match_ok":false,"match_test":"h?","nonmatch_ok":true,"nonmatch_test":"i?","pattern":"h?","tick":1383,"timestamp":"2026-07-17T15:10:11.988865+00:00"}
 {"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":1384,"timestamp":"2026-07-17T15:11:11.782449+00:00"}
 {"match_ok":false,"match_test":"t+","nonmatch_ok":true,"nonmatch_test":"u+","pattern":"t+","tick":1385,"timestamp":"2026-07-17T15:12:17.031783+00:00"}
+{"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1386,"timestamp":"2026-07-17T15:12:36.787736+00:00"}
