@@ -2482,3 +2482,4 @@
 {"match_ok":false,"match_test":"(((d+|(e|v))|u+)*+|(((y|k)|n++)|p))+","nonmatch_ok":true,"nonmatch_test":"(((d+|(e|v))|u+)*+|(((y|k)|n1+)|p))+","pattern":"(((d+|(e|v))|u+)*+|(((y|k)|n++)|p))+","tick":755,"timestamp":"2026-07-17T03:03:13.615992+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":756,"timestamp":"2026-07-17T03:04:13.560806+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":757,"timestamp":"2026-07-17T03:05:13.399926+00:00"}
+{"match_ok":false,"match_test":"((q|(r|k)+)+|i)","nonmatch_ok":true,"nonmatch_test":"((q|(r|k)+)+8i)","pattern":"((q|(r|k)+)+|i)","tick":758,"timestamp":"2026-07-17T03:06:12.909137+00:00"}
