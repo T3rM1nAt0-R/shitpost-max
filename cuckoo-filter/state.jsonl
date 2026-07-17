@@ -48,3 +48,4 @@
 {"fill_count":3,"item":"cherry","op_index":2,"operation":"insert","result":true,"timestamp":"2026-07-17T06:03:41.796914+00:00"}
 {"fill_count":4,"item":"date","op_index":3,"operation":"insert","result":true,"timestamp":"2026-07-17T06:05:16.978306+00:00"}
 {"fill_count":5,"item":"elderberry","op_index":4,"operation":"insert","result":true,"timestamp":"2026-07-17T06:06:41.794515+00:00"}
+{"fill_count":5,"item":"apple","op_index":5,"operation":"lookup","result":true,"timestamp":"2026-07-17T06:08:33.865164+00:00"}
