@@ -8,3 +8,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T04:08:59.783307+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-17T04:13:09.776350+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-17T04:17:19.766489+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-17T04:21:29.779867+00:00"}
