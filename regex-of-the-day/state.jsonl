@@ -2879,3 +2879,4 @@
 {"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":1119,"timestamp":"2026-07-17T10:18:51.730092+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":1120,"timestamp":"2026-07-17T10:20:04.659831+00:00"}
 {"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":1121,"timestamp":"2026-07-17T10:20:54.163506+00:00"}
+{"match_ok":false,"match_test":"s*","nonmatch_ok":true,"nonmatch_test":"s0","pattern":"s*","tick":1122,"timestamp":"2026-07-17T10:21:57.246771+00:00"}
