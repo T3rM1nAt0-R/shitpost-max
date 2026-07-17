@@ -3555,3 +3555,4 @@
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":1736,"timestamp":"2026-07-17T22:22:30.052188+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":1737,"timestamp":"2026-07-17T22:23:28.840476+00:00"}
 {"match_ok":false,"match_test":"((g*|h)|v)","nonmatch_ok":true,"nonmatch_test":"2(g*|h)|v)","pattern":"((g*|h)|v)","tick":1738,"timestamp":"2026-07-17T22:24:28.791780+00:00"}
+{"match_ok":false,"match_test":"(r?|((q|(v|z)+)*|(o|y)))","nonmatch_ok":true,"nonmatch_test":"(r?|((q|(v|z)+)*|(o|z)))","pattern":"(r?|((q|(v|z)+)*|(o|y)))","tick":1739,"timestamp":"2026-07-17T22:25:28.645998+00:00"}
