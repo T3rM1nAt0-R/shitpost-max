@@ -3439,3 +3439,4 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1630,"timestamp":"2026-07-17T20:26:28.661061+00:00"}
 {"match_ok":false,"match_test":"((n|v*)|b)++","nonmatch_ok":true,"nonmatch_test":"((n|v*)|b)+1","pattern":"((n|v*)|b)++","tick":1631,"timestamp":"2026-07-17T20:27:27.578360+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1632,"timestamp":"2026-07-17T20:28:32.948512+00:00"}
+{"match_ok":false,"match_test":"j+","nonmatch_ok":true,"nonmatch_test":"j3","pattern":"j+","tick":1633,"timestamp":"2026-07-17T20:29:30.137748+00:00"}
