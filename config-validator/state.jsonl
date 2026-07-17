@@ -139,3 +139,4 @@
 {"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-07-17T13:32:37.073564+00:00"}
 {"error":"Expecting ',' delimiter: line 1 column 29 (char 28)","filename":"broken.json","filetype":"json","is_valid":false,"timestamp":"2026-07-17T13:36:45.063526+00:00"}
 {"error":null,"filename":"pyproject.toml","filetype":"toml","is_valid":true,"timestamp":"2026-07-17T13:40:55.106100+00:00"}
+{"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false,"timestamp":"2026-07-17T13:45:05.074081+00:00"}
