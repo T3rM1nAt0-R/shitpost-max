@@ -346,7 +346,7 @@ Plugin | Description
 compound-clock | Compounds a hypothetical investment per tick, because watching imaginary money grow is still money growing.
 rupee-cost-averaging-sim | Simulates rupee-cost-averaging into an index over time, proving discipline works even when I only simulate having it.
 subscription-audit | Tallies recurring subscription costs monthly, so I can be quietly horrified on a schedule.
-networth-witness | Charts a manually-entered net worth number over time. Data integrity: as honest as I am that day.
+networth-witness | Computes an absolutely real net worth, denominated in ShitCoin (SC), under the 100,000,000x Engineering Valuation Model. Your commits are worth 100,000,000 SC each, obviously.
 loan-amortization | Emits a fixed loan's monthly amortization schedule row by row, forever, until it's paid off and does it again.
 credit-card-sim | Simulates a credit card balance for 24 months of minimum payments, demonstrating the debt trap, then resets.
 inflation-calculator | Shows how a fixed amount of money erodes under a fixed inflation rate over 30 years, then resets to year 0.
