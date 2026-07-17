@@ -1,0 +1,1 @@
+{"action":"eval_run","factual_acc":1.0,"improvement_count":4,"instruction_pass":1.0,"json_compliance":1.0,"latency_tps":1.3117680967245011,"model_hash":"76435392750818b865720722170837c2eb11c3f93afdb7cf11b51c4ef7475093","model_name":"qwen2.5-coder:7b-instruct-q6_K","regression_count":0,"safety_pass":1.0,"timestamp":"2026-07-17T07:13:33.133759+00:00"}
