@@ -3204,3 +3204,4 @@
 {"match_ok":false,"match_test":"(x|j)","nonmatch_ok":true,"nonmatch_test":"(y|j)","pattern":"(x|j)","tick":1417,"timestamp":"2026-07-17T15:43:59.477928+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":1418,"timestamp":"2026-07-17T15:44:54.986274+00:00"}
 {"match_ok":false,"match_test":"t++","nonmatch_ok":true,"nonmatch_test":"t9+","pattern":"t++","tick":1419,"timestamp":"2026-07-17T15:45:34.801727+00:00"}
+{"match_ok":false,"match_test":"(b+|z)","nonmatch_ok":true,"nonmatch_test":"8b+|z)","pattern":"(b+|z)","tick":1420,"timestamp":"2026-07-17T15:46:34.816259+00:00"}
