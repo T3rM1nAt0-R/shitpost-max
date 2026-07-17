@@ -2509,3 +2509,4 @@
 {"match_ok":false,"match_test":"o++","nonmatch_ok":true,"nonmatch_test":"o2+","pattern":"o++","tick":780,"timestamp":"2026-07-17T03:43:58.470675+00:00"}
 {"match_ok":false,"match_test":"j*","nonmatch_ok":true,"nonmatch_test":"j1","pattern":"j*","tick":781,"timestamp":"2026-07-17T03:44:58.783657+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":782,"timestamp":"2026-07-17T03:45:58.323850+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":783,"timestamp":"2026-07-17T03:46:58.318718+00:00"}
