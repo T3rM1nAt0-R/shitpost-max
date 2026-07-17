@@ -139,7 +139,7 @@ PLUGINS = [
     ("meta-tracker", 60),
     ("model-diff", 600),
     ("name-generator", 60),
-    ("networth-witness", 60),
+    ("networth-witness", 600),
     ("npm-downloads", 600),
     ("palindrome-generator", 60),
     ("pascal-row", 60),
