@@ -7,3 +7,4 @@
 {"heap":[8],"op":"extract","tick":7,"timestamp":"2026-07-17T03:44:49.784221+00:00","value":5}
 {"heap":[5,8],"op":"push","tick":8,"timestamp":"2026-07-17T03:45:39.762565+00:00","value":5}
 {"heap":[3,8,5],"op":"push","tick":9,"timestamp":"2026-07-17T03:46:29.784985+00:00","value":3}
+{"heap":[3,8,5,8],"op":"push","tick":10,"timestamp":"2026-07-17T03:47:19.818354+00:00","value":8}
