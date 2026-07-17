@@ -1,1 +1,1 @@
-{"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false}
+{"error":null,"filename":"settings.yaml","filetype":"yaml","is_valid":true}
