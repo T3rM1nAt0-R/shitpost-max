@@ -2853,3 +2853,4 @@
 {"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":1523,"timestamp":"2026-07-17T15:05:34.174216+00:00","word_count":5}
 {"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":1524,"timestamp":"2026-07-17T15:06:34.417153+00:00","word_count":8}
 {"seed_bigram":"the mat.","sentence":"the mat. the dog ran in the park.","tick":1525,"timestamp":"2026-07-17T15:07:35.592098+00:00","word_count":8}
+{"seed_bigram":"on the","sentence":"on the mat.","tick":1526,"timestamp":"2026-07-17T15:08:41.854655+00:00","word_count":3}
