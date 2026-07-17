@@ -1,1 +1,1 @@
-{"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false}
+{"error":null,"filename":"config.json","filetype":"json","is_valid":true}
