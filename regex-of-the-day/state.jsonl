@@ -2819,3 +2819,4 @@
 {"match_ok":false,"match_test":"(a|g++)+?","nonmatch_ok":true,"nonmatch_test":"8a|g++)+?","pattern":"(a|g++)+?","tick":1062,"timestamp":"2026-07-17T09:18:41.267868+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":1063,"timestamp":"2026-07-17T09:19:35.415880+00:00"}
 {"match_ok":false,"match_test":"m?","nonmatch_ok":true,"nonmatch_test":"m2","pattern":"m?","tick":1064,"timestamp":"2026-07-17T09:20:35.032848+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":1065,"timestamp":"2026-07-17T09:21:35.155037+00:00"}
