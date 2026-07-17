@@ -66,3 +66,5 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-17T08:28:28.959994+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-17T08:32:35.573674+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T08:36:45.080710+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-07-17T08:48:58.052936+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-17T08:51:24.938904+00:00"}
