@@ -168,3 +168,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-17T15:33:30.800285+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-17T15:37:36.596445+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-17T15:41:53.563852+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-17T15:45:55.070152+00:00"}
