@@ -2578,3 +2578,4 @@
 {"match_ok":false,"match_test":"(e++|b)","nonmatch_ok":true,"nonmatch_test":"(e+8|b)","pattern":"(e++|b)","tick":845,"timestamp":"2026-07-17T04:55:21.922140+00:00"}
 {"match_ok":true,"match_test":"j","nonmatch_ok":true,"nonmatch_test":"k","pattern":"j","tick":846,"timestamp":"2026-07-17T04:56:22.856412+00:00"}
 {"match_ok":false,"match_test":"d*","nonmatch_ok":true,"nonmatch_test":"d5","pattern":"d*","tick":847,"timestamp":"2026-07-17T04:57:22.175872+00:00"}
+{"match_ok":false,"match_test":"((u|g++)|a)","nonmatch_ok":true,"nonmatch_test":"((v|g++)|a)","pattern":"((u|g++)|a)","tick":848,"timestamp":"2026-07-17T04:58:22.121414+00:00"}
