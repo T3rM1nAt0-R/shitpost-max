@@ -3113,3 +3113,4 @@
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":1332,"timestamp":"2026-07-17T14:12:36.053091+00:00"}
 {"match_ok":false,"match_test":"(z|(v|d)+)","nonmatch_ok":true,"nonmatch_test":"(z|5v|d)+)","pattern":"(z|(v|d)+)","tick":1333,"timestamp":"2026-07-17T14:14:31.723801+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":1334,"timestamp":"2026-07-17T14:15:22.862048+00:00"}
+{"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":1335,"timestamp":"2026-07-17T14:15:40.746225+00:00"}
