@@ -2521,3 +2521,5 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":791,"timestamp":"2026-07-17T03:55:58.066114+00:00"}
 {"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"s5","pattern":"s+","tick":792,"timestamp":"2026-07-17T03:56:58.428130+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":793,"timestamp":"2026-07-17T03:57:58.135755+00:00"}
+{"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":794,"timestamp":"2026-07-17T04:00:25.388474+00:00"}
+{"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":795,"timestamp":"2026-07-17T04:01:49.676849+00:00"}
