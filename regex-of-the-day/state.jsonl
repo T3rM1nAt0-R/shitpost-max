@@ -2603,3 +2603,4 @@
 {"match_ok":false,"match_test":"(p|d)","nonmatch_ok":true,"nonmatch_test":"(q|d)","pattern":"(p|d)","tick":869,"timestamp":"2026-07-17T05:20:21.332043+00:00"}
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":870,"timestamp":"2026-07-17T05:21:21.924717+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":871,"timestamp":"2026-07-17T05:22:22.348910+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":872,"timestamp":"2026-07-17T05:24:21.244718+00:00"}
