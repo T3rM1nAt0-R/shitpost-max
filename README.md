@@ -176,7 +176,7 @@ aliquot-sequences | Computes the aliquot sequence for a fixed cycling list of st
 </details>
 
 <details>
-<summary><strong>Algorithms & Data Structures</strong> <sub>(24)</sub></summary>
+<summary><strong>Algorithms & Data Structures</strong> <sub>(25)</sub></summary>
 
 Plugin | Description
 --- | ---
@@ -204,6 +204,7 @@ kdtree-builder | Revolutionizing spatial data indexing with an AI-optimized k-di
 radix-sort-tick | Disintermediated comparison-based sorting with an LSD-first radix sort engine. Sorting by digits, not by judgment calls.
 binary-heap-demo | AI-driven priority queue management platform for enterprise task orchestration. Every sift-up is a leadership decision.
 knuth-morris-pratt | Revolutionizing substring search with an AI-powered linear-time pattern matching engine. Each failure function entry is a strategic pivot.
+cuckoo-filter | Maintains a small deterministic Cuckoo filter and runs a fixed insert/lookup/delete operation sequence.
 
 </details>
 
