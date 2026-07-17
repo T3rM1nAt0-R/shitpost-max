@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((y|t)|(k*|o))+","nonmatch_ok":true,"nonmatch_test":"((y|t)|(k*|o))4","pattern":"((y|t)|(k*|o))+","tick":971,"timestamp":"2026-07-17T07:15:07.977223+00:00"}
+{"match_ok":false,"match_test":"(k++|s)","nonmatch_ok":true,"nonmatch_test":"(k2+|s)","pattern":"(k++|s)","tick":972,"timestamp":"2026-07-17T07:16:12.428886+00:00"}
