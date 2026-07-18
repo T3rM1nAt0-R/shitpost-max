@@ -3628,3 +3628,4 @@
 {"seed_bigram":"the mat.","sentence":"the mat. the dog around the park.","tick":2299,"timestamp":"2026-07-18T04:49:05.504010+00:00","word_count":7}
 {"seed_bigram":"dog around","sentence":"dog around the park.","tick":2300,"timestamp":"2026-07-18T04:49:39.546559+00:00","word_count":4}
 {"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":2301,"timestamp":"2026-07-18T04:50:27.348542+00:00","word_count":8}
+{"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":2302,"timestamp":"2026-07-18T04:51:27.594903+00:00","word_count":5}
