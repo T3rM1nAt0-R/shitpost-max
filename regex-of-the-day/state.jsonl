@@ -3820,3 +3820,4 @@
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1970,"timestamp":"2026-07-18T02:47:28.843930+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":1971,"timestamp":"2026-07-18T02:49:50.776778+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":1972,"timestamp":"2026-07-18T02:51:50.640755+00:00"}
+{"match_ok":false,"match_test":"q+","nonmatch_ok":true,"nonmatch_test":"q2","pattern":"q+","tick":1973,"timestamp":"2026-07-18T02:52:10.304487+00:00"}
