@@ -5014,3 +5014,4 @@
 {"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-07-18T23:52:54.702450+00:00","vertices":100}
 {"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-07-18T23:53:56.330577+00:00","vertices":100}
 {"edges":30,"property_name":"Diameter","property_value":"3","timestamp":"2026-07-18T23:54:55.070604+00:00","vertices":100}
+{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-07-18T23:55:56.642634+00:00","vertices":100}
