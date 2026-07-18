@@ -4025,3 +4025,4 @@
 {"match_ok":false,"match_test":"y*","nonmatch_ok":true,"nonmatch_test":"z*","pattern":"y*","tick":2153,"timestamp":"2026-07-18T06:13:16.168318+00:00"}
 {"match_ok":false,"match_test":"z++","nonmatch_ok":true,"nonmatch_test":"a++","pattern":"z++","tick":2154,"timestamp":"2026-07-18T06:15:07.847708+00:00"}
 {"match_ok":false,"match_test":"(f|w)*","nonmatch_ok":true,"nonmatch_test":"(f|x)*","pattern":"(f|w)*","tick":2155,"timestamp":"2026-07-18T06:15:17.423442+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":2156,"timestamp":"2026-07-18T06:15:36.814252+00:00"}
