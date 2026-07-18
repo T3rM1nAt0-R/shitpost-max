@@ -2477,3 +2477,4 @@
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":2475,"timestamp":"2026-07-18T22:46:55.938016+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":2476,"timestamp":"2026-07-18T22:47:57.872688+00:00"}
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":2477,"timestamp":"2026-07-18T22:48:56.733008+00:00"}
+{"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":2478,"timestamp":"2026-07-18T22:49:56.763505+00:00"}
