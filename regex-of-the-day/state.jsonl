@@ -4964,3 +4964,4 @@
 {"match_ok":false,"match_test":"(v|(v|(((i|c)|(u+|m))+|i)+))","nonmatch_ok":true,"nonmatch_test":"(v|(v|(((i|c1|(u+|m))+|i)+))","pattern":"(v|(v|(((i|c)|(u+|m))+|i)+))","tick":3001,"timestamp":"2026-07-18T22:30:58.350707+00:00"}
 {"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"a9","pattern":"a+","tick":3002,"timestamp":"2026-07-18T22:32:04.665179+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":3003,"timestamp":"2026-07-18T22:32:57.928180+00:00"}
+{"match_ok":false,"match_test":"n*","nonmatch_ok":true,"nonmatch_test":"o*","pattern":"n*","tick":3004,"timestamp":"2026-07-18T22:34:00.274063+00:00"}
