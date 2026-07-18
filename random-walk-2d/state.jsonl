@@ -1454,3 +1454,5 @@
 {"distance_squared":2637,"tick":1455,"timestamp":"2026-07-18T05:05:27.689498+00:00","x":6,"y":-51}
 {"distance_squared":2536,"tick":1456,"timestamp":"2026-07-18T05:06:30.097981+00:00","x":6,"y":-50}
 {"distance_squared":2637,"tick":1457,"timestamp":"2026-07-18T05:07:39.149655+00:00","x":6,"y":-51}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/random-walk-2d/random_walk_2d_plugin.py\", line 49, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T05:08:32.425224+00:00"}
+{"distance_squared":2650,"tick":1458,"timestamp":"2026-07-18T05:09:27.992998+00:00","x":7,"y":-51}
