@@ -4801,3 +4801,4 @@
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":2853,"timestamp":"2026-07-18T19:48:17.353662+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":2854,"timestamp":"2026-07-18T19:48:58.563177+00:00"}
 {"match_ok":false,"match_test":"(((c+|a)|n+)*|((t|c)|((g|s++)++|g)))","nonmatch_ok":true,"nonmatch_test":"(((c+|a)|n+)*|((t7c)|((g|s++)++|g)))","pattern":"(((c+|a)|n+)*|((t|c)|((g|s++)++|g)))","tick":2855,"timestamp":"2026-07-18T19:49:58.987457+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":2856,"timestamp":"2026-07-18T19:50:57.592844+00:00"}
