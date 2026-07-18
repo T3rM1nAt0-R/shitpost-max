@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((k*|g)|(s|((a|b)+|b+)))","nonmatch_ok":true,"nonmatch_test":"((k*|g)|(s|((a|b)+|b+))3","pattern":"((k*|g)|(s|((a|b)+|b+)))","tick":2181,"timestamp":"2026-07-18T06:45:29.341083+00:00"}
+{"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":2182,"timestamp":"2026-07-18T06:47:28.443643+00:00"}
