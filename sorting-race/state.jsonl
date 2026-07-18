@@ -4851,3 +4851,4 @@
 {"algorithm":"selection_sort","elapsed_ms":0.5716329978895374,"list_size":200,"sorted_prefix":[24,149,230,234,240],"sorted_suffix":[9735,9757,9815,9911,9929],"tick":3183,"timestamp":"2026-07-18T20:14:58.483988+00:00"}
 {"algorithm":"merge_sort","elapsed_ms":0.23602600413141772,"list_size":200,"sorted_prefix":[39,72,118,125,149],"sorted_suffix":[9856,9862,9869,9893,9901],"tick":3184,"timestamp":"2026-07-18T20:16:01.569187+00:00"}
 {"algorithm":"bubble_sort","elapsed_ms":1.1024310006177984,"list_size":200,"sorted_prefix":[94,202,246,268,283],"sorted_suffix":[9610,9614,9629,9938,9989],"tick":3185,"timestamp":"2026-07-18T20:16:58.891510+00:00"}
+{"algorithm":"insertion_sort","elapsed_ms":0.5046030055382289,"list_size":200,"sorted_prefix":[26,76,91,114,126],"sorted_suffix":[9649,9761,9875,9924,9988],"tick":3186,"timestamp":"2026-07-18T20:18:00.856908+00:00"}
