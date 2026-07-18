@@ -4815,3 +4815,4 @@
 {"match_ok":false,"match_test":"((((x|((n|z)|a++))|u)|(a|(p|z))+)|j+)","nonmatch_ok":true,"nonmatch_test":"((((x|((n6z)|a++))|u)|(a|(p|z))+)|j+)","pattern":"((((x|((n|z)|a++))|u)|(a|(p|z))+)|j+)","tick":2866,"timestamp":"2026-07-18T20:02:05.351700+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":2867,"timestamp":"2026-07-18T20:02:58.074588+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":2868,"timestamp":"2026-07-18T20:04:00.561733+00:00"}
+{"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":2869,"timestamp":"2026-07-18T20:04:57.784065+00:00"}
