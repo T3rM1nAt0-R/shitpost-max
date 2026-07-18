@@ -4833,3 +4833,4 @@
 {"match_ok":false,"match_test":"(d|k)+","nonmatch_ok":true,"nonmatch_test":"(d7k)+","pattern":"(d|k)+","tick":2884,"timestamp":"2026-07-18T20:20:19.247830+00:00"}
 {"match_ok":false,"match_test":"(d|y)","nonmatch_ok":true,"nonmatch_test":"(d4y)","pattern":"(d|y)","tick":2885,"timestamp":"2026-07-18T20:20:57.506134+00:00"}
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":2886,"timestamp":"2026-07-18T20:22:05.541422+00:00"}
+{"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":2887,"timestamp":"2026-07-18T20:22:57.793111+00:00"}
