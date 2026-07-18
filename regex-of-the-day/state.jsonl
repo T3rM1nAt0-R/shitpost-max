@@ -3818,3 +3818,4 @@
 {"match_ok":false,"match_test":"e+","nonmatch_ok":true,"nonmatch_test":"f+","pattern":"e+","tick":1968,"timestamp":"2026-07-18T02:45:29.588089+00:00"}
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"z4","pattern":"z+","tick":1969,"timestamp":"2026-07-18T02:46:28.374041+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1970,"timestamp":"2026-07-18T02:47:28.843930+00:00"}
+{"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":1971,"timestamp":"2026-07-18T02:49:50.776778+00:00"}
