@@ -4766,3 +4766,4 @@
 {"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-07-18T19:44:55.001517+00:00","vertices":100}
 {"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-07-18T19:45:56.046876+00:00","vertices":100}
 {"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-07-18T19:46:54.788765+00:00","vertices":100}
+{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-07-18T19:48:00.457920+00:00","vertices":100}
