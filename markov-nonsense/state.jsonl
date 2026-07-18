@@ -3630,3 +3630,4 @@
 {"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":2301,"timestamp":"2026-07-18T04:50:27.348542+00:00","word_count":8}
 {"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":2302,"timestamp":"2026-07-18T04:51:27.594903+00:00","word_count":5}
 {"seed_bigram":"in the","sentence":"in the park.","tick":2303,"timestamp":"2026-07-18T04:52:28.506960+00:00","word_count":3}
+{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":2304,"timestamp":"2026-07-18T04:53:27.637718+00:00","word_count":4}
