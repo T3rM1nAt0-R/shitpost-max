@@ -605,3 +605,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T22:56:02.571708+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T23:00:18.552149+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T23:04:18.764734+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-18T23:08:28.829009+00:00"}
