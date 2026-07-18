@@ -81,3 +81,26 @@
 {"running_mean":9.06,"running_variance":0.4777,"sample_count":81,"score":9,"timestamp":"2026-07-18T06:03:56.966542+00:00"}
 {"running_mean":9.07,"running_variance":0.4825,"sample_count":82,"score":10,"timestamp":"2026-07-18T06:20:53.446562+00:00"}
 {"running_mean":9.08,"running_variance":0.4869,"sample_count":83,"score":10,"timestamp":"2026-07-18T06:33:49.475591+00:00"}
+{"running_mean":9.07,"running_variance":0.4949,"sample_count":84,"score":8,"timestamp":"2026-07-18T10:16:40.917354+00:00"}
+{"running_mean":9.08,"running_variance":0.4991,"sample_count":85,"score":10,"timestamp":"2026-07-18T10:31:35.879775+00:00"}
+{"running_mean":9.08,"running_variance":0.4934,"sample_count":86,"score":9,"timestamp":"2026-07-18T10:46:27.687987+00:00"}
+{"running_mean":9.08,"running_variance":0.4878,"sample_count":87,"score":9,"timestamp":"2026-07-18T11:01:39.784897+00:00"}
+{"running_mean":9.08,"running_variance":0.4823,"sample_count":88,"score":9,"timestamp":"2026-07-18T11:16:38.802120+00:00"}
+{"running_mean":9.07,"running_variance":0.4898,"sample_count":89,"score":8,"timestamp":"2026-07-18T11:31:45.078203+00:00"}
+{"running_mean":9.07,"running_variance":0.4844,"sample_count":90,"score":9,"timestamp":"2026-07-18T11:46:42.603005+00:00"}
+{"running_mean":9.05,"running_variance":0.4915,"sample_count":91,"score":8,"timestamp":"2026-07-18T12:16:42.765956+00:00"}
+{"running_mean":9.05,"running_variance":0.4862,"sample_count":92,"score":9,"timestamp":"2026-07-18T13:01:47.288602+00:00"}
+{"running_mean":9.04,"running_variance":0.4928,"sample_count":93,"score":8,"timestamp":"2026-07-18T13:16:33.320941+00:00"}
+{"running_mean":9.04,"running_variance":0.4876,"sample_count":94,"score":9,"timestamp":"2026-07-18T13:46:39.338692+00:00"}
+{"running_mean":9.05,"running_variance":0.492,"sample_count":95,"score":10,"timestamp":"2026-07-18T14:01:45.612329+00:00"}
+{"running_mean":9.05,"running_variance":0.4869,"sample_count":96,"score":9,"timestamp":"2026-07-18T14:17:11.457085+00:00"}
+{"running_mean":9.05,"running_variance":0.4819,"sample_count":97,"score":9,"timestamp":"2026-07-18T14:32:25.603686+00:00"}
+{"running_mean":9.04,"running_variance":0.4881,"sample_count":98,"score":8,"timestamp":"2026-07-18T14:46:38.890758+00:00"}
+{"running_mean":9.04,"running_variance":0.4832,"sample_count":99,"score":9,"timestamp":"2026-07-18T15:16:38.858111+00:00"}
+{"running_mean":9.05,"running_variance":0.4875,"sample_count":100,"score":10,"timestamp":"2026-07-18T15:32:26.717302+00:00"}
+{"running_mean":9.04,"running_variance":0.4935,"sample_count":101,"score":8,"timestamp":"2026-07-18T15:46:53.463447+00:00"}
+{"running_mean":9.04,"running_variance":0.4887,"sample_count":102,"score":9,"timestamp":"2026-07-18T16:01:54.783791+00:00"}
+{"running_mean":9.04,"running_variance":0.4839,"sample_count":103,"score":9,"timestamp":"2026-07-18T16:16:42.090231+00:00"}
+{"running_mean":9.04,"running_variance":0.4793,"sample_count":104,"score":9,"timestamp":"2026-07-18T16:46:44.171376+00:00"}
+{"running_mean":9.05,"running_variance":0.4834,"sample_count":105,"score":10,"timestamp":"2026-07-18T17:02:02.531697+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/sentiment-drift/sentiment_drift_plugin.py\", line 67, in produce\n    self._save_persisted_state(new_state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:16:28.580968+00:00"}

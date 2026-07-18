@@ -75,3 +75,30 @@
 {"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T05:48:28.606332+00:00"}
 {"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T06:03:32.725891+00:00"}
 {"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T06:33:37.177331+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T10:01:23.808780+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T10:16:15.581786+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T10:31:21.813904+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T10:46:16.121505+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T11:01:26.651019+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T11:16:16.098670+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T11:31:26.611496+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T11:46:17.334101+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T12:16:16.019003+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T12:46:16.512431+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T13:01:27.838891+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T13:16:16.109062+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T13:31:24.470757+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T13:46:16.882877+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T14:01:24.998287+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T14:16:43.146572+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T14:31:54.046074+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T14:46:16.743640+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T15:01:20.300340+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T15:16:17.247403+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T15:31:38.681433+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T15:46:17.153805+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T16:01:27.804451+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$89.99","date":"July 4th, 2025"},"snippet_index":1,"timestamp":"2026-07-18T16:16:16.175129+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$12,500","date":"2026-01-09"},"snippet_index":2,"timestamp":"2026-07-18T16:46:16.800448+00:00"}
+{"accuracy":0.5,"extracted":{"amount":"$250.00","date":"2026-03-14"},"snippet_index":0,"timestamp":"2026-07-18T17:01:31.257588+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/extraction-bench/extraction_bench_plugin.py\", line 87, in produce\n    self._save_persisted_state({\"index\": (index + 1) % len(SNIPPETS)})\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:16:12.540603+00:00"}

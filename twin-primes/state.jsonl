@@ -215,3 +215,20 @@
 {"candidate":5011,"tick":2505,"timestamp":"2026-07-18T08:14:29.281992+00:00","twin":[5009,5011]}
 {"candidate":5023,"tick":2511,"timestamp":"2026-07-18T08:20:29.669913+00:00","twin":[5021,5023]}
 {"candidate":5101,"tick":2550,"timestamp":"2026-07-18T08:59:29.251355+00:00","twin":[5099,5101]}
+{"candidate":5233,"tick":2616,"timestamp":"2026-07-18T10:05:18.202349+00:00","twin":[5231,5233]}
+{"candidate":5281,"tick":2640,"timestamp":"2026-07-18T10:29:17.482299+00:00","twin":[5279,5281]}
+{"candidate":5419,"tick":2709,"timestamp":"2026-07-18T11:38:19.474638+00:00","twin":[5417,5419]}
+{"candidate":5443,"tick":2721,"timestamp":"2026-07-18T11:50:17.806743+00:00","twin":[5441,5443]}
+{"candidate":5479,"tick":2739,"timestamp":"2026-07-18T12:08:18.637901+00:00","twin":[5477,5479]}
+{"candidate":5503,"tick":2751,"timestamp":"2026-07-18T12:20:17.000356+00:00","twin":[5501,5503]}
+{"candidate":5521,"tick":2760,"timestamp":"2026-07-18T12:29:18.347718+00:00","twin":[5519,5521]}
+{"candidate":5641,"tick":2820,"timestamp":"2026-07-18T13:29:18.326597+00:00","twin":[5639,5641]}
+{"candidate":5653,"tick":2826,"timestamp":"2026-07-18T13:35:16.780339+00:00","twin":[5651,5653]}
+{"candidate":5659,"tick":2829,"timestamp":"2026-07-18T13:38:54.963781+00:00","twin":[5657,5659]}
+{"candidate":5743,"tick":2871,"timestamp":"2026-07-18T14:20:20.076794+00:00","twin":[5741,5743]}
+{"candidate":5851,"tick":2925,"timestamp":"2026-07-18T15:14:18.059088+00:00","twin":[5849,5851]}
+{"candidate":5869,"tick":2934,"timestamp":"2026-07-18T15:23:16.697021+00:00","twin":[5867,5869]}
+{"candidate":5881,"tick":2940,"timestamp":"2026-07-18T15:29:19.047058+00:00","twin":[5879,5881]}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/twin-primes/twin_primes_plugin.py\", line 54, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:06:25.722961+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/twin-primes/twin_primes_plugin.py\", line 54, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:07:14.831146+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/twin-primes/twin_primes_plugin.py\", line 54, in produce\n 

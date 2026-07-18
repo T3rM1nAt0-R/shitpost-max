@@ -1363,3 +1363,388 @@
 {"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1362,"timestamp":"2026-07-18T09:12:04.231992+00:00"}
 {"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1363,"timestamp":"2026-07-18T09:13:29.754226+00:00"}
 {"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1364,"timestamp":"2026-07-18T09:14:34.241525+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1365,"timestamp":"2026-07-18T09:17:08.569063+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1366,"timestamp":"2026-07-18T09:17:23.937855+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1367,"timestamp":"2026-07-18T09:18:39.256848+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1368,"timestamp":"2026-07-18T09:19:53.941050+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1369,"timestamp":"2026-07-18T09:21:15.832312+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1370,"timestamp":"2026-07-18T09:22:23.943732+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1371,"timestamp":"2026-07-18T09:23:39.507336+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1372,"timestamp":"2026-07-18T09:24:53.940793+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1373,"timestamp":"2026-07-18T09:26:18.992949+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1374,"timestamp":"2026-07-18T09:27:23.926836+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1375,"timestamp":"2026-07-18T09:28:39.614228+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1376,"timestamp":"2026-07-18T09:29:53.941279+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1377,"timestamp":"2026-07-18T09:31:16.510462+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1378,"timestamp":"2026-07-18T09:32:23.944849+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1379,"timestamp":"2026-07-18T09:33:39.259603+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1380,"timestamp":"2026-07-18T09:34:53.920965+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1381,"timestamp":"2026-07-18T09:36:19.047923+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1382,"timestamp":"2026-07-18T09:37:23.944626+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1383,"timestamp":"2026-07-18T09:38:39.508050+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1384,"timestamp":"2026-07-18T09:39:53.936015+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1385,"timestamp":"2026-07-18T09:41:16.447084+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1386,"timestamp":"2026-07-18T09:42:23.942431+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1387,"timestamp":"2026-07-18T09:43:39.315190+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1388,"timestamp":"2026-07-18T09:44:53.922080+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1389,"timestamp":"2026-07-18T09:46:19.773991+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1390,"timestamp":"2026-07-18T09:47:23.934948+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1391,"timestamp":"2026-07-18T09:49:04.154315+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1392,"timestamp":"2026-07-18T09:49:54.130235+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1393,"timestamp":"2026-07-18T09:51:16.020229+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1394,"timestamp":"2026-07-18T09:52:23.942780+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1395,"timestamp":"2026-07-18T09:53:39.910742+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1396,"timestamp":"2026-07-18T09:54:53.939857+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1397,"timestamp":"2026-07-18T09:56:21.526620+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1398,"timestamp":"2026-07-18T09:57:24.012529+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1399,"timestamp":"2026-07-18T09:58:39.514632+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1400,"timestamp":"2026-07-18T09:59:53.934414+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1401,"timestamp":"2026-07-18T10:01:42.916290+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1402,"timestamp":"2026-07-18T10:02:35.713938+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1403,"timestamp":"2026-07-18T10:03:39.412762+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1404,"timestamp":"2026-07-18T10:04:53.940530+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1405,"timestamp":"2026-07-18T10:06:36.839330+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1406,"timestamp":"2026-07-18T10:07:24.029286+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1407,"timestamp":"2026-07-18T10:08:39.874751+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1408,"timestamp":"2026-07-18T10:09:53.938597+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1409,"timestamp":"2026-07-18T10:11:17.049350+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1410,"timestamp":"2026-07-18T10:12:23.941854+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1411,"timestamp":"2026-07-18T10:13:39.244134+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1412,"timestamp":"2026-07-18T10:14:53.940259+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1413,"timestamp":"2026-07-18T10:16:36.318730+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1414,"timestamp":"2026-07-18T10:17:24.156021+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1415,"timestamp":"2026-07-18T10:18:39.800225+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1416,"timestamp":"2026-07-18T10:19:53.941577+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1417,"timestamp":"2026-07-18T10:21:17.527567+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1418,"timestamp":"2026-07-18T10:22:23.942405+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1419,"timestamp":"2026-07-18T10:23:39.502554+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1420,"timestamp":"2026-07-18T10:24:53.939907+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1421,"timestamp":"2026-07-18T10:26:21.506091+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1422,"timestamp":"2026-07-18T10:27:24.114284+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1423,"timestamp":"2026-07-18T10:28:39.463212+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1424,"timestamp":"2026-07-18T10:29:53.940454+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1425,"timestamp":"2026-07-18T10:31:32.039887+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1426,"timestamp":"2026-07-18T10:32:23.924466+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1427,"timestamp":"2026-07-18T10:33:39.387236+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1428,"timestamp":"2026-07-18T10:34:53.935557+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1429,"timestamp":"2026-07-18T10:37:12.960535+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1430,"timestamp":"2026-07-18T10:37:42.499257+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1431,"timestamp":"2026-07-18T10:38:39.776403+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1432,"timestamp":"2026-07-18T10:39:53.939658+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1433,"timestamp":"2026-07-18T10:41:16.951914+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1434,"timestamp":"2026-07-18T10:42:23.942732+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1435,"timestamp":"2026-07-18T10:43:39.810078+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1436,"timestamp":"2026-07-18T10:44:53.939015+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1437,"timestamp":"2026-07-18T10:46:27.446838+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1438,"timestamp":"2026-07-18T10:47:24.070003+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1439,"timestamp":"2026-07-18T10:48:39.515810+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1440,"timestamp":"2026-07-18T10:49:53.944632+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1441,"timestamp":"2026-07-18T10:51:17.035514+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1442,"timestamp":"2026-07-18T10:52:24.065473+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1443,"timestamp":"2026-07-18T10:53:39.661061+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1444,"timestamp":"2026-07-18T10:54:53.977140+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1445,"timestamp":"2026-07-18T10:56:24.626455+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1446,"timestamp":"2026-07-18T10:57:24.044530+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1447,"timestamp":"2026-07-18T10:58:39.501579+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1448,"timestamp":"2026-07-18T10:59:53.939503+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1449,"timestamp":"2026-07-18T11:01:36.055693+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1450,"timestamp":"2026-07-18T11:02:23.936821+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1451,"timestamp":"2026-07-18T11:03:39.234407+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1452,"timestamp":"2026-07-18T11:04:53.942242+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1453,"timestamp":"2026-07-18T11:06:21.783570+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1454,"timestamp":"2026-07-18T11:07:24.072114+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1455,"timestamp":"2026-07-18T11:08:40.167458+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1456,"timestamp":"2026-07-18T11:09:54.000144+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1457,"timestamp":"2026-07-18T11:11:17.806629+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1458,"timestamp":"2026-07-18T11:12:23.944207+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1459,"timestamp":"2026-07-18T11:13:39.243419+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1460,"timestamp":"2026-07-18T11:14:53.935082+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1461,"timestamp":"2026-07-18T11:16:35.770675+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1462,"timestamp":"2026-07-18T11:17:24.111372+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1463,"timestamp":"2026-07-18T11:18:39.549884+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1464,"timestamp":"2026-07-18T11:19:53.987487+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1465,"timestamp":"2026-07-18T11:21:18.405121+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1466,"timestamp":"2026-07-18T11:22:23.941186+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1467,"timestamp":"2026-07-18T11:23:39.515427+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1468,"timestamp":"2026-07-18T11:24:53.941852+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1469,"timestamp":"2026-07-18T11:26:24.220386+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1470,"timestamp":"2026-07-18T11:27:24.076613+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1471,"timestamp":"2026-07-18T11:28:39.388722+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1472,"timestamp":"2026-07-18T11:29:53.934062+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1473,"timestamp":"2026-07-18T11:31:39.068161+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1474,"timestamp":"2026-07-18T11:32:23.942991+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1475,"timestamp":"2026-07-18T11:33:39.686358+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1476,"timestamp":"2026-07-18T11:34:53.930657+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1477,"timestamp":"2026-07-18T11:36:23.855167+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1478,"timestamp":"2026-07-18T11:37:24.093626+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1479,"timestamp":"2026-07-18T11:38:39.556100+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1480,"timestamp":"2026-07-18T11:39:53.939373+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1481,"timestamp":"2026-07-18T11:41:17.888476+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1482,"timestamp":"2026-07-18T11:42:23.978954+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1483,"timestamp":"2026-07-18T11:43:39.114588+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1484,"timestamp":"2026-07-18T11:44:53.946358+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1485,"timestamp":"2026-07-18T11:46:42.449026+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1486,"timestamp":"2026-07-18T11:47:24.094856+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1487,"timestamp":"2026-07-18T11:48:39.517510+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1488,"timestamp":"2026-07-18T11:49:53.944307+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1489,"timestamp":"2026-07-18T11:51:18.021490+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1490,"timestamp":"2026-07-18T11:52:23.962239+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1491,"timestamp":"2026-07-18T11:53:39.626644+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1492,"timestamp":"2026-07-18T11:54:53.939851+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1493,"timestamp":"2026-07-18T11:56:24.140712+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1494,"timestamp":"2026-07-18T11:57:24.107269+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1495,"timestamp":"2026-07-18T11:58:40.490471+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1496,"timestamp":"2026-07-18T11:59:53.941407+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1497,"timestamp":"2026-07-18T12:02:20.642106+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1498,"timestamp":"2026-07-18T12:03:21.763020+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1499,"timestamp":"2026-07-18T12:03:39.644811+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1500,"timestamp":"2026-07-18T12:04:53.977132+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1501,"timestamp":"2026-07-18T12:06:21.812124+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1502,"timestamp":"2026-07-18T12:07:24.153669+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1503,"timestamp":"2026-07-18T12:08:39.619487+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1504,"timestamp":"2026-07-18T12:09:53.932841+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1505,"timestamp":"2026-07-18T12:11:18.543395+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1506,"timestamp":"2026-07-18T12:12:23.950730+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1507,"timestamp":"2026-07-18T12:13:39.253747+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1508,"timestamp":"2026-07-18T12:14:53.933666+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1509,"timestamp":"2026-07-18T12:16:41.467396+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1510,"timestamp":"2026-07-18T12:17:24.060974+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1511,"timestamp":"2026-07-18T12:18:39.884990+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1512,"timestamp":"2026-07-18T12:19:53.940081+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1513,"timestamp":"2026-07-18T12:21:16.998682+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1514,"timestamp":"2026-07-18T12:22:23.943357+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1515,"timestamp":"2026-07-18T12:23:39.834917+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1516,"timestamp":"2026-07-18T12:24:53.942465+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1517,"timestamp":"2026-07-18T12:26:27.021667+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1518,"timestamp":"2026-07-18T12:27:24.118208+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1519,"timestamp":"2026-07-18T12:28:40.034481+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1520,"timestamp":"2026-07-18T12:29:53.920992+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1521,"timestamp":"2026-07-18T12:32:22.391314+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1522,"timestamp":"2026-07-18T12:33:24.760603+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1523,"timestamp":"2026-07-18T12:33:45.383292+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1524,"timestamp":"2026-07-18T12:34:53.941053+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1525,"timestamp":"2026-07-18T12:36:20.593276+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1526,"timestamp":"2026-07-18T12:37:24.139744+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1527,"timestamp":"2026-07-18T12:38:40.059845+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1528,"timestamp":"2026-07-18T12:39:53.939814+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1529,"timestamp":"2026-07-18T12:41:17.944530+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1530,"timestamp":"2026-07-18T12:42:23.945771+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1531,"timestamp":"2026-07-18T12:43:39.253568+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1532,"timestamp":"2026-07-18T12:44:53.920597+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1533,"timestamp":"2026-07-18T12:47:22.153024+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1534,"timestamp":"2026-07-18T12:49:25.890321+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1535,"timestamp":"2026-07-18T12:50:13.123209+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1536,"timestamp":"2026-07-18T12:51:23.083480+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1537,"timestamp":"2026-07-18T12:51:54.939112+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1538,"timestamp":"2026-07-18T12:52:43.940419+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1539,"timestamp":"2026-07-18T12:53:39.768821+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1540,"timestamp":"2026-07-18T12:54:54.023246+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1541,"timestamp":"2026-07-18T12:56:36.536385+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1542,"timestamp":"2026-07-18T12:57:24.101547+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1543,"timestamp":"2026-07-18T12:58:39.595438+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1544,"timestamp":"2026-07-18T12:59:53.940225+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1545,"timestamp":"2026-07-18T13:01:42.145354+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1546,"timestamp":"2026-07-18T13:02:23.936661+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1547,"timestamp":"2026-07-18T13:03:39.456898+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1548,"timestamp":"2026-07-18T13:04:53.941020+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1549,"timestamp":"2026-07-18T13:06:21.602790+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1550,"timestamp":"2026-07-18T13:07:24.007601+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1551,"timestamp":"2026-07-18T13:08:39.596516+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1552,"timestamp":"2026-07-18T13:09:53.988244+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1553,"timestamp":"2026-07-18T13:11:17.792963+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1554,"timestamp":"2026-07-18T13:12:23.944622+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1555,"timestamp":"2026-07-18T13:13:39.762516+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1556,"timestamp":"2026-07-18T13:14:53.940224+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1557,"timestamp":"2026-07-18T13:16:31.929612+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1558,"timestamp":"2026-07-18T13:17:24.056540+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1559,"timestamp":"2026-07-18T13:18:39.389710+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1560,"timestamp":"2026-07-18T13:19:53.941527+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1561,"timestamp":"2026-07-18T13:21:17.580094+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1562,"timestamp":"2026-07-18T13:22:23.938825+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1563,"timestamp":"2026-07-18T13:23:39.508094+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1564,"timestamp":"2026-07-18T13:24:53.941532+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1565,"timestamp":"2026-07-18T13:26:21.930002+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1566,"timestamp":"2026-07-18T13:27:24.077380+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1567,"timestamp":"2026-07-18T13:28:39.473552+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1568,"timestamp":"2026-07-18T13:29:53.982155+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1569,"timestamp":"2026-07-18T13:32:16.225982+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1570,"timestamp":"2026-07-18T13:32:53.348719+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1571,"timestamp":"2026-07-18T13:33:39.310078+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1572,"timestamp":"2026-07-18T13:34:53.940145+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1573,"timestamp":"2026-07-18T13:36:48.898635+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1574,"timestamp":"2026-07-18T13:38:33.744800+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1575,"timestamp":"2026-07-18T13:38:57.624988+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1576,"timestamp":"2026-07-18T13:39:53.938741+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1577,"timestamp":"2026-07-18T13:41:17.288970+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1578,"timestamp":"2026-07-18T13:42:23.940999+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1579,"timestamp":"2026-07-18T13:43:39.252578+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1580,"timestamp":"2026-07-18T13:44:53.921052+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1581,"timestamp":"2026-07-18T13:46:38.277132+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1582,"timestamp":"2026-07-18T13:47:24.313848+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1583,"timestamp":"2026-07-18T13:48:39.518630+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1584,"timestamp":"2026-07-18T13:49:53.941009+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1585,"timestamp":"2026-07-18T13:51:18.524448+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1586,"timestamp":"2026-07-18T13:52:23.958040+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1587,"timestamp":"2026-07-18T13:53:39.463009+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1588,"timestamp":"2026-07-18T13:54:53.923373+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1589,"timestamp":"2026-07-18T13:56:22.905437+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1590,"timestamp":"2026-07-18T13:57:24.088617+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1591,"timestamp":"2026-07-18T13:58:39.507725+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1592,"timestamp":"2026-07-18T13:59:53.934268+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1593,"timestamp":"2026-07-18T14:01:43.267486+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1594,"timestamp":"2026-07-18T14:02:23.935483+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1595,"timestamp":"2026-07-18T14:03:39.680653+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1596,"timestamp":"2026-07-18T14:04:53.943803+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1597,"timestamp":"2026-07-18T14:06:39.468965+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1598,"timestamp":"2026-07-18T14:07:36.618594+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1599,"timestamp":"2026-07-18T14:08:39.753973+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1600,"timestamp":"2026-07-18T14:09:53.939405+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1601,"timestamp":"2026-07-18T14:11:18.975193+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1602,"timestamp":"2026-07-18T14:12:23.945227+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1603,"timestamp":"2026-07-18T14:13:39.635785+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1604,"timestamp":"2026-07-18T14:14:53.943569+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1605,"timestamp":"2026-07-18T14:17:06.913239+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1606,"timestamp":"2026-07-18T14:17:27.926010+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1607,"timestamp":"2026-07-18T14:18:39.590288+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1608,"timestamp":"2026-07-18T14:19:53.935519+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1609,"timestamp":"2026-07-18T14:21:16.991052+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1610,"timestamp":"2026-07-18T14:22:24.029256+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1611,"timestamp":"2026-07-18T14:23:39.773801+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1612,"timestamp":"2026-07-18T14:24:53.982694+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1613,"timestamp":"2026-07-18T14:27:17.329595+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1614,"timestamp":"2026-07-18T14:28:37.353377+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1615,"timestamp":"2026-07-18T14:30:20.487209+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1616,"timestamp":"2026-07-18T14:31:34.041746+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1617,"timestamp":"2026-07-18T14:32:19.454472+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1618,"timestamp":"2026-07-18T14:32:38.831208+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1619,"timestamp":"2026-07-18T14:33:39.246212+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1620,"timestamp":"2026-07-18T14:34:53.942975+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1621,"timestamp":"2026-07-18T14:36:39.580545+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1622,"timestamp":"2026-07-18T14:38:32.471231+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1623,"timestamp":"2026-07-18T14:40:17.125343+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1624,"timestamp":"2026-07-18T14:40:42.217322+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1625,"timestamp":"2026-07-18T14:41:23.900728+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1626,"timestamp":"2026-07-18T14:42:23.951522+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1627,"timestamp":"2026-07-18T14:43:39.294158+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1628,"timestamp":"2026-07-18T14:44:53.935872+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1629,"timestamp":"2026-07-18T14:46:37.685230+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1630,"timestamp":"2026-07-18T14:47:24.248321+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1631,"timestamp":"2026-07-18T14:48:39.729866+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1632,"timestamp":"2026-07-18T14:49:53.940797+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1633,"timestamp":"2026-07-18T14:51:17.395337+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1634,"timestamp":"2026-07-18T14:52:23.945945+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1635,"timestamp":"2026-07-18T14:53:39.981982+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1636,"timestamp":"2026-07-18T14:54:53.923365+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1637,"timestamp":"2026-07-18T14:56:24.309472+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1638,"timestamp":"2026-07-18T14:57:24.136914+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1639,"timestamp":"2026-07-18T14:58:39.450780+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1640,"timestamp":"2026-07-18T14:59:53.940705+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1641,"timestamp":"2026-07-18T15:02:21.803571+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1642,"timestamp":"2026-07-18T15:02:35.870827+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1643,"timestamp":"2026-07-18T15:03:39.582211+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1644,"timestamp":"2026-07-18T15:04:53.939973+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1645,"timestamp":"2026-07-18T15:06:44.634660+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1646,"timestamp":"2026-07-18T15:07:24.216815+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1647,"timestamp":"2026-07-18T15:08:39.848632+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1648,"timestamp":"2026-07-18T15:09:53.941230+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1649,"timestamp":"2026-07-18T15:11:17.743675+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1650,"timestamp":"2026-07-18T15:12:24.041569+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1651,"timestamp":"2026-07-18T15:13:39.354886+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1652,"timestamp":"2026-07-18T15:14:53.924963+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1653,"timestamp":"2026-07-18T15:16:37.720524+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1654,"timestamp":"2026-07-18T15:17:24.335299+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1655,"timestamp":"2026-07-18T15:18:40.041451+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1656,"timestamp":"2026-07-18T15:19:53.942801+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1657,"timestamp":"2026-07-18T15:21:17.249350+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1658,"timestamp":"2026-07-18T15:22:23.944053+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1659,"timestamp":"2026-07-18T15:23:39.927476+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1660,"timestamp":"2026-07-18T15:24:53.946685+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1661,"timestamp":"2026-07-18T15:27:21.543938+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1662,"timestamp":"2026-07-18T15:27:48.505022+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1663,"timestamp":"2026-07-18T15:28:39.591993+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1664,"timestamp":"2026-07-18T15:29:53.941469+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1665,"timestamp":"2026-07-18T15:32:23.291799+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1666,"timestamp":"2026-07-18T15:32:35.524946+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1667,"timestamp":"2026-07-18T15:33:39.247504+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1668,"timestamp":"2026-07-18T15:34:53.939517+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1669,"timestamp":"2026-07-18T15:36:28.239355+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1670,"timestamp":"2026-07-18T15:37:24.189104+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1671,"timestamp":"2026-07-18T15:38:39.593181+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1672,"timestamp":"2026-07-18T15:39:53.940061+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1673,"timestamp":"2026-07-18T15:41:17.714376+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1674,"timestamp":"2026-07-18T15:42:24.024892+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1675,"timestamp":"2026-07-18T15:43:40.308548+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1676,"timestamp":"2026-07-18T15:44:53.982058+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1677,"timestamp":"2026-07-18T15:46:47.892326+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1678,"timestamp":"2026-07-18T15:47:24.068965+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1679,"timestamp":"2026-07-18T15:48:39.799158+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1680,"timestamp":"2026-07-18T15:49:54.004465+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1681,"timestamp":"2026-07-18T15:51:38.385232+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1682,"timestamp":"2026-07-18T15:52:24.108044+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1683,"timestamp":"2026-07-18T15:53:39.508801+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1684,"timestamp":"2026-07-18T15:54:53.942360+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1685,"timestamp":"2026-07-18T15:56:25.473892+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1686,"timestamp":"2026-07-18T15:57:24.227754+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1687,"timestamp":"2026-07-18T15:58:39.403518+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1688,"timestamp":"2026-07-18T15:59:54.003686+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1689,"timestamp":"2026-07-18T16:01:48.198406+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1690,"timestamp":"2026-07-18T16:02:23.948641+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1691,"timestamp":"2026-07-18T16:03:39.246989+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1692,"timestamp":"2026-07-18T16:04:53.941156+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1693,"timestamp":"2026-07-18T16:06:24.206225+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1694,"timestamp":"2026-07-18T16:07:24.315467+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1695,"timestamp":"2026-07-18T16:08:40.448091+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1696,"timestamp":"2026-07-18T16:09:53.939887+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1697,"timestamp":"2026-07-18T16:11:18.681423+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1698,"timestamp":"2026-07-18T16:12:23.942121+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1699,"timestamp":"2026-07-18T16:13:39.241880+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1700,"timestamp":"2026-07-18T16:14:53.940197+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1701,"timestamp":"2026-07-18T16:16:39.676025+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1702,"timestamp":"2026-07-18T16:17:24.131228+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1703,"timestamp":"2026-07-18T16:18:39.516241+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1704,"timestamp":"2026-07-18T16:19:53.984557+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1705,"timestamp":"2026-07-18T16:21:18.533874+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1706,"timestamp":"2026-07-18T16:22:23.950164+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1707,"timestamp":"2026-07-18T16:23:39.582021+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1708,"timestamp":"2026-07-18T16:24:53.942384+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1709,"timestamp":"2026-07-18T16:26:24.404341+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1710,"timestamp":"2026-07-18T16:27:24.208421+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1711,"timestamp":"2026-07-18T16:28:39.693951+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1712,"timestamp":"2026-07-18T16:29:53.945637+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1713,"timestamp":"2026-07-18T16:32:27.278318+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1714,"timestamp":"2026-07-18T16:33:27.728388+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1715,"timestamp":"2026-07-18T16:33:42.366472+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1716,"timestamp":"2026-07-18T16:34:53.984481+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1717,"timestamp":"2026-07-18T16:36:52.538321+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1718,"timestamp":"2026-07-18T16:39:16.148048+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1719,"timestamp":"2026-07-18T16:39:47.334247+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1720,"timestamp":"2026-07-18T16:40:01.914087+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1721,"timestamp":"2026-07-18T16:41:40.546536+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1722,"timestamp":"2026-07-18T16:42:24.300108+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1723,"timestamp":"2026-07-18T16:43:39.641603+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1724,"timestamp":"2026-07-18T16:44:53.940878+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1725,"timestamp":"2026-07-18T16:46:40.201171+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1726,"timestamp":"2026-07-18T16:47:24.300020+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1727,"timestamp":"2026-07-18T16:48:39.580959+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1728,"timestamp":"2026-07-18T16:49:53.940706+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1729,"timestamp":"2026-07-18T16:51:18.421250+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1730,"timestamp":"2026-07-18T16:52:24.044135+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1731,"timestamp":"2026-07-18T16:53:39.809597+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1732,"timestamp":"2026-07-18T16:54:53.940018+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1733,"timestamp":"2026-07-18T16:56:35.785671+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1734,"timestamp":"2026-07-18T16:57:24.243589+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1735,"timestamp":"2026-07-18T16:58:40.083524+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1736,"timestamp":"2026-07-18T16:59:53.944513+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1737,"timestamp":"2026-07-18T17:01:56.368017+00:00"}
+{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1738,"timestamp":"2026-07-18T17:02:23.940830+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1739,"timestamp":"2026-07-18T17:03:39.401677+00:00"}
+{"a":"aaa bbb ccc","b":"aaa bbb ccc","hamming_distance":0,"tick":1740,"timestamp":"2026-07-18T17:04:53.921411+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:06:20.043242+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:07:24.103175+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/ha{"a":"the quick brown fox","b":"the quick brown fox jumps","hamming_distance":9,"tick":1741,"timestamp":"2026-07-18T17:12:23.942045+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:13:39.039330+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:14:53.940966+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:16:27.465775+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:17:24.594960+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/simhash-near-dup/simhash_near_dup_plugin.py\", line 56, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T17:18:39.312229+00:00"}
+{"a":"hello world","b":"goodbye world","hamming_distance":14,"tick":1742,"timestamp":"2026-07-18T17:19:53.943303+00:00"}
