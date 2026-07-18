@@ -310,3 +310,4 @@
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T02:10:50.521112+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T02:14:09.243883+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T02:18:24.058678+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-07-18T02:22:32.372745+00:00"}
