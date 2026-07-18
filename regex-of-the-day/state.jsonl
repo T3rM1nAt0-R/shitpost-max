@@ -5030,3 +5030,4 @@
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"a+","pattern":"z+","tick":3060,"timestamp":"2026-07-18T23:36:59.593980+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":3061,"timestamp":"2026-07-18T23:38:00.171149+00:00"}
 {"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":3062,"timestamp":"2026-07-18T23:38:57.969763+00:00"}
+{"match_ok":false,"match_test":"w?","nonmatch_ok":true,"nonmatch_test":"x?","pattern":"w?","tick":3063,"timestamp":"2026-07-18T23:39:59.957097+00:00"}
