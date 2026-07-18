@@ -438,3 +438,4 @@
 {"eroded_value":83961.93,"timestamp":"2026-07-18T05:02:10.016120+00:00","year":3}
 {"eroded_value":79209.37,"timestamp":"2026-07-18T05:05:04.041086+00:00","year":4}
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/inflation-calculator/inflation_calculator_plugin.py\", line 31, in produce\n    self._save_persisted_state({\"year\": year + 1})\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\"){"eroded_value":74725.82,"timestamp":"2026-07-18T05:11:46.466288+00:00","year":5}
+{"eroded_value":70496.05,"timestamp":"2026-07-18T05:15:03.855152+00:00","year":6}
