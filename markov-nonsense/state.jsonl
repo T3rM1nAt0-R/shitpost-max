@@ -3345,3 +3345,4 @@
 {"seed_bigram":"in the","sentence":"in the park.","tick":2016,"timestamp":"2026-07-18T00:13:20.415781+00:00","word_count":3}
 {"seed_bigram":"chased the","sentence":"chased the dog ran in the park.","tick":2017,"timestamp":"2026-07-18T00:13:49.331261+00:00","word_count":7}
 {"seed_bigram":"park. the","sentence":"park. the cat sat on the mat.","tick":2018,"timestamp":"2026-07-18T00:14:08.816884+00:00","word_count":7}
+{"seed_bigram":"the cat","sentence":"the cat chased the dog around the park.","tick":2019,"timestamp":"2026-07-18T00:14:31.383596+00:00","word_count":8}
