@@ -524,3 +524,4 @@
 {"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-07-18T16:58:39.101612+00:00"}
 {"error":"Expecting ',' delimiter: line 1 column 29 (char 28)","filename":"broken.json","filetype":"json","is_valid":false,"timestamp":"2026-07-18T17:02:48.945753+00:00"}
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/config-validato{"error":null,"filename":"pyproject.toml","filetype":"toml","is_valid":true,"timestamp":"2026-07-18T17:19:31.520145+00:00"}
+{"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false,"timestamp":"2026-07-18T17:48:38.943871+00:00"}
