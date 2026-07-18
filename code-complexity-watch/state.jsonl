@@ -303,3 +303,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T01:42:25.551613+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T01:44:59.258395+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T01:49:09.334687+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-18T01:53:24.337052+00:00"}
