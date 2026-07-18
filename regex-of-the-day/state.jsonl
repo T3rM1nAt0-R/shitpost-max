@@ -3916,3 +3916,4 @@
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":2054,"timestamp":"2026-07-18T04:23:54.600888+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":2055,"timestamp":"2026-07-18T04:24:56.833399+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":2056,"timestamp":"2026-07-18T04:25:35.386094+00:00"}
+{"match_ok":false,"match_test":"(u|(h|w*))+","nonmatch_ok":true,"nonmatch_test":"(u|(h8w*))+","pattern":"(u|(h|w*))+","tick":2057,"timestamp":"2026-07-18T04:26:30.184553+00:00"}
