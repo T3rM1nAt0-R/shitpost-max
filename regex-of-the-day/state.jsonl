@@ -3768,3 +3768,4 @@
 {"match_ok":false,"match_test":"p++","nonmatch_ok":true,"nonmatch_test":"p3+","pattern":"p++","tick":1925,"timestamp":"2026-07-18T01:55:28.781340+00:00"}
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":1926,"timestamp":"2026-07-18T01:56:28.727269+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":1927,"timestamp":"2026-07-18T01:57:29.248391+00:00"}
+{"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":1928,"timestamp":"2026-07-18T01:58:35.574762+00:00"}
