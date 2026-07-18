@@ -3785,3 +3785,4 @@
 {"match_ok":false,"match_test":"c+","nonmatch_ok":true,"nonmatch_test":"d+","pattern":"c+","tick":1939,"timestamp":"2026-07-18T02:12:30.339453+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":1940,"timestamp":"2026-07-18T02:13:29.349805+00:00"}
 {"match_ok":false,"match_test":"c+","nonmatch_ok":true,"nonmatch_test":"c5","pattern":"c+","tick":1941,"timestamp":"2026-07-18T02:14:29.748164+00:00"}
+{"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1942,"timestamp":"2026-07-18T02:15:28.616333+00:00"}
