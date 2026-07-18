@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((n|(y|q)+)|y)","nonmatch_ok":true,"nonmatch_test":"((n|(y|q)+)2y)","pattern":"((n|(y|q)+)|y)","tick":1916,"timestamp":"2026-07-18T01:45:29.099735+00:00"}
+{"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"s1","pattern":"s+","tick":1917,"timestamp":"2026-07-18T01:47:28.736456+00:00"}
