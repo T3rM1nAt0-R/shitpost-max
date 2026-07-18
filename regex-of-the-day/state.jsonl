@@ -4013,3 +4013,4 @@
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":2141,"timestamp":"2026-07-18T06:00:29.929218+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":2142,"timestamp":"2026-07-18T06:01:28.615029+00:00"}
 {"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":2143,"timestamp":"2026-07-18T06:02:34.677720+00:00"}
+{"match_ok":false,"match_test":"x+","nonmatch_ok":true,"nonmatch_test":"y+","pattern":"x+","tick":2144,"timestamp":"2026-07-18T06:03:47.501998+00:00"}
