@@ -4030,3 +4030,4 @@
 {"match_ok":false,"match_test":"(i+|v)","nonmatch_ok":true,"nonmatch_test":"(i2|v)","pattern":"(i+|v)","tick":2157,"timestamp":"2026-07-18T06:17:28.934980+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":2158,"timestamp":"2026-07-18T06:19:51.035011+00:00"}
 {"match_ok":false,"match_test":"(w|a)","nonmatch_ok":true,"nonmatch_test":"7w|a)","pattern":"(w|a)","tick":2159,"timestamp":"2026-07-18T06:21:07.455455+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":2160,"timestamp":"2026-07-18T06:21:18.742457+00:00"}
