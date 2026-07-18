@@ -1156,3 +1156,4 @@
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":1157,"timestamp":"2026-07-18T00:13:59.116074+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":1158,"timestamp":"2026-07-18T00:14:30.203815+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":1159,"timestamp":"2026-07-18T00:14:55.796973+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":1160,"timestamp":"2026-07-18T00:15:16.661265+00:00"}
