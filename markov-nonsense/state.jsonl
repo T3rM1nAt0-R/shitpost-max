@@ -4686,3 +4686,4 @@
 {"seed_bigram":"the mat.","sentence":"the mat. the dog around the park.","tick":3357,"timestamp":"2026-07-18T23:07:58.589412+00:00","word_count":7}
 {"seed_bigram":"around the","sentence":"around the park.","tick":3358,"timestamp":"2026-07-18T23:08:56.613303+00:00","word_count":3}
 {"seed_bigram":"ran in","sentence":"ran in the park.","tick":3359,"timestamp":"2026-07-18T23:09:58.640075+00:00","word_count":4}
+{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":3360,"timestamp":"2026-07-18T23:10:56.386451+00:00","word_count":5}
