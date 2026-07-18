@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(k++|y?)+","nonmatch_ok":true,"nonmatch_test":"(k++|y?9+","pattern":"(k++|y?)+","tick":1850,"timestamp":"2026-07-18T00:30:29.745234+00:00"}
+{"match_ok":false,"match_test":"(f|d)","nonmatch_ok":true,"nonmatch_test":"(g|d)","pattern":"(f|d)","tick":1851,"timestamp":"2026-07-18T00:31:29.259599+00:00"}
