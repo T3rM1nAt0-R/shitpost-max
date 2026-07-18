@@ -4938,3 +4938,4 @@
 {"match_ok":false,"match_test":"(((t|(f|m))+|p)|((o|o)*+|(j+|(((u|((b|p)|r+))|(h|(y|a*?)+))|s)))*+)","nonmatch_ok":true,"nonmatch_test":"(((t|(f|m))+|p)|((o|o)3+|(j+|(((u|((b|p)|r+))|(h|(y|a*?)+))|s)))*+)","pattern":"(((t|(f|m))+|p)|((o|o)*+|(j+|(((u|((b|p)|r+))|(h|(y|a*?)+))|s)))*+)","tick":2976,"timestamp":"2026-07-18T22:04:57.827799+00:00"}
 {"match_ok":false,"match_test":"(n|(s++|a+))","nonmatch_ok":true,"nonmatch_test":"(n|(s+6|a+))","pattern":"(n|(s++|a+))","tick":2977,"timestamp":"2026-07-18T22:05:59.283890+00:00"}
 {"match_ok":false,"match_test":"d++","nonmatch_ok":true,"nonmatch_test":"d+7","pattern":"d++","tick":2978,"timestamp":"2026-07-18T22:06:58.961916+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":2979,"timestamp":"2026-07-18T22:08:04.284314+00:00"}
