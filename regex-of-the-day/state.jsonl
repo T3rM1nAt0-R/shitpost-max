@@ -4003,3 +4003,4 @@
 {"match_ok":false,"match_test":"y+?","nonmatch_ok":true,"nonmatch_test":"y4?","pattern":"y+?","tick":2132,"timestamp":"2026-07-18T05:50:28.553516+00:00"}
 {"match_ok":false,"match_test":"(s|g)","nonmatch_ok":true,"nonmatch_test":"4s|g)","pattern":"(s|g)","tick":2133,"timestamp":"2026-07-18T05:51:28.735886+00:00"}
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":2134,"timestamp":"2026-07-18T05:52:35.699855+00:00"}
+{"match_ok":false,"match_test":"((r|c+?)+|x)","nonmatch_ok":true,"nonmatch_test":"((r|c1?)+|x)","pattern":"((r|c+?)+|x)","tick":2135,"timestamp":"2026-07-18T05:53:29.895234+00:00"}
