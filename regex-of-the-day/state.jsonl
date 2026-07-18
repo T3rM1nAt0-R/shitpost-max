@@ -3688,3 +3688,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":1855,"timestamp":"2026-07-18T00:35:27.893061+00:00"}
 {"match_ok":false,"match_test":"l*","nonmatch_ok":true,"nonmatch_test":"m*","pattern":"l*","tick":1856,"timestamp":"2026-07-18T00:36:29.064028+00:00"}
 {"match_ok":false,"match_test":"y+","nonmatch_ok":true,"nonmatch_test":"y6","pattern":"y+","tick":1857,"timestamp":"2026-07-18T00:37:28.670071+00:00"}
+{"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1858,"timestamp":"2026-07-18T00:38:32.420447+00:00"}
