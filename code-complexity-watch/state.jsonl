@@ -549,3 +549,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T19:02:38.750515+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T19:06:53.388569+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T19:11:00.379146+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-07-18T19:15:08.762637+00:00"}
