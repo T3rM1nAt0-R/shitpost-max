@@ -4950,3 +4950,4 @@
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":2988,"timestamp":"2026-07-18T22:16:57.871043+00:00"}
 {"match_ok":false,"match_test":"(i+|k)","nonmatch_ok":true,"nonmatch_test":"3i+|k)","pattern":"(i+|k)","tick":2989,"timestamp":"2026-07-18T22:18:00.633062+00:00"}
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":2990,"timestamp":"2026-07-18T22:18:58.473071+00:00"}
+{"match_ok":false,"match_test":"w+","nonmatch_ok":true,"nonmatch_test":"x+","pattern":"w+","tick":2991,"timestamp":"2026-07-18T22:19:59.530982+00:00"}
