@@ -4725,3 +4725,4 @@
 {"match_ok":false,"match_test":"(p|((w|y)|g+)?+)+","nonmatch_ok":true,"nonmatch_test":"(p|((w1y)|g+)?+)+","pattern":"(p|((w|y)|g+)?+)+","tick":2788,"timestamp":"2026-07-18T18:32:01.945224+00:00"}
 {"match_ok":false,"match_test":"(v|g)++","nonmatch_ok":true,"nonmatch_test":"(v|g3++","pattern":"(v|g)++","tick":2789,"timestamp":"2026-07-18T18:32:59.582364+00:00"}
 {"match_ok":false,"match_test":"(f+|d)","nonmatch_ok":true,"nonmatch_test":"(f+0d)","pattern":"(f+|d)","tick":2790,"timestamp":"2026-07-18T18:33:59.187490+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":2791,"timestamp":"2026-07-18T18:34:57.989391+00:00"}
