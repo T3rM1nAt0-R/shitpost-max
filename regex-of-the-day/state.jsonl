@@ -4081,3 +4081,4 @@
 {"match_ok":false,"match_test":"g*+","nonmatch_ok":true,"nonmatch_test":"h*+","pattern":"g*+","tick":2201,"timestamp":"2026-07-18T07:08:31.464457+00:00"}
 {"match_ok":false,"match_test":"m?+","nonmatch_ok":true,"nonmatch_test":"n?+","pattern":"m?+","tick":2202,"timestamp":"2026-07-18T07:09:28.403133+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":2203,"timestamp":"2026-07-18T07:10:28.329880+00:00"}
+{"match_ok":false,"match_test":"b+","nonmatch_ok":true,"nonmatch_test":"b0","pattern":"b+","tick":2204,"timestamp":"2026-07-18T07:11:27.671424+00:00"}
