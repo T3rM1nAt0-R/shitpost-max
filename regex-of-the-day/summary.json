@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((k|w?+)|v)","nonmatch_ok":true,"nonmatch_test":"((k|w?+3|v)","pattern":"((k|w?+)|v)","tick":2982,"timestamp":"2026-07-18T22:10:58.635498+00:00"}
+{"match_ok":false,"match_test":"((t|d+)|e)","nonmatch_ok":true,"nonmatch_test":"((u|d+)|e)","pattern":"((t|d+)|e)","tick":2983,"timestamp":"2026-07-18T22:12:04.856186+00:00"}
