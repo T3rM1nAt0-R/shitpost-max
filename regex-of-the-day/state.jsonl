@@ -4133,3 +4133,4 @@
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":2252,"timestamp":"2026-07-18T08:00:28.647716+00:00"}
 {"match_ok":false,"match_test":"x+?","nonmatch_ok":true,"nonmatch_test":"x+5","pattern":"x+?","tick":2253,"timestamp":"2026-07-18T08:01:28.193847+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":2254,"timestamp":"2026-07-18T08:02:28.232845+00:00"}
+{"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":2255,"timestamp":"2026-07-18T08:03:28.694915+00:00"}
