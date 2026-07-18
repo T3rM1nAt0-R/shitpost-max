@@ -3715,3 +3715,4 @@
 {"match_ok":false,"match_test":"(i|k)+","nonmatch_ok":true,"nonmatch_test":"(i|k)2","pattern":"(i|k)+","tick":1880,"timestamp":"2026-07-18T01:02:29.238407+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1881,"timestamp":"2026-07-18T01:03:38.539993+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":1882,"timestamp":"2026-07-18T01:04:28.444120+00:00"}
+{"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":1883,"timestamp":"2026-07-18T01:05:28.828227+00:00"}
