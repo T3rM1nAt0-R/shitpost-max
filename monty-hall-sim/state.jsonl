@@ -4356,3 +4356,4 @@
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call{"stay_rate":0.3535771796641362,"stay_wins":1537,"switch_rate":0.6464228203358638,"switch_wins":2810,"tick":4347,"timestamp":"2026-07-18T17:19:15.342127+00:00","trials":4347}
 {"stay_rate":0.35349586016559337,"stay_wins":1537,"switch_rate":0.6465041398344066,"switch_wins":2811,"tick":4348,"timestamp":"2026-07-18T17:19:38.945021+00:00","trials":4348}
 {"stay_rate":0.35341457806392274,"stay_wins":1537,"switch_rate":0.6465854219360773,"switch_wins":2812,"tick":4349,"timestamp":"2026-07-18T17:48:15.419943+00:00","trials":4349}
+{"stay_rate":0.3535632183908046,"stay_wins":1538,"switch_rate":0.6464367816091954,"switch_wins":2812,"tick":4350,"timestamp":"2026-07-18T17:48:39.657637+00:00","trials":4350}
