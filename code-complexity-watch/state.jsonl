@@ -307,3 +307,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T01:57:31.215928+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T02:01:47.198437+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T02:05:53.443793+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-18T02:10:50.521112+00:00"}
