@@ -4022,3 +4022,4 @@
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":2150,"timestamp":"2026-07-18T06:12:17.633555+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":2151,"timestamp":"2026-07-18T06:12:33.287484+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":2152,"timestamp":"2026-07-18T06:12:54.051757+00:00"}
+{"match_ok":false,"match_test":"y*","nonmatch_ok":true,"nonmatch_test":"z*","pattern":"y*","tick":2153,"timestamp":"2026-07-18T06:13:16.168318+00:00"}
