@@ -4770,3 +4770,4 @@
 {"match_ok":false,"match_test":"(k+|(n+|q))+?","nonmatch_ok":true,"nonmatch_test":"(k+|(o+|q))+?","pattern":"(k+|(n+|q))+?","tick":2824,"timestamp":"2026-07-18T19:16:58.168084+00:00"}
 {"match_ok":false,"match_test":"(d|g)+","nonmatch_ok":true,"nonmatch_test":"3d|g)+","pattern":"(d|g)+","tick":2825,"timestamp":"2026-07-18T19:18:00.089327+00:00"}
 {"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":2826,"timestamp":"2026-07-18T19:18:58.093843+00:00"}
+{"match_ok":true,"match_test":"w","nonmatch_ok":true,"nonmatch_test":"x","pattern":"w","tick":2827,"timestamp":"2026-07-18T19:19:58.641807+00:00"}
