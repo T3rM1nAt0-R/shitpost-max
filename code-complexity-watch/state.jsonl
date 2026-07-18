@@ -389,3 +389,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T07:39:09.240067+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T07:43:24.173407+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T07:47:29.278952+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-18T07:51:39.239624+00:00"}
