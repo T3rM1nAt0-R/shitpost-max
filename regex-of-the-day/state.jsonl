@@ -5028,3 +5028,4 @@
 {"match_ok":false,"match_test":"(z|c)","nonmatch_ok":true,"nonmatch_test":"0z|c)","pattern":"(z|c)","tick":3058,"timestamp":"2026-07-18T23:34:57.775183+00:00"}
 {"match_ok":false,"match_test":"(i|(m*+|l)+)","nonmatch_ok":true,"nonmatch_test":"(j|(m*+|l)+)","pattern":"(i|(m*+|l)+)","tick":3059,"timestamp":"2026-07-18T23:36:00.259423+00:00"}
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"a+","pattern":"z+","tick":3060,"timestamp":"2026-07-18T23:36:59.593980+00:00"}
+{"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":3061,"timestamp":"2026-07-18T23:38:00.171149+00:00"}
