@@ -1455,3 +1455,5 @@
 {"estimate":728,"exact":728,"item":"apple","tick":1456,"timestamp":"2026-07-18T05:05:23.945599+00:00"}
 {"estimate":729,"exact":729,"item":"apple","tick":1457,"timestamp":"2026-07-18T05:06:25.532632+00:00"}
 {"estimate":365,"exact":365,"item":"banana","tick":1458,"timestamp":"2026-07-18T05:07:25.956465+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/count-min-sketch/count_min_sketch_plugin.py\", line 50, in produce\n    self._save_persisted_state(state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 282, in _save_persisted_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T05:08:20.094712+00:00"}
+{"estimate":730,"exact":730,"item":"apple","tick":1459,"timestamp":"2026-07-18T05:09:23.331891+00:00"}
