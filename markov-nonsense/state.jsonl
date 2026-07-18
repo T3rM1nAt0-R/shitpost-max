@@ -3823,3 +3823,4 @@
 {"seed_bigram":"sat on","sentence":"sat on the mat.","tick":2493,"timestamp":"2026-07-18T08:03:27.723349+00:00","word_count":4}
 {"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":2494,"timestamp":"2026-07-18T08:04:27.293135+00:00","word_count":5}
 {"seed_bigram":"the cat","sentence":"the cat chased the dog around the park.","tick":2495,"timestamp":"2026-07-18T08:05:26.474426+00:00","word_count":8}
+{"seed_bigram":"cat chased","sentence":"cat chased the dog ran in the park.","tick":2496,"timestamp":"2026-07-18T08:06:27.209661+00:00","word_count":8}
