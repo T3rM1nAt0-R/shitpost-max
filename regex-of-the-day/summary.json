@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"o+","nonmatch_ok":true,"nonmatch_test":"p+","pattern":"o+","tick":2094,"timestamp":"2026-07-18T05:10:28.965554+00:00"}
+{"match_ok":false,"match_test":"(j|c)","nonmatch_ok":true,"nonmatch_test":"(j|d)","pattern":"(j|c)","tick":2095,"timestamp":"2026-07-18T05:11:28.399984+00:00"}
