@@ -3848,3 +3848,4 @@
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":1994,"timestamp":"2026-07-18T03:15:30.701455+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":1995,"timestamp":"2026-07-18T03:16:29.728988+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":1996,"timestamp":"2026-07-18T03:17:29.937327+00:00"}
+{"match_ok":false,"match_test":"(z+|w)","nonmatch_ok":true,"nonmatch_test":"(z1|w)","pattern":"(z+|w)","tick":1997,"timestamp":"2026-07-18T03:18:46.707048+00:00"}
