@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(n+|(z|a++)+)","nonmatch_ok":true,"nonmatch_test":"(n+|(z|a++)0)","pattern":"(n+|(z|a++)+)","tick":3019,"timestamp":"2026-07-18T22:52:07.162668+00:00"}
+{"match_ok":false,"match_test":"q+","nonmatch_ok":true,"nonmatch_test":"q8","pattern":"q+","tick":3020,"timestamp":"2026-07-18T22:52:58.152941+00:00"}
