@@ -4367,3 +4367,4 @@
 {"seed_bigram":"sat on","sentence":"sat on the mat.","tick":3038,"timestamp":"2026-07-18T17:49:22.133658+00:00","word_count":4}
 {"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":3039,"timestamp":"2026-07-18T17:49:26.350429+00:00","word_count":5}
 {"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":3040,"timestamp":"2026-07-18T17:50:18.755626+00:00","word_count":5}
+{"seed_bigram":"mat. the","sentence":"mat. the dog ran in the park.","tick":3041,"timestamp":"2026-07-18T17:52:02.145188+00:00","word_count":7}
