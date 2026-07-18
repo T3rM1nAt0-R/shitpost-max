@@ -3832,3 +3832,4 @@
 {"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":1980,"timestamp":"2026-07-18T02:59:30.207326+00:00"}
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":1981,"timestamp":"2026-07-18T03:00:31.067151+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":1982,"timestamp":"2026-07-18T03:01:30.381148+00:00"}
+{"match_ok":false,"match_test":"d+","nonmatch_ok":true,"nonmatch_test":"d5","pattern":"d+","tick":1983,"timestamp":"2026-07-18T03:02:29.173959+00:00"}
