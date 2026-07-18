@@ -3928,3 +3928,4 @@
 {"chi2":13.45001724137931,"df":5,"fair":true,"p_value":0.6504185522086061,"rolls_this_tick":100,"tick":232000,"timestamp":"2026-07-18T05:07:27.126315+00:00","total_rolls":232000}
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \{"chi2":13.34536837570013,"df":5,"fair":true,"p_value":0.8680558331955233,"rolls_this_tick":100,"tick":232100,"timestamp":"2026-07-18T05:09:23.798365+00:00","total_rolls":232100}
 {"chi2":13.155142118863049,"df":5,"fair":true,"p_value":0.30217548692452256,"rolls_this_tick":100,"tick":232200,"timestamp":"2026-07-18T05:10:25.505646+00:00","total_rolls":232200}
+{"chi2":13.212638829100301,"df":5,"fair":true,"p_value":0.32413924448752085,"rolls_this_tick":100,"tick":232300,"timestamp":"2026-07-18T05:11:24.239171+00:00","total_rolls":232300}
