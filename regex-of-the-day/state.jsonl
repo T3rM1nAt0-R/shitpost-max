@@ -3730,3 +3730,4 @@
 {"match_ok":false,"match_test":"h+","nonmatch_ok":true,"nonmatch_test":"h5","pattern":"h+","tick":1891,"timestamp":"2026-07-18T01:17:28.502636+00:00"}
 {"match_ok":false,"match_test":"l*","nonmatch_ok":true,"nonmatch_test":"m*","pattern":"l*","tick":1892,"timestamp":"2026-07-18T01:19:28.010820+00:00"}
 {"match_ok":false,"match_test":"i+","nonmatch_ok":true,"nonmatch_test":"i5","pattern":"i+","tick":1893,"timestamp":"2026-07-18T01:22:11.021382+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":1894,"timestamp":"2026-07-18T01:22:34.268920+00:00"}
