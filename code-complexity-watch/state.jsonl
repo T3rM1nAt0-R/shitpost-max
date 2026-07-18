@@ -543,3 +543,4 @@
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T18:37:38.757846+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T18:41:53.614637+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T18:46:01.080787+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-07-18T18:50:08.827408+00:00"}
