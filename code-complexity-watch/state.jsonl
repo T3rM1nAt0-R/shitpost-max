@@ -329,3 +329,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-07-18T03:29:30.670944+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T03:33:24.381071+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T03:37:36.180647+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-07-18T03:42:48.301498+00:00"}
