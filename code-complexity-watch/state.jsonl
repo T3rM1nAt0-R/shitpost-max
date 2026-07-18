@@ -591,3 +591,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T21:57:38.755701+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T22:01:54.089814+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T22:06:01.169838+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-07-18T22:10:08.844699+00:00"}
