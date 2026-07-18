@@ -4839,3 +4839,4 @@
 {"match_ok":true,"match_test":"j","nonmatch_ok":true,"nonmatch_test":"k","pattern":"j","tick":2888,"timestamp":"2026-07-18T20:26:00.195657+00:00"}
 {"match_ok":false,"match_test":"n+","nonmatch_ok":true,"nonmatch_test":"o+","pattern":"n+","tick":2889,"timestamp":"2026-07-18T20:26:57.777011+00:00"}
 {"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"a7","pattern":"a+","tick":2890,"timestamp":"2026-07-18T20:28:00.780476+00:00"}
+{"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":2891,"timestamp":"2026-07-18T20:28:58.496702+00:00"}
