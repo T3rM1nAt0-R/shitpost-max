@@ -5035,3 +5035,4 @@
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"n+","pattern":"m+","tick":3065,"timestamp":"2026-07-18T23:42:05.332842+00:00"}
 {"match_ok":false,"match_test":"w+","nonmatch_ok":true,"nonmatch_test":"x+","pattern":"w+","tick":3066,"timestamp":"2026-07-18T23:42:58.965850+00:00"}
 {"match_ok":false,"match_test":"p?","nonmatch_ok":true,"nonmatch_test":"q?","pattern":"p?","tick":3067,"timestamp":"2026-07-18T23:43:58.986231+00:00"}
+{"match_ok":false,"match_test":"(l|r*+)","nonmatch_ok":true,"nonmatch_test":"(l|r0+)","pattern":"(l|r*+)","tick":3068,"timestamp":"2026-07-18T23:44:57.834111+00:00"}
