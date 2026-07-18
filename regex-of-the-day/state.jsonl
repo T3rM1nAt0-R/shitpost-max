@@ -5002,3 +5002,4 @@
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":3035,"timestamp":"2026-07-18T23:08:58.094229+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":3036,"timestamp":"2026-07-18T23:10:00.278614+00:00"}
 {"match_ok":false,"match_test":"(r|n+)+","nonmatch_ok":true,"nonmatch_test":"(r|n+3+","pattern":"(r|n+)+","tick":3037,"timestamp":"2026-07-18T23:10:57.963460+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":3038,"timestamp":"2026-07-18T23:12:24.829325+00:00"}
