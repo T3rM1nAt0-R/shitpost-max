@@ -557,3 +557,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-07-18T19:36:01.541606+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T19:40:08.834106+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T19:44:18.760272+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-07-18T19:48:28.764076+00:00"}
