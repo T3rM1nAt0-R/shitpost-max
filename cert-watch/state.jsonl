@@ -351,3 +351,5 @@
 {"log_entries":[],"min_days":Infinity,"timestamp":"2026-07-18T04:38:23.721957+00:00"}
 {"log_entries":[],"min_days":Infinity,"timestamp":"2026-07-18T04:48:47.226432+00:00"}
 {"log_entries":[],"min_days":Infinity,"timestamp":"2026-07-18T04:58:23.773945+00:00"}
+{"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/cert-watch/cert_watch_plugin.py\", line 138, in produce\n    self._save_state(plugin_dir, state)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/niraj/shitpost-max/cert-watch/cert_watch_plugin.py\", line 71, in _save_state\n    with open(tmp_path, \"w\", encoding=\"utf-8\") as f:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n","timestamp":"2026-07-18T05:08:19.863316+00:00"}
+{"log_entries":[],"min_days":Infinity,"timestamp":"2026-07-18T05:18:23.950896+00:00"}
