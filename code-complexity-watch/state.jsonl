@@ -575,3 +575,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T20:50:59.879942+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T20:55:17.450391+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T20:59:18.906686+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-18T21:03:28.761184+00:00"}
