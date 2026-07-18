@@ -5039,3 +5039,4 @@
 {"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":3069,"timestamp":"2026-07-18T23:46:00.035387+00:00"}
 {"match_ok":false,"match_test":"k+","nonmatch_ok":true,"nonmatch_test":"l+","pattern":"k+","tick":3070,"timestamp":"2026-07-18T23:46:58.045788+00:00"}
 {"match_ok":false,"match_test":"u++","nonmatch_ok":true,"nonmatch_test":"u+7","pattern":"u++","tick":3071,"timestamp":"2026-07-18T23:48:00.631229+00:00"}
+{"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":3072,"timestamp":"2026-07-18T23:48:58.762800+00:00"}
