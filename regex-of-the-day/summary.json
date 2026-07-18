@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(d|(x+|g++))","nonmatch_ok":true,"nonmatch_test":"2d|(x+|g++))","pattern":"(d|(x+|g++))","tick":1964,"timestamp":"2026-07-18T02:42:33.974442+00:00"}
+{"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1965,"timestamp":"2026-07-18T02:43:10.176413+00:00"}
