@@ -610,3 +610,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T23:16:53.383998+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T23:20:59.694719+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T23:25:17.346352+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-18T23:29:18.968210+00:00"}
