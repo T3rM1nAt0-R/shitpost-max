@@ -320,3 +320,4 @@
 {"complexity":1,"function":"helper","timestamp":"2026-07-18T02:52:34.130039+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T02:55:49.394458+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T03:00:03.289276+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-07-18T03:04:09.245398+00:00"}
