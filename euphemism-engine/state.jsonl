@@ -1030,3 +1030,4 @@
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/euphemism-{"blunt":"this will take forever","euphemism":"this is a multi-quarter initiative","tick":1031,"timestamp":"2026-07-18T05:10:14.215534+00:00"}
 {"blunt":"nobody uses this","euphemism":"adoption is still ramping","tick":1032,"timestamp":"2026-07-18T05:11:46.319088+00:00"}
 {"blunt":"you're fired","euphemism":"we're going in a different direction","tick":1033,"timestamp":"2026-07-18T05:13:04.235079+00:00"}
+{"blunt":"this is broken","euphemism":"this has known limitations","tick":1034,"timestamp":"2026-07-18T05:14:29.386684+00:00"}
