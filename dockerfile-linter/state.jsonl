@@ -531,3 +531,4 @@
 {"filename":"good.Dockerfile","issue_count":0,"issues":[],"timestamp":"2026-07-18T17:56:01.970861+00:00"}
 {"filename":"bad.Dockerfile","issue_count":4,"issues":[[1,"uses ':latest' tag instead of a pinned version"],[2,"uses ADD for local files instead of COPY"],[3,"apt-get install without --no-install-recommends"],[0,"no USER instruction; container runs as root"]],"timestamp":"2026-07-18T18:00:16.881101+00:00"}
 {"filename":"good.Dockerfile","issue_count":0,"issues":[],"timestamp":"2026-07-18T18:04:19.073061+00:00"}
+{"filename":"bad.Dockerfile","issue_count":4,"issues":[[1,"uses ':latest' tag instead of a pinned version"],[2,"uses ADD for local files instead of COPY"],[3,"apt-get install without --no-install-recommends"],[0,"no USER instruction; container runs as root"]],"timestamp":"2026-07-18T18:08:33.485205+00:00"}
