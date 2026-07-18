@@ -565,3 +565,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T20:09:18.865075+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T20:13:28.759216+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T20:17:38.757363+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-18T20:21:54.041635+00:00"}
