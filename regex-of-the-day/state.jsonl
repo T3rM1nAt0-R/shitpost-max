@@ -4779,3 +4779,4 @@
 {"match_ok":false,"match_test":"(e?|i+)+","nonmatch_ok":true,"nonmatch_test":"(f?|i+)+","pattern":"(e?|i+)+","tick":2833,"timestamp":"2026-07-18T19:25:57.929142+00:00"}
 {"match_ok":false,"match_test":"((k|(c?|j))|c+)+","nonmatch_ok":true,"nonmatch_test":"(9k|(c?|j))|c+)+","pattern":"((k|(c?|j))|c+)+","tick":2834,"timestamp":"2026-07-18T19:26:59.143908+00:00"}
 {"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":2835,"timestamp":"2026-07-18T19:27:58.838329+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":2836,"timestamp":"2026-07-18T19:28:59.172137+00:00"}
