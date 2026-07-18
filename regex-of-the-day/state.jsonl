@@ -3968,3 +3968,4 @@
 {"match_ok":true,"match_test":"j","nonmatch_ok":true,"nonmatch_test":"k","pattern":"j","tick":2099,"timestamp":"2026-07-18T05:15:29.685163+00:00"}
 {"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"s6","pattern":"s+","tick":2100,"timestamp":"2026-07-18T05:16:28.479074+00:00"}
 {"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":2101,"timestamp":"2026-07-18T05:17:27.756494+00:00"}
+{"match_ok":false,"match_test":"((k|(q+|a))+|w)+","nonmatch_ok":true,"nonmatch_test":"((k|(q+|a)0+|w)+","pattern":"((k|(q+|a))+|w)+","tick":2102,"timestamp":"2026-07-18T05:19:28.143295+00:00"}
