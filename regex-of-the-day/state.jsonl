@@ -3815,3 +3815,4 @@
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":1965,"timestamp":"2026-07-18T02:43:10.176420+00:00"}
 {"match_ok":false,"match_test":"((p|r+)|d)","nonmatch_ok":true,"nonmatch_test":"((q|r+)|d)","pattern":"((p|r+)|d)","tick":1966,"timestamp":"2026-07-18T02:43:49.194348+00:00"}
 {"match_ok":false,"match_test":"w+","nonmatch_ok":true,"nonmatch_test":"x+","pattern":"w+","tick":1967,"timestamp":"2026-07-18T02:44:31.262275+00:00"}
+{"match_ok":false,"match_test":"e+","nonmatch_ok":true,"nonmatch_test":"f+","pattern":"e+","tick":1968,"timestamp":"2026-07-18T02:45:29.588089+00:00"}
