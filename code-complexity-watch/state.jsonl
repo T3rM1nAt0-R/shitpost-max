@@ -378,3 +378,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T06:53:35.139666+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-18T06:57:29.764377+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-18T07:01:46.301722+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-18T07:05:49.236895+00:00"}
