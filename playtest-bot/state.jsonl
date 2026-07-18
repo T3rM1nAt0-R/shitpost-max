@@ -3961,3 +3961,4 @@
 {"agent":"random","final_score":992,"game_length":98,"max_tile":128,"tick":2317,"timestamp":"2026-07-18T05:07:38.912001+00:00"}
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/playtest-bot/playtest_bot_plugin.py\", line 251, in produce\n    self._save_persisted_state(state)\n  {"agent":"heuristic","final_score":1420,"game_length":140,"max_tile":128,"tick":2318,"timestamp":"2026-07-18T05:09:27.832427+00:00"}
 {"agent":"random","final_score":728,"game_length":94,"max_tile":64,"tick":2319,"timestamp":"2026-07-18T05:10:28.548517+00:00"}
+{"agent":"heuristic","final_score":3772,"game_length":289,"max_tile":256,"tick":2320,"timestamp":"2026-07-18T05:11:28.110547+00:00"}
