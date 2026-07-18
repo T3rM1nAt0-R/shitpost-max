@@ -728,3 +728,4 @@
 {"balance":31016.13,"interest":309.01,"month":9,"payment":10494.18,"principal_paid":10185.17,"timestamp":"2026-07-18T17:04:15.081033+00:00"}
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_bas{"balance":20754.57,"interest":232.62,"month":10,"payment":10494.18,"principal_paid":10261.56,"timestamp":"2026-07-18T17:19:14.750658+00:00"}
 {"balance":10416.06,"interest":155.66,"month":11,"payment":10494.18,"principal_paid":10338.52,"timestamp":"2026-07-18T17:49:19.614689+00:00"}
+{"balance":0.0,"interest":78.12,"month":12,"payment":10494.18,"principal_paid":10416.06,"timestamp":"2026-07-18T17:49:25.486210+00:00"}
