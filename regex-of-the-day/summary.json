@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"((q|(z|((w|(z|g)+)+|f+)+)+)+|h+)","nonmatch_ok":true,"nonmatch_test":"((q|(z|((w|(z|g)+)+|f+)6)+)+|h+)","pattern":"((q|(z|((w|(z|g)+)+|f+)+)+)+|h+)","tick":2027,"timestamp":"2026-07-18T03:57:30.914075+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":2028,"timestamp":"2026-07-18T03:58:10.622526+00:00"}
