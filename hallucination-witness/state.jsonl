@@ -471,4 +471,6 @@
 {"timestamp": "2026-07-18T21:41:58.257316+00:00", "question_id": 1, "question": "What is the capital of France?", "answer": "Paris", "reference": "Paris", "verdict": "YES", "category": "geography"}
 {"acc_30": 1.0, "acc_all": 1.0, "answer": "Paris", "category": "geography", "question": "What is the capital of France?", "question_id": 0, "reference": "Paris", "tick": 471, "timestamp": "2026-07-18T21:41:58.268717+00:00", "verdict": "YES"}
 {"timestamp": "2026-07-18T21:42:55.962762+00:00", "question_id": 1, "question": "What is the capital of France?", "answer": "Paris", "reference": "Paris", "verdict": "YES", "category": "geography"}
-{"acc_30":1.0,"acc_all":1.0,"answer":"Paris","category":"geography","question":"What is the capital of France?","question_id":0,"reference":"Paris","tick":473,"timestamp":"2026-07-18T21:42:55.969068+00:00","verdict":"YES"}
+{"acc_30": 1.0, "acc_all": 1.0, "answer": "Paris", "category": "geography", "question": "What is the capital of France?", "question_id": 0, "reference": "Paris", "tick": 473, "timestamp": "2026-07-18T21:42:55.969068+00:00", "verdict": "YES"}
+{"timestamp": "2026-07-18T21:43:56.858513+00:00", "question_id": 1, "question": "What is the capital of France?", "answer": "Paris", "reference": "Paris", "verdict": "YES", "category": "geography"}
+{"acc_30":1.0,"acc_all":1.0,"answer":"Paris","category":"geography","question":"What is the capital of France?","question_id":0,"reference":"Paris","tick":475,"timestamp":"2026-07-18T21:43:56.868625+00:00","verdict":"YES"}
