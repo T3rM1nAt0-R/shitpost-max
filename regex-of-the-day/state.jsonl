@@ -4012,3 +4012,4 @@
 {"match_ok":false,"match_test":"(a|y)","nonmatch_ok":true,"nonmatch_test":"9a|y)","pattern":"(a|y)","tick":2140,"timestamp":"2026-07-18T05:59:28.919194+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":2141,"timestamp":"2026-07-18T06:00:29.929218+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":2142,"timestamp":"2026-07-18T06:01:28.615029+00:00"}
+{"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":2143,"timestamp":"2026-07-18T06:02:34.677720+00:00"}
