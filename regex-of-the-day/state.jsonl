@@ -4829,3 +4829,4 @@
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":2880,"timestamp":"2026-07-18T20:16:00.488307+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":2881,"timestamp":"2026-07-18T20:16:57.971585+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":2882,"timestamp":"2026-07-18T20:18:00.083675+00:00"}
+{"match_ok":true,"match_test":"a","nonmatch_ok":true,"nonmatch_test":"b","pattern":"a","tick":2883,"timestamp":"2026-07-18T20:18:58.932985+00:00"}
