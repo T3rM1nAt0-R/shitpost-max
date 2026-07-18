@@ -3331,3 +3331,4 @@
 {"row":{"first_3":[1,2001,2001000],"last_3":[2001000,2001,1],"max_value_digit_count":601,"row_length":2002,"truncated":true},"row_index":2001,"tick":2002,"timestamp":"2026-07-17T23:51:29.832800+00:00"}
 {"row":{"first_3":[1,2002,2003001],"last_3":[2003001,2002,1],"max_value_digit_count":601,"row_length":2003,"truncated":true},"row_index":2002,"tick":2003,"timestamp":"2026-07-18T00:02:29.238100+00:00"}
 {"row":{"first_3":[1,2003,2005003],"last_3":[2005003,2003,1],"max_value_digit_count":602,"row_length":2004,"truncated":true},"row_index":2003,"tick":2004,"timestamp":"2026-07-18T00:02:39.276444+00:00"}
+{"row":{"first_3":[1,2004,2007006],"last_3":[2007006,2004,1],"max_value_digit_count":602,"row_length":2005,"truncated":true},"row_index":2004,"tick":2005,"timestamp":"2026-07-18T00:03:10.745014+00:00"}
