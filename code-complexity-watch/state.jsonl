@@ -528,3 +528,4 @@
 {"error":"OSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/niraj/shitpost-max/harness/shitpost_base.py\", line 129, in run_tick\n    result = self.produce()\n  File \"/home/niraj/shitpost-max/code-complexity-watch/code_complexity_watch_plugin.py\", line 33, in produce\n    self._save_persisted_state({\"index\": (inde{"complexity":1,"function":"helper","timestamp":"2026-07-18T17:19:28.958641+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-18T17:48:38.943179+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-18T17:49:11.886215+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-07-18T17:50:10.340596+00:00"}
