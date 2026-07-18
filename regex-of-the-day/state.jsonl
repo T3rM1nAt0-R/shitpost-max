@@ -4930,3 +4930,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":2969,"timestamp":"2026-07-18T21:56:58.239706+00:00"}
 {"match_ok":false,"match_test":"(w|r)","nonmatch_ok":true,"nonmatch_test":"(x|r)","pattern":"(w|r)","tick":2970,"timestamp":"2026-07-18T21:57:59.839854+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":2971,"timestamp":"2026-07-18T21:58:57.680016+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":2972,"timestamp":"2026-07-18T21:59:59.456911+00:00"}
