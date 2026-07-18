@@ -345,3 +345,4 @@
 {"branch":"main","days_stale":0,"timestamp":"2026-07-18T04:35:49.871127+00:00"}
 {"branch":"archive/old-api","days_stale":400,"timestamp":"2026-07-18T04:39:59.233995+00:00"}
 {"branch":"experiment/rewrite","days_stale":145,"timestamp":"2026-07-18T04:47:16.665429+00:00"}
+{"branch":"fix/login-bug","days_stale":12,"timestamp":"2026-07-18T04:48:39.827000+00:00"}
