@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"r+","nonmatch_ok":true,"nonmatch_test":"r9","pattern":"r+","tick":2975,"timestamp":"2026-07-18T22:02:58.164299+00:00"}
+{"match_ok":false,"match_test":"(((t|(f|m))+|p)|((o|o)*+|(j+|(((u|((b|p)|r+))|(h|(y|a*?)+))|s)))*+)","nonmatch_ok":true,"nonmatch_test":"(((t|(f|m))+|p)|((o|o)3+|(j+|(((u|((b|p)|r+))|(h|(y|a*?)+))|s)))*+)","pattern":"(((t|(f|m))+|p)|((o|o)*+|(j+|(((u|((b|p)|r+))|(h|(y|a*?)+))|s)))*+)","tick":2976,"timestamp":"2026-07-18T22:04:57.827791+00:00"}
