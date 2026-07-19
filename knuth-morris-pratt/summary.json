@@ -1,1 +1,1 @@
-{"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":2665,"timestamp":"2026-07-19T01:56:56.132285+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":2666,"timestamp":"2026-07-19T01:57:57.399741+00:00"}
