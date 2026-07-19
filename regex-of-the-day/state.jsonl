@@ -5251,3 +5251,4 @@
 {"match_ok":false,"match_test":"((g|e)+|t)","nonmatch_ok":true,"nonmatch_test":"((g|e3+|t)","pattern":"((g|e)+|t)","tick":3261,"timestamp":"2026-07-19T03:18:00.787055+00:00"}
 {"match_ok":false,"match_test":"s+","nonmatch_ok":true,"nonmatch_test":"t+","pattern":"s+","tick":3262,"timestamp":"2026-07-19T03:18:59.287413+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":3263,"timestamp":"2026-07-19T03:20:00.647582+00:00"}
+{"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":3264,"timestamp":"2026-07-19T03:20:57.894688+00:00"}
