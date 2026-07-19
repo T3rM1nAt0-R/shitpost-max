@@ -5309,3 +5309,4 @@
 {"match_ok":false,"match_test":"y++","nonmatch_ok":true,"nonmatch_test":"y+8","pattern":"y++","tick":3314,"timestamp":"2026-07-19T04:16:00.575074+00:00"}
 {"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":3315,"timestamp":"2026-07-19T04:16:59.091057+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":3316,"timestamp":"2026-07-19T04:18:01.282908+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":3317,"timestamp":"2026-07-19T04:18:58.931535+00:00"}
