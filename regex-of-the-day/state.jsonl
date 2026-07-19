@@ -5289,3 +5289,4 @@
 {"match_ok":false,"match_test":"(u|q)","nonmatch_ok":true,"nonmatch_test":"(v|q)","pattern":"(u|q)","tick":3295,"timestamp":"2026-07-19T03:56:00.644068+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":3296,"timestamp":"2026-07-19T03:56:58.833464+00:00"}
 {"match_ok":true,"match_test":"s","nonmatch_ok":true,"nonmatch_test":"t","pattern":"s","tick":3297,"timestamp":"2026-07-19T03:58:00.770805+00:00"}
+{"match_ok":false,"match_test":"(g|s+)","nonmatch_ok":true,"nonmatch_test":"(g|s9)","pattern":"(g|s+)","tick":3298,"timestamp":"2026-07-19T03:58:58.650955+00:00"}
