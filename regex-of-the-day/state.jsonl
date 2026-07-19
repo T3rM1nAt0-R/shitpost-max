@@ -5255,3 +5255,4 @@
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":3265,"timestamp":"2026-07-19T03:22:06.346711+00:00"}
 {"match_ok":false,"match_test":"q?","nonmatch_ok":true,"nonmatch_test":"r?","pattern":"q?","tick":3266,"timestamp":"2026-07-19T03:22:58.937516+00:00"}
 {"match_ok":false,"match_test":"(w+|b)","nonmatch_ok":true,"nonmatch_test":"(w+|b0","pattern":"(w+|b)","tick":3267,"timestamp":"2026-07-19T03:24:00.467016+00:00"}
+{"match_ok":false,"match_test":"h+","nonmatch_ok":true,"nonmatch_test":"i+","pattern":"h+","tick":3268,"timestamp":"2026-07-19T03:24:57.955951+00:00"}
