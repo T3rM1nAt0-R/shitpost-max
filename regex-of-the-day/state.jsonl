@@ -5180,3 +5180,4 @@
 {"match_ok":false,"match_test":"(m+|l)+","nonmatch_ok":true,"nonmatch_test":"(n+|l)+","pattern":"(m+|l)+","tick":3197,"timestamp":"2026-07-19T02:06:59.490893+00:00"}
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":3198,"timestamp":"2026-07-19T02:08:00.876379+00:00"}
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":3199,"timestamp":"2026-07-19T02:08:58.692077+00:00"}
+{"match_ok":false,"match_test":"m++","nonmatch_ok":true,"nonmatch_test":"m+2","pattern":"m++","tick":3200,"timestamp":"2026-07-19T02:10:00.162801+00:00"}
