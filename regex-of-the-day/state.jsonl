@@ -5123,3 +5123,4 @@
 {"match_ok":false,"match_test":"b+","nonmatch_ok":true,"nonmatch_test":"c+","pattern":"b+","tick":3144,"timestamp":"2026-07-19T01:10:00.886547+00:00"}
 {"match_ok":false,"match_test":"(b|e)","nonmatch_ok":true,"nonmatch_test":"7b|e)","pattern":"(b|e)","tick":3145,"timestamp":"2026-07-19T01:10:58.062206+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":3146,"timestamp":"2026-07-19T01:12:05.656211+00:00"}
+{"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":3147,"timestamp":"2026-07-19T01:12:59.773048+00:00"}
