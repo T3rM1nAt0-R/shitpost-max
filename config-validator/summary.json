@@ -1,1 +1,1 @@
-{"error":null,"filename":"config.json","filetype":"json","is_valid":true}
+{"error":"Expecting ',' delimiter: line 1 column 29 (char 28)","filename":"broken.json","filetype":"json","is_valid":false}
