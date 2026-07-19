@@ -655,3 +655,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-19T02:24:18.761484+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-19T02:28:30.965554+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-19T02:32:38.761320+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-19T02:36:53.420665+00:00"}
