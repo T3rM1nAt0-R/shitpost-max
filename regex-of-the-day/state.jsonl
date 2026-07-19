@@ -5232,3 +5232,4 @@
 {"match_ok":false,"match_test":"(s|t)","nonmatch_ok":true,"nonmatch_test":"(t|t)","pattern":"(s|t)","tick":3244,"timestamp":"2026-07-19T02:58:57.992027+00:00"}
 {"match_ok":false,"match_test":"(q|e?)+","nonmatch_ok":true,"nonmatch_test":"0q|e?)+","pattern":"(q|e?)+","tick":3245,"timestamp":"2026-07-19T03:00:20.345668+00:00"}
 {"match_ok":true,"match_test":"r","nonmatch_ok":true,"nonmatch_test":"s","pattern":"r","tick":3246,"timestamp":"2026-07-19T03:00:57.641736+00:00"}
+{"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":3247,"timestamp":"2026-07-19T03:02:05.252380+00:00"}
