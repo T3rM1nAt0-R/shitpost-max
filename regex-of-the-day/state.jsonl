@@ -5135,3 +5135,4 @@
 {"match_ok":false,"match_test":"k+","nonmatch_ok":true,"nonmatch_test":"l+","pattern":"k+","tick":3156,"timestamp":"2026-07-19T01:22:06.794013+00:00"}
 {"match_ok":false,"match_test":"y*+","nonmatch_ok":true,"nonmatch_test":"y1+","pattern":"y*+","tick":3157,"timestamp":"2026-07-19T01:22:58.750957+00:00"}
 {"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":3158,"timestamp":"2026-07-19T01:24:00.640446+00:00"}
+{"match_ok":true,"match_test":"i","nonmatch_ok":true,"nonmatch_test":"j","pattern":"i","tick":3159,"timestamp":"2026-07-19T01:24:58.649635+00:00"}
