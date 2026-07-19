@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(m|v)+","nonmatch_ok":true,"nonmatch_test":"(m4v)+","pattern":"(m|v)+","tick":3101,"timestamp":"2026-07-19T00:24:58.057756+00:00"}
+{"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":3102,"timestamp":"2026-07-19T00:26:00.297965+00:00"}
