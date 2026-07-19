@@ -5093,3 +5093,4 @@
 {"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"b+","pattern":"a+","tick":3116,"timestamp":"2026-07-19T00:39:59.982431+00:00"}
 {"match_ok":false,"match_test":"(d++|e?)","nonmatch_ok":true,"nonmatch_test":"(d++|f?)","pattern":"(d++|e?)","tick":3117,"timestamp":"2026-07-19T00:40:58.140510+00:00"}
 {"match_ok":false,"match_test":"z+","nonmatch_ok":true,"nonmatch_test":"z1","pattern":"z+","tick":3118,"timestamp":"2026-07-19T00:42:04.264072+00:00"}
+{"match_ok":true,"match_test":"m","nonmatch_ok":true,"nonmatch_test":"n","pattern":"m","tick":3119,"timestamp":"2026-07-19T00:42:58.863747+00:00"}
