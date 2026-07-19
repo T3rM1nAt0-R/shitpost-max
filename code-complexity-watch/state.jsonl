@@ -650,3 +650,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-19T02:03:28.840699+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-19T02:07:38.762430+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-19T02:11:54.470452+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-19T02:16:25.346516+00:00"}
