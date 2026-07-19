@@ -5098,3 +5098,4 @@
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":3120,"timestamp":"2026-07-19T00:44:58.070045+00:00"}
 {"match_ok":true,"match_test":"p","nonmatch_ok":true,"nonmatch_test":"q","pattern":"p","tick":3121,"timestamp":"2026-07-19T00:46:00.341569+00:00"}
 {"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"b+","pattern":"a+","tick":3122,"timestamp":"2026-07-19T00:46:59.031457+00:00"}
+{"match_ok":false,"match_test":"d?","nonmatch_ok":true,"nonmatch_test":"d5","pattern":"d?","tick":3123,"timestamp":"2026-07-19T00:48:00.243054+00:00"}
