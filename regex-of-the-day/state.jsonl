@@ -5299,3 +5299,4 @@
 {"match_ok":true,"match_test":"n","nonmatch_ok":true,"nonmatch_test":"o","pattern":"n","tick":3304,"timestamp":"2026-07-19T04:06:00.484642+00:00"}
 {"match_ok":false,"match_test":"(v|w)+","nonmatch_ok":true,"nonmatch_test":"(v0w)+","pattern":"(v|w)+","tick":3305,"timestamp":"2026-07-19T04:06:59.281525+00:00"}
 {"match_ok":true,"match_test":"y","nonmatch_ok":true,"nonmatch_test":"z","pattern":"y","tick":3306,"timestamp":"2026-07-19T04:08:01.545812+00:00"}
+{"match_ok":false,"match_test":"u*","nonmatch_ok":true,"nonmatch_test":"v*","pattern":"u*","tick":3307,"timestamp":"2026-07-19T04:08:58.544799+00:00"}
