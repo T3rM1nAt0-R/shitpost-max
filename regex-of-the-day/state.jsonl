@@ -5059,3 +5059,4 @@
 {"match_ok":false,"match_test":"(e|r*)*","nonmatch_ok":true,"nonmatch_test":"(e|s*)*","pattern":"(e|r*)*","tick":3085,"timestamp":"2026-07-19T00:05:59.683837+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":3086,"timestamp":"2026-07-19T00:06:59.471386+00:00"}
 {"match_ok":false,"match_test":"v+","nonmatch_ok":true,"nonmatch_test":"w+","pattern":"v+","tick":3087,"timestamp":"2026-07-19T00:08:02.389429+00:00"}
+{"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":3088,"timestamp":"2026-07-19T00:08:57.750544+00:00"}
