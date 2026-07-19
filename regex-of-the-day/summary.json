@@ -1,1 +1,1 @@
-{"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":3249,"timestamp":"2026-07-19T03:04:00.840939+00:00"}
+{"match_ok":false,"match_test":"(t|(((n+|b)|(n|(((k+|(c|(h|n*+)))|p)|r))?)|i)?+)","nonmatch_ok":true,"nonmatch_test":"(t|(((n+|b)|(n|(((k+|(c|(h|n*+)))|p)|r7)?)|i)?+)","pattern":"(t|(((n+|b)|(n|(((k+|(c|(h|n*+)))|p)|r))?)|i)?+)","tick":3250,"timestamp":"2026-07-19T03:04:58.760331+00:00"}
