@@ -5284,3 +5284,4 @@
 {"match_ok":false,"match_test":"k++","nonmatch_ok":true,"nonmatch_test":"k+8","pattern":"k++","tick":3290,"timestamp":"2026-07-19T03:50:58.051643+00:00"}
 {"match_ok":false,"match_test":"f+?","nonmatch_ok":true,"nonmatch_test":"f2?","pattern":"f+?","tick":3291,"timestamp":"2026-07-19T03:52:08.149706+00:00"}
 {"match_ok":false,"match_test":"f++","nonmatch_ok":true,"nonmatch_test":"g++","pattern":"f++","tick":3292,"timestamp":"2026-07-19T03:53:17.652272+00:00"}
+{"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":3293,"timestamp":"2026-07-19T03:54:00.351862+00:00"}
