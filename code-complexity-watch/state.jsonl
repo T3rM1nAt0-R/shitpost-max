@@ -653,3 +653,4 @@
 {"complexity":1,"function":"helper","timestamp":"2026-07-19T02:16:25.346516+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-19T02:20:08.835045+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-19T02:24:18.761484+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-07-19T02:28:30.965554+00:00"}
