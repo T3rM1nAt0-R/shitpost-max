@@ -5209,3 +5209,4 @@
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":3222,"timestamp":"2026-07-19T02:36:00.439959+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":3223,"timestamp":"2026-07-19T02:37:00.365914+00:00"}
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"n+","pattern":"m+","tick":3224,"timestamp":"2026-07-19T02:38:00.591956+00:00"}
+{"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":3225,"timestamp":"2026-07-19T02:38:58.529132+00:00"}
