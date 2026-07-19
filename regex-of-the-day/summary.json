@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(m|((v*|l)|b)+)","nonmatch_ok":true,"nonmatch_test":"(m|((v*|l)2b)+)","pattern":"(m|((v*|l)|b)+)","tick":3289,"timestamp":"2026-07-19T03:48:59.049314+00:00"}
+{"match_ok":false,"match_test":"k++","nonmatch_ok":true,"nonmatch_test":"k+8","pattern":"k++","tick":3290,"timestamp":"2026-07-19T03:50:58.051634+00:00"}
