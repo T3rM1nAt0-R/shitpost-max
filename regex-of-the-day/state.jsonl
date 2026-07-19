@@ -5259,3 +5259,4 @@
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":3269,"timestamp":"2026-07-19T03:25:59.788960+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":3270,"timestamp":"2026-07-19T03:27:19.746118+00:00"}
 {"match_ok":false,"match_test":"m+","nonmatch_ok":true,"nonmatch_test":"n+","pattern":"m+","tick":3271,"timestamp":"2026-07-19T03:28:00.869233+00:00"}
+{"match_ok":false,"match_test":"(o|x)+","nonmatch_ok":true,"nonmatch_test":"(o7x)+","pattern":"(o|x)+","tick":3272,"timestamp":"2026-07-19T03:28:58.983268+00:00"}
