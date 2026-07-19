@@ -5090,3 +5090,4 @@
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":3113,"timestamp":"2026-07-19T00:36:59.349905+00:00"}
 {"match_ok":true,"match_test":"d","nonmatch_ok":true,"nonmatch_test":"e","pattern":"d","tick":3114,"timestamp":"2026-07-19T00:38:00.689975+00:00"}
 {"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":3115,"timestamp":"2026-07-19T00:38:58.933516+00:00"}
+{"match_ok":false,"match_test":"a+","nonmatch_ok":true,"nonmatch_test":"b+","pattern":"a+","tick":3116,"timestamp":"2026-07-19T00:39:59.982431+00:00"}
