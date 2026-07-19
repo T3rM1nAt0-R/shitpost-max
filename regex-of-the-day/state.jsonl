@@ -5318,3 +5318,4 @@
 {"match_ok":false,"match_test":"(r*|g+)*+","nonmatch_ok":true,"nonmatch_test":"(r*|g+)3+","pattern":"(r*|g+)*+","tick":3323,"timestamp":"2026-07-19T04:24:58.150193+00:00"}
 {"match_ok":true,"match_test":"f","nonmatch_ok":true,"nonmatch_test":"g","pattern":"f","tick":3324,"timestamp":"2026-07-19T04:26:00.762125+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":3325,"timestamp":"2026-07-19T04:27:01.771800+00:00"}
+{"match_ok":false,"match_test":"y*+","nonmatch_ok":true,"nonmatch_test":"z*+","pattern":"y*+","tick":3326,"timestamp":"2026-07-19T04:27:59.580571+00:00"}
