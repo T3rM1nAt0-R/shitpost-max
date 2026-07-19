@@ -2755,3 +2755,4 @@
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":2753,"timestamp":"2026-07-19T03:24:55.565067+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":2754,"timestamp":"2026-07-19T03:25:57.059328+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":2755,"timestamp":"2026-07-19T03:27:16.682690+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":2756,"timestamp":"2026-07-19T03:27:57.943175+00:00"}
