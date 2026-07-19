@@ -679,3 +679,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-07-19T04:04:18.833948+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-19T04:08:33.348193+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-19T04:12:38.829482+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-07-19T04:16:53.426819+00:00"}
