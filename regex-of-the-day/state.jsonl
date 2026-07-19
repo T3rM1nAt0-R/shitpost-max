@@ -5217,3 +5217,4 @@
 {"match_ok":false,"match_test":"((e+|(p|(z|i)?+)*)|v+)","nonmatch_ok":true,"nonmatch_test":"((e+|(p|(z|i)5+)*)|v+)","pattern":"((e+|(p|(z|i)?+)*)|v+)","tick":3230,"timestamp":"2026-07-19T02:44:00.750858+00:00"}
 {"match_ok":false,"match_test":"(z|v)","nonmatch_ok":true,"nonmatch_test":"(z|v7","pattern":"(z|v)","tick":3231,"timestamp":"2026-07-19T02:44:57.781021+00:00"}
 {"match_ok":true,"match_test":"c","nonmatch_ok":true,"nonmatch_test":"d","pattern":"c","tick":3232,"timestamp":"2026-07-19T02:45:59.745736+00:00"}
+{"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":3233,"timestamp":"2026-07-19T02:46:58.930170+00:00"}
