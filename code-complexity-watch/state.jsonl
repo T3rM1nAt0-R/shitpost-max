@@ -630,3 +630,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-19T00:40:08.759542+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-07-19T00:44:19.041174+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-07-19T00:48:28.762508+00:00"}
+{"complexity":1,"function":"helper","timestamp":"2026-07-19T00:52:38.767240+00:00"}
