@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(b|p)","nonmatch_ok":true,"nonmatch_test":"(b8p)","pattern":"(b|p)","tick":3108,"timestamp":"2026-07-19T00:32:05.461641+00:00"}
+{"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":3109,"timestamp":"2026-07-19T00:32:57.962760+00:00"}
