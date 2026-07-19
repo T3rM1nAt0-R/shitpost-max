@@ -5110,3 +5110,4 @@
 {"match_ok":false,"match_test":"o+","nonmatch_ok":true,"nonmatch_test":"p+","pattern":"o+","tick":3132,"timestamp":"2026-07-19T00:56:59.671544+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":3133,"timestamp":"2026-07-19T00:57:59.746285+00:00"}
 {"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":3134,"timestamp":"2026-07-19T00:58:58.550539+00:00"}
+{"match_ok":false,"match_test":"h+","nonmatch_ok":true,"nonmatch_test":"h6","pattern":"h+","tick":3135,"timestamp":"2026-07-19T00:59:59.851228+00:00"}
