@@ -1,0 +1,11 @@
+# shitpostmax.com static site on Brian. Port 8097 (8095 infiniboard, 8096 access).
+name: shitpostmax
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8097:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv:ro
