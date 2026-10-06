@@ -45,6 +45,7 @@ stays inline in the main loop, not offloaded - it's already fast
 behind a queue of slow tick threads.
 """
 import concurrent.futures
+import shutil
 import heapq
 import os
 import subprocess
@@ -326,6 +327,11 @@ PUSH_CADENCE_SECONDS = 20
 # goal is only to bound a genuine hang, not to race normal ticks).
 TICK_TIMEOUT_SECONDS = 300
 
+# The fleet makes ~90k commits a day, so it must never fill the disk it
+# lives on. Below this much free space ticks and pushes pause (and resume
+# on their own once space is freed).
+MIN_FREE_BYTES = 5 * 1024**3
+
 
 def run_tick_subprocess(
     plugin_dir: str, repo_root: Path = REPO_ROOT, timeout: float = TICK_TIMEOUT_SECONDS
@@ -371,6 +377,27 @@ _TICK_EXECUTOR = concurrent.futures.ThreadPoolExecutor(
 )
 
 
+_disk_warned = False
+
+
+def disk_ok(path: Path = REPO_ROOT, min_free: int = MIN_FREE_BYTES) -> bool:
+    """False when the disk holding ``path`` is nearly full. Logs once per
+    low-space episode rather than every job."""
+    global _disk_warned
+    free = shutil.disk_usage(path).free
+    if free >= min_free:
+        _disk_warned = False
+        return True
+    if not _disk_warned:
+        print(
+            f"[disk] only {free // 1024**2} MiB free (< {min_free // 1024**2} MiB); "
+            f"pausing ticks and pushes",
+            file=sys.stderr,
+        )
+        _disk_warned = True
+    return False
+
+
 def submit_tick(plugin_dir: str) -> None:
     """Dispatch one plugin's tick to the background thread pool and return
     immediately, instead of blocking the scheduler's main loop until it
@@ -379,6 +406,8 @@ def submit_tick(plugin_dir: str) -> None:
     ``.tick.lock`` (non-blocking flock) makes the second invocation log
     "tick already in progress, skipping" and return immediately, rather
     than racing on the same plugin's own state files."""
+    if not disk_ok():
+        return
     _TICK_EXECUTOR.submit(run_tick_subprocess, plugin_dir)
 
 
@@ -386,6 +415,8 @@ def push_job(repo_root: Path = REPO_ROOT) -> None:
     """Scheduler job wrapper around ``git_push`` - logs instead of crashing
     the whole scheduler if a push fails (e.g. transient network issue),
     matching each plugin tick's own error-isolation philosophy."""
+    if not disk_ok(repo_root):
+        return
     try:
         git_push(str(repo_root))
     except Exception as exc:

@@ -13,6 +13,7 @@ class HallucinationWitnessPlugin(Shitpost):
 
     name = "hallucination-witness"
     internal = False
+    max_state_bytes = None  # state.jsonl is this plugin's own data store
     commit_template = "hallucination-witness: {verdict} — {acc_30:.0%} 30d, {acc_all:.0%} all"
 
     def __init__(self):
