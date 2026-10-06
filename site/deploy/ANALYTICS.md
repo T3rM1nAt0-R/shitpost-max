@@ -20,6 +20,10 @@ No emails, names or free text in properties.
 ## Funnel
 `/` -> `/generator/` -> `outbound-click`
 
+## In Umami (created 2026-10-06)
+Goals: "Visit the generator" (path `/generator/`), "Outbound click" (event `outbound-click`), "Scroll depth" (event `scroll-depth`).
+Funnel: "Home to generator to outbound click" (30 min window).
+
 ## UTM rules
 `utm_source` (linkedin, x, youtube, newsletter, github), `utm_medium` (social, email, referral, paid),
 `utm_campaign` kebab-case as `<yyyy-mm>-<topic>`.
