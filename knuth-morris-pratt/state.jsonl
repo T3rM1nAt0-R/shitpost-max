@@ -129,3 +129,4 @@
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":89,"timestamp":"2026-10-06T20:28:12.233166+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":90,"timestamp":"2026-10-06T20:29:32.308693+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":91,"timestamp":"2026-10-06T20:31:27.265559+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":92,"timestamp":"2026-10-06T20:32:33.167972+00:00"}
