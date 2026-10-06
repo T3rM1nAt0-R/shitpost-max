@@ -1,0 +1,667 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #f5f5ff;
+  --hot-pink: #ff2bd6;
+  --cyan: #00f0ff;
+  --lime: #b6ff00;
+  --gold: #ffd700;
+  --purple: #8b2bff;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-hot-pink: var(--hot-pink);
+  --color-cyan: var(--cyan);
+  --color-lime: var(--lime);
+  --color-gold: var(--gold);
+  --color-purple: var(--purple);
+  --font-sans: var(--font-body);
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--hot-pink);
+  color: #000;
+}
+
+/* ---------- Background "shader" blobs ---------- */
+.fx-blob {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  opacity: 0.4;
+  /* soft edge comes from the gradient itself: no filter, no blend mode */
+  background: radial-gradient(circle at center, var(--blob) 0%, transparent 65%);
+  will-change: transform;
+  animation: blob-drift 30s ease-in-out infinite alternate;
+}
+.fx-blob-1 { --blob: var(--hot-pink); top: -20vmax; left: -15vmax; }
+.fx-blob-2 { --blob: var(--cyan); bottom: -25vmax; right: -20vmax; animation-duration: 36s; animation-direction: alternate-reverse; }
+.fx-blob-3 { --blob: var(--purple); top: 30%; left: 35%; width: 40vmax; height: 40vmax; opacity: 0.3; animation-duration: 24s; }
+
+@keyframes blob-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(10vw, -8vh, 0) scale(1.2); }
+  100% { transform: translate3d(-8vw, 10vh, 0) scale(0.9); }
+}
+
+/* ---------- CRT scanlines + noise ---------- */
+.fx-crt {
+  background:
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* ---------- Text effects ---------- */
+.neon {
+  color: var(--foreground);
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px var(--hot-pink),
+    0 0 20px var(--hot-pink),
+    0 0 40px var(--cyan);
+}
+
+.rainbow-text {
+  background: linear-gradient(90deg, var(--hot-pink), var(--gold), var(--lime), var(--cyan), var(--purple), var(--hot-pink));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 4s linear infinite;
+}
+@keyframes rainbow {
+  to { background-position: 300% 0; }
+}
+
+/* RGB-split glitch. Usage: <span class="glitch" data-text="WORDS">WORDS</span> */
+.glitch,
+.glitch-hover {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after,
+.glitch-hover:hover::before,
+.glitch-hover:hover::after,
+.glitch-hover:focus-visible::before,
+.glitch-hover:focus-visible::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  pointer-events: none;
+  background: transparent;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+.glitch::before,
+.glitch-hover:hover::before,
+.glitch-hover:focus-visible::before {
+  color: var(--cyan);
+  text-shadow: -2px 0 var(--cyan);
+  animation: glitch-a 2.4s infinite linear alternate-reverse;
+}
+.glitch::after,
+.glitch-hover:hover::after,
+.glitch-hover:focus-visible::after {
+  color: var(--hot-pink);
+  text-shadow: 2px 0 var(--hot-pink);
+  animation: glitch-b 1.8s infinite linear alternate-reverse;
+}
+.glitch-hover:hover::before,
+.glitch-hover:hover::after {
+  animation-duration: 0.35s, 0.35s;
+}
+@keyframes glitch-a {
+  0% { clip-path: inset(10% 0 80% 0); transform: translate(-3px, 0); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(3px, -1px); }
+  40% { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 1px); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 0); }
+  80% { clip-path: inset(5% 0 70% 0); transform: translate(-1px, 2px); }
+  100% { clip-path: inset(45% 0 35% 0); transform: translate(3px, -2px); }
+}
+@keyframes glitch-b {
+  0% { clip-path: inset(70% 0 15% 0); transform: translate(3px, 1px); }
+  25% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 0); }
+  50% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -2px); }
+  75% { clip-path: inset(5% 0 85% 0); transform: translate(-2px, 1px); }
+  100% { clip-path: inset(35% 0 45% 0); transform: translate(1px, 2px); }
+}
+
+/* ---------- Shake ---------- */
+.shake {
+  animation: shake 0.85s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, 1px, 0) rotate(-0.3deg); }
+  20%, 80% { transform: translate3d(4px, -2px, 0) rotate(0.4deg); }
+  30%, 50%, 70% { transform: translate3d(-8px, 3px, 0) rotate(-0.8deg); }
+  40%, 60% { transform: translate3d(8px, -3px, 0) rotate(0.8deg); }
+}
+
+/* ---------- Marquee ---------- */
+.marquee {
+  animation: marquee 80s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.fx-live {
+  animation: live-pulse 1s steps(2) infinite;
+}
+@keyframes live-pulse {
+  50% { background: var(--gold); }
+}
+
+/* ---------- Cursor trail ---------- */
+.fx-trail {
+  position: absolute;
+  font-size: 18px;
+  line-height: 1;
+  translate: -50% -50%;
+  animation: trail 0.9s ease-out forwards;
+  will-change: transform, opacity;
+}
+@keyframes trail {
+  from { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); }
+  to { opacity: 0; transform: translate(var(--dx), 40px) scale(0.3) rotate(var(--rot)); }
+}
+
+/* ---------- MAKE IT RAIN button ---------- */
+.fx-rain-btn {
+  background: linear-gradient(135deg, var(--gold), var(--lime), var(--gold));
+  background-size: 200% 200%;
+  box-shadow: 0 0 0 2px #000, 0 0 18px var(--gold), 0 0 40px rgba(255, 215, 0, 0.5);
+  animation: rain-btn 2.5s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+.fx-rain-btn:hover { transform: scale(1.08) rotate(-2deg); }
+.fx-rain-btn:active { transform: scale(0.95); }
+.fx-rain-btn:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+@keyframes rain-btn {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; translate: 0 -4px; }
+}
+
+/* ---------- BILLIONAIRE MODE ---------- */
+html.billionaire {
+  filter: sepia(0.6) saturate(2.2) hue-rotate(-12deg) brightness(1.05) contrast(1.1);
+}
+html.billionaire body {
+  --hot-pink: var(--gold);
+  --cyan: #fff3a0;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee {
+    animation: none !important;
+    overflow-x: auto;
+  }
+  .glitch::before,
+  .glitch::after {
+    display: none;
+  }
+}
+
+/* ---------- Page transition (CSS only, compositor-friendly) ---------- */
+.fx-page-in {
+  animation: page-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+}
+
+/* ---------- Hero letters ---------- */
+.fx-letter {
+  display: inline-block;
+  background-image: linear-gradient(90deg, #ff00e5, #ff7a00, #ffe600, #00ff94, #00d4ff, #7a5cff, #ff00e5);
+  background-size: 1100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: letter-bob 2.2s ease-in-out infinite;
+  transition: scale 0.3s ease;
+  will-change: transform;
+}
+.fx-letter:nth-child(odd) { animation-name: letter-bob-odd; }
+.fx-letter:hover { scale: 1.35; }
+@keyframes letter-bob {
+  50% { transform: translateY(-14px) rotate(-4deg); }
+}
+@keyframes letter-bob-odd {
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+/* ---------- Feed cards: skip layout/paint for off-screen cards ---------- */
+.fx-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
+}
+
+/* ---------- Add-on dock ---------- */
+.fx-dock-in {
+  animation: dock-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: bottom left;
+}
+@keyframes dock-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.92); }
+}
+
+/* ---------- addons batch A ---------- */
+/* Everything here animates transform/opacity only. No filters, no blend modes. */
+
+/* Toast (bottom-center, above the dock) */
+.fxa-toast-host {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 5.5rem;
+  z-index: 85;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+.fxa-toast {
+  max-width: min(92vw, 34rem);
+  border: 2px solid var(--gold);
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.92);
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 0 22px rgba(255, 215, 0, 0.35);
+  animation: fxa-toast var(--fxa-toast-ms, 3600ms) ease both;
+}
+@keyframes fxa-toast {
+  0% { opacity: 0; transform: translateY(14px) scale(0.95); }
+  8%, 88% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+
+/* Net Worth HUD */
+.fxa-hud {
+  position: fixed;
+  top: 6.5rem;
+  right: 0.75rem;
+  z-index: 45;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  column-gap: 0.35rem;
+  max-width: min(80vw, 22rem);
+  border: 2px solid var(--gold);
+  border-radius: 1.25rem;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  color: #d4d4d8;
+  pointer-events: none;
+  animation: fxa-fade-in 0.3s ease both;
+}
+.fxa-hud-amount {
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.fxa-hud-quip {
+  flex-basis: 100%;
+  text-align: right;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: #a1a1aa;
+}
+.fxa-hud-quip::before { content: "("; }
+.fxa-hud-quip::after { content: ")"; }
+@keyframes fxa-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+}
+
+/* IPO bell: gold flash + stamp */
+.fxa-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 236, 140, 0.9), rgba(255, 200, 0, 0.55) 55%, rgba(255, 170, 0, 0.3));
+  opacity: 0;
+  animation: fxa-flash 0.8s ease-out both;
+}
+@keyframes fxa-flash {
+  15% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+.fxa-stamp-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding: 1rem;
+}
+.fxa-stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  border: 6px double #b91c1c;
+  border-radius: 1rem;
+  background: rgba(10, 10, 10, 0.9);
+  padding: 1rem 1.5rem;
+  color: #ef4444;
+  text-align: center;
+  animation: fxa-stamp 2.6s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+.fxa-stamp-big {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.8rem, 7vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.fxa-stamp-small {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: clamp(0.8rem, 2.2vw, 1.05rem);
+}
+@keyframes fxa-stamp {
+  0% { opacity: 0; transform: scale(3.2) rotate(-14deg); }
+  12% { opacity: 1; transform: scale(0.94) rotate(-8deg); }
+  18% { transform: scale(1.03) rotate(-8deg); }
+  24%, 78% { opacity: 1; transform: scale(1) rotate(-8deg); }
+  100% { opacity: 0; transform: scale(1.06) rotate(-8deg); }
+}
+
+/* Fire Everyone */
+.fxa-fired {
+  animation: fxa-fired 1.1s cubic-bezier(0.55, 0, 0.9, 0.4) var(--fxa-delay, 0ms) both;
+  pointer-events: none;
+}
+@keyframes fxa-fired {
+  0% { transform: none; }
+  15% { transform: translateY(-24px) rotate(calc(var(--fxa-rot, 20deg) * -0.15)); }
+  100% { opacity: 0.2; transform: translateY(115vh) rotate(var(--fxa-rot, 20deg)); }
+}
+.fxa-rehired {
+  animation: fxa-rehired 0.7s cubic-bezier(0.25, 1.6, 0.5, 1) var(--fxa-delay, 0ms) both;
+}
+@keyframes fxa-rehired {
+  0% { opacity: 0; transform: translateY(-60px) scale(0.85); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* Trickle Down Economics: one sad penny */
+.fxa-penny {
+  position: fixed;
+  top: 0;
+  z-index: 88;
+  pointer-events: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  animation: fxa-penny-fall 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) both;
+}
+.fxa-penny-wobble {
+  display: inline-block;
+  animation: fxa-penny-wobble 0.9s ease-in-out infinite alternate;
+}
+@keyframes fxa-penny-fall {
+  0% { opacity: 0; transform: translateY(-2.5rem); }
+  5% { opacity: 1; }
+  92% { opacity: 1; transform: translateY(calc(100vh - 2rem)); }
+  100% { opacity: 0; transform: translateY(calc(100vh - 2rem)); }
+}
+@keyframes fxa-penny-wobble {
+  from { transform: translateX(-6px) rotate(-18deg); }
+  to { transform: translateX(6px) rotate(18deg); }
+}
+
+/* Golden Parachute */
+.fxa-chute {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 88;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  animation: fxa-chute-fall 7.5s cubic-bezier(0.15, 0.6, 0.35, 1) both;
+}
+.fxa-chute-sway {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  transform-origin: 50% 0;
+  animation: fxa-chute-sway 1.6s ease-in-out infinite alternate;
+}
+.fxa-chute-emoji { font-size: 4.5rem; }
+.fxa-chute-bag { font-size: 2.4rem; margin-top: -0.6rem; }
+.fxa-chute-caption {
+  margin-top: 0.75rem;
+  max-width: min(90vw, 28rem);
+  border: 2px solid var(--gold);
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 0.6rem 1rem;
+  color: var(--gold);
+  font-weight: 900;
+  text-align: center;
+  animation: fxa-fade-in 0.6s ease 1.8s both;
+}
+.fxa-chute-fine {
+  display: block;
+  margin-top: 0.2rem;
+  color: #a1a1aa;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+@keyframes fxa-chute-fall {
+  0% { opacity: 0; transform: translateY(-14rem); }
+  6% { opacity: 1; }
+  45%, 88% { opacity: 1; transform: translateY(28vh); }
+  100% { opacity: 0; transform: translateY(32vh); }
+}
+@keyframes fxa-chute-sway {
+  from { transform: rotate(-9deg); }
+  to { transform: rotate(9deg); }
+}
+.fxa-chute-still {
+  animation: fxa-still 7.5s ease both;
+  transform: translateY(28vh);
+}
+.fxa-chute-still .fxa-chute-sway { animation: none; }
+@keyframes fxa-still {
+  0%, 100% { opacity: 0; }
+  5%, 90% { opacity: 1; }
+}
+
+/* The global reduced-motion rule collapses durations to ~0, which would hide these
+   instantly; show them statically instead (JS removes the nodes on a timer). */
+@media (prefers-reduced-motion: reduce) {
+  .fxa-toast,
+  .fxa-stamp,
+  .fxa-chute-still,
+  .fxa-chute-caption,
+  .fxa-penny-wobble,
+  .fxa-chute-sway { animation: none !important; }
+  .fxa-stamp { transform: rotate(-8deg); }
+}
+/* ---------- end addons batch A ---------- */
+
+/* ---------- addons batch B ---------- */
+/* Toasts / speech bubbles (DOM helper in src/components/fx/addons/batch-b/util.ts) */
+.fxb-toast {
+  position: fixed;
+  z-index: 72;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: min(88vw, 22rem);
+  padding: 12px 16px;
+  border: 2px solid #ffd700;
+  border-radius: 16px;
+  background: #0b0b0f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55), 0 0 24px rgba(255, 215, 0, 0.25);
+  animation: fxb-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.fxb-toast.fxb-out { animation: fxb-out 0.22s ease-in forwards; }
+.fxb-toast-title {
+  color: #ffd700;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fxb-toast-btn {
+  margin-top: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #d4d4d8;
+  cursor: pointer;
+}
+.fxb-toast-btn:hover { border-color: #ffd700; color: #fff; }
+.fxb-tc { top: 9rem; left: 0; right: 0; margin-inline: auto; width: fit-content; text-align: center; align-items: center; }
+.fxb-tr { top: 9rem; right: 16px; transform-origin: top right; }
+.fxb-br { right: 16px; bottom: 84px; transform-origin: bottom right; }
+.fxb-bubble { border-radius: 18px 18px 4px 18px; }
+.fxb-bubble::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  bottom: -10px;
+  border-width: 10px 8px 0 8px;
+  border-style: solid;
+  border-color: #ffd700 transparent transparent transparent;
+}
+@keyframes fxb-pop { from { opacity: 0; transform: translateY(10px) scale(0.9); } }
+@keyframes fxb-out { to { opacity: 0; transform: translateY(8px) scale(0.95); } }
+.fxb-pop { animation: fxb-pop 0.25s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Rocket to Mars: one keyframe on transform, node removed on animationend */
+.fxb-rocket {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 75;
+  font-size: 44px;
+  line-height: 1;
+  pointer-events: none;
+  will-change: transform;
+  animation: fxb-rocket 2.2s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+@keyframes fxb-rocket {
+  0% { transform: translate(0, 0) rotate(0deg) scale(0.8); }
+  55% { transform: translate(55vw, -82vh) rotate(30deg) scale(1.35); }
+  100% { transform: translate(calc(100vw - 96px), calc(-100vh + 150px)) rotate(95deg) scale(0.55); }
+}
+
+/* Butler: transform-only movement */
+.fxb-butler {
+  position: fixed;
+  right: 200px;
+  bottom: 14px;
+  z-index: 64;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fxb-butler-body { display: block; font-size: 40px; line-height: 1; }
+.fxb-butler-bubble {
+  position: absolute;
+  right: -8px;
+  bottom: calc(100% + 8px);
+  width: max-content;
+  max-width: 15rem;
+  padding: 6px 10px;
+  border: 1px solid #ffd700;
+  border-radius: 12px 12px 2px 12px;
+  background: #0b0b0f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(4px) scale(0.9);
+  transform-origin: bottom right;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.fxb-butler.fxb-talk .fxb-butler-bubble { opacity: 1; transform: none; }
+@media (max-width: 639px) {
+  .fxb-butler { right: 16px; bottom: 76px; }
+  .fxb-br { bottom: 150px; }
+}
+
+/* Redact My Taxes */
+html.fxb-redacted [data-money],
+html.fxb-redacted .fx-card .font-mono {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none !important;
+  background: repeating-linear-gradient(-45deg, #000 0 10px, #141414 10px 20px) !important;
+  outline: 1px solid #7f1d1d;
+  border-radius: 2px;
+  user-select: none;
+}
+html.fxb-redacted [data-money] *,
+html.fxb-redacted .fx-card .font-mono * {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fxb-toast,
+  .fxb-toast.fxb-out,
+  .fxb-pop,
+  .fxb-rocket { animation: none !important; }
+  .fxb-butler,
+  .fxb-butler-bubble { transition: none !important; }
+}
+/* ---------- end addons batch B ---------- */

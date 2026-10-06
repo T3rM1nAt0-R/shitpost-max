@@ -1,0 +1,46 @@
+# shitpostmax.com static site on Brian. Port 8097 (8095 infiniboard, 8096 access).
+# `api` is internal only (no published ports); Caddy proxies /api/* to it.
+name: shitpostmax
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8097:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv:ro
+    depends_on:
+      - api
+
+  # One-shot: a fresh named volume is root-owned; hand /data to the node user (uid 1000).
+  votes-init:
+    image: node:22-alpine
+    command: ["chown", "-R", "node:node", "/data"]
+    volumes:
+      - votes:/data
+    restart: "no"
+
+  api:
+    image: node:22-alpine
+    command: node /app/server.mjs
+    restart: unless-stopped
+    user: node
+    read_only: true
+    tmpfs:
+      - /tmp
+    mem_limit: 128m
+    environment:
+      FLEET_FILE: /fleet/fleet.json
+      DATA_DIR: /data
+      PORT: "3000"
+    volumes:
+      - ./api:/app:ro
+      - ./site/fleet-slugs.json:/fleet/fleet.json:ro
+      - votes:/data
+    depends_on:
+      votes-init:
+        condition: service_completed_successfully
+
+volumes:
+  votes:
