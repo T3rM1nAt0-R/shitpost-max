@@ -128,3 +128,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-10-06T20:35:56.136086+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-06T20:39:39.908256+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-06T20:43:39.558905+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-10-06T20:49:57.400867+00:00"}
