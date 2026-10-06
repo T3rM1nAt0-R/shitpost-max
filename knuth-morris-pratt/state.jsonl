@@ -79,3 +79,4 @@
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":39,"timestamp":"2026-10-06T19:23:14.607150+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":40,"timestamp":"2026-10-06T19:25:11.896991+00:00"}
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":41,"timestamp":"2026-10-06T19:26:39.210324+00:00"}
+{"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":42,"timestamp":"2026-10-06T19:27:41.366835+00:00"}
