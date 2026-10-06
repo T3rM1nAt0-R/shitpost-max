@@ -25,5 +25,5 @@ No emails, names or free text in properties.
 `utm_campaign` kebab-case as `<yyyy-mm>-<topic>`.
 
 ## Setup
-Set `UMAMI_WEBSITE_ID` in `src/lib/analytics.ts` once the Umami website exists. No snippet loads while it is empty.
+The website id is in `src/lib/analytics.ts`.
 Niraj's own visits: run `localStorage.setItem('umami.disabled', 1)` in his browsers.
