@@ -20,7 +20,6 @@ CATEGORIES_PATH = REPO_ROOT / "tools" / "plugin_categories.json"
 # Directories that are never plugin directories.
 SKIP_DIRS = {
     "harness",
-    "site",  # the shitpostmax.com Next.js site, not a plugin
     "tests",
     "tools",
     "scripts",
@@ -29,6 +28,7 @@ SKIP_DIRS = {
     ".github",
     ".githooks",
     ".pytest_cache",
+    "site",  # the shitpostmax.com website (Next.js), not a plugin
 }
 
 MARKER_START = "<!-- PLUGIN_TABLE_START -->"
