@@ -110,3 +110,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-06T19:00:13.671490+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-10-06T19:04:58.219194+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-06T19:11:30.107453+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-10-06T19:17:11.932989+00:00"}
