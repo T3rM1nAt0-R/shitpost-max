@@ -1,5 +1,4 @@
-# shitpostmax.com on Brian. Port 8097 (8095 infiniboard, 8096 access, 8098 taken);
-# dev-test.shitpostmax.com runs this same file as project shitpostmax-dev with WEB_PORT=8099.
+# shitpostmax.com static site. WEB_PORT is the host port (loopback only); a dev copy runs this same file as a separate compose project.
 # `api` is internal only (no published ports); Caddy proxies /api/* to it.
 name: shitpostmax
 services:
