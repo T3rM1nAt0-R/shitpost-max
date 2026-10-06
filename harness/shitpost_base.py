@@ -97,6 +97,8 @@ class Shitpost(ABC):
         name: Directory name for this plugin.
         internal: Whether this plugin is hidden from the public dashboard.
             Must be set explicitly by every subclass.
+        max_state_bytes: Size cap for state.jsonl (see :meth:`_trim_state`);
+            ``None`` disables trimming.
         commit_template: ``str.format()`` template used for the git commit
             message. It is formatted with ``produce()``'s return dict, or
             with the summary dict for multi-line ticks.
@@ -105,6 +107,7 @@ class Shitpost(ABC):
     name: str
     internal: bool
     commit_template: str
+    max_state_bytes: int | None = 1_000_000
 
     @abstractmethod
     def produce(self) -> dict | tuple[dict, list[dict]] | None:
@@ -239,14 +242,57 @@ class Shitpost(ABC):
             timestamp = self._now_iso()
         # Harness timestamp is written *after* the spread so it always wins
         # over any 'timestamp' key a plugin may have produced.
-        line = {**data, "timestamp": timestamp}
-        with open(self._state_path(), "a", encoding="utf-8") as f:
-            f.write(json.dumps(line, separators=(",", ":"), sort_keys=True) + "\n")
+        self._append_line({**data, "timestamp": timestamp})
+
+    def _append_line(self, line: dict) -> None:
+        """Append one JSON line to state.jsonl, then trim it.
+
+        If an earlier write was cut off mid-line (a crash or full disk), the
+        file ends without a newline; start a fresh line so the new entry
+        doesn't get glued onto the broken one and lost with it.
+        """
+        path = self._state_path()
+        with open(path, "ab+") as f:
+            f.seek(0, os.SEEK_END)
+            if f.tell() > 0:
+                f.seek(-1, os.SEEK_END)
+                if f.read(1) != b"\n":
+                    f.write(b"\n")
+            f.write(
+                (json.dumps(line, separators=(",", ":"), sort_keys=True) + "\n").encode("utf-8")
+            )
+        self._trim_state()
+
+    def _trim_state(self) -> None:
+        """Keep state.jsonl from growing forever.
+
+        Every tick is committed and the whole file is re-stored each time,
+        so an unbounded log means ever-bigger blobs, a bigger repo, and
+        eventually GitHub's 100MB-per-file push limit (which already broke
+        pascal-row once). Once the file passes ``max_state_bytes``, drop the
+        oldest lines down to half the cap; git history still has them.
+        Plugins that read state.jsonl back as their own data set
+        ``max_state_bytes = None`` to opt out.
+        """
+        cap = self.max_state_bytes
+        path = self._state_path()
+        if cap is None or os.path.getsize(path) <= cap:
+            return
+        with open(path, "rb") as f:
+            lines = f.read().splitlines(keepends=True)
+        kept, total = [], 0
+        for raw in reversed(lines):
+            if total + len(raw) > cap // 2:
+                break
+            kept.append(raw)
+            total += len(raw)
+        tmp = path + ".tmp"
+        with open(tmp, "wb") as f:
+            f.writelines(reversed(kept))
+        os.replace(tmp, path)
 
     def _append_error(self, error_text: str) -> None:
-        line = {"timestamp": self._now_iso(), "error": error_text}
-        with open(self._state_path(), "a", encoding="utf-8") as f:
-            f.write(json.dumps(line, separators=(",", ":"), sort_keys=True) + "\n")
+        self._append_line({"timestamp": self._now_iso(), "error": error_text})
         self._log_error(error_text)
 
     def _log_error(self, error_text: str) -> None:

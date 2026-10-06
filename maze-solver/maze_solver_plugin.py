@@ -19,24 +19,11 @@ class MazeSolverPlugin(Shitpost):
     def __init__(self):
         super().__init__()
 
-    def _load_persisted_state(self, default: Dict) -> Dict:
-        """Load the running maze state, or initialise it at a random seed."""
-        plugin_dir = self._plugin_dir()
-        os.makedirs(plugin_dir, exist_ok=True)
-        state_path = os.path.join(plugin_dir, "state.json")
-        if not os.path.exists(state_path):
-            with open(state_path, "w") as f:
-                json.dump(default, f)
-        with open(state_path, "r") as f:
-            return json.load(f)
-
-    def _save_persisted_state(self, state: Dict) -> None:
-        """Atomically persists the state dict."""
-        plugin_dir = self._plugin_dir()
-        os.makedirs(plugin_dir, exist_ok=True)
-        state_path = os.path.join(plugin_dir, "state.json")
-        with open(state_path, "w") as f:
-            json.dump(state, f)
+    def _persisted_state_path(self) -> str:
+        # The shared base-class load/save handles a missing, empty or corrupt
+        # file and writes atomically; this plugin used to roll its own and
+        # crashed forever once a full disk left state.json empty.
+        return os.path.join(self._plugin_dir(), "state.json")
 
     def _generate_maze(self, size: int, seed: int) -> List[List[int]]:
         """Generate a solvable maze using the Aldous-Broder algorithm."""

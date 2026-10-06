@@ -14,6 +14,7 @@ class FearGreedIndexPlugin(Shitpost):
 
     name = "fear-greed-index"
     internal = False
+    max_state_bytes = None  # state.jsonl is this plugin's own data store
     commit_template = "fear-greed: {score} ({classification})"
 
     def __init__(self):

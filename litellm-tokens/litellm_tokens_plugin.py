@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime, timezone
 
 from harness.shitpost_base import Shitpost
@@ -63,10 +64,14 @@ class LitellmTokensPlugin(Shitpost):
         state = self._load_state(plugin_dir)
         current_counters = {}
 
+        metrics_url = os.getenv("LITELLM_METRICS_URL")
+        if not metrics_url:
+            print("error: LITELLM_METRICS_URL is not set; skipping tick", file=sys.stderr)
+            return None
+
         try:
-            response = requests.get(os.getenv("LITELLM_METRICS_URL"))
-            response.raise_for_status()
-            metrics_text = response.text
+            with urllib.request.urlopen(metrics_url, timeout=15) as response:
+                metrics_text = response.read().decode("utf-8")
         except Exception as e:
             print(f"error: failed to fetch metrics ({e})", file=sys.stderr)
             return None
