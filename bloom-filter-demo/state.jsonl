@@ -5299,3 +5299,4 @@
 {"bits_set":1000,"capacity":1000,"false_positives":100,"fp_rate":1.0,"probes":100,"tick":3681,"timestamp":"2026-07-19T04:29:49.283824+00:00"}
 {"bits_set":141,"capacity":1000,"false_positives":2,"fp_rate":0.02,"probes":100,"tick":1,"timestamp":"2026-10-06T18:33:02.345965+00:00"}
 {"bits_set":253,"capacity":1000,"false_positives":1,"fp_rate":0.01,"probes":100,"tick":2,"timestamp":"2026-10-06T18:35:27.875573+00:00"}
+{"bits_set":358,"capacity":1000,"false_positives":6,"fp_rate":0.06,"probes":100,"tick":3,"timestamp":"2026-10-06T18:36:46.143896+00:00"}
