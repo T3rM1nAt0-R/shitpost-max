@@ -107,7 +107,7 @@ class Shitpost(ABC):
     name: str
     internal: bool
     commit_template: str
-    max_state_bytes: int | None = 1_000_000
+    max_state_bytes: int | None = 20_000
 
     @abstractmethod
     def produce(self) -> dict | tuple[dict, list[dict]] | None:
