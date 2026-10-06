@@ -689,3 +689,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-10-06T18:49:26.352690+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-06T18:54:59.103610+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-06T19:00:13.671490+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-10-06T19:04:58.219194+00:00"}
