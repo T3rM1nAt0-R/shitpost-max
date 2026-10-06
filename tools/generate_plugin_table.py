@@ -20,6 +20,7 @@ CATEGORIES_PATH = REPO_ROOT / "tools" / "plugin_categories.json"
 # Directories that are never plugin directories.
 SKIP_DIRS = {
     "harness",
+    "site",  # the shitpostmax.com Next.js site, not a plugin
     "tests",
     "tools",
     "scripts",
