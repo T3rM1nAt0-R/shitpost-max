@@ -118,3 +118,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-10-06T19:42:19.799281+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-06T19:46:43.642244+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-06T19:54:02.853713+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-10-06T19:59:32.529377+00:00"}
