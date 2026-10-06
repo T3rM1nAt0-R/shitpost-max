@@ -20,4 +20,4 @@ if (slugs.length === 0) throw new Error("no slugs in src/lib/fleet.json");
 fs.writeFileSync("deploy/out/site/fleet-slugs.json", JSON.stringify(slugs));
 console.log("fleet-slugs.json:", slugs.length, "slugs");
 '
-echo "Ready: deploy/out (copy to brian:/opt/data/selfhost/shitpostmax/)"
+echo "Ready: deploy/out"
