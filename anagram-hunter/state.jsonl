@@ -50,3 +50,4 @@
 {"anagram_set":["ab","ba"],"set_size":2,"signature":"ab","tick":1,"timestamp":"2026-10-06T18:32:48.421354+00:00","word_length":2}
 {"anagram_set":["aet","ate","eat","eta","tae","tea"],"set_size":6,"signature":"aet","tick":2,"timestamp":"2026-10-06T18:35:25.375976+00:00","word_length":3}
 {"anagram_set":["abel","able","albe","bael","bale","beal","bela","blae","blea"],"set_size":9,"signature":"abel","tick":3,"timestamp":"2026-10-06T18:36:44.566676+00:00","word_length":4}
+{"anagram_set":["apers","apres","asper","pares","parse","pears","prase","presa","rapes","reaps","repas","spaer","spare","spear"],"set_size":14,"signature":"aeprs","tick":4,"timestamp":"2026-10-06T18:38:09.135525+00:00","word_length":5}
