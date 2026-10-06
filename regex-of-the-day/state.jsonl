@@ -53,3 +53,4 @@
 {"match_ok":false,"match_test":"(z+|((p|e)|f*))","nonmatch_ok":true,"nonmatch_test":"(z+|((p|e6|f*))","pattern":"(z+|((p|e)|f*))","tick":102,"timestamp":"2026-10-06T20:51:29.346976+00:00"}
 {"match_ok":false,"match_test":"f++","nonmatch_ok":true,"nonmatch_test":"f+0","pattern":"f++","tick":103,"timestamp":"2026-10-06T20:52:48.937659+00:00"}
 {"match_ok":false,"match_test":"(g|s)+","nonmatch_ok":true,"nonmatch_test":"(h|s)+","pattern":"(g|s)+","tick":104,"timestamp":"2026-10-06T20:53:59.118349+00:00"}
+{"match_ok":true,"match_test":"l","nonmatch_ok":true,"nonmatch_test":"m","pattern":"l","tick":105,"timestamp":"2026-10-06T20:55:12.883882+00:00"}
