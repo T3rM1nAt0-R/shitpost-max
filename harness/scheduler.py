@@ -327,10 +327,11 @@ PUSH_CADENCE_SECONDS = 20
 # goal is only to bound a genuine hang, not to race normal ticks).
 TICK_TIMEOUT_SECONDS = 300
 
-# The fleet makes ~90k commits a day, so it must never fill the disk it
-# lives on. Below this much free space ticks and pushes pause (and resume
-# on their own once space is freed).
-MIN_FREE_BYTES = 5 * 1024**3
+# The fleet makes ~190k commits a day, so it must never eat into the space
+# the rest of the machine needs. Below this much free space ticks and pushes
+# pause (and resume on their own once space is freed). Override with the
+# SHITPOST_MIN_FREE_GB environment variable.
+MIN_FREE_BYTES = int(float(os.environ.get("SHITPOST_MIN_FREE_GB", "50")) * 1024**3)
 
 
 def run_tick_subprocess(
