@@ -63,7 +63,7 @@ export default function Feed() {
         </p>
       </div>
 
-      <div className="sticky top-2 z-20 mb-8 flex flex-col items-stretch gap-3 rounded-3xl border border-white/10 bg-black/70 p-3 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+      <div className="sticky top-2 z-20 mb-8 flex flex-col items-stretch gap-3 rounded-3xl border border-white/10 bg-black/70 p-3 sm:flex-row sm:items-center sm:justify-between">
         <LayoutGroup id="tabs">
           <div className="flex gap-1 rounded-2xl bg-zinc-900 p-1" role="tablist">
             {TABS.map((t) => (
@@ -102,7 +102,7 @@ export default function Feed() {
           No results. I&apos;ll just acquire a company called &ldquo;{query}&rdquo;. Done. You&apos;re welcome.
         </p>
       ) : (
-        <motion.div layout className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <motion.div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {visible.map(({ s, score }, i) => (
               <ServiceCard key={s.slug} service={s} score={score} rank={i} onVote={vote} />

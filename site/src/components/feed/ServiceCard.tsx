@@ -63,7 +63,6 @@ export default function ServiceCard({ service, score, rank, onVote }: Props) {
 
   return (
     <motion.article
-      layout
       initial={{ opacity: 0, scale: 0.8, y: 30 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.6, rotate: 20 }}
@@ -88,8 +87,8 @@ export default function ServiceCard({ service, score, rank, onVote }: Props) {
           <div className="flex items-start justify-between gap-3" style={{ transform: "translateZ(40px)" }}>
             <motion.span
               className="text-5xl"
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 3 + (rank % 5) * 0.4, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 0.6 }}
             >
               {service.emoji}
             </motion.span>

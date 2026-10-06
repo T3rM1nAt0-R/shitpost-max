@@ -12,7 +12,7 @@ const LINKS = [
 export default function NavBar() {
   const pathname = usePathname();
   return (
-    <nav className="sticky top-8 z-40 border-b border-white/10 bg-black/60 backdrop-blur-md">
+    <nav className="sticky top-8 z-40 border-b border-white/10 bg-black/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link
           href="/"
