@@ -468,10 +468,40 @@ class Scheduler:
             self.step()
 
 
+# Plugins that need a local LLM server (Ollama etc.), which this machine does
+# not run. Skipped until one is available; delete a name to turn it back on.
+LLM_PLUGINS = frozenset({
+    "commit-poet",
+    "emoji-summary",
+    "extraction-bench",
+    "few-shot-drift",
+    "haiku-daily",
+    "llm-self-eval",
+    "llm-vs-llm",
+    "llm-vs-template",
+    "logprobs-tracker",
+    "model-diff",
+    "palindrome-generator",
+    "prompt-chaining-lab",
+    "prompt-injection-lab",
+    "prompt-template-lab",
+    "rag-decay",
+    "regression-canary",
+    "response-length-lab",
+    "sentiment-drift",
+    "system-prompt-tester",
+    "temperature-lab",
+    "translation-telephone",
+    "word-of-the-day",
+    "zero-shot-bench",
+})
+
+
 def default_jobs():
     jobs = [
         (plugin_dir, cadence, lambda p=plugin_dir: submit_tick(p))
         for plugin_dir, cadence in PLUGINS
+        if plugin_dir not in LLM_PLUGINS
     ]
     # push is NOT offloaded to _TICK_EXECUTOR - stays inline in the main
     # scheduler loop (see module docstring for why).
