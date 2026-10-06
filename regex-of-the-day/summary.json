@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(y|((g|p)?|g)+)","nonmatch_ok":true,"nonmatch_test":"(y|((g|p)?|h)+)","pattern":"(y|((g|p)?|g)+)","tick":112,"timestamp":"2026-10-06T21:04:58.412027+00:00"}
+{"match_ok":false,"match_test":"(b*|(j|a)+)?","nonmatch_ok":true,"nonmatch_test":"(b*|(j2a)+)?","pattern":"(b*|(j|a)+)?","tick":113,"timestamp":"2026-10-06T21:06:19.076097+00:00"}
