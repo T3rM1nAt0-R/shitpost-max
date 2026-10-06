@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bungee, Space_Grotesk } from "next/font/google";
 import { CrtOverlay, GradientBlobs } from "@/components/fx/Backdrop";
+import Analytics from "@/components/Analytics";
 import BillionaireMode from "@/components/fx/BillionaireMode";
 import Dock from "@/components/fx/addons/Dock";
 import CursorTrail from "@/components/fx/CursorTrail";
@@ -33,11 +34,13 @@ export const metadata: Metadata = {
     template: "%s | SHITPOSTMAX",
   },
   description: DESCRIPTION,
+  alternates: { canonical: "./" },
   applicationName: "SHITPOSTMAX",
   openGraph: {
     type: "website",
     url: "/",
     siteName: "SHITPOSTMAX",
+    locale: "en_US",
     title: "SHITPOSTMAX — 1000000x Engineering for Problems That Don't Exist",
     description: DESCRIPTION,
   },
@@ -53,6 +56,15 @@ export const metadata: Metadata = {
   },
 };
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "SHITPOSTMAX",
+  url: "https://shitpostmax.com/",
+  description: DESCRIPTION,
+  inLanguage: "en",
+};
+
 export const viewport: Viewport = {
   themeColor: "#000000",
   colorScheme: "dark",
@@ -62,6 +74,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full antialiased`}>
       <body className="relative flex min-h-full flex-col pt-8">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
+        <Analytics />
         <GradientBlobs />
         <ParticleField />
         <NewsTicker />
