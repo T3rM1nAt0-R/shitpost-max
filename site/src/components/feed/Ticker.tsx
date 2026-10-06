@@ -1,5 +1,3 @@
-"use client";
-
 import { getFleetWithStats } from "@/lib/fleet";
 
 const SPECIALS = [

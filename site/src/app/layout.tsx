@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bungee, Space_Grotesk } from "next/font/google";
 import { CrtOverlay, GradientBlobs } from "@/components/fx/Backdrop";
 import BillionaireMode from "@/components/fx/BillionaireMode";
+import Dock from "@/components/fx/addons/Dock";
 import CursorTrail from "@/components/fx/CursorTrail";
 import NavBar from "@/components/fx/NavBar";
 import NewsTicker from "@/components/fx/NewsTicker";
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <NavBar />
         <PageTransition>{children}</PageTransition>
         <BillionaireMode />
+        <Dock />
         <CursorTrail />
         <CrtOverlay />
       </body>
