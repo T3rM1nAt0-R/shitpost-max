@@ -515,3 +515,4 @@
 {"heap":[5,8,8],"op":"extract","tick":11,"timestamp":"2026-10-06T18:44:34.033141+00:00","value":3}
 {"heap":[1,5,8,8],"op":"push","tick":12,"timestamp":"2026-10-06T18:45:24.921475+00:00","value":1}
 {"heap":[5,8,8],"op":"extract","tick":13,"timestamp":"2026-10-06T18:45:42.524094+00:00","value":1}
+{"heap":[8,8],"op":"extract","tick":14,"timestamp":"2026-10-06T18:46:45.727668+00:00","value":5}
