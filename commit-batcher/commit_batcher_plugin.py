@@ -40,12 +40,14 @@ class CommitBatcherPlugin(Shitpost):
 
         ts = datetime.now(timezone.utc).isoformat()
         random_word = ''.join(random.choices(string.ascii_lowercase, k=5))
-        file_path = os.path.join(plugin_dir, f"data/{ts}.txt")
+        # Colons are invalid in Windows filenames.
+        fname = ts.replace(":", "-")
+        file_path = os.path.join(plugin_dir, f"data/{fname}.txt")
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(random_word)
 
         self._save_persisted_state(state)
-        print(f"tick {tick}: created data/{ts}.txt with word '{random_word}'")
+        print(f"tick {tick}: created data/{fname}.txt with word '{random_word}'")
 
         if tick % 600 == 0:
             commits_since_push = 600
