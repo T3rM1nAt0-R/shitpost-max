@@ -4,6 +4,24 @@ import { useEffect, useRef } from "react";
 
 const EMOJI = ["💸", "🚀", "💎", "🤑", "📈", "🪙", "🛥️", "🌕"];
 const HUES = [320, 185, 90, 48];
+const SPRITE = 64;
+
+/** Emoji are slow to rasterize; draw each one once and blit it every frame. */
+function makeSprites(): Map<string, HTMLCanvasElement> {
+  const sprites = new Map<string, HTMLCanvasElement>();
+  for (const glyph of EMOJI) {
+    const c = document.createElement("canvas");
+    c.width = c.height = SPRITE;
+    const g = c.getContext("2d");
+    if (!g) continue;
+    g.font = `${SPRITE * 0.8}px serif`;
+    g.textAlign = "center";
+    g.textBaseline = "middle";
+    g.fillText(glyph, SPRITE / 2, SPRITE / 2);
+    sprites.set(glyph, c);
+  }
+  return sprites;
+}
 
 type Particle = {
   x: number;
@@ -26,7 +44,8 @@ export default function ParticleField() {
     if (!canvas || !ctx) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const sprites = makeSprites();
     let w = 0;
     let h = 0;
     let particles: Particle[] = [];
@@ -55,7 +74,7 @@ export default function ParticleField() {
       canvas.style.width = `${w}px`;
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.round(Math.min(160, (w * h) / 9000));
+      const count = Math.round(Math.min(90, (w * h) / 14000));
       particles = Array.from({ length: count }, () => make(true));
       if (reduce) draw(0);
     };
@@ -67,16 +86,16 @@ export default function ParticleField() {
       for (const p of particles) {
         const px = p.x - mouse.x * 40 * p.z;
         const py = p.y - mouse.y * 40 * p.z;
-        if (p.glyph) {
-          ctx.save();
+        const sprite = p.glyph ? sprites.get(p.glyph) : undefined;
+        if (sprite) {
+          const size = 10 + p.z * 22;
+          const cos = Math.cos(p.rot);
+          const sin = Math.sin(p.rot);
           ctx.globalAlpha = 0.3 + p.z * 0.5;
-          ctx.translate(px, py);
-          ctx.rotate(p.rot);
-          ctx.font = `${Math.round(10 + p.z * 22)}px serif`;
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          ctx.fillText(p.glyph, 0, 0);
-          ctx.restore();
+          ctx.setTransform(dpr * cos, dpr * sin, -dpr * sin, dpr * cos, dpr * px, dpr * py);
+          ctx.drawImage(sprite, -size / 2, -size / 2, size, size);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.globalAlpha = 1;
         } else {
           const twinkle = 0.5 + 0.5 * Math.sin(t * 0.003 + p.x);
           ctx.fillStyle = `hsla(${p.hue}, 100%, 70%, ${0.25 + p.z * 0.6 * twinkle})`;

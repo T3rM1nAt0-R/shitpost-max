@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { LayoutGroup, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { getFleetWithStats } from "@/lib/fleet";
 import ServiceCard from "./ServiceCard";
@@ -102,13 +102,11 @@ export default function Feed() {
           No results. I&apos;ll just acquire a company called &ldquo;{query}&rdquo;. Done. You&apos;re welcome.
         </p>
       ) : (
-        <motion.div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <AnimatePresence mode="popLayout">
-            {visible.map(({ s, score }, i) => (
-              <ServiceCard key={s.slug} service={s} score={score} rank={i} onVote={vote} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {visible.map(({ s, score }, i) => (
+            <ServiceCard key={s.slug} service={s} score={score} rank={i} onVote={vote} />
+          ))}
+        </div>
       )}
     </section>
   );

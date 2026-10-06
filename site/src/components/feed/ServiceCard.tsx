@@ -62,13 +62,7 @@ export default function ServiceCard({ service, score, rank, onVote }: Props) {
   }
 
   return (
-    <motion.article
-      initial={{ opacity: 0, scale: 0.8, y: 30 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.6, rotate: 20 }}
-      transition={{ type: "spring", stiffness: 260, damping: 24 }}
-      style={{ perspective: 900 }}
-    >
+    <article className="fx-card" style={{ perspective: 900 }}>
       <motion.div animate={wobble}>
         <motion.div
           onMouseMove={onMove}
@@ -154,6 +148,6 @@ export default function ServiceCard({ service, score, rank, onVote }: Props) {
           </div>
         </motion.div>
       </motion.div>
-    </motion.article>
+    </article>
   );
 }

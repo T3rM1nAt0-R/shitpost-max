@@ -43,46 +43,27 @@ body {
   width: 60vmax;
   height: 60vmax;
   border-radius: 50%;
-  filter: blur(60px);
+  opacity: 0.4;
+  /* soft edge comes from the gradient itself: no filter, no blend mode */
+  background: radial-gradient(circle at center, var(--blob) 0%, transparent 65%);
   will-change: transform;
-  opacity: 0.35;
-  mix-blend-mode: screen;
-  background: conic-gradient(from 0deg, var(--hot-pink), var(--cyan), var(--lime), var(--gold), var(--purple), var(--hot-pink));
-  animation: blob-spin 22s linear infinite, blob-drift 30s ease-in-out infinite alternate;
+  animation: blob-drift 30s ease-in-out infinite alternate;
 }
-.fx-blob-1 { top: -20vmax; left: -15vmax; }
-.fx-blob-2 { bottom: -25vmax; right: -20vmax; animation-duration: 28s, 36s; animation-direction: reverse, alternate; }
-.fx-blob-3 { top: 30%; left: 35%; width: 40vmax; height: 40vmax; opacity: 0.22; animation-duration: 18s, 24s; }
+.fx-blob-1 { --blob: var(--hot-pink); top: -20vmax; left: -15vmax; }
+.fx-blob-2 { --blob: var(--cyan); bottom: -25vmax; right: -20vmax; animation-duration: 36s; animation-direction: alternate-reverse; }
+.fx-blob-3 { --blob: var(--purple); top: 30%; left: 35%; width: 40vmax; height: 40vmax; opacity: 0.3; animation-duration: 24s; }
 
-@keyframes blob-spin {
-  to { rotate: 360deg; }
-}
 @keyframes blob-drift {
-  0% { translate: 0 0; scale: 1; }
-  50% { translate: 10vw -8vh; scale: 1.2; }
-  100% { translate: -8vw 10vh; scale: 0.9; }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(10vw, -8vh, 0) scale(1.2); }
+  100% { transform: translate3d(-8vw, 10vh, 0) scale(0.9); }
 }
 
 /* ---------- CRT scanlines + noise ---------- */
 .fx-crt {
   background:
-    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px),
-    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.55) 100%);
-}
-.fx-crt::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  opacity: 0.06;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  
-}
-@keyframes noise {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-5%, 3%); }
-  50% { transform: translate(4%, -6%); }
-  75% { transform: translate(-3%, 5%); }
-  100% { transform: translate(2%, -2%); }
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
 }
 
 /* ---------- Text effects ---------- */
@@ -133,7 +114,6 @@ body {
 .glitch-hover:focus-visible::before {
   color: var(--cyan);
   text-shadow: -2px 0 var(--cyan);
-  mix-blend-mode: screen;
   animation: glitch-a 2.4s infinite linear alternate-reverse;
 }
 .glitch::after,
@@ -141,7 +121,6 @@ body {
 .glitch-hover:focus-visible::after {
   color: var(--hot-pink);
   text-shadow: 2px 0 var(--hot-pink);
-  mix-blend-mode: screen;
   animation: glitch-b 1.8s infinite linear alternate-reverse;
 }
 .glitch-hover:hover::before,
@@ -246,9 +225,43 @@ html.billionaire body {
     animation: none !important;
     overflow-x: auto;
   }
-  .fx-crt::after,
   .glitch::before,
   .glitch::after {
     display: none;
   }
+}
+
+/* ---------- Page transition (CSS only, compositor-friendly) ---------- */
+.fx-page-in {
+  animation: page-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+}
+
+/* ---------- Hero letters ---------- */
+.fx-letter {
+  display: inline-block;
+  background-image: linear-gradient(90deg, #ff00e5, #ff7a00, #ffe600, #00ff94, #00d4ff, #7a5cff, #ff00e5);
+  background-size: 1100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: letter-bob 2.2s ease-in-out infinite;
+  transition: scale 0.3s ease;
+  will-change: transform;
+}
+.fx-letter:nth-child(odd) { animation-name: letter-bob-odd; }
+.fx-letter:hover { scale: 1.35; }
+@keyframes letter-bob {
+  50% { transform: translateY(-14px) rotate(-4deg); }
+}
+@keyframes letter-bob-odd {
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+/* ---------- Feed cards: skip layout/paint for off-screen cards ---------- */
+.fx-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
 }

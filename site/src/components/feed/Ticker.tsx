@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getFleetWithStats } from "@/lib/fleet";
 
 const SPECIALS = [
@@ -29,10 +28,9 @@ export default function Ticker() {
       className="relative overflow-hidden border-y-2 border-fuchsia-500/70 bg-black py-3 shadow-[0_0_30px_rgba(217,70,239,0.5)]"
       aria-label="Fake stock ticker"
     >
-      <motion.div
-        className="flex w-max gap-10 whitespace-nowrap font-mono text-sm font-bold sm:text-base"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+      <div
+        className="marquee flex w-max gap-10 whitespace-nowrap font-mono text-sm font-bold sm:text-base"
+        style={{ animationDuration: "60s" }}
       >
         {row.map((it, idx) => (
           <span key={idx} className="flex items-center gap-2">
@@ -42,7 +40,7 @@ export default function Ticker() {
             </span>
           </span>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }

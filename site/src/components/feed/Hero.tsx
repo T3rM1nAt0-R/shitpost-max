@@ -30,26 +30,6 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden px-4 pb-16 pt-20 text-center sm:pt-28">
-      {/* neon blobs */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-fuchsia-600/40 blur-3xl"
-        animate={{ x: [0, 120, -40, 0], y: [0, 60, 140, 0], scale: [1, 1.3, 0.9, 1] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -right-32 top-10 h-[28rem] w-[28rem] rounded-full bg-cyan-500/30 blur-3xl"
-        animate={{ x: [0, -140, 30, 0], y: [0, 100, -30, 0], scale: [1.1, 0.8, 1.2, 1.1] }}
-        transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-yellow-400/20 blur-3xl"
-        animate={{ x: [0, 80, -100, 0], scale: [1, 1.4, 1] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-      />
-
       <motion.p
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -64,32 +44,16 @@ export default function Hero() {
         style={{ fontSize: "clamp(3rem, 13vw, 11rem)" }}
       >
         {LETTERS.map((ch, idx) => (
-          <motion.span
+          <span
             key={idx}
-            className="inline-block bg-clip-text text-transparent"
+            className="fx-letter"
             style={{
-              backgroundImage:
-                "linear-gradient(90deg,#ff00e5,#ff7a00,#ffe600,#00ff94,#00d4ff,#7a5cff,#ff00e5)",
-              backgroundSize: "400% 100%",
-              filter: "drop-shadow(0 0 18px rgba(255,0,229,0.55))",
+              backgroundPosition: `${idx * 10}% 50%`,
+              animationDelay: `${idx * 0.09}s`,
             }}
-            initial={{ y: 120, opacity: 0, rotate: -30 }}
-            animate={{
-              y: [0, -14, 0],
-              opacity: 1,
-              rotate: [0, idx % 2 ? 4 : -4, 0],
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            transition={{
-              y: { duration: 2.2, repeat: Infinity, delay: idx * 0.09, ease: "easeInOut" },
-              rotate: { duration: 2.2, repeat: Infinity, delay: idx * 0.09, ease: "easeInOut" },
-              backgroundPosition: { duration: 6, repeat: Infinity, ease: "linear" },
-              opacity: { duration: 0.4, delay: idx * 0.05 },
-            }}
-            whileHover={{ scale: 1.4, rotate: 360, transition: { duration: 0.6 } }}
           >
             {ch}
-          </motion.span>
+          </span>
         ))}
       </h1>
 
@@ -103,9 +67,9 @@ export default function Hero() {
         <AnimatePresence mode="wait">
           <motion.blockquote
             key={i}
-            initial={{ opacity: 0, y: 30, rotateX: 90, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -30, rotateX: -90, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 30, rotateX: 90 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            exit={{ opacity: 0, y: -30, rotateX: -90 }}
             transition={{ duration: 0.5 }}
             className="text-xl font-semibold text-white sm:text-3xl"
           >
