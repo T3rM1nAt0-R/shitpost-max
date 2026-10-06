@@ -685,3 +685,4 @@
 {"complexity":9,"function":"validate_input","timestamp":"2026-07-19T04:29:18.895817+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-06T18:33:07.421184+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-10-06T18:39:41.913187+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-10-06T18:44:34.986589+00:00"}
