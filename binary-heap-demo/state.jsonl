@@ -517,3 +517,4 @@
 {"heap":[5,8,8],"op":"extract","tick":13,"timestamp":"2026-10-06T18:45:42.524094+00:00","value":1}
 {"heap":[8,8],"op":"extract","tick":14,"timestamp":"2026-10-06T18:46:45.727668+00:00","value":5}
 {"heap":[5,8,8],"op":"push","tick":15,"timestamp":"2026-10-06T18:48:02.312082+00:00","value":5}
+{"heap":[3,5,8,8],"op":"push","tick":16,"timestamp":"2026-10-06T18:49:25.000963+00:00","value":3}
