@@ -8,7 +8,6 @@ than once per plugin tick - see that function's docstring for why.
 """
 
 import contextlib
-import fcntl
 import json
 import os
 import subprocess
@@ -17,6 +16,29 @@ import time
 import traceback
 from abc import ABC, abstractmethod
 from datetime import datetime, timezone
+
+
+if os.name == "nt":
+    import msvcrt
+
+    def _lock_nb(fd: int) -> None:
+        """Non-blocking exclusive lock on byte 0; raises OSError if held."""
+        os.lseek(fd, 0, os.SEEK_SET)
+        msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
+
+    def _unlock(fd: int) -> None:
+        os.lseek(fd, 0, os.SEEK_SET)
+        msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
+else:
+    import fcntl
+
+    def _lock_nb(fd: int) -> None:
+        """Non-blocking exclusive lock; raises OSError if held."""
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+    def _unlock(fd: int) -> None:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+
 
 # Several plugins (pi-spigot, golden-ratio, sqrt2-stream, e-stream,
 # digits-of-tau) are unbounded-integer digit spigots whose persisted state
@@ -120,7 +142,7 @@ class Shitpost(ABC):
         lock_fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
         try:
             try:
-                fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                _lock_nb(lock_fd)
             except (BlockingIOError, OSError):
                 self._log_error("tick already in progress, skipping")
                 return
@@ -180,7 +202,7 @@ class Shitpost(ABC):
                 self._log_error(traceback.format_exc())
                 return
         finally:
-            fcntl.flock(lock_fd, fcntl.LOCK_UN)
+            _unlock(lock_fd)
             os.close(lock_fd)
             try:
                 os.remove(lock_path)
@@ -345,7 +367,7 @@ def _repo_git_lock(lock_path: str):
         deadline = time.monotonic() + _GIT_LOCK_TIMEOUT_SECONDS
         while True:
             try:
-                fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                _lock_nb(lock_fd)
                 break
             except (BlockingIOError, OSError):
                 if time.monotonic() >= deadline:
@@ -357,7 +379,7 @@ def _repo_git_lock(lock_path: str):
                 time.sleep(0.5)
         yield
     finally:
-        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+        _unlock(lock_fd)
         os.close(lock_fd)
 
 

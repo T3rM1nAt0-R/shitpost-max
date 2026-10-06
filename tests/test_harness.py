@@ -1,4 +1,3 @@
-import fcntl
 import json
 import os
 import shutil
@@ -9,6 +8,21 @@ from unittest.mock import patch
 import pytest
 
 from harness.shitpost_base import Shitpost
+
+from harness.shitpost_base import _lock_nb, _unlock  # noqa: E402
+
+
+def _flock_ex(fd):
+    """Blocking exclusive lock built on the portable non-blocking one."""
+    import time as _t
+
+    while True:
+        try:
+            _lock_nb(fd)
+            return
+        except OSError:
+            _t.sleep(0.01)
+
 
 
 class FakeShitpost(Shitpost):
@@ -322,12 +336,11 @@ def _locked_call(plugin, label, sleep_seconds, events, events_lock):
     """Exercise the real repo lock via the plugin's actual lock path, then
     simulate a slow git operation so overlap would be observable if the lock
     didn't serialize."""
-    import fcntl
     import time
 
     lock_path = plugin._repo_git_lock_path()
     fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
-    fcntl.flock(fd, fcntl.LOCK_EX)
+    _flock_ex(fd)
     try:
         with events_lock:
             events.append(f"{label}-start")
@@ -335,14 +348,13 @@ def _locked_call(plugin, label, sleep_seconds, events, events_lock):
         with events_lock:
             events.append(f"{label}-end")
     finally:
-        fcntl.flock(fd, fcntl.LOCK_UN)
+        _unlock(fd)
         os.close(fd)
 
 
 def test_git_commit_raises_on_lock_timeout():
     """If the repo lock is held past the timeout, the tick must surface an
     error rather than hang forever or silently skip the commit."""
-    import fcntl
 
     with tempfile.TemporaryDirectory() as repo_root:
         plugin_dir = os.path.join(repo_root, "plugin-a")
@@ -351,7 +363,7 @@ def test_git_commit_raises_on_lock_timeout():
 
         lock_path = fake._repo_git_lock_path()
         holder_fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
-        fcntl.flock(holder_fd, fcntl.LOCK_EX)
+        _flock_ex(holder_fd)
         try:
             with patch(
                 "harness.shitpost_base._GIT_LOCK_TIMEOUT_SECONDS", 0.3
@@ -359,7 +371,7 @@ def test_git_commit_raises_on_lock_timeout():
                 with pytest.raises(TimeoutError):
                     fake._git_commit("tick: 1")
         finally:
-            fcntl.flock(holder_fd, fcntl.LOCK_UN)
+            _unlock(holder_fd)
             os.close(holder_fd)
 
 
@@ -370,7 +382,7 @@ def test_run_tick_skips_when_another_tick_is_in_progress():
 
         # Hold the tick lock from outside.
         fd = os.open(lock_path, os.O_CREAT | os.O_RDWR)
-        fcntl.flock(fd, fcntl.LOCK_EX)
+        _flock_ex(fd)
         try:
             with patch.object(fake, "_git_commit") as mock_commit:
                 fake.run_tick()
@@ -379,5 +391,5 @@ def test_run_tick_skips_when_another_tick_is_in_progress():
             assert not os.path.exists(os.path.join(tmp, "summary.json"))
             mock_commit.assert_not_called()
         finally:
-            fcntl.flock(fd, fcntl.LOCK_UN)
+            _unlock(fd)
             os.close(fd)
