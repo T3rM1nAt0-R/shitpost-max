@@ -9,6 +9,22 @@
 
 	header -Server
 	header X-Shitpost "1000000x"
+	header X-Content-Type-Options nosniff
+	header Referrer-Policy strict-origin-when-cross-origin
+
+	# Public apex only (dev-test is Access-only). Cloudflare terminates TLS.
+	@apex host shitpostmax.com
+	header @apex Strict-Transport-Security "max-age=31536000"
+
+	# One hop to the canonical https host.
+	@www host www.shitpostmax.com
+	handle @www {
+		redir https://shitpostmax.com{uri} permanent
+	}
+	@insecure header X-Forwarded-Proto http
+	handle @insecure {
+		redir https://{host}{uri} permanent
+	}
 
 	handle /api/* {
 		reverse_proxy api:3000
