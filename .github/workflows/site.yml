@@ -1,0 +1,130 @@
+name: Site
+
+# Every push and same-repo PR touching the site: lint, typecheck, test, build once.
+# Pushes to main ship that build to dev-test.shitpostmax.com (behind Cloudflare Access).
+# Promote (run this workflow by hand on main) points shitpostmax.com at the exact release
+# dev-test is serving; rollback puts the previous one back. See site/deploy/README.md.
+on:
+  push:
+    paths: ["site/**", ".github/workflows/site.yml"]
+  pull_request:
+    paths: ["site/**", ".github/workflows/site.yml"]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "promote = put dev-test's release on shitpostmax.com; rollback = previous release"
+        type: choice
+        options: [promote, rollback]
+        default: promote
+      release:
+        description: "Commit SHA to promote; must be what dev-test serves (empty = whatever dev-test serves)"
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  # Superseded branch/PR runs are cancelled; main runs queue so a deploy is never cut off.
+  group: site-${{ github.ref }}-${{ github.event_name == 'workflow_dispatch' && 'prod' || 'ci' }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  verify:
+    # Self-hosted runner on Monster: never run code from fork PRs.
+    if: github.event_name != 'workflow_dispatch' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: [self-hosted, linux, x64, monster-wsl, shitpostmax]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - name: Check out site only
+        uses: actions/checkout@v5
+        with:
+          # the fleet has filenames some tools choke on; the site needs none of them
+          sparse-checkout: |
+            site
+            .github
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install, lint, test, build and bundle
+        run: bash deploy/publish.sh
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Check shell scripts
+        run: bash -n deploy/publish.sh deploy/ship.sh deploy/brian.sh deploy/setup-runner.sh
+
+      - name: Upload deployable bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: shitpostmax-bundle
+          path: site/deploy/out
+          retention-days: 3
+
+  deploy-dev:
+    needs: verify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, monster-wsl, shitpostmax]
+    timeout-minutes: 10
+    concurrency:
+      group: shitpostmax-dev-test
+      cancel-in-progress: false
+    environment:
+      name: dev-test
+      url: https://dev-test.shitpostmax.com/
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: site/deploy
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Fetch the bundle verify built
+        uses: actions/download-artifact@v4
+        with:
+          name: shitpostmax-bundle
+          path: site/deploy/out
+
+      - name: Ship to dev-test and check it
+        run: bash deploy/ship.sh dev "$GITHUB_SHA"
+
+  production:
+    # A person starts this by hand; it never rebuilds, it reuses what dev-test serves.
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, monster-wsl, shitpostmax]
+    timeout-minutes: 10
+    concurrency:
+      group: shitpostmax-production
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: https://shitpostmax.com/
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: site/deploy
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: ${{ inputs.action }} shitpostmax.com
+        env:
+          ACTION: ${{ inputs.action }}
+          RELEASE: ${{ inputs.release }}
+        run: |
+          if [ "$ACTION" = rollback ]; then bash deploy/ship.sh rollback
+          else bash deploy/ship.sh promote "$RELEASE"; fi
