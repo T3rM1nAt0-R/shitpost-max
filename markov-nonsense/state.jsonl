@@ -1,76 +1,3 @@
-{"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":182,"timestamp":"2026-10-07T05:54:14.769424+00:00","word_count":8}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":183,"timestamp":"2026-10-07T05:55:00.783775+00:00","word_count":4}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":184,"timestamp":"2026-10-07T05:55:46.713600+00:00","word_count":4}
-{"seed_bigram":"the park.","sentence":"the park. the cat chased the dog around the park.","tick":185,"timestamp":"2026-10-07T05:56:31.774898+00:00","word_count":10}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":186,"timestamp":"2026-10-07T05:57:15.974226+00:00","word_count":4}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":187,"timestamp":"2026-10-07T05:58:17.672652+00:00","word_count":4}
-{"seed_bigram":"ran in","sentence":"ran in the park.","tick":188,"timestamp":"2026-10-07T05:59:15.550760+00:00","word_count":4}
-{"seed_bigram":"ran in","sentence":"ran in the park.","tick":189,"timestamp":"2026-10-07T06:00:27.855446+00:00","word_count":4}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog ran in the park.","tick":190,"timestamp":"2026-10-07T06:01:15.925502+00:00","word_count":10}
-{"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":191,"timestamp":"2026-10-07T06:02:20.481028+00:00","word_count":5}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog around the park.","tick":192,"timestamp":"2026-10-07T06:03:13.577934+00:00","word_count":9}
-{"seed_bigram":"around the","sentence":"around the park.","tick":193,"timestamp":"2026-10-07T06:04:20.455537+00:00","word_count":3}
-{"seed_bigram":"cat chased","sentence":"cat chased the dog ran in the park.","tick":194,"timestamp":"2026-10-07T06:05:11.356190+00:00","word_count":8}
-{"seed_bigram":"the cat","sentence":"the cat chased the dog ran in the park.","tick":195,"timestamp":"2026-10-07T06:06:12.390202+00:00","word_count":9}
-{"seed_bigram":"chased the","sentence":"chased the dog ran in the park.","tick":196,"timestamp":"2026-10-07T06:07:23.811401+00:00","word_count":7}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":197,"timestamp":"2026-10-07T06:08:14.769373+00:00","word_count":4}
-{"seed_bigram":"the park.","sentence":"the park. the cat chased the dog ran in the park.","tick":198,"timestamp":"2026-10-07T06:09:12.541535+00:00","word_count":11}
-{"seed_bigram":"cat chased","sentence":"cat chased the dog around the park.","tick":199,"timestamp":"2026-10-07T06:10:25.786045+00:00","word_count":7}
-{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":200,"timestamp":"2026-10-07T06:11:12.592832+00:00","word_count":5}
-{"seed_bigram":"the cat","sentence":"the cat chased the dog ran in the park.","tick":201,"timestamp":"2026-10-07T06:12:14.609271+00:00","word_count":9}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":202,"timestamp":"2026-10-07T06:13:17.761061+00:00","word_count":4}
-{"seed_bigram":"ran in","sentence":"ran in the park.","tick":203,"timestamp":"2026-10-07T06:14:16.037753+00:00","word_count":4}
-{"seed_bigram":"around the","sentence":"around the park.","tick":204,"timestamp":"2026-10-07T06:15:13.163414+00:00","word_count":3}
-{"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":205,"timestamp":"2026-10-07T06:16:14.089664+00:00","word_count":8}
-{"seed_bigram":"the dog","sentence":"the dog ran in the park.","tick":206,"timestamp":"2026-10-07T06:17:11.329332+00:00","word_count":6}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog around the park.","tick":207,"timestamp":"2026-10-07T06:18:10.368304+00:00","word_count":9}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":208,"timestamp":"2026-10-07T06:19:12.368957+00:00","word_count":4}
-{"seed_bigram":"mat. the","sentence":"mat. the dog ran in the park.","tick":209,"timestamp":"2026-10-07T06:20:15.865287+00:00","word_count":7}
-{"seed_bigram":"chased the","sentence":"chased the dog ran in the park.","tick":210,"timestamp":"2026-10-07T06:21:11.003742+00:00","word_count":7}
-{"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":211,"timestamp":"2026-10-07T06:22:11.623476+00:00","word_count":5}
-{"seed_bigram":"chased the","sentence":"chased the dog ran in the park.","tick":212,"timestamp":"2026-10-07T06:23:10.058031+00:00","word_count":7}
-{"seed_bigram":"on the","sentence":"on the mat.","tick":213,"timestamp":"2026-10-07T06:24:10.887719+00:00","word_count":3}
-{"seed_bigram":"on the","sentence":"on the mat.","tick":214,"timestamp":"2026-10-07T06:25:14.678819+00:00","word_count":3}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":215,"timestamp":"2026-10-07T06:26:11.086202+00:00","word_count":4}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog ran in the park.","tick":216,"timestamp":"2026-10-07T06:27:10.862072+00:00","word_count":10}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog ran in the park.","tick":217,"timestamp":"2026-10-07T06:28:12.140434+00:00","word_count":10}
-{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":218,"timestamp":"2026-10-07T06:29:09.444436+00:00","word_count":5}
-{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":219,"timestamp":"2026-10-07T06:30:15.608073+00:00","word_count":5}
-{"seed_bigram":"around the","sentence":"around the park.","tick":220,"timestamp":"2026-10-07T06:31:22.403566+00:00","word_count":3}
-{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":221,"timestamp":"2026-10-07T06:32:19.645096+00:00","word_count":5}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":222,"timestamp":"2026-10-07T06:33:12.693072+00:00","word_count":4}
-{"seed_bigram":"ran in","sentence":"ran in the park.","tick":223,"timestamp":"2026-10-07T06:34:12.235284+00:00","word_count":4}
-{"seed_bigram":"ran in","sentence":"ran in the park.","tick":224,"timestamp":"2026-10-07T06:35:12.262845+00:00","word_count":4}
-{"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":225,"timestamp":"2026-10-07T06:36:09.646751+00:00","word_count":5}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog ran in the park.","tick":226,"timestamp":"2026-10-07T06:37:11.949492+00:00","word_count":10}
-{"seed_bigram":"park. the","sentence":"park. the cat sat on the mat.","tick":227,"timestamp":"2026-10-07T06:38:21.584172+00:00","word_count":7}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog ran in the park.","tick":228,"timestamp":"2026-10-07T06:39:19.562199+00:00","word_count":10}
-{"seed_bigram":"ran in","sentence":"ran in the park.","tick":229,"timestamp":"2026-10-07T06:40:20.450108+00:00","word_count":4}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog around the park.","tick":230,"timestamp":"2026-10-07T06:41:10.477322+00:00","word_count":9}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":231,"timestamp":"2026-10-07T06:42:11.047027+00:00","word_count":4}
-{"seed_bigram":"around the","sentence":"around the park.","tick":232,"timestamp":"2026-10-07T06:43:11.007057+00:00","word_count":3}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":233,"timestamp":"2026-10-07T06:44:10.557774+00:00","word_count":4}
-{"seed_bigram":"mat. the","sentence":"mat. the dog around the park.","tick":234,"timestamp":"2026-10-07T06:45:10.606178+00:00","word_count":6}
-{"seed_bigram":"the dog","sentence":"the dog ran in the park.","tick":235,"timestamp":"2026-10-07T06:46:11.513116+00:00","word_count":6}
-{"seed_bigram":"cat chased","sentence":"cat chased the dog around the park.","tick":236,"timestamp":"2026-10-07T06:47:10.104326+00:00","word_count":7}
-{"seed_bigram":"in the","sentence":"in the park.","tick":237,"timestamp":"2026-10-07T06:48:10.593477+00:00","word_count":3}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":238,"timestamp":"2026-10-07T06:49:12.670358+00:00","word_count":4}
-{"seed_bigram":"the cat","sentence":"the cat sat on the mat.","tick":239,"timestamp":"2026-10-07T06:50:22.097606+00:00","word_count":6}
-{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":240,"timestamp":"2026-10-07T06:51:09.944159+00:00","word_count":5}
-{"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":241,"timestamp":"2026-10-07T06:52:11.524273+00:00","word_count":5}
-{"seed_bigram":"in the","sentence":"in the park.","tick":242,"timestamp":"2026-10-07T06:53:10.492077+00:00","word_count":3}
-{"seed_bigram":"around the","sentence":"around the park.","tick":243,"timestamp":"2026-10-07T06:54:11.685815+00:00","word_count":3}
-{"seed_bigram":"chased the","sentence":"chased the dog around the park.","tick":244,"timestamp":"2026-10-07T06:55:14.108796+00:00","word_count":6}
-{"seed_bigram":"dog ran","sentence":"dog ran in the park.","tick":245,"timestamp":"2026-10-07T06:56:11.202931+00:00","word_count":5}
-{"seed_bigram":"on the","sentence":"on the mat.","tick":246,"timestamp":"2026-10-07T06:57:10.343881+00:00","word_count":3}
-{"seed_bigram":"sat on","sentence":"sat on the mat.","tick":247,"timestamp":"2026-10-07T06:58:11.923906+00:00","word_count":4}
-{"seed_bigram":"the dog","sentence":"the dog around the park.","tick":248,"timestamp":"2026-10-07T06:59:10.540576+00:00","word_count":5}
-{"seed_bigram":"cat chased","sentence":"cat chased the dog ran in the park.","tick":249,"timestamp":"2026-10-07T07:00:16.790890+00:00","word_count":8}
-{"seed_bigram":"cat sat","sentence":"cat sat on the mat.","tick":250,"timestamp":"2026-10-07T07:01:12.064122+00:00","word_count":5}
-{"seed_bigram":"dog around","sentence":"dog around the park.","tick":251,"timestamp":"2026-10-07T07:02:13.589245+00:00","word_count":4}
-{"seed_bigram":"park. the","sentence":"park. the cat chased the dog ran in the park.","tick":252,"timestamp":"2026-10-07T07:03:10.221341+00:00","word_count":10}
-{"seed_bigram":"the park.","sentence":"the park. the cat sat on the mat.","tick":253,"timestamp":"2026-10-07T07:04:12.029601+00:00","word_count":8}
-{"seed_bigram":"around the","sentence":"around the park.","tick":254,"timestamp":"2026-10-07T07:05:10.773342+00:00","word_count":3}
 {"seed_bigram":"mat. the","sentence":"mat. the dog around the park.","tick":255,"timestamp":"2026-10-07T07:06:11.092955+00:00","word_count":6}
 {"seed_bigram":"around the","sentence":"around the park.","tick":256,"timestamp":"2026-10-07T07:07:11.830580+00:00","word_count":3}
 {"seed_bigram":"ran in","sentence":"ran in the park.","tick":257,"timestamp":"2026-10-07T07:08:10.483511+00:00","word_count":4}
@@ -142,3 +69,4 @@
 {"seed_bigram":"cat chased","sentence":"cat chased the dog around the park.","tick":323,"timestamp":"2026-10-07T08:14:26.681633+00:00","word_count":7}
 {"seed_bigram":"chased the","sentence":"chased the dog around the park.","tick":324,"timestamp":"2026-10-07T08:15:16.958178+00:00","word_count":6}
 {"seed_bigram":"mat. the","sentence":"mat. the dog ran in the park.","tick":325,"timestamp":"2026-10-07T08:16:17.011067+00:00","word_count":7}
+{"seed_bigram":"the dog","sentence":"the dog ran in the park.","tick":326,"timestamp":"2026-10-07T08:17:14.859298+00:00","word_count":6}
