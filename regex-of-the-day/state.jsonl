@@ -7,3 +7,4 @@
 {"match_ok":false,"match_test":"((o*|i+)|q)","nonmatch_ok":true,"nonmatch_test":"((o*9i+)|q)","pattern":"((o*|i+)|q)","tick":257,"timestamp":"2026-10-07T07:34:17.073849+00:00"}
 {"match_ok":true,"match_test":"t","nonmatch_ok":true,"nonmatch_test":"u","pattern":"t","tick":258,"timestamp":"2026-10-07T07:35:16.672892+00:00"}
 {"match_ok":true,"match_test":"u","nonmatch_ok":true,"nonmatch_test":"v","pattern":"u","tick":259,"timestamp":"2026-10-07T07:36:15.138947+00:00"}
+{"match_ok":true,"match_test":"z","nonmatch_ok":true,"nonmatch_test":"a","pattern":"z","tick":260,"timestamp":"2026-10-07T07:37:15.954400+00:00"}
