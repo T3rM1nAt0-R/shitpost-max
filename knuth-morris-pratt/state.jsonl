@@ -82,3 +82,4 @@
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":326,"timestamp":"2026-10-07T08:17:12.071729+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":327,"timestamp":"2026-10-07T08:18:11.008778+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":328,"timestamp":"2026-10-07T08:19:12.542071+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":329,"timestamp":"2026-10-07T08:20:15.258689+00:00"}
