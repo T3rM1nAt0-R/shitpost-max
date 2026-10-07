@@ -190,3 +190,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-07T08:42:27.597346+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-10-07T08:46:37.006326+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-07T08:50:50.162374+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-10-07T08:55:01.337675+00:00"}
