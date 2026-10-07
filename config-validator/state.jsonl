@@ -93,3 +93,4 @@
 {"error":"Illegal character '\\n' (at line 1, column 12)","filename":"broken.toml","filetype":"toml","is_valid":false,"timestamp":"2026-10-06T21:28:53.140952+00:00"}
 {"error":null,"filename":"settings.yaml","filetype":"yaml","is_valid":true,"timestamp":"2026-10-07T05:10:10.493830+00:00"}
 {"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false,"timestamp":"2026-10-07T05:16:18.819211+00:00"}
+{"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-10-07T05:21:26.324013+00:00"}
