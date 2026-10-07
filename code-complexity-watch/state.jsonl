@@ -152,3 +152,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-07T06:04:31.027865+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-10-07T06:08:30.984618+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-07T06:12:30.976004+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-10-07T06:16:36.713979+00:00"}
