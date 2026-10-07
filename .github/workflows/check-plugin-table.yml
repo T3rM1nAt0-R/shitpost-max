@@ -1,10 +1,12 @@
 name: Check plugin table
 
+# The table only depends on the plugin code layout and the README, not on the
+# state files the fleet commits every few seconds, so only run when those change.
 on:
   push:
-    paths-ignore: ["site/**", ".github/workflows/site.yml"]
+    paths: ["README.md", "tools/**", "requirements.txt", "harness/**", "*/*.py", ".github/workflows/check-plugin-table.yml"]
   pull_request:
-    paths-ignore: ["site/**", ".github/workflows/site.yml"]
+    paths: ["README.md", "tools/**", "requirements.txt", "harness/**", "*/*.py", ".github/workflows/check-plugin-table.yml"]
 
 jobs:
   check-plugin-table:
@@ -15,6 +17,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --retries 5 -r requirements.txt
       - name: Check README plugin table is up to date
         run: python3 tools/generate_plugin_table.py --check
