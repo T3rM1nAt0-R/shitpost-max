@@ -205,3 +205,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-07T09:45:02.288006+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-10-07T09:50:08.033113+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-07T09:54:05.830043+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-10-07T09:57:58.025952+00:00"}
