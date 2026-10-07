@@ -111,3 +111,4 @@
 {"complexity":1,"function":"helper","timestamp":"2026-10-07T11:17:43.690517+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-07T11:25:02.399489+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-10-07T11:31:09.498287+00:00"}
+{"complexity":6,"function":"parse_config","timestamp":"2026-10-07T11:37:03.105484+00:00"}
