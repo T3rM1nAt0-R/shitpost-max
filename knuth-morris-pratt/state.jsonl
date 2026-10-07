@@ -102,3 +102,4 @@
 {"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":275,"timestamp":"2026-10-07T07:26:10.206625+00:00"}
 {"failure":[0,0,1,2],"match_count":3,"matches":[0,2,4],"pattern":"ABAB","tick":276,"timestamp":"2026-10-07T07:27:15.348707+00:00"}
 {"failure":[0,0,1,2,0,1,2,3,4],"match_count":2,"matches":[10,25],"pattern":"ABABCABAB","tick":277,"timestamp":"2026-10-07T07:28:26.651411+00:00"}
+{"failure":[0,1,0,1,2,0,1,2,3,4,5],"match_count":2,"matches":[0,11],"pattern":"AABAACAABAA","tick":278,"timestamp":"2026-10-07T07:29:08.544633+00:00"}
