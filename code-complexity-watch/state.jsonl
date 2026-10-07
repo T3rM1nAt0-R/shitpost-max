@@ -177,3 +177,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-07T07:48:21.651347+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-10-07T07:52:35.988740+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-07T07:56:36.969348+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-10-07T08:00:46.939893+00:00"}
