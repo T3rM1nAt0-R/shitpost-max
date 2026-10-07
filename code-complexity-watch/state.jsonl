@@ -203,3 +203,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-10-07T09:36:37.042005+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-07T09:41:06.663511+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-07T09:45:02.288006+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-10-07T09:50:08.033113+00:00"}
