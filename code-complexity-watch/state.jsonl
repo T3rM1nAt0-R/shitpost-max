@@ -145,3 +145,4 @@
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-07T05:37:53.607788+00:00"}
 {"complexity":9,"function":"validate_input","timestamp":"2026-10-07T05:42:25.903901+00:00"}
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-07T05:46:09.133432+00:00"}
+{"complexity":3,"function":"main","timestamp":"2026-10-07T05:49:53.507493+00:00"}
