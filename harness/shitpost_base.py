@@ -452,4 +452,13 @@ def git_push(repo_root: str) -> None:
     """
     lock_path = os.path.join(repo_root, ".git-push.lock")
     with _repo_git_lock(lock_path):
+        if subprocess.run(["git", "push"], cwd=repo_root).returncode == 0:
+            return
+        # Rejected: someone else (a merged PR) moved the remote branch. Rebase
+        # our local fleet commits on top of it and try once more, so the fleet
+        # heals itself instead of staying stuck until a human fixes it.
+        subprocess.run(
+            ["git", "-c", "core.protectNTFS=false", "pull", "--rebase", "--autostash"],
+            cwd=repo_root, check=True,
+        )
         subprocess.run(["git", "push"], cwd=repo_root, check=True)
