@@ -163,3 +163,4 @@
 {"complexity":3,"function":"main","timestamp":"2026-10-07T06:50:02.073158+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-07T06:54:23.247512+00:00"}
 {"complexity":14,"function":"handle_request","timestamp":"2026-10-07T06:58:25.204453+00:00"}
+{"complexity":9,"function":"validate_input","timestamp":"2026-10-07T07:02:26.802446+00:00"}
