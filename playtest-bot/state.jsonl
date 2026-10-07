@@ -127,3 +127,4 @@
 {"agent":"random","final_score":1384,"game_length":134,"max_tile":128,"tick":235,"timestamp":"2026-10-07T06:47:12.940935+00:00"}
 {"agent":"heuristic","final_score":3100,"game_length":239,"max_tile":256,"tick":236,"timestamp":"2026-10-07T06:48:13.159609+00:00"}
 {"agent":"random","final_score":1000,"game_length":99,"max_tile":128,"tick":237,"timestamp":"2026-10-07T06:49:15.212276+00:00"}
+{"agent":"heuristic","final_score":3860,"game_length":299,"max_tile":256,"tick":238,"timestamp":"2026-10-07T06:50:25.895513+00:00"}
