@@ -212,3 +212,4 @@
 {"complexity":6,"function":"parse_config","timestamp":"2026-10-07T10:14:28.100329+00:00"}
 {"complexity":3,"function":"main","timestamp":"2026-10-07T10:18:33.085032+00:00"}
 {"complexity":1,"function":"helper","timestamp":"2026-10-07T10:23:04.500603+00:00"}
+{"complexity":14,"function":"handle_request","timestamp":"2026-10-07T10:26:55.437222+00:00"}
