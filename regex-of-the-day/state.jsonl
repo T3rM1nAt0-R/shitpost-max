@@ -58,3 +58,4 @@
 {"match_ok":false,"match_test":"(a|c)","nonmatch_ok":true,"nonmatch_test":"(a3c)","pattern":"(a|c)","tick":130,"timestamp":"2026-10-07T05:12:46.128486+00:00"}
 {"match_ok":false,"match_test":"(e+|x)","nonmatch_ok":true,"nonmatch_test":"(e+|y)","pattern":"(e+|x)","tick":131,"timestamp":"2026-10-07T05:13:53.093108+00:00"}
 {"match_ok":false,"match_test":"(b++|r)*","nonmatch_ok":true,"nonmatch_test":"(b++|r)0","pattern":"(b++|r)*","tick":132,"timestamp":"2026-10-07T05:14:46.934281+00:00"}
+{"match_ok":false,"match_test":"(h?|(t|d))","nonmatch_ok":true,"nonmatch_test":"7h?|(t|d))","pattern":"(h?|(t|d))","tick":133,"timestamp":"2026-10-07T05:16:09.519284+00:00"}
