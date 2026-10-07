@@ -1,81 +1,3 @@
-{"edges":30,"property_name":"Diameter","property_value":"3","timestamp":"2026-10-07T05:59:09.588885+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:00:15.541117+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:01:10.037984+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:02:11.026013+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"1","timestamp":"2026-10-07T06:03:07.966687+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:04:10.406461+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"5","timestamp":"2026-10-07T06:05:05.817513+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:06:07.601326+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-3-0.3","timestamp":"2026-10-07T06:07:10.682381+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:08:09.113475+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:09:07.313877+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:10:16.903935+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"3","timestamp":"2026-10-07T06:11:07.717402+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:12:09.145532+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:13:10.918282+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:14:09.054927+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:15:07.265108+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:16:09.014188+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"3","timestamp":"2026-10-07T06:17:06.316406+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:18:05.519076+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:19:07.816236+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:20:09.476994+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:21:05.331953+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:22:07.053818+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"1","timestamp":"2026-10-07T06:23:05.740923+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:24:05.835121+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:25:09.356297+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:26:05.829205+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:27:06.758614+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:28:07.338018+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"2","timestamp":"2026-10-07T06:29:04.798200+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:30:09.174117+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:31:12.587216+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:32:12.422189+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"1","timestamp":"2026-10-07T06:33:08.054689+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:34:07.586255+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"2","timestamp":"2026-10-07T06:35:06.432980+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:36:05.486192+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-3-0.3","timestamp":"2026-10-07T06:37:07.501114+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:38:13.169401+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:39:11.548307+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:40:10.790736+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"2","timestamp":"2026-10-07T06:41:06.372708+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:42:05.832336+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:43:06.621406+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:44:05.851854+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:45:05.366091+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:46:06.912059+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"2","timestamp":"2026-10-07T06:47:05.896563+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:48:06.173598+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:49:07.625609+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:50:11.835217+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"1","timestamp":"2026-10-07T06:51:05.732916+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:52:06.962961+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"4","timestamp":"2026-10-07T06:53:05.449149+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T06:54:06.325404+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T06:55:08.660289+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T06:56:06.426146+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T06:57:06.049215+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T06:58:06.942639+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"4","timestamp":"2026-10-07T06:59:06.462458+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T07:00:10.607160+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T07:01:07.671269+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T07:02:07.481596+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"1","timestamp":"2026-10-07T07:03:05.603458+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T07:04:07.669006+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"2","timestamp":"2026-10-07T07:05:05.638061+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T07:06:06.704616+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-3-0.3","timestamp":"2026-10-07T07:07:07.437603+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T07:08:06.071582+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T07:09:06.587747+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T07:10:11.483508+00:00","vertices":100}
-{"edges":30,"property_name":"Diameter","property_value":"4","timestamp":"2026-10-07T07:11:06.275870+00:00","vertices":100}
-{"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T07:12:06.107882+00:00","vertices":100}
-{"edges":30,"property_name":"Degree Stats","property_value":"0-3-0.3","timestamp":"2026-10-07T07:13:06.441309+00:00","vertices":100}
-{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T07:14:07.223884+00:00","vertices":100}
-{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T07:15:08.878473+00:00","vertices":100}
-{"edges":30,"property_name":"Connected Components","property_value":"85","timestamp":"2026-10-07T07:16:15.739494+00:00","vertices":100}
 {"edges":30,"property_name":"Diameter","property_value":"3","timestamp":"2026-10-07T07:17:12.223130+00:00","vertices":100}
 {"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T07:18:07.216775+00:00","vertices":100}
 {"edges":30,"property_name":"Degree Stats","property_value":"0-3-0.3","timestamp":"2026-10-07T07:19:13.353873+00:00","vertices":100}
@@ -151,3 +73,4 @@
 {"edges":30,"property_name":"Diameter","property_value":"3","timestamp":"2026-10-07T08:29:07.521630+00:00","vertices":100}
 {"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T08:30:15.500994+00:00","vertices":100}
 {"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T08:31:18.474910+00:00","vertices":100}
+{"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T08:32:10.153184+00:00","vertices":100}
