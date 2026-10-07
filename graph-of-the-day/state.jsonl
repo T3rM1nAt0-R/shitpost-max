@@ -110,3 +110,4 @@
 {"edges":30,"property_name":"MST Weight","property_value":"15","timestamp":"2026-10-07T12:02:59.474355+00:00","vertices":100}
 {"edges":30,"property_name":"Degree Stats","property_value":"0-2-0.3","timestamp":"2026-10-07T12:03:51.805927+00:00","vertices":100}
 {"edges":30,"property_name":"Triangle Count","property_value":"0","timestamp":"2026-10-07T12:04:41.030052+00:00","vertices":100}
+{"edges":30,"property_name":"Max Clique Lower Bound","property_value":"2","timestamp":"2026-10-07T12:05:29.241191+00:00","vertices":100}
