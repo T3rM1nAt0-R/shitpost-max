@@ -63,6 +63,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from harness.live import live_job  # noqa: E402
 from harness.shitpost_base import git_push  # noqa: E402
 
 # (plugin directory name, cadence in seconds). Cadence per each plugin's own
@@ -309,6 +310,8 @@ PLUGINS += [
 
 # How often the pusher runs, independent of any plugin's own cadence.
 PUSH_CADENCE_SECONDS = 20
+# Refresh live/live.json (what the public site shows) this often.
+LIVE_CADENCE_SECONDS = 300
 
 
 # Hard ceiling on how long any single plugin's tick.py may run. This is
@@ -506,6 +509,7 @@ def default_jobs():
     ]
     # push is NOT offloaded to _TICK_EXECUTOR - stays inline in the main
     # scheduler loop (see module docstring for why).
+    jobs.append(("live", LIVE_CADENCE_SECONDS, lambda: disk_ok() and live_job(REPO_ROOT)))
     jobs.append(("push", PUSH_CADENCE_SECONDS, push_job))
     return jobs
 

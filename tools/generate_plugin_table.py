@@ -29,6 +29,7 @@ SKIP_DIRS = {
     ".githooks",
     ".pytest_cache",
     "site",  # the shitpostmax.com website (Next.js), not a plugin
+    "live",  # live/live.json, the latest-commit feed the site reads
 }
 
 MARKER_START = "<!-- PLUGIN_TABLE_START -->"

@@ -2,6 +2,7 @@ import { getFleetWithStats } from "@/lib/fleet";
 import FeedControls from "./FeedControls";
 import FeedGrid from "./FeedGrid";
 import FeedCards from "./FeedCards";
+import LiveFeed from "./LiveFeed";
 import "./feed.css";
 
 const GRID_ID = "feed-grid";
@@ -32,6 +33,7 @@ export default function Feed() {
       <FeedGrid id={GRID_ID}>
         <FeedCards />
       </FeedGrid>
+      <LiveFeed gridId={GRID_ID} />
     </section>
   );
 }

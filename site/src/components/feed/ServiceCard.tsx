@@ -33,6 +33,7 @@ export default function ServiceCard({ service: s, rank }: Props) {
             </a>
           </h3>
           <p className="spm-tag">{s.tagline}</p>
+          <p className="spm-live" data-live hidden />
           <dl className="spm-dl">
             <div>
               <dt>Valuation</dt>

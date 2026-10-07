@@ -27,8 +27,13 @@ if os.name == "nt":
         msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
 
     def _unlock(fd: int) -> None:
+        # Unlike flock, Windows raises if the region isn't locked, which is
+        # the case when we give up waiting for the lock and unwind.
         os.lseek(fd, 0, os.SEEK_SET)
-        msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
+        try:
+            msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
+        except OSError:
+            pass
 else:
     import fcntl
 
