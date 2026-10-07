@@ -42,3 +42,4 @@
 {"match_ok":false,"match_test":"v?","nonmatch_ok":true,"nonmatch_test":"w?","pattern":"v?","tick":387,"timestamp":"2026-10-07T09:57:40.988594+00:00"}
 {"match_ok":false,"match_test":"(n|h)","nonmatch_ok":true,"nonmatch_test":"(n4h)","pattern":"(n|h)","tick":388,"timestamp":"2026-10-07T09:58:48.635803+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":389,"timestamp":"2026-10-07T09:59:37.174502+00:00"}
+{"match_ok":true,"match_test":"o","nonmatch_ok":true,"nonmatch_test":"p","pattern":"o","tick":390,"timestamp":"2026-10-07T10:00:48.368814+00:00"}
