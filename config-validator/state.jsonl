@@ -131,3 +131,4 @@
 {"error":"line 2: tab character not allowed in YAML indentation","filename":"broken.yaml","filetype":"yaml","is_valid":false,"timestamp":"2026-10-07T07:44:27.902944+00:00"}
 {"error":null,"filename":"config.json","filetype":"json","is_valid":true,"timestamp":"2026-10-07T07:48:21.916016+00:00"}
 {"error":"Expecting ',' delimiter: line 1 column 29 (char 28)","filename":"broken.json","filetype":"json","is_valid":false,"timestamp":"2026-10-07T07:52:36.384807+00:00"}
+{"error":null,"filename":"pyproject.toml","filetype":"toml","is_valid":true,"timestamp":"2026-10-07T07:56:36.978406+00:00"}
