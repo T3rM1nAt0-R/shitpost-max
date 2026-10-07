@@ -161,3 +161,4 @@
 {"branch":"main","days_stale":0,"timestamp":"2026-10-07T06:54:22.763098+00:00"}
 {"branch":"archive/old-api","days_stale":400,"timestamp":"2026-10-07T06:58:24.694079+00:00"}
 {"branch":"experiment/rewrite","days_stale":145,"timestamp":"2026-10-07T07:02:26.802446+00:00"}
+{"branch":"fix/login-bug","days_stale":12,"timestamp":"2026-10-07T07:06:36.831262+00:00"}
