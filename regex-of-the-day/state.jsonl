@@ -49,3 +49,4 @@
 {"match_ok":false,"match_test":"(p|(y|g)+)+","nonmatch_ok":true,"nonmatch_test":"(p|(y|g)+)9","pattern":"(p|(y|g)+)+","tick":215,"timestamp":"2026-10-07T06:46:15.328946+00:00"}
 {"match_ok":true,"match_test":"h","nonmatch_ok":true,"nonmatch_test":"i","pattern":"h","tick":216,"timestamp":"2026-10-07T06:47:13.946088+00:00"}
 {"match_ok":true,"match_test":"q","nonmatch_ok":true,"nonmatch_test":"r","pattern":"q","tick":217,"timestamp":"2026-10-07T06:48:14.424134+00:00"}
+{"match_ok":false,"match_test":"i++","nonmatch_ok":true,"nonmatch_test":"j++","pattern":"i++","tick":218,"timestamp":"2026-10-07T06:49:16.235720+00:00"}
