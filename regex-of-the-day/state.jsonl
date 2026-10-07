@@ -19,3 +19,4 @@
 {"match_ok":false,"match_test":"x*","nonmatch_ok":true,"nonmatch_test":"y*","pattern":"x*","tick":451,"timestamp":"2026-10-07T11:35:34.576438+00:00"}
 {"match_ok":true,"match_test":"v","nonmatch_ok":true,"nonmatch_test":"w","pattern":"v","tick":452,"timestamp":"2026-10-07T11:36:46.909385+00:00"}
 {"match_ok":true,"match_test":"b","nonmatch_ok":true,"nonmatch_test":"c","pattern":"b","tick":453,"timestamp":"2026-10-07T11:37:53.194027+00:00"}
+{"match_ok":true,"match_test":"g","nonmatch_ok":true,"nonmatch_test":"h","pattern":"g","tick":454,"timestamp":"2026-10-07T11:38:50.284741+00:00"}
