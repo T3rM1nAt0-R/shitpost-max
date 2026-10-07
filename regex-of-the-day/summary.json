@@ -1,1 +1,1 @@
-{"match_ok":false,"match_test":"(h*+|(k|q++))","nonmatch_ok":true,"nonmatch_test":"(h*6|(k|q++))","pattern":"(h*+|(k|q++))","tick":182,"timestamp":"2026-10-07T06:11:18.522192+00:00"}
+{"match_ok":false,"match_test":"((h*|w)|((r|u*)*|u)*)","nonmatch_ok":true,"nonmatch_test":"((h*|w)|((r|u*)*|v)*)","pattern":"((h*|w)|((r|u*)*|u)*)","tick":183,"timestamp":"2026-10-07T06:12:22.896571+00:00"}
