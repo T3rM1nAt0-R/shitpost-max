@@ -43,3 +43,4 @@
 {"match_ok":true,"match_test":"e","nonmatch_ok":true,"nonmatch_test":"f","pattern":"e","tick":359,"timestamp":"2026-10-07T09:24:24.345366+00:00"}
 {"match_ok":true,"match_test":"k","nonmatch_ok":true,"nonmatch_test":"l","pattern":"k","tick":360,"timestamp":"2026-10-07T09:25:23.790354+00:00"}
 {"match_ok":false,"match_test":"c++","nonmatch_ok":true,"nonmatch_test":"c+8","pattern":"c++","tick":361,"timestamp":"2026-10-07T09:26:22.492135+00:00"}
+{"match_ok":true,"match_test":"x","nonmatch_ok":true,"nonmatch_test":"y","pattern":"x","tick":362,"timestamp":"2026-10-07T09:27:16.927259+00:00"}
